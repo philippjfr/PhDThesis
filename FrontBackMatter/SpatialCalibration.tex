@@ -1,0 +1,57 @@
+%!TEX root = ../PhDthesis.tex
+\chapter{Spatially calibrating models of primary visual cortex}
+
+The Gain Control Adapation Lateral model (GCAL) has been able to
+demonstrate robust, yet adaptive development of orientation maps,
+largely due to the mechanisms it is named after. However, although it
+is a good model of map development, matching the time course of
+selectivity and stability measurements in ferret V1 (see Stevens et
+al. 2013), it was never developed to be spatially calibrated or
+closely match anatomy.
+
+In this notebook we will explore the literature on the spatial scales
+of connectivity in the early visual system and then adjust the
+connectivity in the GCAL model to be consistent with our anatomical
+and electrophysiological knowledge about macaque V1. Where macaque
+data is not available some of the estimates will be taken from cat
+primary visual cortex.
+
+We will begin by looking at the size of receptive fields in the
+lateral geniculate nucleus and then progress toward V1, looking at
+feedforward and intracortical connectivity. Additionally we will pay
+attention to the difference in observed connectivity between
+excitatory and inhibitory neurons, which will further highlight how
+difficult it is to find correspondence between the GCAL model, with
+only one cell class and the real anatomy.
+
+\section{Spatially calibrating LGN receptive fields}
+
+The results from Sceniak et al. (2006) represent the best estimates of
+the spatial properties of LGN receptive fields in macaque as they
+employ more a more refined measurement protocol than older studies
+(full discussion can be found in my First Year Review). The estimated
+excitatory extents in this study are significantly larger than
+previous estimates, while the suppressive surround estimates are
+fairly consistent. Furthermore, the spatial extent of the excitatory
+CRF centers were found to be contrast invariant, while both the ECRF
+and CRF suppressive surround extents were found to increase at lower
+contrast levels. In summary, looking back at all the studies
+considered here excitatory CRF extents are generally distributed
+between 0.05-0.5 $\deg$ in radius, while inhibitory CRF and
+suppressive ECRF radii are distributed distributed anywhere between
+0.6-1.5 $\deg$ and the suppression index is quite high (SI>0.8) for
+80\% cells.
+
+The spatial profile of LGN Receptive Fields is usually estimated by measuring the response of LGN neurons to moving bar stimuli with varying extents and spatial frequencies. The resulting size tuning curves are then fit using a Difference of Gaussian (DoG) model, expressed as a function of either the spatial frequency (DoGf) or the radius (DoGr).
+
+DoGr: $\(R = k_c e^{-\frac{r}{r_c}^2} - k_s e^{-\frac{r}{r_s}^2}\)$
+
+DoGf: $\(R = k_c e^{-\frac{f}{f_c}^2} - k_s e^{-\frac{f}{f_s}^2}\)$
+
+More recent papers have also attempted to fit the size response curves with integrated Difference of Gaussian models
+
+iDoG $\(R(s) = R_0 + K_e \int \int re^{-\frac{r^2}{a}} \, \mathrm{d}r\mathrm{d}\theta - K_i \int\int re^{-\frac{r^2}{b}} \, \mathrm{d}r\mathrm{d}\theta\)$
+
+where $\(R_0\)$ is the spontaneous response rate, $\(K_e\)$ the excitatory gain, $\(K_i\)$ the inhibitory gain, $\(a\)$ the excitatory space constant and $\(b\)$ the inhibitory space constant.
+
+Using this methodology Sceniak et al. 2006 were able to fit excitatory and inhibitory space constants to a sample of 136 thalamocortical afferents in macaque V1.
