@@ -149,13 +149,6 @@ Cavanaugh, J.~R., Bair, W., and Movshon, J.~A. (2002).
   and surround in macaque V1 neurons.}
 \newblock {\em Journal of Neurophysiology}, 88(5):2530--46.
 
-\bibitem[Chang et~al., 2010]{Chang2010}
-Chang, M.~C., Park, J.~M., Pelkey, K.~a., Grabenstatter, H.~L., Xu, D., Linden,
-  D.~J., Sutula, T.~P., McBain, C.~J., and Worley, P.~F. (2010).
-\newblock {Narp regulates homeostatic scaling of excitatory synapses on
-  parvalbumin-expressing interneurons.}
-\newblock {\em Nature neuroscience}, 13(9):1090--1097.
-
 \bibitem[Chapman et~al., 1996]{Chapman1996}
 Chapman, B., Stryker, M.~P., and Bonhoeffer, T. (1996).
 \newblock {Development of orientation preference maps in ferret primary visual
@@ -202,7 +195,7 @@ Desimone, R. and Duncan, J. (1995).
 \bibitem[Disney and Aoki, 2008]{Disney2008}
 Disney, A. and Aoki, C. (2008).
 \newblock {Muscarinic acetylcholine receptors in macaque V1 are most frequently
-  expressed by parvalbumin‐immunoreactive neurons}.
+  expressed by parvalbumin-immunoreactive neurons}.
 \newblock {\em Journal of Comparative Neurology}, 507(5):1748--1762.
 
 \bibitem[Disney et~al., 2007]{Disney2007}
@@ -311,12 +304,6 @@ Gentet, L.~J., Kremer, Y., Taniguchi, H., Huang, Z.~J., Staiger, J.~F., and
   neurons in mouse barrel cortex.}
 \newblock {\em Nature Neuroscience}, 15(4):607--12.
 
-\bibitem[Ghose et~al., 2002]{Ghose2002}
-Ghose, G.~M., Yang, T., and Maunsell, J. H.~R. (2002).
-\newblock {Physiological correlates of perceptual learning in monkey V1 and
-  V2.}
-\newblock {\em Journal of Neurophysiology}, 87(4):1867--88.
-
 \bibitem[Gil et~al., 1997]{Gil1997}
 Gil, Z., Connors, B.~W., and Amitai, Y. (1997).
 \newblock {Differential regulation of neocortical synapses by neuromodulators
@@ -333,11 +320,6 @@ Gilbert, C. and Wiesel, T. (1990).
 \newblock {The influence of contextual stimuli on the orientation selectivity
   of cells in primary visual cortex of the cat}.
 \newblock {\em Vision research}, 30(Il).
-
-\bibitem[Gilbert et~al., 2001]{Gilbert2001}
-Gilbert, C.~D., Sigman, M., and Crist, R.~E. (2001).
-\newblock {The Neural Basis of Perceptual Learning}.
-\newblock {\em Neuron}, 31(5):681--697.
 
 \bibitem[Goard and Dan, 2009]{Goard2009}
 Goard, M. and Dan, Y. (2009).
@@ -455,8 +437,8 @@ Hup\'{e}, J.-M., James, A., Payne, B., Lomber, S., Girard, P., and Bullier, J.
 
 \bibitem[Huxlin and Pasternak, 2001]{Huxlin2001}
 Huxlin, K. and Pasternak, T. (2001).
-\newblock {Long‐term neurochemical changes after visual cortical lesions in
-  the adult cat}.
+\newblock {Long-term neurochemical changes after visual cortical lesions in the
+  adult cat}.
 \newblock {\em Journal of Comparative Neurology}, 429:221--241.
 
 \bibitem[Ichida et~al., 2007]{Ichida2007}
@@ -539,12 +521,6 @@ Kuhlman, S.~J., Olivas, N.~D., Tring, E., Ikrar, T., Xu, X., and Trachtenberg,
   the visual cortex}.
 \newblock {\em Nature}, pages 1--7.
 
-\bibitem[Law, 2009]{Law2009}
-Law, J.~S. (2009).
-\newblock {\em {Modeling the development of organization for orientation
-  preference in primary visual cortex}}.
-\newblock PhD thesis, The University of Edinburgh.
-
 \bibitem[Law et~al., 2011]{Law2011}
 Law, J.~S., Antolik, J., and Bednar, J.~A. (2011).
 \newblock {Mechanisms for stable and robust development of orientation maps and
@@ -600,12 +576,6 @@ Li, L.-Y., Xiong, X.~R., Ibrahim, L.~a., Yuan, W., Tao, H.~W., and Zhang, L.~I.
 \newblock {Differential Receptive Field Properties of Parvalbumin and
   Somatostatin Inhibitory Neurons in Mouse Auditory Cortex.}
 \newblock {\em Cerebral Cortex}, 14:2--3.
-
-\bibitem[Li et~al., 2004]{Li2006}
-Li, W., Pi\"{e}ch, V., and Gilbert, C.~D. (2004).
-\newblock {Perceptual learning and top-down influences in primary visual
-  cortex}.
-\newblock {\em Nature Neuroscience}, 7(6):651--657.
 
 \bibitem[Li, 2002]{Li2002}
 Li, Z. (2002).
@@ -688,12 +658,6 @@ Mizobe, K., Polat, U., Pettet, M.~W., and Kasamatsu, T. (2001).
 \newblock {Facilitation and suppression of single striate-cell activity by
   spatially discrete pattern stimuli presented beyond the receptive field.}
 \newblock {\em Visual Neuroscience}, 18(3):377--91.
-
-\bibitem[Nassi et~al., 2013]{Nassi2013}
-Nassi, J.~J., Lomber, S.~G., and Born, R.~T. (2013).
-\newblock {Corticocortical Feedback Contributes to Surround Suppression in V1
-  of the Alert Primate}.
-\newblock {\em Journal of Neuroscience}, 33(19):8504--8517.
 
 \bibitem[Nienborg et~al., 2013]{Nienborg2013}
 Nienborg, H., Hasenstaub, a., Nauhaus, I., Taniguchi, H., Huang, Z.~J., and
@@ -829,6 +793,12 @@ Runyan, C.~a., Schummers, J., {Van Wart}, A., Kuhlman, S.~J., Wilson, N.~R.,
   precise roles for subtypes of inhibition in visual cortex.}
 \newblock {\em Neuron}, 67(5):847--57.
 
+\bibitem[Ruthazer and Stryker, 1996]{Ruthazer1996}
+Ruthazer, E.~S. and Stryker, M.~P. (1996).
+\newblock {The role of activity in the development of long-range horizontal
+  connections in area 17 of the ferret.}
+\newblock {\em The Journal of Neuroscience}, 16(22):7253--69.
+
 \bibitem[Sarter et~al., 2009]{Sarter2009}
 Sarter, M., Parikh, V., and Howe, W.~M. (2009).
 \newblock {nAChR agonist-induced cognition enhancement: integration of
@@ -856,12 +826,6 @@ Schmidt, K.~E., Goebel, R., L\"{o}wel, S., and Singer, W. (1997).
   Anisotropies of Connections in the Primary Visual Cortex}.
 \newblock {\em European Journal of Neuroscience}, 9(December 1996):1083--1089.
 
-\bibitem[Schoups et~al., 2001]{Schoups2001}
-Schoups, A., Vogels, R., Qian, N., and Orban, G. (2001).
-\newblock {Practising orientation identification improves orientation coding in
-  V1 neurons.}
-\newblock {\em Nature}, 412(6846):549--53.
-
 \bibitem[Schwabe et~al., 2006]{Schwabe2006}
 Schwabe, L., Obermayer, K., Angelucci, A., and Bressloff, P.~C. (2006).
 \newblock {The role of feedback in shaping the extra-classical receptive field
@@ -872,23 +836,6 @@ Schwabe, L., Obermayer, K., Angelucci, A., and Bressloff, P.~C. (2006).
 Schwartz, O. and Simoncelli, E.~P. (2001).
 \newblock {Natural signal statistics and sensory gain control.}
 \newblock {\em Nature neuroscience}, 4:819--825.
-
-\bibitem[Seitz, 2011]{Seitz2011}
-Seitz, A.~R. (2011).
-\newblock {Perceptual learning: stimulus-specific learning from low-level
-  visual plasticity?}
-\newblock {\em Current Biology}, 21(19):R814--5.
-
-\bibitem[Seitz and Dinse, 2007]{Seitz2007}
-Seitz, A.~R. and Dinse, H.~R. (2007).
-\newblock {A common framework for perceptual learning.}
-\newblock {\em Current Opinion in Neurobiology}, 17(2):148--53.
-
-\bibitem[Self et~al., 2014]{Self2014}
-Self, M., Lorteije, J., Vangeneugden, J., van Best, E., Grigore, M., Levelt,
-  C., Heimel, J., and Roelfsema, P. (2014).
-\newblock {Orientation-Tuned Surround Suppression in Mouse Visual Cortex}.
-\newblock {\em The Journal of Neuroscience}, 34(28):9290--9304.
 
 \bibitem[Seri\`{e}s et~al., 2003]{Series2004}
 Seri\`{e}s, P., Lorenceau, J., and Fr\'{e}gnac, Y. (2003).
@@ -1010,6 +957,12 @@ Stevens, J.~L. (2011).
   primary visual cortex}}.
 \newblock PhD thesis, The University of Edinburgh.
 
+\bibitem[Stevens et~al., 2013]{Stevens2013}
+Stevens, J.-l.~R., Law, J.~S., Antolik, J., and Bednar, J.~A. (2013).
+\newblock {Mechanisms for stable, robust, and adaptive development of
+  orientation maps in the primary visual cortex}.
+\newblock {\em Journal of Neuroscience}, 33(40):15747--15766.
+
 \bibitem[Sur et~al., 1990]{Sur1990}
 Sur, M., Pallas, S.~L., and Roe, A.~W. (1990).
 \newblock {Cross-modal plasticity in cortical development: Differentiation and
@@ -1074,12 +1027,6 @@ Tsodyks, M.~V. and Markram, H. (1997).
 \newblock {The neural code between neocortical pyramidal neurons depends}.
 \newblock {\em Proceedings of the National Academy of Sciences}, 94:719--723.
 
-\bibitem[Turrigiano, 2011]{Turrigiano2011}
-Turrigiano, G. (2011).
-\newblock {Too many cooks? Intrinsic and synaptic homeostatic mechanisms in
-  cortical circuit refinement.}
-\newblock {\em Annual review of neuroscience}, 34:89--103.
-
 \bibitem[{Van Brederode} et~al., 1990]{VanBrederode1990}
 {Van Brederode}, J.~F., Mulligan, K.~a., and Hendrickson, a.~E. (1990).
 \newblock {Calcium-binding proteins as markers for subpopulations of GABAergic
@@ -1103,11 +1050,6 @@ von Engelhardt, J., Eliava, M., Meyer, A.~H., Rozov, A., and Monyer, H. (2007).
 \newblock {Functional characterization of intrinsic cholinergic interneurons in
   the cortex.}
 \newblock {\em The Journal of Neuroscience}, 27(21):5633--42.
-
-\bibitem[Watanabe et~al., 2001]{Watanabe2001}
-Watanabe, T., N\'{a}\~{n}ez, J.~E., and Sasaki, Y. (2001).
-\newblock {Perceptual learning without perception.}
-\newblock {\em Nature}, 413(6858):844--8.
 
 \bibitem[Webb et~al., 2005]{Webb2005}
 Webb, B.~S., Dhruv, N.~T., Solomon, S.~G., Tailby, C., and Lennie, P. (2005).
@@ -1183,11 +1125,5 @@ Zinke, W., Roberts, M.~J., Guo, K., McDonald, J.~S., Robertson, R., and Thiele,
 \newblock {Cholinergic modulation of response properties and orientation tuning
   of neurons in primary visual cortex of anaesthetized Marmoset monkeys.}
 \newblock {\em The European Journal of Neuroscience}, 24(1):314--28.
-
-\bibitem[{Zivari Adab} et~al., 2011]{Zivari2011}
-{Zivari Adab}, H., Vogels, R., and Adab, H.~Z. (2011).
-\newblock {Practicing Coarse Orientation Discrimination Improves Orientation
-  Signals in Macaque Cortical Area V4.}
-\newblock {\em Current Biology}, 21(19):1661--1666.
 
 \end{thebibliography}

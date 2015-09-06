@@ -17,7 +17,7 @@
 % Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
 % Adding 'dottedtoc' will make page numbers in the table of contents flushed right with dots leading to them
 
-\newcommand{\myTitle}{Unifying models of development, circuits and surround modulation in the primate primary visual cortex\xspace}
+\newcommand{\myTitle}{Unifying models of development, anatomy and surround modulation in the primate primary visual cortex\xspace}
 \newcommand{\mySubtitle}{\xspace}
 \newcommand{\myDegree}{Doctor of Philosophy\xspace}
 \newcommand{\myName}{Philipp John Frederic Rudiger\xspace}
@@ -49,11 +49,22 @@
 \newcounter{dummy} % Necessary for correct hyperlinks (to index, bib, etc.)
 \providecommand{\mLyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
 
+
+
+
 %----------------------------------------------------------------------------------------
 %	PACKAGES
 %----------------------------------------------------------------------------------------
 
-\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{siunitx}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{wasysym}
+\usepackage{adjustbox}
+\usepackage[utf8x]{inputenc}
+
 
 %------------------------------------------------
  
@@ -139,7 +150,7 @@
 \newcommand{\tableheadline}[1]{\multicolumn{1}{c}{\spacedlowsmallcaps{#1}}}
 \newcommand{\myfloatalign}{\centering} % To be used with each float for alignment
 \usepackage{caption}
-\captionsetup{font=small,font=singlespacing,format=plain,indention=0cm} %font=sf,
+\captionsetup{font=small,font=singlespacing} %font=sf,
 %\renewcommand{\captionlabelfont}{\sffamily}
 \usepackage{subfig}  
 \usepackage{placeins}
@@ -168,7 +179,7 @@ showstringspaces=false, % Sets whether spaces in strings should appear underline
 breaklines=true, % Force the code to stay in the confines of the listing box
 %frameround=ftff, % Uncomment for rounded frame
 frame=single, % Frame border - none/leftline/topline/bottomline/lines/single/shadowbox/L
-belowcaptionskip=.75\baselineskip % Space after the "Listing #: Desciption" text and the listing box
+%% belowcaptionskip=.75\baselineskip % Space after the "Listing #: Desciption" text and the listing box
 }
 
 %----------------------------------------------------------------------------------------
