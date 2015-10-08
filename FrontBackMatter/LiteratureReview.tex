@@ -1,8 +1,7 @@
 %!TEX root = ../PhDthesis.tex
 \chapter{Literature Review}
 
-
-\section{Early Visual System}
+\section{Early Visual System: Areas and layers}
 
 The early stages of mammalian visual system (pictured in figure
 \ref{VisualSystem}) consist of the retina, where rod and cone
@@ -33,16 +32,6 @@ cortex (V1).
 	\label{VisualSystem}
 \end{figure}
 
-Retinal processing begins, as previously mentioned, with the
-photoreceptors, which release glutamate into the synaptic terminal
-connecting them to bipolar or horizontal cells. The bipolar cells
-respond either as ON or OFF cells as the glutamate either de- or
-hyperpolarizes them basically turning on or off in response to light
-stimulation. The bipolar cells can make connections to a small or
-large number of photoreceptors or even be indirectly connected to them
-via horizontal cells, which leads to a large variance in receptive
-field size and structure.
-
 In the retina, summation of various photoreceptor types gives rise to
 so called center-surround receptive fields. These ON- and OFF-center
 receptive fields can arise in bipolar cells but are more commonly
@@ -65,26 +54,23 @@ characterized as simple edge detectors.
 	\label{Center-Surround}
 \end{figure}
 
-Much like the retina and many other areas of the brain, the LGN forms
-a laminar architecture, receiving input from RGCs and projecting axons
-to the primary visual cortex via the optic radiation. The separation
-of LGN cells into layers also corresponds to functional separations,
-as layers 1, 4 and 6 usually receive contra-lateral input, while
-layers 2, 3 and 5 receive ipsi-lateral inputs from the
-retina. Furthermore, different layers consist of different cell types,
-with ventral layers 1 and 2 containing larger so called magno-cellular
-(M) neurons and dorsal layers 3, 4, 5 and 6 containing smaller
-parvo-cellular (P) neurons with intra-laminar neurons being referred
-to as konio-cellular (K). Since these three cell types are also
-present in the retina and make connections mainly with their own cell
-type it is theorized that each carries its own parallel information
-stream. Functionally, P-cells have displayed greater sensitivity to
-chromatic contrast and higher spatial frequencies, linking them to the
-processing of detail and color, while M-cells have been shown to have
-greater sensitivity for high temporal frequencies associating them
-with motion processing.  In addition to the feedforward retinal input,
-the LGN also receives feedback connections from V1, the influence of
-which has not yet been fully clarified but will be explored later on.
+In addition to the macro-organization of the visual system into
+distinct areas the LGN and its downstream structures are further
+broken down into individual layers and cell classes. The separation of
+LGN cells into layers also corresponds to functional separations, as
+layers 1, 4 and 6 usually receive contra-lateral input, while layers
+2, 3 and 5 receive ipsi-lateral inputs from the retina. Furthermore,
+different layers consist of different cell types, with ventral layers
+1 and 2 containing larger so called magno-cellular (M) neurons and
+dorsal layers 3, 4, 5 and 6 containing smaller parvo-cellular (P)
+neurons with intra-laminar neurons being referred to as konio-cellular
+(K). Since these three cell types are also present in the retina and
+make connections mainly with their own cell type it is theorized that
+each carries its own parallel information stream. Functionally,
+P-cells have displayed greater sensitivity to chromatic contrast and
+higher spatial frequencies, linking them to the processing of detail
+and color, while M-cells have been shown to have greater sensitivity
+for high temporal frequencies associating them with motion processing.
 
 \subsection{Primary Visual Cortex: Topographic Maps, Simple and Complex Cells}
 
@@ -258,8 +244,6 @@ constantly changing and varies widely from cell to cell, a lot of work
 has gone into measuring the exact structure and functional properties
 of neural receptive fields and their underlying anatomical correlates,
 the neurite arbors.
-
-
 
 \section{Developmental models of the Primary Visual Cortex}
 
@@ -808,19 +792,6 @@ connectivity in layer 2/3. The extents of horizontal connections range
 between 3-10 mm, which averages to around 2.5$\degree$ in visual
 space.
 
-\begin{table}
-\centering
-\begin{tabular}{l | c c}
-  \hline \hline Cortical Layer & Mean $\pm$ SD & Range \\ \hline 2/3
-  ($n = 10$) & 6 $\pm$ 0.7 & 3-9 \\ 4B/4C$\alpha$ ($n = 8$) & 6.7
-  $\pm$ 0.7 & 4.7-10 \\ 5/6 & 7.9 $\pm$ 1.6 & 6.3-9.5 \\ \hline
-\end{tabular}
-\caption{Extents of macaque V1
-lateral connections between 2.5-7.5$\degree$ eccentricity broken down
-by layer given as $D_{mm}$ along V1's elevation axis. Taken from
-\cite{Angelucci2002}.}
-\label{LatExtents}
-\end{table}
 
 \paragraph{Feedback from Higher Cortical Areas and the Far Surround}
 
@@ -1098,8 +1069,6 @@ literature of the past 20 years, however as of yet there is only
 limited evidence to support this core assumption and there are a
 number of alternative or concurrent mechanisms that may explain all or
 at least some of the contrast dependent effects.
-
-%% Before looking in more detail at the effects and mechanisms of surround suppression it is important to consider what the functional significance the excitatory and inhibitory components have in the circuit. \cite{Douglas1995} looked at precisely this problem by taking a network level approach on the basis of which they were able to draw several conclusions. By considering excitatory and inhibitory feedback as time-dependent network conductances, they concluded that as a noisy input signal is presented to a orientation selective V1 population, the network determined gain of individual neurons would at first be almost equal, would then be averaged by the inhibitory interneurons, which in turn provide an effective threshold for the pyramidal cells. As pyramidal neurons fall silent, due to an iceberg effect, the effective gain between the surviving pyramidals increases, amplifying the remaining signal. Through such a process of variable thresholding and amplification, a network could restore incomplete and noisy inputs based on the statistics stored within its lateral connectivity. In such a scenario, the rate of decay of the surviving neuron ensemble is effectively slowed leading to selective amplification.
 
 As the last paragraphs have shown, inhibition and in particular
 surround inhibition are at the core of the major discussions on
@@ -1587,139 +1556,6 @@ interneurons suppresses Pv-ir neural activity allowing associative
 fear learning to occur \citep{Letzkus2011}. All this work suggests a
 crucial role for Pv-ir neurons in controlling cortical plasticity
 during the critical period and beyond.
-
-\section{Interactions between neuromodulators and V1 circuitry}
-
-As the prime interest of this report and the PhD project is to
-characterize the influence of cholinergic modulation on V1 circuitry,
-this section will detail how cholinergic basal forebrain inputs may be
-modulating the different cell types described above and how this may
-give rise to the effects that were described in the PhD proposal. It
-will also try to provide a general framework of cholinergic
-modulation.
-
-As outlined in the previous report there are two main groups of
-acetylcholine receptors (AChRs), nicotinic and muscarinic, hereto
-referred to as nAChRs and mAChRs, respectively. While nAChRs are
-primarily expressed presynaptically on thalamocortical afferents,
-mAChRs are expressed throughout the cortex on a large variety of cell
-types with highly divergent effects. The recent review by
-\cite{Thiele2013} provides a thorough summary on the effects of
-muscarinic and cholinergic signaling within neocortical circuits,
-highlighting the fact that the data is still relatively sparse, often
-contradictory and do not yet point to a definite theory of cholinergic
-modulation. However, in addition to laying out the evidence,
-summarized in the schematics shown in Figure \ref{ach_circuit}, two
-main theories of cholinergic modulation of neocortical circuits are
-discussed. The influential theory that cholinergic signaling simply
-reduces intracortical processing in favor of feedforward processing is
-assessed as simplistic, although it may provide a good first
-approximation of the effects. As an alternative, Thiele suggests that
-it may be involved in enabling efficient filtering of information to
-satisfy current task demands but points out this theory too needs
-further refinement. By identifying the core circuits affected by
-cholinergic signaling it may be possible to close in on a more refined
-framework and refine current theories.
-
-\begin{figure}
-	\centering
-        \includegraphics[width=0.7\textwidth]{ach_circuit_effect.pdf}
-	\caption{Cholinergic effects on cortical circuits. (a)
-        Cholinergic effects on the processing of feedforward versus
-        internal information. When acetylcholine (ACh) is low,
-        synaptic efficacy of intrinsic connections is high, while
-        feedforward synaptic efficacy is average. Therefore,
-        information flow is dominated by recurrent processing. When
-        ACh is high, feedforward synaptic efficacy is high (through
-        presynaptic nicotinic mechanisms), while synaptic efficacy of
-        intrinsic connections is reduced (through M2-type receptor
-        mediated mechanisms). In this mode, processing is dominated by
-        feedforward information. (b) Overview of muscarinic effects on
-        cortical circuitry, which may enable efficient filtering of
-        information. Arrows indicate whether neuronal activity is
-        increased or decreased by muscarinic signaling. Reduced
-        intensity of colors at synaptic sites indicates that the
-        synaptic efficacy is reduced by muscarinic signaling. The
-        diagram does not provide immediate insight into the likely
-        consequences of the effects, but rather intends to give a
-        graphic overview of the main effects reported in the
-        literature. Reprinted from \cite{Thiele2013}.}
-	\label{ach_circuit}
-\end{figure}
-
-In order to begin modeling the effects of cholinergic modulation and
-possibly shed some light on the different frameworks of their action,
-it is important to establish their effect on the different cell
-classes that have been identified and characterized hereto. In the
-mammalian neocortex both mAChRs, in their m1 and m2 subtypes
-\citep{Tigges1997}, and nAChRs \citep{Han2000} are expressed at
-significant levels. Nicotinic AChRs are primarily expressed
-presynaptically in thalamic axons arriving in primary sensory areas
-and have been shown to boost the response gain of layer 4C principal
-neurons \citep{Disney2007,Gil1997}. In layers 2,3 and 5 on the other
-hand, the main effect of nicotinic application seems to be general
-suppression mediated by nAChR expression on different interneuron
-classes.
-
-Muscarinic AChRs are strongly expressed in different GABAergic
-populations but particularly among Pv-ir neurons, which show strong
-expression of the m1 receptor subtype in their somata (87\% of cells)
-and much weaker expression of the M2-subtype 31\% of cells), which was
-generally restricted to the axons \citep{Disney2008}. Surprisingly
-however several studies have indicated that the intrinsic excitability
-of FS cells is unaffected by cholinergic agonists
-\citep{Gulledge2007,Kruglikov2008}. Conversely synapses by FS cells
-onto pyramidal cells in layers 3, 4 and 5 seem to be strongly
-downregulated through an M2-receptor mediated mechanism
-\citep{Kruglikov2008}, which may powerfully reduce feedforward
-inhibition. At the same time it remains unclear what role the strong
-somatic expression of m1-AChRs may serve in modulating Pv-ir
-responses. Non-FS interneuron to pyramidal cell connections also seem
-to be downregulated by cholinergic modulation \citep{Yamamoto2010},
-while there seems to be a strength dependent effect on
-inter-interneuronal connections, whereby weak connections are
-strengthened while strong connections are weakened, indicating that
-cholinergic modulation of GABAergic synaptic transmission is
-differentially regulated depending on the postsynaptic neuron subtype
-and connection strength. To underscore these diverse effects,
-muscarinic-induced activation of both Sst-ir and ViP-ir cells has been
-observed \citep{Kawaguchi1997}.
-
-In the spiny neuron population there also seems to be significant
-heterogeneity among modulatory effects. In rat barrel cortex for
-example, m4-AChR receptor activation causes hyperpolarization among
-layer 4 spiny neurons, which effectively reduces onward communication
-\citep{Eggermann2009}. On the other hand, through m1-receptor mediated
-effects layer 2/3 and layer 5 pyramidal cells are depolarized
-\citep{Eggermann2009}, which would result in filtering out of weak
-signals impinging on thalamocortical recipient neurons, while onward
-communication is boosted. Recurrent excitation on the other hand seems
-to be reduced through both nicotinic and muscarinic pathways
-\citep{Levy2006}. Interestingly the nicotinic pathway seems to reduce
-recurrent excitation in an activity dependent manner, due to its
-dependence on NMDA receptor activation.
-
-As can be seen the effects of nAChR and mAChR activation on cortical
-circuits is highly complex and far from fully characterized. However
-several clear effects of acetylcholine on V1 circuitry can be
-identified:
-
-\begin{itemize}
-  \item Thalamocortical synapses onto layer 4 spiny neurons are
-    boosted in efficacy.
-  \item Layer 4 spiny stellate cells are suppressed filtering out weak
-    inputs.
-  \item Layer 2/3 pyramidal cells are facilitated, amplifying signals
-    arriving from layer 4.
-  \item FS basket cell responses are mostly unaffected but their
-    synaptic GABA release is suppressed through axonal m2-receptor
-    activation.
-  \item Sst-ir cells are depolarized through muscarinic receptor
-    activation.
-  \item Recurrent excitation is reduced through both muscarinic and
-    nicotinic mechanisms.
-\end{itemize}
-
 
 \section{Functional Roles of Intracortical Connectivity}
 
