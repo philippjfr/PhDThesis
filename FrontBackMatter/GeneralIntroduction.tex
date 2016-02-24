@@ -1,49 +1,7 @@
 %!TEX root = ../PhDthesis.tex
 \chapter{Introduction}
 
-In introducing the topic of neuroscience it is often customary to
-point out the incredibly complexity of the mammalian nervous system
-and highlight its incredible ability to adapt to whatever environment
-it develops in. While this serves to highlight just how interesting a
-topic it is to begin revealing the computations performed by this
-structure, it also implicitly highlights the difficulty of the
-problem. Particularly when trying to develop computational models of
-the nervous system it is often tempting to abstract away the
-complexities of biophysical reality and focus on developing toy models
-that describe particular phenomena very well but lack the ability to
-provide more general predictions.
-
-This is precisely what David Marr highlighted when stating that the
-brain and the visual system in particular should be analyzed at three
-distinct but complementary levels of analysis, later expanded to
-include a fourth level by Tomaso Poggio. According to Marr and Poggio
-models of cognitive systems such as the mammalian visual system should
-describe the system at one or more of the following levels of
-analysis:
-
-\begin{itemize}
-\item Learning: How does the system learn to perform the necessary computations?
-\item Computational: What does the system actually do? What computations does it perform?
-\item Algorithmic/Representational: How does the system represent the problem and solve it?
-\item Implementational/Physical: How is the system physically implemented?
-\end{itemize}
-
-Each of these levels of evidence when viewed in isolation can
-contribute to the overall understanding about the system, however to
-gain real insights, models should begin abstracting across these
-levels of analysis to find out where and how evidence from various
-sources fit together or more interestingly, highlight potential
-discrepancies.
-
-Visual neuroscience in particular has enjoyed a huge amount of
-attention with a wide range of descriptive and mechanistic models
-describing individual phenomena very well. There is however still a
-serious lack of models that attempt to bridge between our
-computational understanding of what the visual cortex is doing and how
-it self-organizes with the lower level details of how the physical
-substrate could actually perform those computations.
-
-The aim of this thesis is to begin unifying across various
+The overall aim of this thesis is to begin unifying across various
 phenomenological models integrating them with existing mechanistic
 models and come up with better constrained models of visuo-cortical
 development reaching across all four levels of description. Starting
@@ -58,6 +16,69 @@ doing so we will also describe an incredibly flexible yet reproducible
 workflow developed as part of this thesis to support the analysis of
 complex, non-linear dynamic systems.
 
+\section{Objectives}
+
+One of the major experimental advances in visual neuroscience over the
+past decade has been the ability to manipulate and record from
+individual cells or cell classes by combining advanced genetic and
+imaging techniques. As we will outline in the literature review this
+has given us a new window into the mammalian brain and has allowed us
+to begin hypothesizing what role different cell classes may play in
+development and behavior. However, so far very few attempts have been
+made to place these new findings into a greater context, particularly
+to investigate what makes different cell classes suited toward
+particular functions.
+
+In particular we will adapt an existing developmental model of the
+primary visual cortex, which gives a good account of the
+activity-dependent development in the primary visual cortex,
+demonstrating robust, yet adaptive organization of receptive fields
+and lateral connectivity. Once we have established how to relate the
+spatial scales in the model to experimental data this thesis sets out
+to answer a number of questions:
+
+\begin{itemize}
+\item What type of inhibition is suited toward driving robust
+  self-organization of V1 circuits.
+\item What is the role of parvalbumin- and somatostatin-immunoreactive
+  interneurons in the development and function of the primary visual cortex?
+\item What properties make a particular cell class suited for a
+  particular function?
+\item How do the cell classes self-organize into a circuit that is
+  robust and stable to the widely varying visual input that an animal's
+  environment provides?
+\item What specific computational purpose, if any, do particular cell
+  classes serve?
+\item Does the connectivity in V1 store the visual statistics of the
+  environment and how can it begin using this information to improve
+  neural coding and low-level inference?
+\end{itemize}
+
+Through a detailed breakdown of the literature we show how the spatial
+scales of the circuitry of different cell classes in the visual cortex
+can form an effective mexican-hat driving the self-organization of
+feature maps. Having established a clear mapping between anatomical
+and physiological measurements and the model we investigate the how
+the response properties of different cell classes bring about the
+known spatial profiles making several predictions. The fast, quickly
+spiking response properties of parvalbumin-expressing neurons lead to
+a broad orientation tuning, which is crucial for robust development of
+cortical feature maps. The facilitating response properties of
+somatostatin immunoreactive neurons on the other hand lead to narrower
+orientation tuning, allowing these neurons to integrate over large
+spatial scales mediating orientation dependent suppression. Finally we
+demonstrate how long-range lateral connections can capture the visual
+statistics of the environement.
+
+The guiding hypothesis of this thesis is the idea that the incredible
+complexity of the mammalian cortex is achieved through a careful
+genetic program that establishes a basic circuit, which through the
+process of development self-organizes into a circuit, which can
+robustly capture the statistics of the input and adaptively use this
+information to optimally encode this input for further processing and
+perform low-level inferences when only a low amount of information is
+available.
+
 \section{Organisation of the Thesis}
 
 Based on the overarching goals laid out above it is crucial to begin
@@ -65,14 +86,6 @@ by integrating information across Marr's levels of description. The
 entire first chapter will therefore be devoted towards providing an
 overview of our current knowledge about the visual system, broadly
 categorized into the four levels of analysis.
-
-Having established the current state of knowledge about the visual
-system we then explore how providing a unified account of the spatial
-scales in anatomical, electrophysiological and behavioural experiments
-allows us, for the first time to bridge across all three levels and
-begin highlighting where these very different experiments make similar
-predictions and where there are seeming discrepancies and highlight
-where these differences could arise from.
 
 In the second results chapter we extend this analysis to models of
 cortical development and function that takes into account the
@@ -92,6 +105,4 @@ computations performed by the cortex.
 By the end of the thesis we will have presented a unifying account on
 how different cell classes in the visual cortex self-organize into a
 robust circuit that can encode the natural image statistics of its
-rearing environment and meaningfully contribute to incredibly complex
-computations and inferences performed by ``most complex known
-structure in the universe''.
+rearing environment.

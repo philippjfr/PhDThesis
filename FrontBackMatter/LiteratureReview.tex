@@ -1,6 +1,59 @@
 %!TEX root = ../PhDthesis.tex
 \chapter{Literature Review}
 
+The field of neuroscience has experienced an explosion in the size,
+quantity and quality of data being collected over the past few
+decades, but in the same time period very few novel theoretical
+advances have been made. Most of our theories on how the brain
+operates have been left unchanged by the radical improvements in
+techniques such as optogenetics and two-photon calcium imaging. The
+major obstacle to converting these breakthroughs in experimental
+neuroscience to genuine advances in our theoretical understanding of
+the brain is to build theoretical models that span various levels of
+description from the smallest scales of molecular interactions all the
+way up to the behavior of the entire organism.
+
+This problem is particularly evident in visual neuroscience, one of
+the most extensively researched areas in neuroscience, due to the
+relative ease with which the visual areas can be accessed, stimulated
+and studied. Since the first models of the function of the visual
+system were developed by the pioneers of visual neuroscience, namely
+Mountcastle, Hubel and Wiesel we have collected tremendous amounts of
+data and developed models to explain particular phenomena. However
+taking a high-level view on the computations performed by the visual
+cortices, we have made very little progress since many of the core
+ideas such as receptive and association fields have been around since
+the early pioneers proposed them.
+
+In this thesis I will argue that this failure to make significant
+advances in understanding the computations performed by the visual
+system is primarily a failure to attempt to integrate our knowledge
+across various levels of description. This is precisely what David
+Marr highlighted when stating that the brain, and the visual system in
+particular, should be analyzed at three distinct but complementary
+levels of analysis, later expanded to include a fourth level by Tomaso
+Poggio. According to Marr and Poggio models of cognitive systems such
+as the mammalian visual system should describe the system at one or
+more of the following levels of analysis:
+
+\begin{itemize}
+\item Learning: How does the system learn to perform the necessary
+  computations?
+\item Computational: What does the system actually do? What
+  computations does it perform?
+\item Algorithmic/Representational: How does the system represent the
+  problem and solve it?
+\item Implementational/Physical: How is the system physically
+  implemented?
+\end{itemize}
+
+Each of these levels of evidence when viewed in isolation can
+contribute to the overall understanding about the system, however to
+gain real insights, models should begin abstracting across these
+levels of analysis to find out where and how evidence from various
+sources fit together or more interestingly, highlight potential
+discrepancies.
+
 \section{Early Visual System: Areas and layers}
 
 The early stages of mammalian visual system (pictured in figure
@@ -887,7 +940,8 @@ the maximal presented stimulus size \citep{Ichida2007}. These results
 clearly indicate that cortical feedback to V1 increases in its spatial
 extents and becomes less spatially and retinotopically specific when
 moving up in the cortical hierarchy to the point where it covers huge
-portions of the visual field.
+portions of the visual field, trading spatial specifity for
+specificity for more complex features.
 
 Feedback projection from higher cortical areas to V1 mediate a number
 of important contextual effects and has been implicated in the early
@@ -1094,7 +1148,7 @@ surround suppression, stimulus size and contrast.
 
 Since the circuitry of the cortex is so complex, the task of
 segregating feedforward and feedback contributions to surround
-suppression is highly difficult. Although only a starting point, one
+suppression is difficult. Although only a starting point, one
 way of starting to tease these two possible contributions apart is to
 look at the time course of suppression. In the literature early and
 late components to surround suppression have been identified. The
@@ -1697,7 +1751,7 @@ structure in a natural image, e.g. edges and lines remain. By
 introducing an explicit sparsity constraint, \cite{Olshausen1996} were
 able to develop V1-like simple cell receptive fields with varying
 orientations, spatial frequencies and sizes. These models indicated
-that sensory system was optimizing two contstraints, sparsity and
+that sensory system was optimizing two constraints, sparsity and
 statistical independence. However, even these approaches cannot
 achieve complete statistical independence since there are higher order
 correlations even between non-overlapping receptive fields.

@@ -34,9 +34,15 @@ Angelucci, A. and Bullier, J. (2003).
   horizontal or feedback axons?}
 \newblock {\em Journal of Physiology}, 97(2-3):141--54.
 
-\bibitem[Angelucci et~al., 2002]{Angelucci2002}
+\bibitem[Angelucci et~al., 2002a]{Angelucci2002c}
+Angelucci, A., Levitt, J.~B., and Lund, J.~S. (2002a).
+\newblock {Anatomical Origins of the Classical Receptive Field of Single
+  Neurons in Macaque Visual Cortical Area V1}.
+\newblock {\em Progress in Brain Research}, 136:373--88.
+
+\bibitem[Angelucci et~al., 2002b]{Angelucci2002}
 Angelucci, A., Levitt, J.~B., Walton, E. J.~S., Hupe, J.-M., Bullier, J., and
-  Lund, J.~S. (2002).
+  Lund, J.~S. (2002b).
 \newblock {Circuits for local and global signal integration in primary visual
   cortex.}
 \newblock {\em The Journal of Neuroscience}, 22(19):8633--46.
@@ -137,17 +143,30 @@ Buz\'{a}s, P., Eysel, U.~T., Adorj\'{a}n, P., and Kisv\'{a}rday, Z.~F. (2001).
   orientation, direction, and ocular dominance maps.}
 \newblock {\em The Journal of comparative neurology}, 437(3):259--85.
 
+\bibitem[Buzas et~al., 2006]{Buzas2006}
+Buzas, P., Kovacs, K., Ferecsk\'{o}, A.~S., Budd, J.~M., Eysel, U.~T., and
+  Kisv\'{a}rday, Z.~F. (2006).
+\newblock {Model-Based Analysis of Excitatory Lateral Connections in the Visual
+  Cortex}.
+\newblock {\em The Journal of comparative neurology}, 881(May):861--881.
+
 \bibitem[Carandini et~al., 2002]{Carandini2002}
 Carandini, M., Heeger, D.~J., and Senn, W. (2002).
 \newblock {A synaptic explanation of suppression in visual cortex.}
 \newblock {\em The Journal of neuroscience : the official journal of the
   Society for Neuroscience}, 22(22):10053--65.
 
-\bibitem[Cavanaugh et~al., 2002]{Cavanaugh2002a}
-Cavanaugh, J.~R., Bair, W., and Movshon, J.~A. (2002).
+\bibitem[Cavanaugh et~al., 2002a]{Cavanaugh2002a}
+Cavanaugh, J.~R., Bair, W., and Movshon, J.~A. (2002a).
 \newblock {Nature and interaction of signals from the receptive field center
   and surround in macaque V1 neurons.}
 \newblock {\em Journal of Neurophysiology}, 88(5):2530--46.
+
+\bibitem[Cavanaugh et~al., 2002b]{Cavanaugh2002}
+Cavanaugh, J.~R., Bair, W., and Movshon, J.~A. (2002b).
+\newblock {Selectivity and spatial distribution of signals from the receptive
+  field surround in macaque V1 neurons.}
+\newblock {\em Journal of Neurophysiology}, 88(5):2547--56.
 
 \bibitem[Chapman et~al., 1996]{Chapman1996}
 Chapman, B., Stryker, M.~P., and Bonhoeffer, T. (1996).
@@ -180,41 +199,12 @@ Derrington, A.~M. and Lennie, P. (1984).
   geniculate nucleus of macaque.}
 \newblock {\em The Journal of Physiology}, 357:219--40.
 
-\bibitem[Desimone and Duncan, 1995]{Desimone1995}
-Desimone, R. and Duncan, J. (1995).
-\newblock {Neural mechanisms of selective visual attention.}
-\newblock {\em Annual Review of Neuroscience}, 18:193--222.
-
 \bibitem[{Di Cristo} et~al., 2004]{DiCristo2004}
 {Di Cristo}, G., Wu, C., Chattopadhyaya, B., Ango, F., Knott, G., Welker, E.,
   Svoboda, K., and Huang, Z.~J. (2004).
 \newblock {Subcellular domain-restricted GABAergic innervation in primary
   visual cortex in the absence of sensory and thalamic inputs.}
 \newblock {\em Nature Neuroscience}, 7(11):1184--6.
-
-\bibitem[Disney and Aoki, 2008]{Disney2008}
-Disney, A. and Aoki, C. (2008).
-\newblock {Muscarinic acetylcholine receptors in macaque V1 are most frequently
-  expressed by parvalbumin-immunoreactive neurons}.
-\newblock {\em Journal of Comparative Neurology}, 507(5):1748--1762.
-
-\bibitem[Disney et~al., 2007]{Disney2007}
-Disney, A.~A., Aoki, C., and Hawken, M.~J. (2007).
-\newblock {Gain modulation by nicotine in macaque v1.}
-\newblock {\em Neuron}, 56(4):701--13.
-
-\bibitem[Disney et~al., 2012]{Disney2012}
-Disney, A.~a., Aoki, C., and Hawken, M.~J. (2012).
-\newblock {Cholinergic suppression of visual responses in primate V1 is
-  mediated by GABAergic inhibition.}
-\newblock {\em Journal of Neurophysiology}, 108(7):1907--23.
-
-\bibitem[Disney et~al., 2006]{Disney2006}
-Disney, A.~A., Domakonda, K.~V., and Aoki, C. (2006).
-\newblock {Differential Expression of Muscarinic Acetylcholine Receptors Across
-  Excitatory and Inhibitory Cells in Visual Cortical Areas V1 and V2 of the
-  Macaque}.
-\newblock {\em Comparative and General Pharmacology}, 63(April):49 -- 63.
 
 \bibitem[Dosher and Lu, 2000]{Dosher2000}
 Dosher, A.~B. and Lu, Z.-l. (2000).
@@ -225,13 +215,6 @@ Dosher, A.~B. and Lu, Z.-l. (2000).
 Douglas, R. and Martin, K. (1991).
 \newblock {A functional microcircuit for cat visual cortex.}
 \newblock {\em The Journal of Physiology}, 440:735--769.
-
-\bibitem[Eggerman and Feldmayer, 2009]{Eggermann2009}
-Eggerman, E. and Feldmayer, D. (2009).
-\newblock {Cholinergic filtering in the recurrent excitatory microcircuit of
-  cortical layer 4}.
-\newblock {\em Proceedings of the National Academy of Sciences of the United
-  States of America}, 106(28):11753--11758.
 
 \bibitem[Fagiolini et~al., 2004]{Fagiolini2004}
 Fagiolini, M., Fritschy, J.-M., L\"{o}w, K., M\"{o}hler, H., Rudolph, U., and
@@ -250,11 +233,6 @@ Fanselow, E., Richardson, K.~A., and Connors, B.~W. (2008).
 \newblock {Selective, state-dependent activation of somatostatin-expressing
   inhibitory interneurons in mouse neocortex}.
 \newblock {\em Journal of Neurophysiology}, 100:2640--2652.
-
-\bibitem[Feldman and Friston, 2010]{Feldman2010}
-Feldman, H. and Friston, K.~J. (2010).
-\newblock {Attention, uncertainty, and free-energy.}
-\newblock {\em Frontiers in Human Neuroscience}, 4(December):215.
 
 \bibitem[Felleman and {Van Essen}, 1991]{Felleman1991}
 Felleman, D.~J. and {Van Essen}, D.~C. (1991).
@@ -304,12 +282,6 @@ Gentet, L.~J., Kremer, Y., Taniguchi, H., Huang, Z.~J., Staiger, J.~F., and
   neurons in mouse barrel cortex.}
 \newblock {\em Nature Neuroscience}, 15(4):607--12.
 
-\bibitem[Gil et~al., 1997]{Gil1997}
-Gil, Z., Connors, B.~W., and Amitai, Y. (1997).
-\newblock {Differential regulation of neocortical synapses by neuromodulators
-  and activity.}
-\newblock {\em Neuron}, 19(3):679--86.
-
 \bibitem[Gilbert and Wiesel, 1983]{Gilbert1983}
 Gilbert, C. and Wiesel, T. (1983).
 \newblock {Clustered intrinsic connections in cat visual cortex}.
@@ -320,12 +292,6 @@ Gilbert, C. and Wiesel, T. (1990).
 \newblock {The influence of contextual stimuli on the orientation selectivity
   of cells in primary visual cortex of the cat}.
 \newblock {\em Vision research}, 30(Il).
-
-\bibitem[Goard and Dan, 2009]{Goard2009}
-Goard, M. and Dan, Y. (2009).
-\newblock {Basal forebrain activation enhances cortical coding of natural
-  scenes.}
-\newblock {\em Nature Neuroscience}, 12(11):1444--9.
 
 \bibitem[Gonchar et~al., 2007]{Gonchar2007}
 Gonchar, Y., Wang, Q., and Burkhalter, A. (2007).
@@ -340,29 +306,6 @@ Grinvald, A., Lieke, E.~E., Frostig, R.~D., and Hildesheim, R. (1994).
   cortex.}
 \newblock {\em The Journal of Neuroscience}, 14(5):2545--68.
 
-\bibitem[Gulledge et~al., 2007]{Gulledge2007}
-Gulledge, A.~T., Park, S.~B., Kawaguchi, Y., and Stuart, G.~J. (2007).
-\newblock {Heterogeneity of phasic cholinergic signaling in neocortical
-  neurons.}
-\newblock {\em Journal of Neurophysiology}, 97(3):2215--29.
-
-\bibitem[Han et~al., 2000]{Han2000}
-Han, Z.~Y., {Le Nov\`{e}re}, N., Zoli, M., Hill, J.~a., Champtiaux, N., and
-  Changeux, J.~P. (2000).
-\newblock {Localization of nAChR subunit mRNAs in the brain of Macaca mulatta.}
-\newblock {\em The European journal of neuroscience}, 12(10):3664--74.
-
-\bibitem[Harris and Thiele, 2011]{Harris2011}
-Harris, K.~D. and Thiele, A. (2011).
-\newblock {Cortical state and attention.}
-\newblock {\em Nature Reviews Neuroscience}, 12(September).
-
-\bibitem[Hasselmo and McGaughy, 2004]{Hasselmo2004}
-Hasselmo, M.~E. and McGaughy, J. (2004).
-\newblock {High acetylcholine sets circuit dynamics for attention and encoding
-  and low acetylcholine sets dynamics for consolidation}.
-\newblock {\em Progress in brain research}, 145:207--231.
-
 \bibitem[Hawken et~al., 2009]{Hawken1996}
 Hawken, M.~J., Shapley, R.~M., and Grosof, D.~H. (2009).
 \newblock {Temporal-frequency selectivity in monkey visual cortex}.
@@ -373,18 +316,6 @@ Hensch, T.~K. and Stryker, M.~P. (2004).
 \newblock {Columnar architecture sculpted by GABA circuits in developing cat
   visual cortex.}
 \newblock {\em Science (New York, N.Y.)}, 303(5664):1678--81.
-
-\bibitem[Herrero, 2011]{Herrero2011}
-Herrero, J.~L. (2011).
-\newblock {\em {Neurophysiology and neuropharmacology of visual attention .}}
-\newblock PhD thesis, University of Newcastle.
-
-\bibitem[Herrero et~al., 2008]{Herrero2008}
-Herrero, J.~L., Roberts, M.~J., Delicato, L.~S., Gieselmann, M.~a., Dayan, P.,
-  and Thiele, a. (2008).
-\newblock {Acetylcholine contributes through muscarinic receptors to
-  attentional modulation in V1.}
-\newblock {\em Nature}, 454(7208):1110--4.
 
 \bibitem[Higley, 2014]{Higley2014}
 Higley, M. (2014).
@@ -447,22 +378,17 @@ Ichida, J.~M., Schwabe, L., Bressloff, P.~C., and Angelucci, A. (2007).
   surround of macaque V1 neurons.}
 \newblock {\em Journal of Neurophysiology}, 98(4):2168--81.
 
-\bibitem[Itti and Baldi, 2009]{Itti2009}
-Itti, L. and Baldi, P. (2009).
-\newblock {Bayesian surprise attracts human attention.}
-\newblock {\em Vision Research}, 49(10):1295--306.
-
 \bibitem[Jin et~al., 2011]{Jin2011}
 Jin, J., Wang, Y., Swadlow, H.~a., and Alonso, J.~M. (2011).
 \newblock {Population receptive fields of ON and OFF thalamic inputs to an
   orientation column in visual cortex}.
 \newblock {\em Nature Neuroscience}, 14(2):232--238.
 
-\bibitem[Jones, 2004]{Jones2004}
-Jones, B.~E. (2004).
-\newblock {Activity, modulation and role of basal forebrain cholinergic neurons
-  innervating the cerebral cortex.}
-\newblock {\em Progress in Brain Research}, 145:157--69.
+\bibitem[Kapadia et~al., 1995]{Kapadia1995}
+Kapadia, M.~K., Ito, M., Gilbert, C.~D., and Westheimer, G. (1995).
+\newblock {Improvement in visual sensitivity by changes in local context:
+  parallel studies in human observers and in V1 of alert monkeys.}
+\newblock {\em Neuron}, 15(4):843--56.
 
 \bibitem[Kapadia et~al., 1999]{Kapadia1999}
 Kapadia, M.~K., Westheimer, G., and Gilbert, C.~D. (1999).
@@ -471,18 +397,19 @@ Kapadia, M.~K., Westheimer, G., and Gilbert, C.~D. (1999).
 \newblock {\em Proceedings of the National Academy of Sciences of the United
   States of America}, 96(21):12073--8.
 
+\bibitem[Kaschube et~al., 2010]{Kaschube2010}
+Kaschube, M., Schnabel, M., L\"{o}wel, S., Coppola, D., White, L., and Wolf, F.
+  (2010).
+\newblock {Universality in the evolution of orientation columns in the visual
+  cortex}.
+\newblock {\em Science}, 330(6007):1113--1116.
+
 \bibitem[Katz et~al., 2000]{Katz2000}
 Katz, L.~C., Weliky, M., and Crowley, J.~C. (2000).
 \newblock {Activity and the Development of the Visual Cortex: New
   Perspectives}.
 \newblock In {\em The New Cognitive Neurosciences}, chapter~13, pages 199--221.
   MIT Press, Cambridge, MA.
-
-\bibitem[Kawaguchi, 1997]{Kawaguchi1997}
-Kawaguchi, Y. (1997).
-\newblock {Selective cholinergic modulation of cortical GABAergic cell
-  subtypes}.
-\newblock {\em Journal of Neurophysiology}, 78:1743--1747.
 
 \bibitem[Kepecs and Fishell, 2014]{Kepecs2014}
 Kepecs, A. and Fishell, G. (2014).
@@ -508,12 +435,6 @@ Klausberger, T., Roberts, J. D.~B., and Somogyi, P. (2002).
 \newblock {\em The Journal of neuroscience : the official journal of the
   Society for Neuroscience}, 22(7):2513--21.
 
-\bibitem[Kruglikov and Rudy, 2008]{Kruglikov2008}
-Kruglikov, I. and Rudy, B. (2008).
-\newblock {Perisomatic GABA release and thalamocortical integration onto
-  neocortical excitatory cells are regulated by neuromodulators.}
-\newblock {\em Neuron}, 58(6):911--24.
-
 \bibitem[Kuhlman et~al., 2013]{Kuhlman2013}
 Kuhlman, S.~J., Olivas, N.~D., Tring, E., Ikrar, T., Xu, X., and Trachtenberg,
   J.~T. (2013).
@@ -525,12 +446,6 @@ Kuhlman, S.~J., Olivas, N.~D., Tring, E., Ikrar, T., Xu, X., and Trachtenberg,
 Law, J.~S., Antolik, J., and Bednar, J.~A. (2011).
 \newblock {Mechanisms for stable and robust development of orientation maps and
   receptive fields}.
-
-\bibitem[Lee and Maunsell, 2009]{Lee2009}
-Lee, J. and Maunsell, J. H.~R. (2009).
-\newblock {A normalization model of attentional modulation of single unit
-  responses.}
-\newblock {\em PLoS one}, 4(2):e4651.
 
 \bibitem[Lee et~al., 2013]{Lee2013}
 Lee, S., Kruglikov, I., Huang, Z.~J., Fishell, G., and Rudy, B. (2013).
@@ -563,13 +478,6 @@ Levitt, J.~B., Schumer, R.~a., Sherman, S.~M., Spear, P.~D., and Movshon, J.~a.
   and visually deprived macaque monkeys.}
 \newblock {\em Journal of Neurophysiology}, 85(5):2111--29.
 
-\bibitem[Levy et~al., 2006]{Levy2006}
-Levy, R.~B., Reyes, A.~D., and Aoki, C. (2006).
-\newblock {Nicotinic and muscarinic reduction of unitary excitatory
-  postsynaptic potentials in sensory cortex; dual intracellular recording in
-  vitro.}
-\newblock {\em Journal of Neurophysiology}, 95(4):2155--66.
-
 \bibitem[Li et~al., 2014]{Li2014}
 Li, L.-Y., Xiong, X.~R., Ibrahim, L.~a., Yuan, W., Tao, H.~W., and Zhang, L.~I.
   (2014).
@@ -588,12 +496,6 @@ Liu, Y.-J., Ehrengruber, M., Negwer, M., Shao, H.-J., Cetin, A., and Lyon, D.
 \newblock {Tracing Inputs to Inhibitory or Excitatory Neurons of Mouse and Cat
   Visual Cortex with a Targeted Rabies Virus}.
 \newblock {\em Current Biology}, pages 1--10.
-
-\bibitem[Lucas-Meunier et~al., 2003]{Lucas-Meunier2003}
-Lucas-Meunier, E., Fossier, P., Baux, G., and Amar, M. (2003).
-\newblock {Cholinergic modulation of the cortical neuronal network.}
-\newblock {\em Pfl\"{u}gers Archiv : European journal of physiology},
-  446(1):17--29.
 
 \bibitem[Lund and Yoshioka, 1991]{Lund1991}
 Lund, J. and Yoshioka, T. (1991).
@@ -626,11 +528,6 @@ Martin, K., Somogyi, P., and Whitteridge, D. (1983).
   cells in the cat's visual cortex}.
 \newblock {\em Experimental Brain Research}, 50:193--200.
 
-\bibitem[Maunsell and Treue, 2006]{Maunsell2006}
-Maunsell, J. H.~R. and Treue, S. (2006).
-\newblock {Feature-based attention in visual cortex.}
-\newblock {\em Trends in Neurosciences}, 29(6):317--22.
-
 \bibitem[McGuire et~al., 1991]{McGuire1991}
 McGuire, B.~a., Gilbert, C.~D., Rivlin, P.~K., and Wiesel, T.~N. (1991).
 \newblock {Targets of horizontal connections in macaque primary visual cortex.}
@@ -641,6 +538,18 @@ McMains, S.~a. and Somers, D.~C. (2004).
 \newblock {Multiple spotlights of attentional selection in human visual
   cortex.}
 \newblock {\em Neuron}, 42(4):677--86.
+
+\bibitem[Mehaffey et~al., 2005]{Mehaffey2005}
+Mehaffey, W.~H., Doiron, B., Maler, L., and Turner, R.~W. (2005).
+\newblock {Deterministic multiplicative gain control with active dendrites.}
+\newblock {\em The Journal of neuroscience : the official journal of the
+  Society for Neuroscience}, 25(43):9968--77.
+
+\bibitem[Miikkulainen and Bednar, 2005]{Miikkulainen2005}
+Miikkulainen, R. and Bednar, J.~A. (2005).
+\newblock {Development of Maps and Connections}.
+\newblock In {\em Computational Maps in the Visual Cortex}, chapter~5, pages
+  85--132. Springer, Berlin.
 
 \bibitem[Miikkulainen et~al., 2005]{Miikkulainen2005b}
 Miikkulainen, R., Bednar, J.~A., Choe, Y., and Sirosh, J. (2005).
@@ -692,17 +601,23 @@ Olshausen, B.~a. and Field, D.~J. (1996).
 \newblock {Emergence of simple-cell receptive field properties by learning a
   sparse code for natural images.}
 
+\bibitem[Perry and Cowey, 1985]{Perry1985}
+Perry, V.~H. and Cowey, A. (1985).
+\newblock {The ganglion cell and cone distributions in the monkey's retina:
+  Implications for central magnification factors}.
+\newblock {\em Vision Research}, 25(12):1795--1810.
+
 \bibitem[Pfeffer et~al., 2013]{Pfeffer2013}
 Pfeffer, C.~K., Xue, M., He, M., Huang, Z.~J., and Scanziani, M. (2013).
 \newblock {Inhibition of inhibition in visual cortex: the logic of connections
   between molecularly distinct interneurons}.
 \newblock {\em Nature Neuroscience}, (June):1--12.
 
-\bibitem[Pooresmaeili et~al., 2010]{Pooresmaeili2010}
-Pooresmaeili, A., Poort, J., Thiele, A., and Roelfsema, P.~R. (2010).
-\newblock {Separable codes for attention and luminance contrast in the primary
-  visual cortex.}
-\newblock {\em The Journal of Neuroscience}, 30(38):12701--11.
+\bibitem[Polat et~al., 1998]{Polat1998}
+Polat, U., Mizobe, K., Pettet, M.~W., Kasamatsu, T., and Norcia, A.~M. (1998).
+\newblock {Colinear stimuli regulate visual responses depeding on cell's
+  constrast threshold}.
+\newblock {\em Nature}, 391(February):580--584.
 
 \bibitem[Poort et~al., 2012]{Poort2012}
 Poort, J., Raudies, F., Wannig, A., Lamme, V. a.~F., Neumann, H., and
@@ -711,46 +626,16 @@ Poort, J., Raudies, F., Wannig, A., Lamme, V. a.~F., Neumann, H., and
   v4 of the visual cortex.}
 \newblock {\em Neuron}, 75(1):143--56.
 
-\bibitem[Posner et~al., 1980]{Posner1980}
-Posner, M.~I., Snyder, C.~R., and Davidson, B.~J. (1980).
-\newblock {Attention and the detection of signals.}
-\newblock {\em Journal of Experimental Psychology}, 109(2):160--74.
-
 \bibitem[Ramsden et~al., 2001]{Ramsden2001}
 Ramsden, B.~M., Hung, C.~P., and Roe, a.~W. (2001).
 \newblock {Real and illusory contour processing in area V1 of the primate: a
   cortical balancing act.}
 \newblock {\em Cerebral Cortex}, 11(7):648--65.
 
-\bibitem[Rao and Ballard, 1999]{Rao1999}
-Rao, R.~P. and Ballard, D.~H. (1999).
-\newblock {Predictive coding in the visual cortex: a functional interpretation
-  of some extra-classical receptive-field effects.}
-\newblock {\em Nature Neuroscience}, 2(1):79--87.
-
-\bibitem[Rao, 2005]{Rao2005}
-Rao, R. P.~N. (2005).
-\newblock {Bayesian inference and attentional modulation in the visual cortex.}
-\newblock {\em Neuroreport}, 16(16):1843--8.
-
 \bibitem[Ringach, 2007]{Ringach2007}
 Ringach, D.~L. (2007).
 \newblock {On the origin of the functional architecture of the cortex.}
 \newblock {\em PLoS One}, 2(2):e251.
-
-\bibitem[Roberts et~al., 2007]{Roberts2007}
-Roberts, M., Delicato, L.~S., Herrero, J., Gieselmann, M.~A., and Thiele, A.
-  (2007).
-\newblock {Attention alters spatial integration in macaque V1 in an
-  eccentricity-dependent manner.}
-\newblock {\em Nature Neuroscience}, 10(11):1483--91.
-
-\bibitem[Roberts et~al., 2005]{Roberts2005}
-Roberts, M.~J., Zinke, W., Guo, K., Robertson, R., McDonald, J.~S., and Thiele,
-  A. (2005).
-\newblock {Acetylcholine dynamically controls spatial integration in marmoset
-  primary visual cortex.}
-\newblock {\em Journal of Neurophysiology}, 93(4):2062--72.
 
 \bibitem[Rodieck, 1965]{Rodieck1965a}
 Rodieck, R.~W. (1965).
@@ -799,12 +684,6 @@ Ruthazer, E.~S. and Stryker, M.~P. (1996).
   connections in area 17 of the ferret.}
 \newblock {\em The Journal of Neuroscience}, 16(22):7253--69.
 
-\bibitem[Sarter et~al., 2009]{Sarter2009}
-Sarter, M., Parikh, V., and Howe, W.~M. (2009).
-\newblock {nAChR agonist-induced cognition enhancement: integration of
-  cognitive and neuronal mechanisms.}
-\newblock {\em Biochemical Pharmacology}, 78(7):658--67.
-
 \bibitem[Sceniak and Hawken, 2001]{Sceniak2001}
 Sceniak, M. and Hawken, M. (2001).
 \newblock {Visual Spatial Characterization of Macaque V1 Neurons}.
@@ -836,12 +715,6 @@ Schwabe, L., Obermayer, K., Angelucci, A., and Bressloff, P.~C. (2006).
 Schwartz, O. and Simoncelli, E.~P. (2001).
 \newblock {Natural signal statistics and sensory gain control.}
 \newblock {\em Nature neuroscience}, 4:819--825.
-
-\bibitem[Seri\`{e}s et~al., 2003]{Series2004}
-Seri\`{e}s, P., Lorenceau, J., and Fr\'{e}gnac, Y. (2003).
-\newblock {The "silent" surround of V1 receptive fields: theory and
-  experiments.}
-\newblock {\em Journal of Physiology}, 97(4-6):453--74.
 
 \bibitem[Shatz et~al., 1978]{Shatz1978}
 Shatz, B. C.~J., Strykert, M.~P., Shatz, C., and Stryker, M. (1978).
@@ -907,11 +780,12 @@ Solomon, S.~G. and Lennie, P. (2007).
 \newblock {The machinery of colour vision.}
 \newblock {\em Nature Reviews Neuroscience}, 8(4):276--86.
 
-\bibitem[Soma et~al., 2012]{Soma2012}
-Soma, S., Shimegi, S., Osaki, H., and Sato, H. (2012).
-\newblock {Cholinergic modulation of response gain in the primary visual cortex
-  of the macaque.}
-\newblock {\em Journal of Neurophysiology}, 107(1):283--91.
+\bibitem[Solomon et~al., 2002]{Solomon2002}
+Solomon, S.~G., White, A. J.~R., and Martin, P.~R. (2002).
+\newblock {Extraclassical receptive field properties of parvocellular,
+  magnocellular, and koniocellular cells in the primate lateral geniculate
+  nucleus.}
+\newblock {\em The Journal of Neuroscience}, 22(1):338--49.
 
 \bibitem[Somers et~al., 1998]{Somers1998}
 Somers, D.~C., Todorov, E.~V., Siapas, a.~G., Toth, L.~J., Kim, D.~S., and Sur,
@@ -933,12 +807,6 @@ Spear, P.~D., Moore, R.~J., Kim, C.~B., Xue, J.~T., and Tumosa, N. (1994).
   processing by lateral geniculate neurons in young adult and old rhesus
   monkeys.}
 \newblock {\em Journal of Neurophysiology}, 72(1):402--20.
-
-\bibitem[Spratling, 2010]{Spratling2010}
-Spratling, M.~W. (2010).
-\newblock {Predictive coding as a model of response properties in cortical area
-  V1.}
-\newblock {\em The Journal of Neuroscience}, 30(9):3531--43.
 
 \bibitem[Srinivasan et~al., 1982]{Srinivasan1982}
 Srinivasan, M., Laughlin, S., and Dubs, A. (1982).
@@ -982,16 +850,6 @@ Tan, Z., Hu, H., Huang, Z.~J., and Agmon, a. (2008).
 \newblock {\em Proceedings of the National Academy of Sciences},
   105(6):2187--2192.
 
-\bibitem[Thiele, 2009]{Thiele2009a}
-Thiele, A. (2009).
-\newblock {Optimizing brain processing.}
-\newblock {\em Nature Neuroscience}, 12(11):1359--60.
-
-\bibitem[Thiele, 2013]{Thiele2013}
-Thiele, A. (2013).
-\newblock {Muscarinic signaling in the brain.}
-\newblock {\em Annual Review of Neuroscience}, 36:271--94.
-
 \bibitem[Thomson and Deuchars, 1994]{Thomson1994}
 Thomson, A. and Deuchars, J. (1994).
 \newblock {Temporal and spatial properties of local circuits in neocortex}.
@@ -1003,12 +861,6 @@ Thomson, A., West, D., and Deuchars, J. (1995).
   elicited in spiny interneurons by action potentials in pyramidal neurons in
   slices of rat neocortex}.
 \newblock {\em Neuroscience}, 69(3):727--738.
-
-\bibitem[Tigges et~al., 1997]{Tigges1997}
-Tigges, M., Tigges, J., Rees, H., Rye, D., and Levey, a.~I. (1997).
-\newblock {Distribution of muscarinic cholinergic receptor proteins m1 to m4 in
-  area 17 of normal and monocularly deprived rhesus monkeys.}
-\newblock {\em The Journal of comparative neurology}, 388(1):130--45.
 
 \bibitem[Treue, 2003]{Treue2003}
 Treue, S. (2003).
@@ -1045,12 +897,6 @@ von~der Malsburg, C. (1973).
   cortex.}
 \newblock {\em Kybernetik}, 14(2):85--100.
 
-\bibitem[von Engelhardt et~al., 2007]{vonEngelhardt2007}
-von Engelhardt, J., Eliava, M., Meyer, A.~H., Rozov, A., and Monyer, H. (2007).
-\newblock {Functional characterization of intrinsic cholinergic interneurons in
-  the cortex.}
-\newblock {\em The Journal of Neuroscience}, 27(21):5633--42.
-
 \bibitem[Webb et~al., 2005]{Webb2005}
 Webb, B.~S., Dhruv, N.~T., Solomon, S.~G., Tailby, C., and Lennie, P. (2005).
 \newblock {Early and late mechanisms of surround suppression in striate cortex
@@ -1078,11 +924,6 @@ Wilson, N.~R., Runyan, C.~a., Wang, F.~L., and Sur, M. (2012).
   vivo.}
 \newblock {\em Nature}, 488(7411):343--8.
 
-\bibitem[Woolf, 1991]{Woolf1991}
-Woolf, N.~J. (1991).
-\newblock {Cholinergic systems in mammalian brain and spinal cord.}
-\newblock {\em Progress in neurobiology}, 37(6):475--524.
-
 \bibitem[Xing et~al., 2005]{Xing2005}
 Xing, D., Shapley, R.~M., Hawken, M.~J., and Ringach, D.~L. (2005).
 \newblock {Effect of Stimulus Size on the Dynamics of Orientation Selectivity
@@ -1107,23 +948,5 @@ Xu, X., Roby, K.~D., and Callaway, E.~M. (2010).
 \newblock {Immunochemical characterization of inhibitory mouse cortical
   neurons: three chemically distinct classes of inhibitory cells.}
 \newblock {\em The Journal of comparative neurology}, 518(3):389--404.
-
-\bibitem[Yamamoto et~al., 2010]{Yamamoto2010}
-Yamamoto, K., Koyanagi, Y., Koshikawa, N., and Kobayashi, M. (2010).
-\newblock {Postsynaptic cell type-dependent cholinergic regulation of GABAergic
-  synaptic transmission in rat insular cortex.}
-\newblock {\em Journal of Neurophysiology}, 104(4):1933--45.
-
-\bibitem[Yu and Dayan, 2005]{Yu2005}
-Yu, A.~J. and Dayan, P. (2005).
-\newblock {Uncertainty, neuromodulation, and attention.}
-\newblock {\em Neuron}, 46(4):681--92.
-
-\bibitem[Zinke et~al., 2006]{Zinke2006}
-Zinke, W., Roberts, M.~J., Guo, K., McDonald, J.~S., Robertson, R., and Thiele,
-  A. (2006).
-\newblock {Cholinergic modulation of response properties and orientation tuning
-  of neurons in primary visual cortex of anaesthetized Marmoset monkeys.}
-\newblock {\em The European Journal of Neuroscience}, 24(1):314--28.
 
 \end{thebibliography}

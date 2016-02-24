@@ -4,7 +4,7 @@
 One of the major obstacles in modern neuroscience is integrating the
 vast amount of experimental data that has been generated, highlighting
 where different sources of evidence is and is not in agreement and
-offering meaningful hypothesis to resolve such discrepancies. The
+offering testable hypothesis to resolve such discrepancies. The
 primary visual cortex is one of the most well studied areas in the
 mammalian brain and we have previously seen that it has been
 extensively explored at varying levels of description, from
@@ -197,12 +197,7 @@ R = R_0 + \frac{R_e}{1+R_i}
 \label{DoGDivisive}
 \end{equation}
 
-Note that neither of these models captures the mechanisms of the
-SCAL-LGN model described above, which although it too operates on DoG
-center-surround fields uses joint normalization and adds a distinct
-divisive component, independent of the subtractive surround.
-
-\citep{Results}
+\subsection{Results}
  
 A set of area-summation curves measured at varying contrast levels can
 be seen in Figure \ref{LGNSizeTuning}. These curves were then fitted
@@ -229,6 +224,11 @@ overestimated using this procedure.
 	\label{LGNSizeFit}
 \end{figure}
 
+Note that neither of these models captures the mechanisms of the
+SCAL-LGN model described above, which although it too operates on DoG
+center-surround fields uses joint normalization and adds a distinct
+divisive component, independent of the subtractive surround.
+
 In the end it was decided that due to the large variance in results
 from different studies and the limitation to a single spatial filter a
 lower spatial constants should be chosen for the center-surround
@@ -241,7 +241,7 @@ Figure \ref{LGNDiagram}.
  
 \begin{table}
   \centering
-  \begin{adjustbox}{width=0.5\textwidth}
+  \begin{adjustbox}{width=0.3\textwidth}
   \begin{tabular}{l | r}
     Model parameter   & Value \\
     \hline
@@ -443,8 +443,8 @@ variety of measurements.
 \end{table}
 
 The first step towards a spatially calibrated model is to decide on
-the region of V1 that should be targetted. Most studies of V1
-particularly in the surround modulation literature targets parafoveal
+the region of V1 that should be targeted. Most studies of V1
+particularly in the surround modulation literature focuss on parafoveal
 regions between $2-5\degree$ in eccentricity. Therefore we have chosen
 a region at around $3\degree$ eccentricity. This already gives us a
 number of constraints, first of all gives us an approximate V1
@@ -701,12 +701,11 @@ the known properties of various cell classes and identified
 fast-spiking Parvalbumin-expressing interneurons as the most likely
 source of connectivity to drive developmental, particularly due to
 their broad tuning profile and high abundance in the thalamocortical
-recipient layers. In the SCAL model no distinct cell classes are
-employed anyway but we will consider the maximal extent of known
-basket cells as the maximal permitted extent of the inhibitory profile
-in the model. We will revisit the spatial profiles of inhibitory
-connections in the next chapter.
-
+recipient layers. Since the SCAL model does not have distinct
+populations of V1 we will consider the maximal extent of known basket
+cells as the maximal permitted extent of the inhibitory profile in the
+model. We will revisit the spatial profiles of inhibitory connections
+in the next chapter.
 
 \section{Conclusions}
 
