@@ -1,33 +1,28 @@
 %!TEX root = ../PhDthesis.tex
 \chapter{Introduction}
 
-The overall aim of this thesis is to begin unifying across various
-phenomenological models integrating them with existing mechanistic
-models and come up with better constrained models of visuo-cortical
-development reaching across all four levels of description. Starting
-with developmental models of receptive field and orientation map
-development, the models will work backwards from the lowest level
-incorporating increasing levels of physical/anatomical detail,
-hypothesizing about different algorithmic and computational roles for
-different cell classes and analysing how they contribute both to the
-self-organization and learning in the developing cortex but also their
-potential role in the computations performed by the adult cortex. In
-doing so we will also describe an incredibly flexible yet reproducible
-workflow developed as part of this thesis to support the analysis of
-complex, non-linear dynamic systems.
-
-\section{Objectives}
-
 One of the major experimental advances in visual neuroscience over the
 past decade has been the ability to manipulate and record from
 individual cells or cell classes by combining advanced genetic and
-imaging techniques. As we will outline in the literature review this
-has given us a new window into the mammalian brain and has allowed us
-to begin hypothesizing what role different cell classes may play in
-development and behavior. However, so far very few attempts have been
-made to place these new findings into a greater context, particularly
-to investigate what makes different cell classes suited toward
-particular functions.
+imaging techniques. This has given us a new window into the mammalian
+brain and has allowed us to begin hypothesizing what role different
+cell classes may play in development and behavior. However, so far
+very few attempts have been made to place these new findings into a
+greater context, particularly to investigate what makes different cell
+classes suited toward particular functions and how these neurons
+develop into a functional circuit, which can efficiently extract and
+encode the statistics of the visual input.
+
+The guiding hypothesis of this thesis is the idea that the incredible
+complexity of the mammalian cortex is arrived at through a process of
+self-organization giving rise to a developed circuit, which can
+robustly capture the statistics of the input and adaptively use this
+information to optimally encode the input for further processing and
+perform low-level inferences when only a low amount of information is
+available. Over the course of this thesis we will outline how a fairly
+stereotyped circuit of different neural cell classes develops into a
+circuit that closely matches experimental observations of development
+and surround modulation.
 
 In particular we will adapt an existing developmental model of the
 primary visual cortex, which gives a good account of the
@@ -39,55 +34,73 @@ to answer a number of questions:
 
 \begin{itemize}
 \item What type of inhibition is suited toward driving robust
-  self-organization of V1 circuits.
+  self-organization of V1 circuits?
 \item What is the role of parvalbumin- and somatostatin-immunoreactive
-  interneurons in the development and function of the primary visual cortex?
+  interneurons in the development and function of the primary visual
+  cortex?
 \item What properties make a particular cell class suited for a
   particular function?
 \item How do the cell classes self-organize into a circuit that is
-  robust and stable to the widely varying visual input that an animal's
-  environment provides?
+  robust and stable to the widely varying visual input that an
+  animal's environment provides?
 \item What specific computational purpose, if any, do particular cell
   classes serve?
-\item Does the connectivity in V1 store the visual statistics of the
-  environment and how can it begin using this information to improve
-  neural coding and low-level inference?
+\item Does the connectivity in the visual cortex store the visual
+  statistics of the environment and how can it begin using this
+  information to improve neural coding and low-level inference?
 \end{itemize}
 
-Through a detailed breakdown of the literature we show how the spatial
-scales of the circuitry of different cell classes in the visual cortex
-can form an effective mexican-hat driving the self-organization of
-feature maps. Having established a clear mapping between anatomical
-and physiological measurements and the model we investigate the how
-the response properties of different cell classes bring about the
-known spatial profiles making several predictions. The fast, quickly
-spiking response properties of parvalbumin-expressing neurons lead to
-a broad orientation tuning, which is crucial for robust development of
-cortical feature maps. The facilitating response properties of
-somatostatin immunoreactive neurons on the other hand lead to narrower
-orientation tuning, allowing these neurons to integrate over large
-spatial scales mediating orientation dependent suppression. Finally we
-demonstrate how long-range lateral connections can capture the visual
-statistics of the environement.
+Through an iterative process of analysing the model and incorporating
+increasing anatomical and physiological detail in the model we make
+several concrete predictions about the role in both developmental and
+behavioral processes. Firstly we establish that we can create a model
+which agrees with anatomical connectivity data, electrophysiological
+measurements and the known spatial scales of orientation maps in V1.
+Having established this we show that the fast, quickly spiking response
+properties of parvalbumin-expressing neurons lead to the development
+of broad orientation tuning, which is crucial for robust development
+of cortical feature maps. Further, we show that the facilitating and
+slow response profile of somatostatin-immunoreactive neurons give rise
+to narrower orientation tuning providing orientation dependent
+surround suppression. Finally we show how the long-range lateral
+connectivity is able to capture the statistics of the input, acting to
+normalize higher-order statistics in the input and thereby optimizing
+the neural code and relate these results to the known patchy
+connectivity in the primate visual cortex.
 
-The guiding hypothesis of this thesis is the idea that the incredible
-complexity of the mammalian cortex is achieved through a careful
-genetic program that establishes a basic circuit, which through the
-process of development self-organizes into a circuit, which can
-robustly capture the statistics of the input and adaptively use this
-information to optimally encode this input for further processing and
-perform low-level inferences when only a low amount of information is
-available.
+Not only does this thesis outline the first spatially calibrated,
+developmental model of the primary visual cortex but it makes specific
+predictions about the role of different cell classes, which have been
+implicated in a variety of pathologies, most notably in autism,
+schizophrenia and Parkinsons. A better understanding of the
+developmental disruptions caused by malfunctioning parvalbumin neurons
+in particular will provide a better understanding of how to recover
+regular function and provides a solid starting point for future
+studies looking specifically at these disruptions. Further these
+results have clear implications for theoretical neuroscience and
+machine learning fields as they clearly predict that not only is the
+lateral connectivity in V1 shaped by the visual statistics of the
+environment but also suggests that even low-level areas like V1 can
+make use of these statistics to optimize neural coding.
 
 \section{Organisation of the Thesis}
 
-Based on the overarching goals laid out above it is crucial to begin
-by integrating information across Marr's levels of description. The
-entire first chapter will therefore be devoted towards providing an
-overview of our current knowledge about the visual system, broadly
-categorized into the four levels of analysis.
+After a thorough review of the existing literature, we present a
+workflow for easily and reproducibly exploring high-dimensional and
+temporally evolving models allowing us to gain insights into
+non-linear interactions between different components and parameters in
+the model, in ways that were not possible with previous tools.
 
-In the second results chapter we extend this analysis to models of
+In the following chapter we then introduce the initial developmental
+model of the visual cortex, summarize what we know about the spatial
+scales of different types of connections in primary visual cortex and
+establish a correspondence between the model and experimental data. In
+the process we present various protocols to characterize the spatial
+tuning in the response of the model and various analyses applied to
+the connectivity in the model to confirm that model and experiment are
+indeed in close agreement.
+
+In second results chapter we extend this analysis to models of
 cortical development and function that takes into account the
 anatomical and physiological properties of different cell classes and
 begin elucidating their role in experimentally observed phenomena
@@ -105,4 +118,6 @@ computations performed by the cortex.
 By the end of the thesis we will have presented a unifying account on
 how different cell classes in the visual cortex self-organize into a
 robust circuit that can encode the natural image statistics of its
-rearing environment.
+rearing environment and make use of that information to improve how
+the cortex extracts, encodes and uses information from its
+environment.
