@@ -25,7 +25,7 @@ cortices, we have made very little progress since many of the core
 ideas such as receptive and association fields have been around since
 the early pioneers proposed them.
 
-In this thesis I will argue that this failure to make significant
+In this thesis we will argue that this failure to make significant
 advances in understanding the computations performed by the visual
 system is primarily a failure to attempt to integrate our knowledge
 across various levels of description. This is precisely what David
@@ -52,7 +52,13 @@ contribute to the overall understanding about the system, however to
 gain real insights, models should begin abstracting across these
 levels of analysis to find out where and how evidence from various
 sources fit together or more interestingly, highlight potential
-discrepancies.
+discrepancies. In this chapter we will attempt to summarize our
+current knowledge about the circuits, cell classes and functions
+performed by the primary visual cortex at each of these levels before
+starting to integrate that information into model that will allow us
+to make novel predictions about the physical implementation,
+algorithmic operation, computational function as well as learning and
+development.
 
 \section{Early Visual System: Areas and layers}
 
@@ -304,16 +310,20 @@ As it is thought that the cortex captures statistics about the sensory
 streams to construct internal models of the world, it is clear that
 function, structure and development are closely linked. Recognizing
 this close association, Dr. Bednar began developing models of the
-sensory cortex \citep{Bednar2003} based on self-organizing maps
-(SOMs). Since then these models have been refined substantially but
-still implement the retina, LGN and V1 as a set of neuronal sheets
-with feedforward and lateral connectivity self-organizing into the
-complex topographic maps as seen in carnivore and primate species. It
-can explain the development of robust yet adaptive topographic maps
-using only a small set of mechanism including contrast-gain control,
-an adaptive single-neuron threshold, and lateral connectivity giving
-rise to GCAL \citep{Law2011}. Extensions of this model explaining the
-development of complex cells and of contrast dependent size tuning
+sensory cortex \citep{Bednar2003} based on the original
+self-organizing map models (SOM) by von der Malsburg. Since then these
+models have been refined substantially but work on many of the same
+principles.
+
+The basic idea is that the retina, LGN and V1 are modeled as a set of
+neuronal sheets with feedforward and lateral connectivity
+self-organizing into the complex topographic maps. These models
+provide a very good match to the known developmental timecourse and
+replicate a large range of phenomena observed in the mammalian cortex,
+yet work with only a small set of mechanism including contrast-gain
+control, an adaptive single-neuron threshold, and lateral connectivity
+\citep{Stevens2011}. Extensions of this model explaining the development
+of complex cells and of contrast dependent size tuning
 \citep{Antolik2011} as well as a continuous time model incorporating
 LGN/V1 onsets using hysteresis functions are in development
 \citep{Stevens2011}.
@@ -437,14 +447,14 @@ modulate the processing architecture.
 \subsection{Functional and Anatomical Properties of Neural Receptive Fields}
 
 The spatial properties of RFs in the LGN and V1 are of particular
-interest in the context of this PhD project as they provide the basis
-of a realistic model of the para-foveal regions of the primary visual
+interest in the context of this thesis as they provide the basis of a
+realistic model of the para-foveal regions of the primary visual
 cortex in macaques, allowing direct comparisons between model in
 experiment in a system where the spatial scales are of great
-importance. Before attempting to model the effects of higher- and
-extra-cortical influences on information processing in V1, the spatial
-properties of each set of afferent connections entering V1 need to be
-thoroughly understood and incorporated into the model.
+importance. Before attempting to model the recurrent, lateral inputs
+to V1, the spatial properties of each set of afferent connections
+entering V1 need to be thoroughly understood and incorporated into the
+model.
 
 The extents and structure of neural receptive fields are defined by
 the axonal and dendritic arborization of afferent, horizontal and
