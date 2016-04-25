@@ -17,6 +17,10 @@
 % Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
 % Adding 'dottedtoc' will make page numbers in the table of contents flushed right with dots leading to them
 
+
+\usepackage{xspace} % To get the spacing after macros right
+
+
 \newcommand{\myTitle}{Modeling the role of different cell types in development and encoding of visual statistics in the primary visual cortex\xspace}
 \newcommand{\mySubtitle}{\xspace}
 \newcommand{\myDegree}{Doctor of Philosophy\xspace}
@@ -49,13 +53,15 @@
 \newcounter{dummy} % Necessary for correct hyperlinks (to index, bib, etc.)
 \providecommand{\mLyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
 
-
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
 
 
 %----------------------------------------------------------------------------------------
 %	PACKAGES
 %----------------------------------------------------------------------------------------
 
+\usepackage[dvipsnames]{xcolor}
 \usepackage{siunitx}
 \usepackage{mathtools}
 \usepackage{gensymb}
@@ -97,8 +103,6 @@
 \usepackage{fontenc}
 
 %------------------------------------------------
-
-\usepackage{xspace} % To get the spacing after macros right
 
 %------------------------------------------------
 

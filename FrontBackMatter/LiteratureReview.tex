@@ -304,7 +304,13 @@ has gone into measuring the exact structure and functional properties
 of neural receptive fields and their underlying anatomical correlates,
 the neurite arbors.
 
-\section{Developmental models of the Primary Visual Cortex}
+\section{Existing large-scale models of the Primary Visual Cortex}
+
+\subsection{Surround modulation models}
+
+Add sections on Spratling, Angelucci, Shapley, Diesman and Gewaltig models
+
+\subsection{Developmental models} \label{devmodels}
 
 As it is thought that the cortex captures statistics about the sensory
 streams to construct internal models of the world, it is clear that
@@ -315,18 +321,17 @@ self-organizing map models (SOM) by von der Malsburg. Since then these
 models have been refined substantially but work on many of the same
 principles.
 
-The basic idea is that the retina, LGN and V1 are modeled as a set of
-neuronal sheets with feedforward and lateral connectivity
-self-organizing into the complex topographic maps. These models
-provide a very good match to the known developmental timecourse and
-replicate a large range of phenomena observed in the mammalian cortex,
-yet work with only a small set of mechanism including contrast-gain
-control, an adaptive single-neuron threshold, and lateral connectivity
-\citep{Stevens2011}. Extensions of this model explaining the development
-of complex cells and of contrast dependent size tuning
-\citep{Antolik2011} as well as a continuous time model incorporating
-LGN/V1 onsets using hysteresis functions are in development
-\citep{Stevens2011}.
+The retina, LGN and V1 are modeled as a set of neuronal sheets with
+feedforward and lateral connectivity self-organizing into the complex
+topographic maps. These models provide a very good match to the known
+developmental timecourse and replicate a large range of phenomena
+observed in the mammalian cortex, yet work with only a small set of
+mechanism including contrast-gain control, an adaptive single-neuron
+threshold, and lateral connectivity \citep{Stevens2013}. Extensions of
+this model explaining the development of complex cells and of contrast
+dependent size tuning \citep{Antolik2011} as well as a continuous time
+model incorporating LGN/V1 onsets using hysteresis functions are in
+development \citep{Stevens2011}.
 
 The GCAL model is based on several core observations about
 information-processing in V1 and the cortex in general. As previous
@@ -384,42 +389,7 @@ direction, spatial frequency, temporal frequency, disparity and
 color. All these models are trained by presenting it with a visual
 input on the retina, allowing the response to propagate through the
 different sheets and then adjusting the connections weights to V1
-neurons based on a local learning rule. The response of a given neuron
-$j$ at time $t+\delta t$ can be calculated as the thresholded dot
-product between the activations of every input neurons $i$ at time
-$t$, or $\eta_i(t)$, and their associated weights stored in the
-connection field:
-
-\begin{equation}
-\eta_j(t+\delta t) = \sigma \left ( \sum_p{\gamma_p} \sum_{i \in
-  F_{jp}}{\eta_i(t)\omega_{ij}}\right)
-\end{equation}
-
-where $\eta_i$ is the activation of all units $i$ in connection field
-$F_{jp}$, which contains all neurons unit $j$ receives its inputs
-from. $\omega_{ij}$ is the connection weight from $i$ to $j$. $\sigma$
-is a half-wave rectifying function with a variable threshold point
-($\theta$) dependent on the average activity of the unit, effectively
-acting as a homeostatic mechanism, pulling the activity of neuron back
-to a desired level. $\gamma_p$ is an arbitrary multiplier for the
-overall strength of all connections $i$ in projection $p$ and thus a
-free parameter.
-
-The connection weights $\omega_{ij}$ are adjusted after each iteration
-using a simple Hebbian learning rule, capturing correlations between
-pre- and post-synaptic activities. The Hebbian connection weight
-update for unit $j$ is expressed as a function of the presynaptic
-activity $\eta_i$, the post-synaptic response $\eta_j$ and the Hebbian
-learning rate $\alpha$, taking the form:
-
-\begin{equation}
-\omega_{ij}(t+1) = \frac{\omega_{ij}(t) + \alpha \eta_j
-  \eta_i}{\sum_{k\in F_jp}{ (\omega_{kj}(t) + \alpha \eta_j \eta_k)}}
-\end{equation}
-
-This function also constrains runaway changes in weights by employing
-divisive post-synaptic weight normalization and thus eliminates the
-instability associated with classical Hebbian learning.
+neurons based on a local learning rule.
 
 This limited number of mechanisms already gives rise to an incredibly
 robust model of development of topographic map development and
@@ -507,11 +477,6 @@ the receptive field. It wasn't until later that systematic recordings
 of this kind were carried out in the LGN of macaques at which point
 the moving bar stimuli were replaced with sine gratings of varying
 spatial frequency.
-
-\begin{equation}
-R = k_c e^{-\frac{f}{f_c}^2} - k_s e^{-\frac{f}{f_s}^2}
-\label{DoGf}
-\end{equation}
 
 As not all papers can be considered, the data from three different
 studies making use of protocols with increasing complexity will be
@@ -938,15 +903,10 @@ feature-specific influences from the far surround.
 The anatomical spatial extents of FB connections from higher cortical
 areas have been measured in a number of tracing
 studies. \cite{Angelucci2002} provides a measurements broken down by
-area, measuring the extents of FB connections from V2, V3 and MT to V1
-(see table \ref{FBExtents}). Once converted into degrees of visual
-space the results are the following: Feedback from V2 has a mean size
-of 3.4$\degree$ in layer 2/3 and 3.8$\degree$ in layers 5/6, FB from
-V3 a mean size of 5.6$\degree$ in layers 2/3 and 6.7$\degree$ and FB
-from MT a mean size of 15.3$\degree$ and 26.6$\degree$ in the upper
-and lower layers respectively. The largest far surround field measured
-was 28$\degree$ in diameter and the measurement was still limited by
-the maximal presented stimulus size \citep{Ichida2007}. These results
+area, measuring the extents of FB connections from V2, V3 and MT to
+V1.  As one moves up the cortical hierarchy the extent of feedback
+projections continues to grow with the largest far surround field
+measured at 28$\degree$ in diameter \citep{Ichida2007}. These results
 clearly indicate that cortical feedback to V1 increases in its spatial
 extents and becomes less spatially and retinotopically specific when
 moving up in the cortical hierarchy to the point where it covers huge
