@@ -2,7 +2,7 @@
 \chapter{Reproducible science and visualization}
 
 Although the subject of this thesis is centered around modeling of the
-visual cortex a reproducible workflow is crucial to all scientific
+visual cortex, a reproducible workflow is crucial to all scientific
 disciplines and especially so in the computational sciences. As part
 of the work presented in this thesis, we describe a new workflow to
 make the exploration, analysis and publication of complex models
@@ -205,8 +205,8 @@ into the overall parameter set for the batched experiment.
 \begin{lstlisting}[frame=single]
 times = [1000*i for i in range(21)]
 constants = lancet.Args(area=3.0)
-parameter\_space = lancet.Range('latexc\_strength', 0, 3.0, 11) * lancet.Range('contrast', 10, 100, 10)
-batch\_arguments =  constants * parameter\_space * lancet.Args(times=times)
+parameter_space = lancet.Range('latexc_strength', 0, 3.0, 11) * lancet.Range('contrast', 10, 100, 10)
+batch_arguments =  constants * parameter_space * lancet.Args(times=times)
 \end{lstlisting}
 
 \subsection{Step 2: Specifying analysis}
@@ -240,7 +240,7 @@ output by Lancet.
   c = Collector()
 
   # Measurement
-  c.collect(measure\_or\_pref, frequencies=[1.4, 1.6, 1.8])
+  c.collect(measure_or_pref, frequencies=[1.4, 1.6, 1.8])
 
   # Analysis
   c.Pinwheels.V1   = c.analyze(c.ref.OrientationPreference.V1 *\
@@ -267,16 +267,16 @@ large scale analyses or parameter explorations.
 
 \begin{lstlisting}[frame=single]
   QSUB = True
-  qsub\_options = dict(b='y',
+  qsub_options = dict(b='y',
                     pe=('sharedmem', '4'),   # Parallel environment allocation
-                    v='OMP\_NUM\_THREADS=4')   # Must match slot allocation above.
+                    v='OMP_NUM_THREADS=4')   # Must match slot allocation above.
 
-  @lancet.review\_and\_launch()
+  @lancet.review_and_launch()
   def launch():
-    runbatch\_cmd = RunBatchCommand(ty\_file, c, metadata=batch\_arguments.varying\_keys, snapshot=False)
+    runbatch_cmd = RunBatchCommand(ty_file, c, metadata=batch_arguments.varying_keys, snapshot=False)
     Launcher = lancet.QLauncher if QSUB else lancet.Launcher
-    return Launcher(batch\_name, batch\_arguments, runbatch\_cmd,  metadata=metadata(), 
-                    **({'qsub\_flag\_options':qsub\_options} if QSUB else {}))
+    return Launcher(batch_name, batch_arguments, runbatch_cmd,  metadata=metadata(),
+                    **({'qsub_flag_options':qsub_options} if QSUB else {}))
   launch()
 \end{lstlisting}
 
@@ -329,10 +329,10 @@ with attribute access and selecting by the parameter values.
 
 \begin{lstlisting}[frame=single]  % Start your code-block
   :Layout
-   .CFs.LateralInhibitory     :Collator   [Index,contrast,latexc\_strength,tid,time,timestamps]   (filename,entries)
-   .CFs.LateralExcitatory     :Collator   [Index,contrast,latexc\_strength,tid,time,timestamps]   (filename,entries)
-   .OrientationPreference.V1  :Collator   [Index,contrast,latexc\_strength,tid,time,timestamps]   (filename,entries)
-   .OrientationSelectivity.V1 :Collator   [Index,contrast,latexc\_strength,tid,time,timestamps]   (filename,entries)
+   .CFs.LateralInhibitory     :Collator   [Index,contrast,latexc_strength,tid,time,timestamps]   (filename,entries)
+   .CFs.LateralExcitatory     :Collator   [Index,contrast,latexc_strength,tid,time,timestamps]   (filename,entries)
+   .OrientationPreference.V1  :Collator   [Index,contrast,latexc_strength,tid,time,timestamps]   (filename,entries)
+   .OrientationSelectivity.V1 :Collator   [Index,contrast,latexc_strength,tid,time,timestamps]   (filename,entries)
 \end{lstlisting}
 
 
@@ -365,8 +365,8 @@ In the previous step we saw how to load a dataset, here we will
 quickly demonstrate how we can work with this data once it is loaded.
 As an example we load some of the weights that represent synaptic
 neural connections between different neurons in our model. In
-\ref{workflow_exploration} we can see how we can load two sets of
-weights for a specific set of parameters and compose them together by
+\ref{workflow_explore} we can see how we can load two sets of weights
+for a specific set of parameters and compose them together by
 overlaying them. The resulting visualization demonstrates the
 complexity this approach allows as we can represent the X/Y positions
 of the neurons in the V1 sheet on a grid, while representing other
