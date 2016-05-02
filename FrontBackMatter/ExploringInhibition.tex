@@ -1,5 +1,5 @@
 %!TEX root = ../PhDthesis.tex
-\chapter{Exploring the role of inhibition in cortical development}
+\chapter{Exploring the role of inhibition in cortical development and surround modulation}
 
 Surround suppression is one of the most well described phenomena in
 neural circuits, yet no definite conclusions on the sources of various
@@ -30,6 +30,145 @@ inputs \citep{Bartley2008,Beierlein2003,Bartley2008,Tan2008} lead to
 the development of highly tuned neurons, which respond only for high
 contrasts or large stimuli, thereby mediating a range of surround
 modulation phenomena.
+
+\section{Methods}
+
+\subsection{Assessing the quality of orientation maps}
+
+In addition to assessing the spatial scales in the model and comparing
+them against experiment the model developed in this section should
+also share other properties including robustness to a variety of
+visual input, as well as smooth, robust and high-quality organization
+of V1 neurons into an overall orientation map. There are a variety of
+measures to assess these properties but we will focus on three in
+particular, smoothness, stability and pinwheel density.
+
+\subsubsection{Pinwheel density}
+
+Through empirical observation that orientation maps across species
+share a fundamental property, that pinwheel count in biological
+orientation maps scales linearly with hypercolumn size, specifically
+that there are $\pi$ orientation pinwheels within the area of one
+hypercolumn, when averaging over sufficiently large cortical
+areas. This dimensionless, statistical measure of pinwheel
+distribution is thought to reflect a universal constant of map
+organization, converging to across carnivorans, primates, cats, and
+tree shrews \citep{Kaschube2010, Keil2012}. This value was predicted
+by a theoretical model of map organization and has strong empirical
+evidence, with a mean pinwheel density across four species (tree
+shrew, galago, cat, and ferret) statistically indistinguishable from
+$\pi$.
+
+To determine the pinwheel density for any given map, the hypercolumn
+distance is computed and all all pinwheel centers are found. Pinwheel
+centers are located at the intersection of the zero contours of the
+real and imaginary components in the polar representation of
+orientation preference \citep{Lowel1998}. Then we simply divide the
+number of pinwheels in the modelled area by the number of hypercolumns
+to arrive at the pinwheel density.
+
+\subsubsection{Stability}
+
+The stability of orientation maps is determined by determing the
+average orientation similarity index of the orientation map over the
+course of development. To assess similarity quantitatively
+\cite{Chapman1996} computed the correlation of orientation preference
+at each developmental age with the organized preference map observed
+in the final recording for that animal. As in \cite{Stevens2013} we
+normalize these similarity values to fall between 0 (completely
+uncorrelated) to 1 (identical orientation preference). The orientation
+similarity index is therefore defined as:
+
+\begin{equation}
+  OSI = 1 - \frac{4}{n\pi} \sum_{i}\abs{(F_{i}-O_{i})mod(\frac{\pi}{2})}
+\end{equation}
+
+By averaging the OSI at every 1000 development steps we can
+numerically compare the stability of the model over time. Note that
+this does not provide a measure that is comparable across models
+because this measure is heavily influenced by the speed of learning
+but it does allow us to assess the effect of changing specific
+parameters on the stability of the model.
+
+\subsection{Surround modulation}
+
+Beyond measuring simple attributes of the spatial organization in LGN
+and V1, higher order effecs can be explored through complex surround
+modulation measurement protocols. In addition to the simple area
+summation curve measurements described above we replicate two further
+protocols to evaluate the spatial response properties of the model.
+In particular we are interested in the interaction between the spatial
+arrangement of visual patterns presented to an animal and the contrast
+on the response properties of visually responding neurons. For that
+purpose we replicate two measurement protocols, a simple annulus based
+contrast suppression measurement \cite{Jones2002} and a protocol using
+target and flanker stimuli performed by \cite{Kapadia1995}.
+
+\paragraph{Orientation contrast suppression}
+
+The orientation contrast suppression is perhaps one of the most well
+studied surround modulation paradigms. The measurement involves
+presenting stimuli of a central sine grating, optimized to the
+preferred size, frequency and orientation of the neuron being
+measured. Once the baseline activity has been measured an additional
+surround anulus with the same frequency is added and varied in
+contrast, size and orientation to measure orientation dependent
+interactions between center and surround (as shown in Figure
+\ref{ORC_Stimulus}).
+
+\begin{figure}
+	\centering
+        \includegraphics[width=0.5\textwidth]{ORC_Stimulus.pdf}
+	\caption{Orientation contrast stimulus measuring modulation by a
+      sine grating annulus on the response of a central neuron
+      responding to a central sine grating disk of the same frequency.
+      Stimulus is varied by center and surround contrast, surround
+      orientation and the offset between the central disk and the
+      surround annulus.}
+	\label{ORC_Stimulus}
+\end{figure}
+
+The surround facilitation is quantified as:
+
+\begin{equation}
+F = (\frac{R_{cs}}{R_c} - 1) * 100
+\end{equation}
+
+where $R_{CS}$ is the response of the combined stimulus and $R_C$ the
+response to just the center stimulus.
+
+\paragraph{Flanker Modulation}
+
+Instead of working solely using area based protocols we also make use
+of a simple bar based stimulus along with a flanker, which is
+modulated in a number of ways to characterize the surround modulation
+effects associated with this protocol. In \cite{Kapadia1995} describe
+a high degree of variability ranging from a complete lack of surround
+modulation to facilitation and suppression. The three stimulus
+protocols employed here are shown in \ref{Flanker}, we replicate these
+protocol on the model to compare the effects observed in experiments
+qualitatively.
+
+\begin{figure}
+	\centering
+        \includegraphics[width=1.0\textwidth]{FlankerProtocol.pdf}
+	\caption{Flanker offset surround modulation paradigm. Measuring
+      the effect of a flanker stimulus varying by an offset in X, Y
+      and orientation on the response of a neuron to a target
+      stimulus.}
+	\label{Flanker}
+\end{figure}
+
+
+\section{Results}
+
+A major component of the work in this chapter was optimizing for a
+wide range of measures to achieve rough agreement with the wide range
+of experimentally confirmed measurements. In the coming sections we
+will break down how the model parameters were chosen and then compare
+measurements and analyses applied to the model to the experimental
+results they are replicating, highlighting discrepancies and
+simplifications where there are any.
 
 \section{The role of inhibition in development}
 
