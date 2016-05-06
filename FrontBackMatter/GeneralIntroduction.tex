@@ -19,16 +19,20 @@ self-organization giving rise to a developed circuit, which can
 robustly capture the statistics of the input and adaptively use this
 information to optimally encode the input for further processing and
 perform low-level inferences when only a low amount of information is
-available. Over the course of this thesis we will outline how a fairly
+available. Over the course of this thesis I will outline how a fairly
 stereotyped circuit of different neural cell classes develops into a
 circuit that closely matches experimental observations of development
-and surround modulation.
+and surround modulation. This will for the first time bridge the early
+development of the circuits, with a mechanistic account of how the
+learned statistics are used and finally play a role in specific
+cortical functions, which give rise to contextual modulation effects
+and higher level behaviors.
 
-In particular we will adapt an existing developmental model of the
-cortical developmenet, which gives a good account of the
+In particular I will adapt an existing developmental model of the
+cortical development, which gives a good account of the
 activity-dependent development in the primary visual cortex,
 demonstrating robust, yet adaptive organization of receptive fields
-and lateral connectivity. Once we have established how to relate the
+and lateral connectivity. Once I have established how to relate the
 spatial scales in the model to experimental data this thesis sets out
 to answer a number of questions:
 
@@ -45,28 +49,34 @@ to answer a number of questions:
   animal's environment provides?
 \item What specific computational purpose, if any, do particular cell
   classes serve?
+\item What are the tradeoffs between long-range recurrent excitation
+  and inhibition for stimulus detection and discriminability?
 \item Does the connectivity in the visual cortex store the visual
   statistics of the environment and how can it begin using this
   information to improve neural coding and low-level inference?
 \end{itemize}
 
 Through an iterative process of analysing the model and incorporating
-increasing anatomical and physiological detail in the model we make
+increasing anatomical and physiological detail in the model I make
 several concrete predictions about the role in both developmental and
-behavioral processes. Firstly we establish that we can create a model
+behavioral processes. Firstly I establish that we can create a model
 which agrees with anatomical connectivity data, electrophysiological
 measurements and the known spatial scales of orientation maps in V1.
-Having established this we show that the fast, quickly spiking
-response properties of parvalbumin-expressing neurons lead to the
-development of broad orientation tuning, which is crucial for robust
-development of cortical feature maps. Further, we show that the
-facilitating and slow response profile of somatostatin-immunoreactive
-neurons give rise to narrower orientation tuning providing orientation
-dependent surround suppression. Finally we show how the long-range
-lateral connectivity is able to capture the statistics of the input,
-acting to normalize higher-order statistics in the input, thereby
-optimizing the neural code, and relate these results to the known
-patchy connectivity in the primate visual cortex.
+Having established this I show that the fast, quickly spiking response
+properties of parvalbumin-expressing neurons lead to the development
+of broad orientation tuning, which is crucial for robust development
+of cortical feature maps. Further, I show that the facilitating and
+slow response profile of somatostatin-immunoreactive neurons give rise
+to narrower orientation tuning providing orientation dependent
+surround suppression. In doing so the thesis will explore the tension
+between strong long-range recurrent excitation, useful for detection
+under uncertain or weak stimulus conditions and suppression useful to
+redue the redundancy in the neural representation and enhancing
+discrimination under strong stimulus conditions. Finally, I show how
+the long-range lateral connectivity is able to capture the statistics
+of the input, acting to normalize higher-order statistics in the
+input, thereby optimizing the neural code, and relate these results to
+the known patchy connectivity in the primate visual cortex.
 
 Not only does this thesis outline the first spatially calibrated,
 developmental model of the primary visual cortex but it makes specific
@@ -85,22 +95,22 @@ make use of these statistics to optimize neural coding.
 
 \section{Organisation of the Thesis}
 
-After a thorough review of the existing literature, we present a
+After a thorough review of the existing literature, I present a
 workflow for easily and reproducibly exploring high-dimensional and
 temporally evolving models allowing us to gain insights into
 non-linear interactions between different components and parameters in
 the model, in ways that were not possible with previous tools.
 
-In the following chapter we then introduce the initial developmental
-model of the visual cortex, summarize what we know about the spatial
-scales of different types of connections in primary visual cortex and
+The following chapter then introduces the initial developmental model
+of the visual cortex, summarize what is known about the spatial scales
+of different types of connections in primary visual cortex and
 establish a correspondence between the model and experimental data. In
 the process we present various protocols to characterize the spatial
 tuning in the response of the model and various analyses applied to
 the connectivity in the model to confirm that model and experiment are
 indeed in close agreement.
 
-In the second results chapter we extend this analysis to models of
+In the second results chapter I extend this analysis to models of
 cortical development and function that takes into account the
 anatomical and physiological properties of different cell classes and
 begin elucidating their role in experimentally observed phenomena
@@ -108,14 +118,14 @@ ranging from self-organization to particular computations performed by
 the fully developed cortex, including surround modulation, divisive
 gain control and sparse coding.
 
-In the final results chapter we demonstrate how a model that respects
+In the final results chapter I demonstrate how a model that respects
 the known properties of different cell classes and their interactions
 can develop realistic connectivity patterns that not only allow for
 the resulting circuit to robustly respond to highly variable input but
 also encode the statistics of the input to aid in the various complex
 computations performed by the cortex.
 
-By the end of the thesis we will have presented a unifying account on
+By the end of the thesis I will have presented a unifying account on
 how different cell classes in the visual cortex self-organize into a
 robust circuit that can encode the natural image statistics of its
 rearing environment and make use of that information to improve how
