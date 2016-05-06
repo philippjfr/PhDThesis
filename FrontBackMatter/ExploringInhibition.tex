@@ -1,17 +1,20 @@
 %!TEX root = ../PhDthesis.tex
 \chapter{Exploring the role of inhibition in cortical development and surround modulation}
 
-Surround suppression is one of the most well described phenomena in
-neural circuits, yet no definite conclusions on the sources of various
-forms of suppressions can be drawn so far. In the literature section
-of this thesis we described the known properties of various inhibitory
-cell classes and what roles they might perform. In particular we
-discovered that PV and SOM-expressing interneurons exhibit highly
-distinct response properties and layer-specific expression patterns.
-With recent techniques allowing targeting of specific populations
-there is now huge interest in understanding their role both in
-development and in mediating and gating the both contextual and
-attentional modulation phenomena.
+In the previous chapter we explored the spatially calibrated SCAL
+model, establishing how various sources of evidence about the spatial
+structure of V1 projections relate to each other. This highlighted the
+fact that the spatial scales of inhibitory connections are not
+sufficient to account for long-range surround
+suppression. Additionally, in the literature section we
+described the known properties of various inhibitory cell classes and
+what roles they might perform. In particular we discovered that PV and
+SOM-expressing interneurons exhibit highly distinct response
+properties and layer-specific expression patterns.  With recent
+techniques allowing targeting of specific populations there is now
+huge interest in understanding their role both in development and in
+mediating and gating the both contextual and attentional modulation
+phenomena.
 
 In this chapter we will propose models that incorporate the distinct
 response properties of PV and SOM interneuron populations, allowing us
@@ -31,7 +34,82 @@ the development of highly tuned neurons, which respond only for high
 contrasts or large stimuli, thereby mediating a range of surround
 modulation phenomena.
 
+
+Most developmental models of the primary visual cortex are based
+around the concept of so called Mexican hat connectivity. This is the
+idea that there is a local attractive force which pulls similar
+features together and a larger repulsive force, which pushes
+dissimilar features away. This is what enables the self-organization
+of feature maps, which itself can be explained in terms of
+dimensionality reduction, specifically forming a discretized
+approximation of the principal surface of the input
+\citep{Ritter1992}. In most of these models \citep{Miller1994,
+  Miikkulainen2005} these interactions are modeled using point neurons
+which provide excitatory and inhibitory input. In the previous chapter
+we showed that an adapted version of the GCAL model
+\citep{Stevens2013}, which employs divisive inhibition can still
+demonstrate robust and stable map development. Here we will extend
+this
+
 \section{Methods}
+
+\subsection{The SEPI Model}
+
+\begin{figure}
+	\centering
+        \includegraphics[width=1.0\textwidth]{SEPI_Diagram.pdf}
+	\caption{Diagram of the SEPI V1 stage of the model showing the
+          spatial scales of the various excitatory (red) and
+          inhibitory (blue) connections. Satured colors indicate the
+          kernel radii, while lightly shaded regions indicate kernel
+          cut-off extents.}
+	\label{SCALDiagram}
+\end{figure}
+
+
+\subsection{The LESPI model}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{./v1circuit.pdf}
+	\caption[]{High-level circuit diagram of the LESPI model.}
+    \label{circuit_diagram}
+\end{figure}
+
+
+\begin{equation}
+  \eta_{exc} = \frac{\eta_{A} + \eta_{LOC}}{1 + \eta_{PV}} * \eta_{SM}
+\end{equation}
+
+where $\eta_{A}$ is the LGN afferent activity, $\eta_{LOC}$ the local
+excitatory contribution, $\eta_{P}$ the PV inhibitory contribution
+and the surround modulation term $\eta_{SM}$ is defined as:
+
+\begin{equation}
+  \eta_{SM} = 1 + \eta_{LAT} - \eta_{S}
+\end{equation}
+
+where $\eta_{LAT}$ represents the long-range lateral excitatory
+contribution and $\eta_{S}$ is the Sst inhibitory contribution. In the
+SEPI model the $\eta_{SM}$ term simply reduces to 1, eliminating all
+long-range interactions. The surround modulatorion term provides gain
+when excitation exceeds inhibition and shunting inhibition when the
+reverse is true. As such, this term provides a convenient abstraction
+to model the modulatory influence of the dendritic integration of
+long-range inputs.
+
+The effective excitatory gain may not be a bad approximation to the
+effect of long-range horizontal connections, which have been shown to
+be strongly voltage dependent \citep{Hirsch1991}. Since Sst neurons
+generally target distal dendrites they have generally been associated
+with subtractive inhibition, they do however also have a
+multiplicative component \citep{Wilson2012}. Additionally, their
+preference for targetting distal dendrites may allow them to
+effectively gate horizontal excitatory and feedback inputs
+\citep{Ma2011, Gentet2012}. Additionally theoretical studies indicate
+active dendritic spike backpropagation can lead to multiplicative
+increases in gain, while reduction in spike backpropagation can lead
+to divisive scaling of the firing rate \citep{Mehaffey2005}.
 
 \subsection{Assessing the quality of orientation maps}
 
@@ -162,6 +240,8 @@ qualitatively.
 
 \section{Results}
 
+\subsection{Development}
+
 A major component of the work in this chapter was optimizing for a
 wide range of measures to achieve rough agreement with the wide range
 of experimentally confirmed measurements. In the coming sections we
@@ -169,41 +249,6 @@ will break down how the model parameters were chosen and then compare
 measurements and analyses applied to the model to the experimental
 results they are replicating, highlighting discrepancies and
 simplifications where there are any.
-
-\section{The role of inhibition in development}
-
-Most developmental models of the primary visual cortex are based
-around the concept of so called Mexican hat connectivity. This is the
-idea that there is a local attractive force which pulls similar
-features together and a larger repulsive force, which pushes
-dissimilar features away. This is what enables the self-organization
-of feature maps, which itself can be explained in terms of
-dimensionality reduction, specifically forming a discretized
-approximation of the principal surface of the input
-\citep{Ritter1992}. In most of these models \citep{Miller1994,
-  Miikkulainen2005} these interactions are modeled using point neurons
-which provide excitatory and inhibitory input. In the previous chapter
-we showed that an adapted version of the GCAL model
-\citep{Stevens2013}, which employs divisive inhibition can still
-demonstrate robust and stable map development. Here we will extend
-this
-
-\subsection{The SEPI Model}
-
-
-\begin{figure}
-	\centering
-        \includegraphics[width=1.0\textwidth]{SEPI_Diagram.pdf}
-	\caption{Diagram of the SEPI V1 stage of the model showing the
-          spatial scales of the various excitatory (red) and
-          inhibitory (blue) connections. Satured colors indicate the
-          kernel radii, while lightly shaded regions indicate kernel
-          cut-off extents.}
-	\label{SCALDiagram}
-\end{figure}
-
-
-\subsection{Results}
 
 \begin{figure}
 	\centering
@@ -242,49 +287,7 @@ this
 \end{figure}
 
 
-\section{The role of inhbition in surround modulation}
+\subsection{Surround Modulation}
 
 
-\subsection{The LESPI model}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=1.0\textwidth]{./v1circuit.pdf}
-	\caption[]{High-level circuit diagram of the LESPI model.}
-    \label{circuit_diagram}
-\end{figure}
-
-
-\begin{equation}
-  \eta_{exc} = \frac{\eta_{A} + \eta_{LOC}}{1 + \eta_{PV}} * \eta_{SM}
-\end{equation}
-
-where $\eta_{A}$ is the LGN afferent activity, $\eta_{LOC}$ the local
-excitatory contribution, $\eta_{P}$ the PV inhibitory contribution
-and the surround modulation term $\eta_{SM}$ is defined as:
-
-\begin{equation}
-  \eta_{SM} = 1 + \eta_{LAT} - \eta_{S}
-\end{equation}
-
-where $\eta_{LAT}$ represents the long-range lateral excitatory
-contribution and $\eta_{S}$ is the Sst inhibitory contribution. In the
-SEPI model the $\eta_{SM}$ term simply reduces to 1, eliminating all
-long-range interactions. The surround modulatorion term provides gain
-when excitation exceeds inhibition and shunting inhibition when the
-reverse is true. As such, this term provides a convenient abstraction
-to model the modulatory influence of the dendritic integration of
-long-range inputs.
-
-The effective excitatory gain may not be a bad approximation to the
-effect of long-range horizontal connections, which have been shown to
-be strongly voltage dependent \citep{Hirsch1991}. Since Sst neurons
-generally target distal dendrites they have generally been associated
-with subtractive inhibition, they do however also have a
-multiplicative component \citep{Wilson2012}. Additionally, their
-preference for targetting distal dendrites may allow them to
-effectively gate horizontal excitatory and feedback inputs
-\citep{Ma2011, Gentet2012}. Additionally theoretical studies indicate
-active dendritic spike backpropagation can lead to multiplicative
-increases in gain, while reduction in spike backpropagation can lead
-to divisive scaling of the firing rate \citep{Mehaffey2005}.
+\section{Discussion}

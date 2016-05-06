@@ -8,45 +8,45 @@ offering testable hypothesis to resolve such discrepancies. The
 primary visual cortex is one of the most well studied areas in the
 mammalian brain and we have previously seen that it has been
 extensively explored at varying levels of description, from
-development, circuits and anatomy to surround modulation, behavioural
+development, circuits and anatomy to surround modulation, behavioral
 studies and theoretical models of computation.
 
 In order to provide a better account on how all this information fits
 together in a generalized model describing the organization and
 computations performed by the cortex, a unified reference frame
-regarding the various spatial scales is desparately needed. A careful
+regarding the various spatial scales is desperately needed. A careful
 reading of the literature highlights just how dependent various
-effects are on the spatial scales involved. Here we will present a
-developmental model that takes these levels of evidence into account,
-allowing us to cross-validate known anatomical properties by
-confirming them against the response properties of the model after
-development. This will allow bridging between known measurements of
-anatomy and circuitry and electrophysiological or even behavioral
-experiments performed on visual cortex.
+effects are on the spatial profiles of the underlying neurite
+projections. Here I will present a developmental model that takes
+these levels of evidence into account, allowing us to cross-validate
+known anatomical properties by confirming them against the response
+properties of the model after development. This will allow bridging
+between known measurements of anatomy and circuitry and
+electro-physiological or even behavioral experiments performed on
+visual cortex.
 
 So far only very few attempts have been made at developing models that
 take into account the various spatial properties that have been
 described in the literature ranging from anatomy to
-electrophysiological measurements.  Therefore this chapter will
-demonstrate how existing models of cortical development, specifically
-the Gain Control Adapation Lateral model (GCAL) \citep{Stevens2013}
-can be calibrated to match known measurements of spatial extents more
-closely in a new S-patially CAL-ibrated (SCAL) model.
+electro-physiological measurements. This chapter will demonstrate how
+existing models of cortical development, specifically the Gain Control
+Adaptation Lateral model (GCAL) \citep{Stevens2013} can be calibrated
+to match known measurements of spatial extents more closely in a new
+\textbf{S}patially \textbf{CAL}ibrated (SCAL) model.
 
 The analysis will focus on various experimental assessments of the
 spatial properties of the visual pathway and describe how we can use
 these to build a model that achieves a high-level of consistency with
-experimental results across a wide range of measures. Specifically, we
-will attempt to calibrate the model with experimental measurements in
-the parafoveal regions of the visual system of macaque. The macaque
-has long been a experimental model for in visual neuroscience and the
-literature surrounding contextual modulation in particular.
-
-In doing so this chapter will critically evaluate the literature
-surrounding spatial tuning properties in the mammalian cortex,
-highlighting discrepancies and specifically assessing various models
-used to characterize the spatial tuning properties of neurons in the
-visual pathway.
+experimental results across a wide range of measures. Specifically,
+the model will be calibrated with experimental measurements in the
+parafoveal regions of the visual system of macaque. The macaque has
+long been a experimental model for in visual neuroscience and the
+literature surrounding contextual modulation in particular. In doing
+so this chapter will critically evaluate the literature surrounding
+spatial tuning properties in the mammalian cortex, highlighting
+discrepancies and specifically assessing various models used to
+characterize the spatial tuning properties of neurons in the visual
+pathway.
 
 Once we have collected the data we will provide a full
 characterization of the spatial response properties, receptive fields
@@ -54,6 +54,11 @@ and synaptic weights in the model confirming they closely match
 experimental data. At the same time we will outline in which ways the
 model falls short and discuss some ways in which these shortcomings
 might be remedied, which we will pick up in the following chapters.
+In particular we will highlight problems with the classical GCAL
+architecture, which makes no distinction between excitatory and
+inhibitory cell classes and how that relates to the spatial
+calibration and long-range surround suppression, which is thought to
+be mediated by disynaptic, long-range excitatory mechanisms.
 
 \section{Methods}
 
@@ -96,20 +101,38 @@ retinal ganglion and LGN function and provides the input to the
 various cortical models introduced here.
 
 The architecture of the retinal ganglion cell and lateral geniculate
-nucleus layers will remain unchanged in the model. Note that the
-diagram already specifies the final spatial scales used in this model,
-while this section will focus on determining a consistent set of
-parameters for the model.
+nucleus layers will remain unchanged for all the models presented in
+this thesis, while the V1 stage will be progressively refined.
+
+The model diagram for the SCAL V1 stage is shown in \ref{SCALDiagram}
+consisting of a single neural sheet with a comparatively large
+afferent connection when considered against the GCAL model. The local
+excitatory and inhibitory kernels however have changed only slightly
+in their size and finally the model optionally includes a long-range
+excitatory connection, which represents the long-range patchy lateral
+connectivity that is so characteristic of layer 2/3 in the visual
+cortex of higher mammals.
 
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{LGN_Diagram.pdf}
 	\caption{Diagram of the SCAL-LGN stage of the model showing
           the spatial scales of the various excitatory (red) and
-          inhibitory (blue) connections. Satured colors indicate the
+          inhibitory (blue) connections. Saturated colors indicate the
           kernel radii, while lightly shaded regions indicate kernel
           cut-off extents.}
 	\label{LGNDiagram}
+\end{figure}
+
+\begin{figure}
+	\centering
+        \includegraphics[width=1.0\textwidth]{SCAL_Diagram.pdf}
+	\caption{Diagram of the SCAL V1 stage of the model showing
+          the spatial scales of the various excitatory (red) and
+          inhibitory (blue) connections. Saturated colors indicate the
+          kernel radii, while lightly shaded regions indicate kernel
+          cut-off extents.}
+	\label{SCALDiagram}
 \end{figure}
 
 \subsubsection{Input patterns}
@@ -185,7 +208,7 @@ location $(x,y)$ on the photoreceptor sheet is given by:
 \end{equation}
 
 The kernel sizes of the central Gaussian $\sigma_{c}$ and surround
-mechanism $\sigma_{s}$ are what we will be determinging here. Unlike
+mechanism $\sigma_{s}$ are what we will be determining here. Unlike
 simple DoG kernels, the center-surround are jointly normalized to 1.0
 using $Z_c$ and $Z_s$. The weights for an OFF-center cell are the
 negative of the ON-center weights (i.e., surround minus center). The
@@ -205,7 +228,7 @@ ON or OFF sheet:
 \label{eqn:gauss}
 \end{equation}
 %%
-where $(x, y)$ is the location of the presynaptic neuron, $\sigma_{S}$
+where $(x, y)$ is the location of the pre-synaptic neuron, $\sigma_{S}$
 determines the width of the Gaussian, and $Z_S$ is a normalizing
 constant that ensures that the total of all the lateral inhibitory
 weights $\omega_{ij}$ to neuron $j$ sum to 1.0. This gain-control
@@ -258,7 +281,9 @@ inhibition, and between afferent and lateral influences, to provide
 robust formation of activity bubbles that allows smooth maps to
 form. The function $f$ defines a variable threshold point ($\theta$)
 dependent on the average activity of the unit as described in the next
-subsection, but in all cases the gain is fixed at unity.
+subsection, but in all cases the gain is fixed at unity. Note that
+unlike GCAL the inhibitory projection acts divisively rather than
+subtractively.
 
 At the end of the 16 settling steps, the settled V1 activation pattern
 is deemed to be the V1 response to the presented pattern. At this
@@ -313,7 +338,7 @@ projections. Specifically, for a neuron located at (0,0):
 \label{eqn:gaussrandomweights}
 \end{equation}
 %%
-where $(x, y)$ is the sheet-coordinate location of the presynaptic
+where $(x, y)$ is the sheet-coordinate location of the pre-synaptic
 neuron, $u=1$ for the lateral excitatory projection ($p=E$) and $u$ is
 a scalar value drawn from a uniform random distribution for the
 afferent and lateral inhibitory projections ($p=A,I$), $\sigma_{p}$
@@ -361,8 +386,8 @@ number of connections per connection field in the afferent projection.
 
 \subsection{Analyses}
 
-In order to analyse the spatial organization of the developed model we
-borrow from a variety of techniques used to analyse
+In order to analyze the spatial organization of the developed model we
+borrow from a variety of techniques used to analyze
 electrophysiological, optical imaging and anatomical data obtained in
 vivo allowing us to compare directly between experimental results and
 our model.
@@ -434,23 +459,23 @@ transform of the orientation map and collapse the real component to
 simple kernel to the collapsed FFT and finding the frequency of the
 strongest component.
 
-\subsubsection{Modeling lateral connectivity}
+\subsubsection{Modeling lateral connectivity} \label{BuzasEquations}
 
 Assessing the organization and extent of lateral connectivity in a way
 that is consistent with experimental measures is difficult as they
 variously use the maximum extent, which is highly dependent on the
-process used for tracing the axonal projections. The only quantitively
+process used for tracing the axonal projections. The only quantitatively
 rigorous assessment of the extent of long-range patchy connectivity in
 primary visual cortex was performed by \cite{Buzas2006} in cat.
 
-By injecting presynaptic neurons with a tracer which stains synaptic
+By injecting pre-synaptic neurons with a tracer which stains synaptic
 boutons they were able to identify the location of each bouton
 relative to the injected neuron and correlate it with the orientation
 preference map at pre- and post-synaptic locations. This allowed them
 to build a model of lateral connectivity with both spatial and
 orientation dependent components, expressed as the combination of
-vonMises and Gaussian distributions respectively. The orientation
-dependent component is expressed as the vonMises distribution:
+von Mises and Gaussian distributions respectively. The orientation
+dependent component is expressed as the von Mises distribution:
 
 \begin{equation}
 V(\phi, \kappa, \mu) = \frac{1}{2 \pi I_0(\kappa)} e^{\kappa cos 2(\phi - \mu)}
@@ -464,7 +489,7 @@ zero order.
 
 The Gaussian component on the other hand is a simple 2D Gaussian
 function, where $x$ and $y$ are the cortical coordinates and $\sigma$
-the SD of the Gaussian:
+the standard deviation of the Gaussian:
 
 \begin{equation}
 G(x, y, \sigma) = \frac{1}{2 \pi \sigma^2} e^{\frac{x^2+y^2}{2
@@ -472,7 +497,7 @@ G(x, y, \sigma) = \frac{1}{2 \pi \sigma^2} e^{\frac{x^2+y^2}{2
 \end{equation}
 
 These two components can be combined into a single spatially weighted
-vonMises distribution in the orientation map by simple multiplying the
+von Mises distribution in the orientation map by simple multiplying the
 components.
 
 \begin{equation}
@@ -492,9 +517,9 @@ the local isotropic component and separately measures of the
 orientation dependence and size of the long-range lateral connectivity
 kernel. We fitted this model to the long-range lateral connections in
 the model using the optimization routines built into the SciPy Python
-library, reporting the MSE and explained variance ($R^2$) of the final
-fit when compared to a naive model ignoring the orientation dependent
-component.
+library, reporting the mean square error (MSE) and explained variance
+($R^2$) of the final fit when compared to a naive model ignoring the
+orientation dependent component.
 
 We further extend this model with an additional variable controlling
 the aspect ratio of the long-range lateral Gaussian field relative to
@@ -507,7 +532,7 @@ co-linear training patterns on the model connectivity.
 The receptive fields of neurons in primary visual cortex are often
 described in terms of simple Gabor functions characterized by the
 spatial position, phase, frequency and orientation
-\citep{Jones1987,Ringach2002}. The literature also confirms that this
+\citep{Jones1987,Ringach2002b}. The literature also confirms that this
 simple function provides a good approximation for the spatial
 properties of simple cell receptive fields in the visual cortex.
 
@@ -580,19 +605,19 @@ responses with the previously described Difference of Gaussian model.
   \centering
   \begin{adjustbox}{width=1\textwidth}
   \begin{tabular}{l | l l l l l l}
-    Connection   & Literature            & Species  & Ecc. ($\degree$) & Model & Layer & $R_{c/s}$ \\
+    Connection   & Literature            & Species  & Ecc. ($\degree$) & Layer & $R_{c/s}$ \\
     \hline
-    LGN Center   & \cite{Sceniak2006}    & macaque  & 2-5  & parvo & - & $median = 0.46 \degree$ $mean = 0.5 \degree$ \\
-                 & \cite{Levitt2001}     & macaque  & 0-10 & parvo & - & $0.069 \pm 0.076 \degree$ \\
-                 & \cite{Spear1994}      & macaque  & 0-10 & parvo & - & $0.087 \pm 0.046 \degree$ \\
-                 & \cite{Bonin2005}      & macaque  & 13.9 & parvo & - & $0.6 \pm 0.4 \degree$\\
-                 &                       &          &      &       & / & $0.4 \pm 0.2 \degree$ \\
+    LGN Center   & \cite{Sceniak2006}    & macaque  & 2-5  & parvo & $median = 0.46 \degree$ $mean = 0.5 \degree$ \\
+                 & \cite{Levitt2001}     & macaque  & 0-10 & parvo & $0.069 \pm 0.076 \degree$ \\
+                 & \cite{Spear1994}      & macaque  & 0-10 & parvo & $0.087 \pm 0.046 \degree$ \\
+                 & \cite{Bonin2005}      & macaque  & 13.9 & parvo & $0.6 \pm 0.4 \degree$\\
+                 &                       &          &      &       & $0.4 \pm 0.2 \degree$ \\
     \hline
-    LGN Surround & \cite{Sceniak2006}    & macaque  & 2-5  & parvo & - &$median = 0.51 \degree$ (0.15-0.85) \\
-                 & \cite{Levitt2001}     & macaque  & 0-10 & parvo & - & $0.33 \pm 0.076 \degree$ \\
-                 & \cite{Spear1994}      & macaque  & 0-10 & parvo & - & $0.53 \pm 0.39 \degree$ \\
-                 & \cite{Bonin2005}      & macaque  & 13.9 & parvo & - & $2.0 \pm 1.1 \degree$\\
-                 &                       &          &      &       & / & $1.8 \pm 2.6 \degree$\\
+    LGN Surround & \cite{Sceniak2006}    & macaque  & 2-5  & parvo & $median = 0.51 \degree$ (0.15-0.85) \\
+                 & \cite{Levitt2001}     & macaque  & 0-10 & parvo & $0.33 \pm 0.076 \degree$ \\
+                 & \cite{Spear1994}      & macaque  & 0-10 & parvo & $0.53 \pm 0.39 \degree$ \\
+                 & \cite{Bonin2005}      & macaque  & 13.9 & parvo & $2.0 \pm 1.1 \degree$\\
+                 &                       &          &      &       & $1.8 \pm 2.6 \degree$\\
 
     \hline
   \end{tabular}
@@ -602,25 +627,28 @@ responses with the previously described Difference of Gaussian model.
   \label{LGNEstimates}
 \end{table}
 
-A set of area-summation curves measured at varying contrast levels can
-be seen in Figure \ref{LGNSizeTuning}. These curves were then fitted
-using the subtractive and divisive integrated Difference-of-Gaussian
-model described in \ref{DoG_Section}.  After fitting this model we
-calculate the mean-squared error (MSE) and the explained variance of
-the model ($r^2$) to characterize the goodness of fit and compare how
-well the two models can capture the data. The goodness fit analysis of
-the model across contrasts and a sample subtractive and divisive fit
-are shown in \ref{LGNSizeFit}. Both models capture the data well but
-the subtractive model performs signficantly better than the divisive
-model with mean $r^2$ values of 0.876 and 0.96 respectively. Therefore
-all analyses going forward will use the subtractive DoG model.
+A set of area-summation curves measured at varying contrast levels in
+the SCAL model can be seen in Figure \ref{LGNSizeTuning}. These curves
+were then fitted using the subtractive and divisive integrated
+Difference-of-Gaussian model described in \ref{DoG_Section}.  After
+fitting this model we calculate the mean-squared error (MSE) and the
+explained variance of the model ($R^2$) to characterize the goodness
+of fit and compare how well the two models can capture the data. The
+goodness fit analysis of the model across contrasts and a sample
+subtractive and divisive fit are shown in \ref{LGNSizeFit}. Both
+models capture the data well but the subtractive model performs
+significantly better than the divisive model with mean $r^2$ values of
+0.876 and 0.96 respectively. Therefore all analyses going forward will
+use the subtractive DoG model.
 
 \begin{figure}
 	\centering
     \includegraphics[width=0.5\textwidth]{./results/SCAL/LGN_SizeTuning.pdf}
 	\caption{LGN neuron size tuning representing the response of a
       stereotyped LGN neuron to a sinusoidal grating disk stimulus
-      with increasing contrast.}
+      with increasing contrast. The tuning curves demonstrate a small
+      but noticeable shift toward larger size preferences at lower
+      contrasts.}
 	\label{LGNSizeTuning}
 \end{figure}
 
@@ -635,16 +663,25 @@ all analyses going forward will use the subtractive DoG model.
 	\label{LGNSizeFit}
 \end{figure}
 
-Since LGN responses in the model are stereotyped we cannot compare the
-distributions directly. To compare the responses with the experimental
-results we will treat the 10\% contrast response as the low contrast
-response and 70\% contrast as the high contrast response. This matches
-the experiment where the contrast with 20-50\% and 70-90\% of the
-maximal contrast are taken as low- and high-contrast responses
-respectively. To compare the data directly to the experimental data,
-we have overlaid the low and high contrast estimates of the excitatory
-and inhibitory constant as well as the suppression index (SI) directly
-on the experimental data \ref{LGNDistribution}.
+Since LGN responses in this model do not have any source of
+variability we cannot compare the distributions directly. To compare
+the responses with the experimental results we will treat the 10\%
+contrast response as the low contrast response and 70\% contrast as
+the high contrast response. This matches the experiment where the
+contrast with 20-50\% and 70-90\% of the maximal contrast are taken as
+low- and high-contrast responses respectively. To compare the data
+directly to the experimental data, we have overlaid the low and high
+contrast estimates of the excitatory and inhibitory constant directly
+on experimental data from \citep{Sceniak2006} (see
+\ref{LGNDistribution}).
+
+The excitatory space constant $a$ was estimated at $0.16 \degree$ at
+high contrast, expanding to $0.294 \degree$ at low contrast. The
+inhibitory or surround space constant on the other hand was $0.62
+\degree$ at high contrast and $0.56 \degree$ at high contrast. These
+values fall well in the distributions that have been measured in
+experiments, even if they are reaching toward the smaller end of what
+was measured in thalamocortical afferents in the visual cortex.
 
 \begin{figure}
 	\centering   \includegraphics[width=1.0\textwidth]{./Sceniak_LGN_Distribution.pdf}
@@ -679,8 +716,8 @@ toward higher frequencies at higher contrasts.
 We compare the spatial frequency preference of the model LGN directly
 with a scatter plot of spatial frequency preferences against
 eccentricities, again demonstrating that we are well within the
-empirically validated distribution of values
-(\ref{LGNFrequencyLevitt}.
+empirically validated distribution of values (see
+\ref{LGNFrequencyLevitt}).
 
 \begin{figure}
 	\centering
@@ -691,6 +728,39 @@ empirically validated distribution of values
       SCAL LGN neuron (red circle). Plot reproduced from
       \cite{Levitt2001}.}
 	\label{LGNFrequencyLevitt}
+\end{figure}
+
+\subsection{The V1 model}
+
+Before going into the spatial calibration of the V1 stage of SCAL
+model, we will first review how the model self-organizes into a
+smooth, high-quality orientation map. The model was in most cases
+simulated as a $4^\circ x 4^\circ$ area, which corresponds to around
+$12 mm^2$ of cortical area. After training using one of the three
+datasets a wide range of measurements were performed to confirm the
+model developed correctly and exhibited the same properties as GCAL.
+
+The orientation map, receptive fields and orientation tuning curve for
+the fully developed model are shown in \ref{SCALORTuning}. These
+results demonstrate that the final spatially calibrated model still
+exhibit good quality orientation maps, contrast independent
+orientation tuning and very clear oriented lobes in individual
+receptive fields. Comparing the robustness of map organization to the
+GCAL model will be performed later on, when we are looking at the
+properties that make a model robust to a wide range of inputs.
+
+\begin{figure}
+	\centering
+    \includegraphics[width=1.0\textwidth]{./results/SCAL/SCAL_V1_ORTuning.pdf}
+	\caption{SCAL model results presenting 20,000 oriented Gaussian
+      patterns. A) Orientation map measured by presenting sine
+      gratings at the optimal spatial frequency to the model, along
+      with the locations of the receptive fields shown in B. B)
+      Gabor-fits to receptive fields measured using sparse random
+      noise. C) Orientation tuning curve of a single neuron across
+      contrasts, demonstrating largely contrast dependent orientation
+      tuning.}
+	\label{SCALORTuning}
 \end{figure}
 
 \subsection{V1 Spatial Calibration}
@@ -773,7 +843,7 @@ per visual degree, which falls well within the acceptable range.
 
 Based on that measurement we can now explicitly state that 1 visual
 degree corresponds to 3 mm in the model, which will let us
-indepedently confirm that the extent of the final model weights are
+independently confirm that the extent of the final model weights are
 consistent with experimental measurements but also internally
 consistent with the size tuning response of the model. The next steps
 will be to evaluate feedforward and lateral connections independently.
@@ -799,7 +869,7 @@ driver of responses in the primary visual cortex. It is therefore
 crucial in determining the size tuning profile of the visual cortex.
 The \ref{AfferentBackground} discussed how the integrative area of a
 neuron in V1 is made up of the combined integrative area of
-geniculocortical projections and retinogeniculate projections.
+thalamocortical projections and retinogeniculate projections.
 
 \paragraph{Area summation}
 
@@ -807,23 +877,24 @@ The first step in the fitting procedure was to repeat the protocols
 applied to the LGN, i.e. measuring area summation curves and fitting
 DoG models to the results. Using this approach we obtained a large
 number of size estimates for the excitatory and inhibitory kernels
-contributing to the V1 response.
+contributing to the V1 response, which we can compare to the results
+obtained from comparable studies in macaque visual cortex.
 
 \begin{table}
   \centering
   \begin{adjustbox}{width=1\textwidth}
   \begin{tabular}{l | l l l l}
-    Measurement              & Literature            & Species & Layer & $\sigma$ \\
+    Measurement              & Literature            & Species & Layer & Diameter \\
     \hline
     V1 hsRF                  & \cite{Levitt2002}     & macaque & 2-6 & $1.0 \pm 0.1 \degree$ (0.15 - 1.1) \\
     \hline
     V1 Excitatory DoG fit    & \cite{Levitt2002}     & macaque & 2-6 & $0.9 \degree$ \\
-                             & \cite{Sceniak2001}    & cat     & 2-6 & $2.0 \degree$ \\
+                             & \cite{Sceniak2001}    & macaque & 2-6 & $2.0 \degree$ \\
                              & \cite{Cavanaugh2002}  & macaque & 2-6 & $1.4 \degree$ \\
                              & \cite{Solomon2002}    & macaque & not stated & $0.94 \degree$ \\
     \hline
     V1 Inhibitory DoG fit    & \cite{Levitt2002}     & macaque & 2-6 & $1.9 \degree$ \\
-                             & \cite{Sceniak2001}    & cat     & 2-6 & $4.4 \degree$ \\
+                             & \cite{Sceniak2001}    & macaque & 2-6 & $4.4 \degree$ \\
                              & \cite{Cavanaugh2002}  & macaque & 2-6 & $2.7 \degree$ \\
                              & \cite{Solomon2002}    & macaque & not stated & $2.97 \degree$ \\
     \hline
@@ -834,36 +905,66 @@ contributing to the V1 response.
   \label{electrophystable}
 \end{table}
 
-
-\begin{figure}
-	\centering
-        \includegraphics[width=1.0\textwidth]{SCAL_SizeDist.pdf}
-	\caption{Distribution of excitatory (A) and inhibitory (B)
-          Difference-of-Gaussian components fitted to area-summation
-          curves measured in the SCAL V1 model. These results provide
-          a close match to the results seen in Fig. 12 \& 14 of
-          \cite{Sceniak2001}.}
-	\label{SCALSizeDist}
-\end{figure}
-
-
-\begin{figure}
-	\centering
-        \includegraphics[width=1.0\textwidth]{Cavanaugh_V1_Distributions.pdf}
-	\caption{}
-	\label{CavanaughDistribution}
-\end{figure}
+The table \ref{electrophystable} summarizes the mean results obtained
+by these studies, with a general agreement of an afferent integration
+field that spans about $1 \degree$ in diameter, with inhibitory
+surround that is on average about two times larger at about $2
+\degree$. The most thorough analysis being performed by
+\cite{Cavanaugh2002}, who fitted a number of variants of the model. In
+addition to measuring integrative area of V1 neurons in visual space
+they converted the results into cortical space using the known
+magnification factor. In \ref{CavanaughDistribution} the results from
+the model, also converted to cortical space are compared to these
+distributions, showing less diversity but general agreement on mean
+and median values.
 
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{Cavanaugh_V1_Distributions.pdf}
-	\caption{}
+	\caption{Comparison between the distributions of space constants
+      estimated by \cite{Cavanaugh2002}, converted from visual angle
+      to cortical space and the equivalent measurements applied to the
+      model. A, C) Distributions of maximal integration area radii.
+      B, D) Distributions of suppressive surround area radii. }
 	\label{CavanaughDistribution}
 \end{figure}
 
-Summarize table and electrophysiological results
-Replicate area summation procedure
-Compare distributions of fits
+Additionally we also compare the shift in size tuning preference
+between low and high contrast conditions, between experiment
+\citep{Sceniak1999} and the model. In addition to the SCAL model the
+analysis also includes results from GCAL, which employs subtractive
+rather than divisive inhibition. The results highlight that the GCAL
+model does not really exhibit any meaningful size tuning shift between
+low and high contrast. Additionally both model scatter plots clearly
+highlight the lack of diversity in the model. Generally however the
+results are qualitatively very similar between SCAL and the
+experimental data, showing a mean shift and distribution of shifts
+that is very similar (2.2x shift in experiment vs. 1.8x in the model).
+
+\begin{figure}
+	\centering
+        \includegraphics[width=0.8\textwidth]{./V1_DoG_Contrast.pdf}
+	\caption{Comparison between contrast dependent size tuning shifts
+      between the GCAL model (A, B), the SCAL model (C, D) and
+      experimental results from \cite{Sceniak1999} (E, F). A, C, E)
+      Scatter plot of DoG excitatory constant at low and high contrast
+      in experiment and the model respectively. B, D, F) Distribution of
+      contrast dependent shift in excitatory constant.}
+	\label{ContrastShift}
+\end{figure}
+
+Finally we investigate the distribution of suppression indices, which
+shows a similar mean value but also highlights the complete lack of
+unsuppressed cells.
+
+\begin{figure}
+	\centering
+        \includegraphics[width=0.6\textwidth]{./results/SCAL/SCAL_V1_SI.pdf}
+	\caption{Distribution of Suppression Index (SI) values under
+      high-contrast stimulus condition.}
+	\label{SCALSI}
+\end{figure}
+
 
 \paragraph{Receptive Fields}
 
@@ -883,31 +984,44 @@ toward greater $n_x$ values as compared to the experimental data.
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/SCAL/RF_nxny.pdf}
-	\caption{}
+	\caption{Scatter plot of receptive field $n_x$ and $n_y$ values,
+      representing the width and length of the receptive field
+      relative to the period of the grating underlying the Gabor fit
+      respectively. Comparison between results from
+      \cite{Ringach2002b} in macaque V1 (circles), \cite{Jones1987} in
+      cat V1 (crosses) and in the SCAL model (squares).}
 	\label{RFFits}
 \end{figure}
 
-
 \subsubsection{Intracortical connectivity}
 
-The intracortical connectivity can be further divided into excitatory
-and inhibitory populations, we will outline the protocols for tuning
-each.
+We have already settled that afferent activity is the major driver of
+responses in primary visual cortex but intracortical, recurrent
+connections between neurons are though to provide significant
+modulatory influences on V1 responses. Precisely breaking down the
+contributions of specific connections, particularly when taking into
+account the cell types is much more difficult, particularly because
+experimental data is much more scarce. In \ref{InhibitoryBackground}
+we summarized the potential role of different inhibitory subclasses,
+however beyond some estimates of the maximum extent of the axonal
+projections from different cell classes \citep{Kisvarday1993,
+  Kisvarday1997a, Budd2001, Buzas2001}, very little is known about
+their spatial profile. The extent of excitatory projections between V1
+neurons are better studied, with a range of estimates for the maximum
+extents \citep{Angelucci2002} and even some models of the spatial
+profile of connections \citep{Buzas2006} being available.
 
-In particular we will confirmed the spatial tuning of the afferents,
-independently from the lateral connections. While electrophysiological
-results were again fit using the DoG model and compared against
-experimental results, the lateral connectivity was fit with a
-descriptive model of the patchy, excitatory connectivity found in
-layer 2/3 of the visual cortex and again compared against the
-experimentally observed values.
-
+We summarize various anatomical estimates of the extents and spatial
+distribution of intracortical connections in
+\ref{anatomicaltable}. Note that due to the lack of data a lot of
+these estimates were obtained in cat V1, which means we have to
+extrapolate these results to macaque V1.
 
 \begin{table}
   \centering
   \begin{adjustbox}{width=1\textwidth}
   \begin{tabular}{l | l l l l}
-    Connection               & Literature            & Species & Layer & $\sigma$ \\
+    Connection               & Literature            & Species & Layer & Diameter \\
     \hline
     LGN-V1 Afferents         & \cite{Angelucci2002c} & macaque & 4C$\alpha$ & $0.8-1.6\degree$ \\
                              & \cite{Angelucci2006a} & macaque & 4A/4C$\beta$ & $0.91 \pm 0.041 \degree$ \\
@@ -930,6 +1044,7 @@ experimentally observed values.
   \label{anatomicaltable}
 \end{table}
 
+
 \paragraph{Excitatory Connections}
 
 The literature has had a much harder time of picking apart the
@@ -939,122 +1054,249 @@ developed as expected is to compare it to anatomical measurements.
 For this purpose we will be fitting a descriptive model, developed by
 \cite{Buzas2006} to the lateral connectivity data.
 
+The distance of long-range connectivity varies considerably across
+species so using some anatomical estimates from macaque we will
+attempt to refine our estimates of the long-range oriented
+component. Anatomic data suggests that the spatial spread of lateral
+connections can be anywhere between 3-10 mm (on average 6-7 mm) in
+total length \cite{Angelucci2002}. Along its principal axis the
+visuotopic mono-synaptic spread of V1 horizontal connections has a
+mean of \(2.47^\circ\) \(\pm\) \(0.3^\circ\). This falls well within
+the range of estimates for the lsRF as published in a number of
+studies \cite{Sceniak1999, Sceniak2001, Shushruth2009}, which employed
+the iDoG protocol.
+
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{Buzas.png}
 	\caption{Lateral excitatory projection bouton density and
           orientation maps in layer 2/3 of cat V1 fit using a Gaussian
-          and vonMises model, replicated from \cite{Buzas2006}.}
+          and von Mises model, replicated from \cite{Buzas2006}.}
 	\label{Buzas}
 \end{figure}
 
-The model describes the patchy lateral connectivity found in layer 2/3
-of V1 as a function of two distinct components. A short range
-isotropic Gaussian pattern and a long range pattern, defined as a von
-Mises function, which is combined with the orientation map. The model
-therefore assumes that lateral connectivity develops as a function of
-both the proximity in space but also along a particular feature
-dimension, in this case the orientation.
+The model that was used to fit the lateral weights describes the
+patchy lateral connectivity found in layer 2/3 of V1 as a function of
+two distinct components. A short range isotropic Gaussian pattern and
+a long range pattern, defined as a von Mises function, which is
+combined with the orientation map. The model therefore assumes that
+lateral connectivity develops as a function of both the proximity in
+space but also along a particular feature dimension, in this case the
+orientation. The equations underlying this model and an extension,
+which also exposes the aspect ratio of the long-range Gaussian kernel
+are described in \ref{BuzasEquations}.
 
 The full model fitting procedure for an experimentally traced lateral
 connection field is shown in Figure \ref{Buzas}. By applying this
 fitting procedure we can effectively estimate the spatial extents of
 both the local isotropic local kernel and the long-range excitatory
-kernel. In Figure \ref{SCAL_Laterals.pdf} demonstrates what one such
-fit looks like for the SCAL model, while the full distribution of
-local and long-range kernel values is shown in \ref{LatDist}.
-
-The distance of long-range connectivity varies even more considerably
-across species so using some anatomical estimates from macaque we will
-attempt to refine our estimates of the long-range oriented
-component. Anatomic data suggests that the spatial spread of lateral
-connections can be anywhere between 3-10 mm (on average 6-7 mm) in
-total length \cite{Angelucci2002}. Along its principal axis the
-visuotopic monosynaptic spread of V1 horizontal connections has a mean
-of \(2.47^\circ\) \(\pm\) \(0.3^\circ\). This falls well within the
-range of estimates for the lsRF as published in a number of studies
-\cite{Sceniak1999, Sceniak2001, Shushruth2009}, which employed the
-iDoG protocol.
-
-The results of our fitting procedure shown in Figure \ref{LatDist}
-show good correspondence with these experimental estimates with a mean
-long-range connectivity that has a spatial constant of around 5 mm but
-extends beyond that with our cut-off defined at $2.5\degree$ or $7.5
-mm$. The local excitatory kernel also matches experimental estimates
-closely with a mean local excitatory kernel with a spatial constant of
-around $220 \mu m$, compared to the $280 \mu m$ estimated in cat V1.
+kernel. The figure \ref{LatFits} demonstrates what one such fit looks
+like for the SCAL model, while the full distribution of local and
+long-range kernel values is shown in \ref{LatDist}. Note that the
+weight array that is being fit has been thresholded at the 70th
+percentile of non-zero values to ensure the weight matrix more closely
+resembles the bouton density maps obtained by \cite{Buzas2006}.
 
 \begin{figure}
 	\centering
-        \includegraphics[width=1.0\textwidth]{SCAL_Laterals.pdf}
-	\caption{Distribution of spatial constant obtained by fitting
-          the \cite{Buzas2006} vonMises+Gaussian model to long-range
-          lateral excitatory connections developed as part of the SCAL
-          model.}
+        \includegraphics[width=1.0\textwidth]{./results/SCAL/SCAL_vonMises_Fits.pdf}
+	\caption{Example fits obtained by fitting Gaussian and von Mises
+      distributions to the thresholded long-range lateral weights. A)
+      The thresholded long-range lateral weight matrix (at the 70th
+      percentile). B, C) Example fits using the von Mises orientation
+      model with and without an aspect parameter. D, E) Error between
+      the fits and the thresholded weight matrix pattern.}
 	\label{LatFits}
 \end{figure}
 
+The results of our fitting procedure shown in Figure \ref{LatDist}
+show good correspondence with these experimental estimates with a mean
+long-range connectivity that has a spatial constant of around $1645 \mu m$
+but extends beyond that with our cut-off defined at
+$2.5\degree$ or $7.5 mm$. The model without aspect fits the
+experimentally obtained long-range spatial constant more closely but
+neither extends to the furthest reaches of the lateral connection
+field. The local excitatory kernel provides a reasonable fit to
+experimental estimates with a mean local excitatory kernel with a
+spatial constant of around $221 \mu m$, compared to the $280 \mu m$
+estimated in cat V1 \citep{Buzas2006}. However most neurons exhibit
+much smaller local kernels and the distribution seems to be
+distributed bi-modally.
+
 \begin{figure}
 	\centering
-        \includegraphics[width=1.0\textwidth]{SCAL_LateralFits.pdf}
+        \includegraphics[width=1.0\textwidth]{./results/SCAL/SCAL_Buzas_Distributions.pdf}
 	\caption{Distribution of spatial constant obtained by fitting
-          the \cite{Buzas2006} vonMises+Gaussian model to long-range
+          the \cite{Buzas2006} von Mises+Gaussian model to long-range
           lateral excitatory connections developed as part of the SCAL
           model.}
 	\label{LatDist}
 \end{figure}
 
+Finally we can evaluate in how far the orientation preference and
+selectivity of the post-synaptic neuron predicts the long-range
+lateral connections it receives. Specifically we can evaluate how
+closely the $\kappa$ value of the von Mises fit, which represents the
+bandwidth of the kernel in the orientation domain, is correlated with
+the orientation selectivity of the neuron. The relationship between
+these two variables is shown in \ref{LatORKappa}, and clearly predicts
+that the orientation specificity of the lateral connections received
+by a V1 neuron is highly dependent on the orientation selectivity of
+the neuron (spearman $\rho=0.59$, $p<1e-184$).
+
+\begin{figure}
+	\centering
+        \includegraphics[width=1.0\textwidth]{./results/SCAL/SCAL_vonMises_ORSel.pdf}
+	\caption{Scatter plot of the $\kappa$ variable of the von Mises
+      distribution and the orientation selectivity of each neuron,
+      showing a clear relationship between the orientation specificity
+      of patchy lateral connections and the post-synaptic neurons
+      orientation selectivity. The points are additionally colored by
+      their goodness of fit and marginal histograms of the
+      distributions of the $\kappa$ and orientation selectivity are
+      provided. Fits with an $R^2$ value below 0.3 were rejected.}
+	\label{LatORKappa}
+\end{figure}
+
 \subsubsection{Inhibitory connectivity}
 
-The literature surrounding inhibitory connectivity is much more
-limited and no good estimates of cell-type specific spatial profiles
-particularly for the primate visual cortex exist. Therefore we have to
-extrapolate from existing data. In the literature review we explored
-the known properties of various cell classes and identified
-fast-spiking Parvalbumin-expressing interneurons as the most likely
-source of connectivity to drive developmental, particularly due to
-their broad tuning profile and high abundance in the thalamocortical
-recipient layers. Since the SCAL model does not have distinct
-populations of V1 we will consider the maximal extent of known basket
-cells as the maximal permitted extent of the inhibitory profile in the
-model. We will revisit the spatial profiles of inhibitory connections
-in the next chapter.
+Since the SCAL model does not have distinct populations of V1 we will
+consider the joint spatial and orientation distribution of basket
+cells in order to determine the inhibitory profile in order to compare
+model to experiment. \cite{Kisvarday1997a} provide the best
+known estimates for the spatial distribution of inhibitory basket
+cells, having injected tracers much more conservatively than previous
+studies. Their estimates indicate that inhibitory projection in cat V1
+extend no further than 1.5-2 mm with most synaptic boutons being
+distributed in a central regions approximately 1 mm in diameter. In
+the absence of any precise fits, equivalent to the Gaussian and von
+Mises model available for the excitatory connectivity, we restrict
+inhibitory connectivity to a conservative 1.2 mm in diameter.
 
-\subsection{Sparse connectivity}
+By binning the strength of connections by their distance and the
+orientation difference between pre- and post-synaptic neurons we can
+at least qualitatively assess how closely the model distribution
+matches experimental bouton density maps. The analysis breaks down the
+spatial distribution of connections targeting iso-, oblique and
+cross-orientation regions, comparing against the equivalent analysis
+performed by \cite{Kisvarday1997a} in cat area 17. While we are
+restricting the inhibitory connectivity to a smaller region the
+experimental results highlight again that most weights fall into the
+central region. Additionally we can see that the distributions of
+weights broken down by distance are qualitatively very similar, with
+most of the weight in the iso-orientation case being centered near the
+center, while oblique and cross-orientations are strongest at medium
+ranges.
 
-* Real neurons only receive a few number of afferents (citation)
-* We can develop sparse connectivity profiles
-* Map quality does not suffer
-* Show figure
+\begin{figure}
+	\centering
+        \includegraphics[width=1.0\textwidth]{./SCAL_Inh_Distribution.pdf}
+	\caption{Distributions of inhibitory projections as a function of
+      space broken down into iso-orientation, oblique orientation, and
+      cross orientations relative to the orientation preference of the
+      post-synaptic neuron.}
+	\label{LatDist}
+\end{figure}
 
+\subsubsection{Sparsity of connections}
+
+The implementation of the GCAL and SCAL models has generally meant
+that neurons densely innervate neurons within the defined spatial
+extent. However from experimental studies it is known that neurons
+actually only make fairly sparse contact to neurons around them and
+once the initial sprouting and pruning phase of development is over it
+is generally much harder to form new connections. In particular we
+know that a V1 neuron is only contacted by a fairly small number of
+afferent projections from the LGN and that lateral projections while
+very dense innervate only a small fraction of neurons around
+them. This has profound implication for development because neurons
+have much sparser input than is assumed in these models, secondly it
+can strongly affect the development of the model because once
+connections have been formed it is much more difficult to shift the
+synaptic weights to some other location.
+
+A detailed investigation into the processes underlying sprouting and
+pruning and the competition for afferent inputs would be a thesis in
+itself. However for computational purposes but also to test the
+robustness of the model we implemented a simple form of sprouting and
+pruning, which starts out with a densely connected network and slowly
+prunes away connections while also generating a small number of new
+weights.
+
+In this way we can demonstrate that sparsity of connections can indeed
+increase the robustness of the model and that how true long-range
+patchy connectivity akin to the thresholded version used in the von
+Mises model fitting procedure can emerge from the model.
 
 \section{Discussion}
 
+In this chapter we set out to spatially calibrate the GCAL
+developmental model in order to cross-validate known measurements of
+the spatial profile of afferent, excitatory and inhibitory connections
+in the primary visual cortex. Additionally we wanted to explore how
+the intra-areal connectivity in the cortex can give rise to a Mexican
+hat like profile, which is thought to underlie the organization of the
+cortical neurons into smooth topographic maps, which optimally map
+features in the sensory input onto the surface of the cortex. In the
+literature review we had established that long-range connections in
+the cortex are almost exclusively excitatory. However the spatial
+scales involved in mediating Mexican hat like connectivity are well
+below the long-range excitatory connections, which can often span many
+hypercolumns. By incorporating the empirically determined spatial
+scales of the model we were able to establish that the relatively long
+projections originating from the basket cell population in V1 is
+sufficient to account for the Mexican hat profile. At the same time we
+show that long-range surround suppression cannot be effected directly
+by these projections and must instead by mediated by a di-synaptic
+mechanism, via the long-range excitatory projections.
+
+First we will review how we determined the spatial parameters of the
+SCAL model, before critically reviewing the experimental measurements
+given in the light of the model results. This will let us highlight
+issues with DoG fitting procedures employed to fit area summation
+curves in visual cortex and call into questions some conclusions made
+about the source of contrast dependent size tuning shifts. Finally we
+will discuss the model of lateral excitatory connectivity and how the
+addition of an aspect parameter can help us quantify the isotropy of
+patchy lateral connectivity in a way that can easily be applied to
+experiments.
+
 \subsection{The LGN Model}
 
-This direct comparison highlights that we are at the low end of the
-distribution. This is a deliberate choice as we have several
-objectives to trade off against one another. The primary aim in tuning
-the LGN response is to provide the V1 model with realistic input,
-since we are limited to a single spatial frequency filter for
-computational and pragmatic reasons we pick values that are clearly
-within the distribution but still have a fairly broad frequency
-tuning, which does not act to exclude too much of the high-frequency
-and low frequency spectrum. This is particularly important because in
-the limited cortical space that can reasonably be simulated very low
-spatial frequencies may not even cover a full cycle. The chosen
-values, now confirmed against experiment therefore provide a good
-tradeoff.
+In spatially calibrating the early stages of the model roughly
+corresponding to the retinal ganglion cell and lateral geniculate
+nucleus we relied mostly on electrophysiological estimates of the size
+and area summation curves of the neurons. In doing so we had two
+primary aims, first of all since we chose only a single spatial filter
+rather than a distribution for computational reasons. Later models can
+easily add further diversity to the model by drawing the the spatial
+constants of the center-surround filters from a distribution. In the
+absence of this diversity we chose a spatial filter size that had to
+have several important properties.
 
-In the end it was decided that due to the large variance in results
-from different studies and the limitation to a single spatial filter a
-lower spatial constants should be chosen for the center-surround
-mechanism. This choice allowed a fairly broad range of spatial
-frequencies to be relayed to V1 to account for the lack of spatial
-filter diversity. Future models should aim to cover the full
-distribution of spatial frequency and size sensitivities. The final
+The first was that the chosen values should not diverge too far from
+the values obtained by fitting a DoG model to area summation
+curves. We confirmed this was the case and plotted the results
+compared to the empirical data obtained from \cite{Sceniak2006},
+finding the values at the lower end of the distribution.
+
+The second constraint was that the spatial frequency preference of the
+neurons could not be too low in order to allow V1 neurons to integrate
+over at least one cycle of the main spatial frequency preference. This
+meant that the preferred spatial frequency of the network should fall
+somewhere between 1 and 2 cycles per degree of visual angle. Again we
+confirmed this was the case and compared the result to similar results
+obtained by \cite{Levitt2001} in the visual cortex of macaques.
+
+The extent of the gain control projection in LGN could not be
+experimentally verified as there is little to no data about the
+precise anatomical profile of inhibitory neurons in the LGN. The final
 model parameters are summarized in \ref{LGNTuning} and visualized in
-Figure \ref{LGNDiagram}.
+Figure \ref{LGNDiagram}. In future this model may be extended by
+drawing the extent of these afferent connections from a
+distribution. For the purposes of this thesis, this level of
+calibration is sufficient however and will provide the V1 model with
+input that is roughly at the desired spatial scale.
  
 \begin{table}
   \centering
@@ -1072,30 +1314,234 @@ Figure \ref{LGNDiagram}.
     $LGN_{GC}$ strength  & 0.6 \\
   \end{tabular}
   \end{adjustbox}
-  \caption{Parameters for S-patially CAL-ibrated (SCAL) LGN model.}
+  \caption{Parameters for \textbf{S}patially \textbf{CAL}ibrated (SCAL) LGN model.}
   \label{LGNTuning}
 \end{table}
 
+\subsection{The V1 Model}
+
+The V1 model that was introduced in this chapter is able to replicate
+a wide range of experimental results and provides a much closer match
+to experimental results than the existing GCAL model. In addition to
+spatially calibrating the extents of afferent and lateral connections,
+the model is also the first developmental model that uses divisive
+rather than subtractive inhibition. The divisive model provides a much
+better account of size tuning responses, which shift to larger
+integrative areas depending on the contrast, which agrees with a wide
+range of existing models. We also showed that the extents of
+inhibitory basket cells is sufficient to account for the Mexican hat
+profile that has long been used to explain the organization of neurons
+into topographic feature maps by pulling together activity locally and
+suppressing it in nearby regions, which leads to a smooth mapping of
+different feature preferences across the cortical surface.
+
+However, in exploring this model we have also encountered clear
+limitations. The most important of which is the lack of distinct
+excitatory and inhibitory populations. Apart from directly violating
+Dale's law, this poses a serious problem for a developmental model.
+This is because Hebbian learning will ensure the strength and spatial
+profile of the neural connections is dependent on the response
+properties of the neuron and different cell types may respond very
+differently. This has made it difficult to directly compare the
+lateral connectivity in the model.
+
+\subsubsection{Differences to GCAL}
+
+There are a number of major changes between the GCAL model and the
+SCAL model that was introduced in this chapter. As we have already
+emphasized the SCAL model operates on divisive rather than subtractive
+inhibition. While inhibition in the brain generally has both divisive
+and subtractive effects, the divisive normalization paradigm has shown
+tremendous success in explaining a wide range of effects including
+modulatory effects, contrast dependent changes in responses,
+decorrelating the inputs and even effects associated with visual
+attention \citep{Cavanaugh2002a, Graham2011, Carandini2012,
+  Reynaud2012, Coen2015}.
+
+The other aim was to move away from other unrealistic mechanisms. The
+first thing to eliminate was the artificial resets in activity that
+were required for GCAL to work correctly. The model now behaves more
+continuously with no hard reset between stimulus
+presentations. Instead the model activity from a previous step decays
+at the start of a new presentation and is usually extinguished
+completely by the time it reaches V1.
+
+While all the spatial profiles have changed in some way or another the
+most significant change was the size of the afferent field relative to
+the lateral connections in V1. While the receptive fields of neurons
+in GCAL generally only subtended only a single hypercolumn, the
+receptive fields in SCAL span somewhere between 3-4 hypercolumns. This
+has significant theoretical consequences, while long-range
+connectivity in the GCAL model generally connected neurons with
+non-overlapping receptive fields, the SCAL model highlights that this
+is generally not the case. A good portion of the lateral connectivity
+field actually connects neurons with significantly overlapping
+connection fields and only a portion of long-range patchy connections
+reaches outside the neurons receptive field. This has significant
+implications for the function of these connections, rather than purely
+reflecting the co-occurence of stimuli the patchy connections will
+strongly mirror the response of the neuron itself. This suggests that
+lateral connections are involved in improving the encoding of the
+local stimulus in addition to mediating true surround influences.
+
+Despite some of these limitations the model exhibits very robust
+development under varying stimulus conditions and still exhibits all
+the nice properties of the GCAL model, including contrast invariant
+orientation tuning, robust yet adaptive self-organization and much
+more.
+
+\subsubsection{Size tuning}
+
+A major component of the analysis we applied here was in comparing
+applying a Difference-of-Gaussian model to the area summation curves
+and comparing the results to equivalent experimental data. Since the
+model itself does not exert any long-range influences any changes in
+the fit is must likely mediated by the relatively short-range
+connections in the model. However we did find significant shifts in
+the integration area depending on the contrast level in the SCAL model
+but not in the GCAL model. This suggests suggest the contrast
+dependent shifts in effective integration area can be explained by
+changes in the relative gain of the center and surround component in a
+ratio-of-Gaussians model, just as was proposed by
+\cite{Cavanaugh2002}. It is therefore not necessary to invoke
+integration over a larger area via long-range lateral connections as
+was suggested by the experimental work by \cite{Levitt2002} and
+\cite{Sceniak2001} and translated into a model by
+\cite{Schwabe2006}. This does not mean however that long-range lateral
+connections do not have any influence. Indeed it is difficult to
+envision how the model can mediate any longer range feature specific
+excitation and inhibition without corresponding long-range projections
+between neurons, which are themselves tuned for those specific
+features.
+
+\subsubsection{Lateral Connectivity}
+
+\paragraph{Excitatory}
+
+In addition to fitting the response properties of the V1 neurons this
+chapter also demonstrated how the anatomical distribution of synaptic
+boutons can be compared to the lateral connectivity in the model. By
+fitting a model made up of a local Gaussian kernel and an orientation
+dependent long-range kernel, first devised by \cite{Buzas2006}, to the
+data we are able to achieve good fits demonstrating that the lateral
+connectivity captures the statistics of the visual input. In addition
+the results indicated that at least the extent of the long-range
+connectivity is consistent with experimental results. However, the
+short-range kernels were significantly smaller in scale than what we
+would expect from experiment. There are multiple factors that could
+account for this difference. The main issue being that the model only
+captures one population of cells, which generally display a high level
+of feature selectivity. More diversity, such as the introduction of
+unselective inhibitory cells could explain larger and more weakly
+tuned local connections. Another factor that could play a role is that
+neurons in macaque V1 are generally much more dense and the
+hypercolumn distance considerably shorter. With relatively larger
+hypercolumns we could also expect that the excitatory connectivity
+grows in size. Finally, the development of connectivity in the model
+is driven entirely by Hebbian rules, and therefore cannot account for
+any intrinsic, genetically mediated programming, which could lead to a
+dense local network of connections.
+
+We will revisit some of these issues in later chapters to investigate
+if some of these factors can significantly affect these results and
+whether we can reach a more harmonious fit of the local excitatory
+connectivity.
+
+\paragraph{Inhibitory}
+
+The literature surrounding inhibitory connectivity is much more
+limited and no good estimates of cell-type specific spatial profiles
+particularly for the primate visual cortex exist. Therefore we have
+had to extrapolate from existing data. In the literature review we
+explored the known properties of various cell classes and identified
+fast-spiking Parvalbumin-expressing interneurons as the most likely
+source of connectivity to drive developmental processes, particularly
+due to their broad tuning profile
+\citep{Albus1994,Kisvarday1997a,Hofer2011,Ma2011} and high abundance
+in the thalamocortical recipient layers
+\citep{VanBrederode1990,Hogan1992,Huxlin2001} but also because they
+have been implicated in developmental disruptions
+\citep{Fagiolini2004,Hensch2004}.
+
+In a Hebbian learning model lacking distinct excitatory and inhibitory
+projections the distribution of the inhibitory connections is
+determined by the responses of the joint population. Therefore it is
+not possible to directly compare the inhibitory connectivity profile
+to any anatomical equivalents. The comparison of the spatial and
+orientation distribution of connections does show significant
+similarity however, something we will investigate in more detail when
+we have a model that actually expresses distinct excitatory and
+inhibitory populations.
+
+\subsubsection{Diversity of responses}
+
+One of the major design decisions in creating this model was to decide
+on whether to match the average response of neurons in V1 or to try to
+incorporate the huge amount of variability that is observed in the
+real cortex. Due to computational tractability issues we have focused
+on matching the average response rather than capturing the full level
+of detail immediately. This means that the LGN stage filters the
+visual input at just one spatial frequency, which severely limits the
+variability in receptive field properties. This is particularly
+evident when comparing the distribution of spatial constants, the size
+tuning shifts and indeed the measured receptive fields
+themselves.
+
+The receptive field Gabor analysis in particular highlights the lack
+of diversity in the receptive fields. This is a direct result of the
+lack of LGN filter diversity and a better fit may be achieved by
+incorporating a wider range of spatial frequency filters at that
+level. Additionally the circular bounding region of the model
+connection fields often prevents .
 
 \section{Conclusions}
 
-\begin{figure}
-	\centering
-        \includegraphics[width=1.0\textwidth]{SCAL_Diagram.pdf}
-	\caption{Diagram of the SCAL V1 stage of the model showing
-          the spatial scales of the various excitatory (red) and
-          inhibitory (blue) connections. Satured colors indicate the
-          kernel radii, while lightly shaded regions indicate kernel
-          cut-off extents.}
-	\label{SCALDiagram}
-\end{figure}
+In summary, we have presented a model of the primary visual cortex
+that for the first time captures the spatial extents of various
+connections in the cortex. This has allowed us to make a number of
+concrete predictions.
 
+First of all we were able to establish that the network of local
+excitatory and inhibitory connections is sufficient to account for the
+Mexican hat profile, which drives the organization of cortical neurons
+into smooth topographic maps. Indeed the estimates used for the extent
+of inhibitory projections was deliberately chosen to be very
+conservative to demonstrate that real long-range inhibitory
+connections are not needed to drive development of an orientation map.
 
-To be done:
+Secondly we showed that introducing divisive inhibition is indeed
+sufficient to account for contrast dependent changes in the spatial
+integration of V1 neurons. Divisive normalization has been described
+as a canonical computation performed by the cortex and indeed we are
+able to account for contrast dependent changes in the response of V1
+neurons using the divisive model. This fits the findings by
+\cite{Carandini2012} and many others and suggests that long-range
+lateral connections are not necessary to account for increases in the
+integration area at low contrast as has been suggested in the
+literature \citep{Levitt2002, Schwabe2006}.
 
-\begin{itemize}
-  \item Add further plots describing the size and frequency tuning of SCAL V1.
-  \item Provide further details on the lateral connectivity model fits and suggest extension based on selectivity.
-  \item Potentially add section that shows that the model can develop with realistic numbers of afferents (~30) and that lateral connectivity can be hugely sparsified (over 90\%) with little effect.
-\end{itemize}
+Finally we were able to show that the model develops realistic
+long-range patchy connectivity that we were able to fit with an
+adapted version of the \cite{Buzas2006} model. This provides a
+framework to be able to assess in how far the similarity in feature
+preferences between pre- and post-synaptic drives strong connectivity
+between the two cells. Additionally it provides a way to
+quantitatively assess the spatial extent of these connections.
 
+At the same time we have also identified a wide range of problems with
+this model, the most important of which is the violation of Dale's
+law, which states that a single neuron can only employ one main
+neurotransmitter and therefore not mediate excitatory and inhibitory
+effects at the same time. This has profound effects on the final model
+because the connectivity is shaped by responses in a Hebbian model. In
+the following chapter we will therefore explore how we can separate
+these populations and what properties make different inhibitory cell
+classes suited towards specific functions such as sparsifying the
+response, divisive normalization and feature specific contextual
+effects.
+
+% TODO
+
+% * Improve model description and improve model parameters
+% * How much detail about measurements is needed
+% * Add results from latest sparse run
