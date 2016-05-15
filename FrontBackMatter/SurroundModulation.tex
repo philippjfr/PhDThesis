@@ -1,6 +1,41 @@
 %!TEX root = ../PhDthesis.tex
-\chapter{Exploring the role of inhibition in surround modulation}
+\chapter{Long-range interactions in the visual cortex}
 
+In the previous chapters two novel models of the visual cortex have
+been introduced to study how neurons in the visual cortex interact to
+give rise to robust development but also meaningful responses. The
+SEPI model in particular successfully models a wide range of effects
+that occur in the cortex. Specifically we also tested whether the
+model can robustly develop and respond even when strong long-range
+excitatory patchy connections are introduced to the model. However
+since these long-range projections are purely excitatory they cannot
+mediate long-range suppressive effects directly and due to the weakly
+tuned nature of the PV cell population they too aren't very good
+candidates to mediate feature specific contextual modulation effects
+such as iso-orientation suppression.
+
+In the literature we have identified a second population of inhibitory
+interneurons with interesting properties. The Somatostatin
+immunoreactive (Sst) neurons are the second largest group of
+interneurons and exhibit very different properties from the PV
+population, which makes them interesting as a candidate to perform
+long-range integration of inputs. Specifically they are enriched in
+layer 2/3 where a lot of the long-range patchy connectivity is found
+and they seem to respond strongly only under strong stimulation or for
+very large stimuli. Additionally the input scaling does not seem to be
+linear, with a accelerating response function driving much stronger
+responses when they recruited consistently and robustly (as would be
+the case for large or high contrast stimuli).
+
+In this chapter we further extend the existing SEPI model by adding
+this second population of inhibitory neurons modelled after the Sst
+interneuron population. In doing so we will demonstrate how this
+second population integrates large and high-contrast stimuli providing
+strong suppression feature specific inhibition under those conditions,
+while only very weakly responding in low contrast conditions.
+
+Using this model we will demonstrate realistic long-range contextual
+modulation effects such as flanker enhancement and suppression.
 
 \section{Methods}
 
@@ -64,15 +99,30 @@ to divisive scaling of the firing rate \citep{Mehaffey2005}.
 	\label{LESPIDiagram}
 \end{figure}
 
-
+The overall operation of this circuit can be summarized by the
+schematic in \ref{circuit_diagram}. The diagram shows the preferential
+linking of columns with similar orientation preference via patchy
+long-range connections and the long-range integration of Sst neurons,
+which receive both local and lateral input from pyramidal neurons,
+providing di-synaptic inhibition to the local region. Furthermore it
+suggests that under low-contrast conditions the Sst population is
+effectively disabled, activating only under high contrast input.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{./v1circuit.pdf}
-	\caption[]{High-level circuit diagram of the LESPI model.}
+	\caption[High-level circuit diagram of the LESPI
+      model.]{High-level circuit diagram of the LESPI model. The
+      schematic represents multiple hypercolumns varying smoothly in
+      their orientation preference. PV neurons provide feedforward and
+      recurrent inhibition to neurons to columns in the local region,
+      regardless of their orientation tuning. Long-range excitatory
+      connections link pyramidal cells with similar orientation
+      preference, while the Sst population integrates both local and
+      long-range input to provide tuned orientation suppression under
+      high contrast input.}
     \label{circuit_diagram}
 \end{figure}
-
 
 \subsection{Surround modulation}
 
@@ -136,9 +186,10 @@ qualitatively.
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{FlankerProtocol.pdf}
-	\caption{Flanker offset surround modulation paradigm. Measuring
-      the effect of a flanker stimulus varying by an offset in X, Y
-      and orientation on the response of a neuron to a target
-      stimulus.}
+	\caption[Flanker offset stimuli. Reproduced from
+      \cite{Kapadia1995}.]{Flanker offset surround modulation
+      paradigm. Measuring the effect of a flanker stimulus varying by
+      an offset in X, Y and orientation on the response of a neuron to
+      a target stimulus. Reproduced from \cite{Kapadia1995}.}
 	\label{Flanker}
 \end{figure}
