@@ -115,7 +115,7 @@ sheets.
       control connection is indicated by a solid line while the
       diameter of the Gaussian used to initialize the lateral weights
       is marked by a dotted line. The given spatial scales hold for an
-      eccentricity of 3 \degree in macaque retina and LGN.}
+      eccentricity of 3\degree in macaque retina and LGN.}
 	\label{LGNDiagram}
 \end{figure}
 
@@ -255,7 +255,7 @@ the V1 sheet.
 
 As we saw above in the LGN section the model described here is heavily
 based on the GCAL model \citep{Stevens2013}, however it does differ in
-one major respect, it employs divisive rather than subtractive
+one major respect---it employs divisive rather than subtractive
 inhibition.
 
 Each V1 neuron in each model receives connections from three different
@@ -360,6 +360,7 @@ a scalar value drawn from a uniform random distribution for the
 afferent and lateral inhibitory projections ($p=A,I$), $\sigma_{p}$
 determines the width of the Gaussian in sheet coordinates, which
 correspond to visual degrees in the spatially calibrated model. For a
+% jbednar: broken ref
 full summary for the spatial parameters see \ref{Appendix:SCAL}.
 
 In the model, as images are presented to
@@ -422,8 +423,8 @@ The size tuning measurements are modeled on the measurements by
 \cite{Sceniak1999, Sceniak2001} presenting sine grating stimuli of
 increasing area at the preferred position, orientation and spatial
 frequency of the central neuron. Due to the uncertainty in
-experimental measurements we can include all neurons within 0.1
-\degree of central neurons, which respond significantly and have an
+experimental measurements we can include all neurons within 
+0.1\degree\ of central neurons, which respond significantly and have an
 orientation preference varying from the central neuron by no more than
 $\pi/16$ radians.
 
@@ -436,7 +437,7 @@ response curve respectively.
 The frequency tuning measurements were performed the same way as the
 size tuning measurements however instead of optimizing the spatial
 frequency of the pattern it was varied. The size of the stimulus was
-restricted to a 2x2 \degree region in the retina centered around the
+restricted to a 2x2\degree\ region in the retina centered around the
 measured neurons.
 
 \subsection{Analyses}
@@ -662,17 +663,17 @@ responses with the previously described Difference of Gaussian model.
   \begin{tabular}{l | l l l l l l}
     Connection   & Literature            & Ecc. ($\degree$) & Layer & $R_{c/s}$ \\
     \hline
-    LGN Center   & \cite{Sceniak2006}    & 2-5  & parvo & $median = 0.46 \degree$ $mean = 0.5 \degree$ \\
-                 & \cite{Levitt2001}     & 0-10 & parvo & $0.069 \pm 0.076 \degree$ \\
-                 & \cite{Spear1994}      & 0-10 & parvo & $0.087 \pm 0.046 \degree$ \\
-                 & \cite{Bonin2005}      & 13.9 & parvo & $0.6 \pm 0.4 \degree$\\
-                 &                       &      &       & $0.4 \pm 0.2 \degree$ \\
+    LGN Center   & \cite{Sceniak2006}    & 2-5  & parvo & $median = 0.46\degree$ $mean = 0.5\degree$ \\
+                 & \cite{Levitt2001}     & 0-10 & parvo & $0.069 \pm 0.076\degree$ \\
+                 & \cite{Spear1994}      & 0-10 & parvo & $0.087 \pm 0.046\degree$ \\
+                 & \cite{Bonin2005}      & 13.9 & parvo & $0.6 \pm 0.4\degree$\\
+                 &                       &      &       & $0.4 \pm 0.2\degree$ \\
     \hline
-    LGN Surround & \cite{Sceniak2006}    & 2-5  & parvo & $median = 0.51 \degree$ (0.15-0.85) \\
-                 & \cite{Levitt2001}     & 0-10 & parvo & $0.33 \pm 0.076 \degree$ \\
-                 & \cite{Spear1994}      & 0-10 & parvo & $0.53 \pm 0.39 \degree$ \\
-                 & \cite{Bonin2005}      & 13.9 & parvo & $2.0 \pm 1.1 \degree$\\
-                 &                       &      &       & $1.8 \pm 2.6 \degree$\\
+    LGN Surround & \cite{Sceniak2006}    & 2-5  & parvo & $median = 0.51\degree$ (0.15-0.85) \\
+                 & \cite{Levitt2001}     & 0-10 & parvo & $0.33 \pm 0.076\degree$ \\
+                 & \cite{Spear1994}      & 0-10 & parvo & $0.53 \pm 0.39\degree$ \\
+                 & \cite{Bonin2005}      & 13.9 & parvo & $2.0 \pm 1.1\degree$\\
+                 &                       &      &       & $1.8 \pm 2.6\degree$\\
 
     \hline
   \end{tabular}
@@ -732,14 +733,14 @@ contrast with 20-50\% and 70-90\% of the maximal contrast are taken as
 low- and high-contrast responses respectively. To compare the data
 directly to the experimental data, we have overlaid the low and high
 contrast estimates of the excitatory and inhibitory constant directly
-on experimental data from \citep{Sceniak2006} (see
+on experimental data from \cite{Sceniak2006} (see
 \ref{LGNDistribution}).
 
-The excitatory space constant $a$ was estimated at $0.16 \degree$ at
-high contrast, expanding to $0.294 \degree$ at low contrast. The
-inhibitory or surround space constant on the other hand was $0.62
-\degree$ at high contrast and $0.56 \degree$ at high contrast. These
-values fall well in the distributions that have been measured in
+The excitatory space constant $a$ was estimated at $0.16\degree$ at
+high contrast, expanding to $0.294\degree$ at low contrast. The
+inhibitory or surround space constant on the other hand was
+$0.62\degree$ at high contrast and $0.56\degree$ at high contrast. 
+These values fall well in the distributions that have been measured in
 experiments, even if they are reaching toward the smaller end of what
 was measured in thalamocortical afferents in the visual cortex.
 
@@ -812,6 +813,7 @@ receptive fields. Comparing the robustness of map organization to the
 GCAL model will be performed later on, when we are looking at the
 properties that make a model robust to a wide range of inputs.
 
+% jbednar: B would be better in red/blue, as would fig 4.13, 5.4, etc.
 \begin{figure}
 	\centering
     \includegraphics[width=1.0\textwidth]{./results/SCAL/SCAL_V1_ORTuning.pdf}
@@ -820,7 +822,7 @@ properties that make a model robust to a wide range of inputs.
       oriented Gaussian patterns. A) Orientation map measured by
       presenting sine gratings at the optimal spatial frequency to the
       model, along with the locations of the receptive fields shown in
-      B. B) Gabor-fits to receptive fields measured using sparse
+      B. B) Gabor fits to receptive fields measured using sparse
       random noise. C) Orientation tuning curve of a single neuron
       across contrasts, demonstrating largely contrast dependent
       orientation tuning.}
@@ -863,12 +865,14 @@ space this conversion factor is still entirely arbitrary. Therefore we
 make use of the fact that the hypercolumn distance between orientation
 columns in V1 is well defined by numerous studies.
 
+% jbednar: would be more readable if the citations would fit into the
+% first column; seems like they might
 \begin{table}
 \centering
 \begin{tabular}{l | c c}
   \hline
   \hline
-  Visual Area     & Magnification Factor ($mm/\deg$) & Anisotropy Index \\
+  Visual Area     & Magnification Factor ($mm/\degree$) & Anisotropy Index \\
   \hline
   Retina$^1$      & 0.223                            & -                      \\
   LGN$^2$         & 0.324                             & 1.0-2.0                \\
@@ -951,17 +955,17 @@ obtained from comparable studies in macaque visual cortex.
   \begin{tabular}{l | l l l l}
     Measurement              & Literature            & Species & Layer & Diameter \\
     \hline
-    V1 hsRF                  & \cite{Levitt2002}     & macaque & 2-6 & $1.0 \pm 0.1 \degree$ (0.15 - 1.1) \\
+    V1 hsRF                  & \cite{Levitt2002}     & macaque & 2-6 & $1.0 \pm 0.1\degree$ (0.15 - 1.1) \\
     \hline
-    V1 Excitatory DoG fit    & \cite{Levitt2002}     & macaque & 2-6 & $0.9 \degree$ \\
-                             & \cite{Sceniak2001}    & macaque & 2-6 & $2.0 \degree$ \\
-                             & \cite{Cavanaugh2002}  & macaque & 2-6 & $1.4 \degree$ \\
-                             & \cite{Solomon2002}    & macaque & not stated & $0.94 \degree$ \\
+    V1 Excitatory DoG fit    & \cite{Levitt2002}     & macaque & 2-6 & $0.9\degree$ \\
+                             & \cite{Sceniak2001}    & macaque & 2-6 & $2.0\degree$ \\
+                             & \cite{Cavanaugh2002}  & macaque & 2-6 & $1.4\degree$ \\
+                             & \cite{Solomon2002}    & macaque & not stated & $0.94\degree$ \\
     \hline
-    V1 Inhibitory DoG fit    & \cite{Levitt2002}     & macaque & 2-6 & $1.9 \degree$ \\
-                             & \cite{Sceniak2001}    & macaque & 2-6 & $4.4 \degree$ \\
-                             & \cite{Cavanaugh2002}  & macaque & 2-6 & $2.7 \degree$ \\
-                             & \cite{Solomon2002}    & macaque & not stated & $2.97 \degree$ \\
+    V1 Inhibitory DoG fit    & \cite{Levitt2002}     & macaque & 2-6 & $1.9\degree$ \\
+                             & \cite{Sceniak2001}    & macaque & 2-6 & $4.4\degree$ \\
+                             & \cite{Cavanaugh2002}  & macaque & 2-6 & $2.7\degree$ \\
+                             & \cite{Solomon2002}    & macaque & not stated & $2.97\degree$ \\
     \hline
   \end{tabular}
   \end{adjustbox}
@@ -972,9 +976,9 @@ obtained from comparable studies in macaque visual cortex.
 
 The table \ref{electrophystable} summarizes the mean results obtained
 by these studies, with a general agreement of an afferent integration
-field that spans about $1 \degree$ in diameter, with inhibitory
-surround that is on average about two times larger at about $2
-\degree$. The most thorough analysis being performed by
+field that spans about $1\degree$ in diameter, with inhibitory
+surround that is on average about two times larger at about 
+$2\degree$. The most thorough analysis being performed by
 \cite{Cavanaugh2002}, who fitted a number of variants of the model. In
 addition to measuring integrative area of V1 neurons in visual space
 they converted the results into cortical space using the known
@@ -1096,17 +1100,17 @@ extrapolate these results to macaque V1.
     Connection               & Literature            & Species & Layer & Diameter \\
     \hline
     LGN-V1 Afferents         & \cite{Angelucci2002c} & macaque & 4C$\alpha$ & $0.8-1.6\degree$ \\
-                             & \cite{Angelucci2006a} & macaque & 4A/4C$\beta$ & $0.91 \pm 0.041 \degree$ \\
+                             & \cite{Angelucci2006a} & macaque & 4A/4C$\beta$ & $0.91 \pm 0.041\degree$ \\
     \hline
     V1 local excitation      & \cite{Buzas2006}      & cat      & 2-4 single cell & $288 \mu m$ \\
                              & \cite{Buzas2006}      & cat      & 2-4 population  & $520 \mu m$ \\
     \hline
-    V1 basket cells          & \cite{Buzas2001}      & cat      & 2-6 & $0.7-1.9 \degree$ \\
+    V1 basket cells          & \cite{Buzas2001}      & cat      & 2-6 & $0.7-1.9\degree$ \\
                              & \cite{Buzas2001}      & cat      & 2-6 & $0.76-2.6 mm$ \\
     \hline
     V1 long-range excitation & \cite{Angelucci2002}  & macaque  & 2/3 & $6\pm 0.7 mm$ (3-9) \\
                              &                       &          & 4B/4C$\alpha$ & $6.7 \pm 0.7 mm$ (4.7-10) \\
-                             &                       &          & population & $2.47 \pm 0.3 \degree$ \\
+                             &                       &          & population & $2.47 \pm 0.3\degree$ \\
                              & \cite{Buzas2006}      & cat      & 2/3 & $6 mm$ \\
     \hline
   \end{tabular}
@@ -1131,11 +1135,11 @@ species so using some anatomical estimates from macaque we will
 attempt to refine our estimates of the long-range oriented
 component. Anatomic data suggests that the spatial spread of lateral
 connections can be anywhere between 3-10 mm (on average 6-7 mm) in
-total length \cite{Angelucci2002}. Along its principal axis the
+total length \citep{Angelucci2002}. Along its principal axis the
 visuotopic mono-synaptic spread of V1 horizontal connections has a
 mean of \(2.47^\circ\) \(\pm\) \(0.3^\circ\). This falls well within
 the range of estimates for the lsRF as published in a number of
-studies \cite{Sceniak1999, Sceniak2001, Shushruth2009}, which employed
+studies \citep{Sceniak1999, Sceniak2001, Shushruth2009}, which employed
 the iDoG protocol.
 
 \begin{figure}
