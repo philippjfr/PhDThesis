@@ -33,14 +33,14 @@ the early pioneers proposed them.
 In this thesis we will argue that this failure to make significant
 advances in understanding the computations performed by the visual
 system is primarily a failure to attempt to integrate our knowledge
-across various levels of description. This issue is precisely what David
-Marr highlighted when stating that the brain, and the visual system in
-particular, should be analyzed at three distinct but complementary
-levels of analysis, later expanded to include a fourth level by Tomaso
-Poggio. According to Marr and Poggio, models of cognitive systems such
-as the mammalian visual system should describe the system at one or
-more of the following levels of analysis:
-% jbednar: cite!
+across various levels of description. This issue is precisely what
+David Marr highlighted when stating that the brain, and the visual
+system in particular, should be analyzed at three distinct but
+complementary levels of analysis \citep{Marr1982}, later expanded to
+include a fourth level by Tomaso Poggio \citep{Poggio2012}. According
+to Marr and Poggio, models of cognitive systems such as the mammalian
+visual system should describe the system at one or more of the
+following levels of analysis:
 
 \begin{itemize}
 \item Learning: How does the system learn to perform the necessary
@@ -54,16 +54,16 @@ more of the following levels of analysis:
 \end{itemize}
 
 Each of these levels of evidence when viewed in isolation can
-contribute to the overall understanding about the system, but to
-gain real insights, models should begin abstracting across these
-levels of analysis to find out where and how evidence from various
-sources fit together (or more interestingly, highlight potential
-discrepancies). In this chapter we will summarize the
-current knowledge about the circuits, cell classes and functions
-performed by the primary visual cortex at each of these levels before
-starting to integrate that information into models that will allow us
-to make novel predictions about the physical implementation,
-algorithmic operation, and computational function as well as learning and
+contribute to the overall understanding about the system, but to gain
+real insights, models should begin abstracting across these levels of
+analysis to find out where and how evidence from various sources fit
+together (or more interestingly, highlight potential
+discrepancies). In this chapter we will summarize the current
+knowledge about the circuits, cell classes and functions performed by
+the primary visual cortex at each of these levels before starting to
+integrate that information into models that will allow us to make
+novel predictions about the physical implementation, algorithmic
+operation, and computational function as well as learning and
 development.  We will begin by reviewing the anatomy and physiology of
 the early visual system.
 
@@ -200,16 +200,14 @@ ON and OFF lobes, giving rise to direction selectivity.
 
 Orientation-selective neurons can generally be classed as simple or
 complex cells, depending on whether they display some form of
-spatial/phase invariance. In reality this classification is not
-particularly clear, 
-with cells being somewhere on a gradient from pure simple cells to a
-complex cell with the degree of phase invariance being the determining
-factor. Apart from phase invariance the neurons often exhibit
-contrast invariance, such that even at very low contrast they will
-respond more strongly to their preferred orientation than to the
-orthogonal orientation.
-% jbednar: This paragraph is missing some citations, but maybe no one
-% will notice.
+spatial/phase invariance \citep{Skottun1991}. In reality this
+classification is not particularly clear, with cells being somewhere
+on a gradient from pure simple cells to a complex cell with the degree
+of phase invariance being the determining factor. Apart from phase
+invariance the neurons often exhibit contrast invariance, such that
+even at very low contrast they will respond more strongly to their
+preferred orientation than to the orthogonal orientation
+\citep{Sclar1982}.
 
 \begin{figure}
 	\centering \includegraphics[width=0.25\textwidth]{gabor.png}
@@ -222,13 +220,12 @@ orthogonal orientation.
 
 In context of this project, topographic feature maps and RF
 interactions play a fundamental role as they provide the basis around
-which the neural circuit organizes. The functional organization of V1
-arises during the development of the animal and is thought to be
-mediated largely by activity dependent processes as the next section
-will show.
-% jbednar: The above statement is very controversial, and should have
-% some caveats.
-
+which the neural circuit organizes. In fact one of the core
+assumptions of this thesis is that functional organization of V1
+arises during the development of the animal and is mediated largely by
+activity dependent processes. While this assumption is founded on
+multiple lines of evidence it is still under heavy debate and we will
+describe the literature supporting this view in the next section.
 
 \subsection{Development of Topographic Maps in V1}
 
@@ -245,15 +242,11 @@ early in development and subsequently show very little change
 \citep{Chapman1996} (pictured in figure \ref{RFMapDevelopment}). These
 and other experiments \citep{White2007} showed that orientation
 preference develops even in absence of visual input, although the maps
-do not fully mature. Thus orientation maps and
-other topographic organizations develop initially even in absence of
-external visual input,
-% jbednar: Removed since it would need cites and explanations, and is
-% covered below: 
-% perhaps through internally generated visual
-% activity such as retinal waves,
-but then require external stimulation to fully mature.
-
+do not fully mature. Thus orientation maps and other topographic
+organizations develop initially even in absence of external visual
+input, through internally generated visual activity such as retinal
+waves \citep{Cang2005}, but then require external stimulation to fully
+mature.
 
 \begin{figure}
 	\centering \includegraphics[width=0.9\textwidth]{Figure6.png}
@@ -267,42 +260,38 @@ but then require external stimulation to fully mature.
 
 In the initial stages of development various preprogrammed guidance
 cues set up the basic connectivity between the LGN and the cortical
-processing areas.
-% cite
-Some successful models of development have focused
-on the afferent connections between the LGN ON and OFF cells and their
-targets in the visual cortex as the driving force behind the
-development of orientation columns \citep{Jin2011}. This is likely to
-tell only part of the story as even during pre-natal development,
-retinal waves, consisting of periodic activity in retinal ganglion
-cells (RGCs), spread across the retina driving neighboring RGCs to
-fire in a correlated fashion, which allows the primary visual cortex
-to develop topographic feature maps \citep{Firth2005}. The most
-prominent proposals in theory and in models have been focused on the
-termination pattern of both the geniculocortical afferents in layer 4
-\citep{Katz2000,Ringach2007} and adjustments in feedforward and
-lateral connectivity through activity dependent, competitive processes
-\citep{Bednar2003}.
+processing areas \citep{Huberman2008}. Some successful models of
+development have focused on the afferent connections between the LGN
+ON and OFF cells and their targets in the visual cortex as the driving
+force behind the development of orientation columns
+\citep{Jin2011}. This is likely to tell only part of the story as even
+during pre-natal development, retinal waves, consisting of periodic
+activity in retinal ganglion cells (RGCs), spread across the retina
+driving neighboring RGCs to fire in a correlated fashion, which allows
+the primary visual cortex to develop topographic feature maps
+\citep{Firth2005}. The most prominent proposals in theory and in
+models have been focused on the termination pattern of both the
+geniculocortical afferents in layer 4 \citep{Katz2000,Ringach2007} and
+adjustments in feedforward and lateral connectivity through activity
+dependent, competitive processes \citep{Bednar2003}.
 
 It is now generally accepted that the development of topographic maps
 is driven by activity dependent weight modification in some form of
-Hebbian learning \citep{Wolf}.
-% jbednar: broken ref?
-The LISSOM and GCAL models,
-% cite
-which provide the basis of the modeling work proposed in
-this project, have shown that robust map development can be achieved
-with a small number of relatively simple mechanisms including
+Hebbian learning \citep{Shatz1996} and a variety of models have
+emerged to account for this idea \citep{Bienenstock1982,
+  Miller1989}. The LISSOM and GCAL models \citep{Bednar2003,
+  Stevens2013}, which provide the basis of the modeling work proposed
+in this project, have shown that robust map development can be
+achieved with a small number of relatively simple mechanisms including
 homeostatic plasticity, lateral gain control in LGN and lateral
 connectivity in V1 \citep{Stevens2013} and will be considered in more
 detail at a later stage. These models can account for the development
 of orientation preference maps through both intrinsic activity such as
 retinal waves \citep{Bednar2003} and visually induced retinal
-% jbednar: what do you mean by ``these processes''? Activity-dependent
-% weight modification?  Retinal wages?
-activity. Experiments show that at the very least these processes are
-required to achieve the finely tuned precision, which can now be
-observed at single cell resolution \citep{Ohki2005,White2007}.
+activity. Experiments show that at the very least activity dependent
+synaptic modification is required to achieve the finely tuned
+precision, which can now be observed at single cell resolution
+\citep{Ohki2005,White2007}.
 
 Lateral intra-areal connections in particular have been implicated in
 map development as their functional connectivity seems to be closely
@@ -314,15 +303,12 @@ connections longer than 500 \si{\micro\metre} preferentially link
 neurons with co-oriented and co-axially aligned receptive fields
 \citep{Bosking1997}. In iso-orientation regions, cells therefore make
 short-range connections largely with cells that prefer the same
-direction as them, while at pinwheels short-range
-connections are made with cells with a wide range of orientation
-preferences \citep{Ohki2005}.
-% jbednar: Okhi didn't show connectivity; what do you mean?
-However, it is known that the patchy
-lateral connectivity in V1 does not arise until after the orientation
-map has emerged \citep{Ruthazer1996}, indicating that they may be
-involved in some higher-order processing not required during initial
-development.
+direction as them, while at pinwheels short-range connections are made
+with cells with a wider range of orientation preferences
+\citep{Yousef2001}. However, it is known that the patchy lateral
+connectivity in V1 does not arise until after the orientation map has
+emerged \citep{Ruthazer1996}, indicating that they may be involved in
+some higher-order processing not required during initial development.
 
 The development of the early visual pathway is probably driven by a
 number of mechanisms complementing each other at various stages,
@@ -728,18 +714,16 @@ connections, which we will look at in detail at a later stage.
 
 Having established that spatial profile of lateral connections is
 commensurate to that of the lsRF and vice versa, the data from both
-sources will be laid out and analyzed. Anatomical data suggests that the
-spatial spread of lateral connections can be anywhere between 3-10 mm
-(on average 6-7 mm) in total length \citep{Angelucci2002}, which is
-% jbednar: broken ref?
-broken down by layer in table \ref{LatExtents}. Along its principal
-axis the visuotopic monosynaptic spread of V1 horizontal connections
-has a mean of $2.47\degree \pm 0.3\degree$. This falls well within the
-range of estimates for the lsRF as published in a number of studies
-\citep{Shushruth2009,Sceniak1999,Sceniak2001}, which were fit with the
-same integrated DoG model and stimulus protocol as used in the
-\cite{Sceniak2006} paper on the spatial properties of LGN neurons,
-reviewed previously.
+sources will be laid out and analyzed. Anatomical data suggests that
+the spatial spread of lateral connections can be anywhere between 3-10
+mm (on average 6-7 mm) in total length \citep{Angelucci2002}. Along
+its principal axis the visuotopic monosynaptic spread of V1 horizontal
+connections has a mean of $2.47\degree \pm 0.3\degree$. This falls
+well within the range of estimates for the lsRF as published in a
+number of studies \citep{Shushruth2009,Sceniak1999,Sceniak2001}, which
+were fit with the same integrated DoG model and stimulus protocol as
+used in the \cite{Sceniak2006} paper on the spatial properties of LGN
+neurons, reviewed previously.
 
 In summary, there is strong evidence that lateral connections underlie
 the extent of the lsRF and mediate a number of effects in the near
@@ -1483,7 +1467,6 @@ selectively up- and down-regulate their activity. Their results
 indicate that a rapid, but transient reduction in Pv-ir cell firing
 restores pyramidal cell firing to pre-deprivation levels allowing
 competitive plasticity to occur. Pv-ir neurons therefore seem to play
-% jbednar: at least?
 a permissive role in visual cortical plasticity. Interestingly adult
 sensory plasticity such as reinforced associative learning occurs
 through a similar mechanism, where cholinergic activation of layer 1
@@ -1605,11 +1588,7 @@ to what has been experimentally observed during iontophoretic application
 of ACh. Other effects that have been commonly associated with
 feedback in some form are the signaling of illusory contours, which
 have been shown to be negatively signaled or deemphasized in V1
-\citep{Ramsden2001} and boundary detection \citep{Poort2012}.  In the
-% jbednar: planning section of what?  Refer by number.
-planning section, concrete proposals will be made suggesting what
-mechanisms may account for these phenomena and how they can be
-implemented.
+\citep{Ramsden2001} and boundary detection \citep{Poort2012}.
 
 \section{Natural Image Statistics, Sparsity and Horizontal Connections}
 
@@ -1650,10 +1629,10 @@ independence of the normalized responses. Additionally, they
 demonstrated that the optimal weights were at least partly due to the
 prevalence of extended contours in natural images.
 
-Attempting to
-quantify the co-occurence statistics of contours in natural images,
-\cite{Geisler2001} demonstrated that the performance in contour-detection tasks could be predicted by a local grouping rule derived
-from the co-occurence statistics. The first explicit link to
+Attempting to quantify the co-occurence statistics of contours in
+natural images, \cite{Geisler2001} demonstrated that the performance
+in contour-detection tasks could be predicted by a local grouping rule
+derived from the co-occurence statistics. The first explicit link to
 horizontal connectivity was made by \cite{Sigman2001}, who noted that
 the pattern of long-range patchy connectivity in the primary visual
 cortex linking iso-orientation columns has a close correspondence with
@@ -1666,8 +1645,8 @@ appear most sparse when presented with natural stimuli. Secondly,
 observing that visual cortex can also exhibit co-linear facilitation
 under low-contrast conditions \citep{Sceniak1999, Kapadia1999}, they
 suggest that under low signal-to-noise conditions the cortex may act
-to enhance commonly encountered patterns to aid the identification of contours
-and form.
+to enhance commonly encountered patterns to aid the identification of
+contours and form.
 
 These theoretical studies have hugely advanced our thinking about the
 computations performed by the early visual cortex, yet very little
@@ -1678,17 +1657,17 @@ horizontal connections are anisotropic along the axis of preferred
 orientation of the neuron, as would be expected from theoretical
 studies, there is conflicting evidence. The result has been confirmed
 in monkey \citep{Sincich2001}, tree shrew \citep{Bosking1997} and cat
-\citep{Schmidt1997}, but conflicting results have been reported for macaque
-\citep{Angelucci2002}. By performing analyses on an early tree shrew
-dataset \cite{Hunt2011} investigated whether horizontal connections
-captured the co-circularity of natural image statistics. Although they
-found neurons that exhibited co-circularity and anti-cocircularity
-and hypothesize a role for both, given the small number of lateral
-connections fields and the fact that second-order properties are
-highly sensitive to even small errors in the data, it is unclear how
-strong this result is. Further research in this area is desperately
-needed if we are to understand how the patterns of lateral
-connectivity relate to natural image statistics.
+\citep{Schmidt1997}, but conflicting results have been reported for
+macaque \citep{Angelucci2002}. By performing analyses on an early tree
+shrew dataset \cite{Hunt2011} investigated whether horizontal
+connections captured the co-circularity of natural image
+statistics. Although they found neurons that exhibited co-circularity
+and anti-cocircularity and hypothesize a role for both, given the
+small number of lateral connections fields and the fact that
+second-order properties are highly sensitive to even small errors in
+the data, it is unclear how strong this result is. Further research in
+this area is desperately needed if we are to understand how the
+patterns of lateral connectivity relate to natural image statistics.
 
 \section{Existing large-scale models of the primary visual cortex}
 
@@ -1730,16 +1709,16 @@ like contextual modulation. Instead these models are usually used to
 study only the overall statistics of the responses. As an example,
 \cite{Potjans2014} develop a highly detailed and refined microcircuit
 model of the visual cortex, including different cell types and laminar
-distributions, which they can scale to large cortical
-networks. The resultant model can provide answers about the flow of
-information in the network between different layers, but because it is
-simply a statistical model of connectivity it cannot address questions at
-the functional, algorithmic and computational level.
+distributions, which they can scale to large cortical networks. The
+resultant model can provide answers about the flow of information in
+the network between different layers, but because it is simply a
+statistical model of connectivity it cannot address questions at the
+functional, algorithmic and computational level.
 
 Alternatively, there are large scale models that disregard the
-architecture of different brain regions entirely, instead treating them
-as functional modules of excitatory and inhibitory cells serving a
-specific function. \cite{Eliasmith2012} present one such model,
+architecture of different brain regions entirely, instead treating
+them as functional modules of excitatory and inhibitory cells serving
+a specific function. \cite{Eliasmith2012} present one such model,
 which models the entire cortical hierarchy and even performs specific
 tasks. Here the model of V1 is simplified to the point where it is
 simply a visual encoder, ignoring more complex interactions entirely.
@@ -1748,40 +1727,39 @@ As we have seen, models of this scale suffer of one of two
 problems. When incorporating a lot of biological detail, they are very
 useful for understanding the low-level interactions in a network and
 how information is communicated locally, but are not usually useful
-for linking low-level
-processes to the higher-level processes that these processes
-underlie. Models at the other extreme are relegated to be very high level
-approximations of the visual cortex, without the full breadth of
-complex contextual effects that has been observed in the visual
-cortex.
+for linking low-level processes to the higher-level processes that
+these processes underlie. Models at the other extreme are relegated to
+be very high level approximations of the visual cortex, without the
+full breadth of complex contextual effects that has been observed in
+the visual cortex.
 
 \subsubsection{Surround modulation models} \label{SRmodels}
 
 Perhaps the precisely opposite approach to building in copious amounts
-of biophysical
-detail is to focus on a particular phenomenon and attempt to explain
-it with a reduced set of mechanisms. These models have traditionally
-been incredibly useful in explaining different aspects of the
-literature in V1. Specifically, point, rate-based neuron models have
-been used to explain effects ranging from surround suppression and to
-more complex contextual modulation effects such as contour integration
-and pop-out.
+of biophysical detail is to focus on a particular phenomenon and
+attempt to explain it with a reduced set of mechanisms. These models
+have traditionally been incredibly useful in explaining different
+aspects of the literature in V1. Specifically, point, rate-based
+neuron models have been used to explain effects ranging from surround
+suppression and to more complex contextual modulation effects such as
+contour integration and pop-out.
 
 The surround-modulation literature is one of the most complex topics
 in visual neuroscience, due to the high dependence of the observed
 phenomena not only on the precise stimulus conditions but also the
 behavioral state of the animal. As we discovered in section
-\ref{contextualmodulation}, there are two main phenomena that
-are of interest: surround suppression, usually thought to reduce
-redundancy in the input, and contextual enhancement of responses
-through facilitatory effects. These two opposing mechanisms are
-thought to drive a wide range of the phenomena in the literature
-including pop-out, contour completion, as well as end-stopping,
-flanker facilitation and much more.
+\ref{contextualmodulation}, there are two main phenomena that are of
+interest: surround suppression, usually thought to reduce redundancy
+in the input, and contextual enhancement of responses through
+facilitatory effects. These two opposing mechanisms are thought to
+drive a wide range of the phenomena in the literature including
+pop-out, contour completion, as well as end-stopping, flanker
+facilitation and much more.
 
 Various models have been proposed to explain how these contextual
 influences emerge. In one of the more straightforward models,
-\cite{Li2002} proposes that through recurrent enhancement of responses, long-range lateral connections can give rise to a visual
+\cite{Li2002} proposes that through recurrent enhancement of
+responses, long-range lateral connections can give rise to a visual
 saliency map in V1, which underlies pop-out, enhancing features that
 stand out from the visual background. While this model explains how a
 particular surround modulation effect can emerge from the network
@@ -1803,43 +1781,44 @@ neurons in the local circuit determine the sign of the effect.
 An alternative to this circuit-level analysis is to express these
 interactions in the more abstract framework of predictive coding. The
 work by \cite{Spratling2010} in particular expresses the cortical
-circuit as predictive coding, modeling the
-response of V1 neurons using a competitive mechanism between neurons
-attempting to best represent the input. Like many others, this model
-provides a good account of various surround modulation effects
-including iso- and cross-orientation suppression but exhibits only
-weak facilitatory effects, suggesting that it does not fully capture
-the mechanism that is behind the contrast- and context-dependent
-interactions between suppression and facilitation. Furthermore, it is
-very difficult to relate the interactions between explicitly
-predictive or error-coding neurons to the real interactions taking
-place in the cortex.
+circuit as predictive coding, modeling the response of V1 neurons
+using a competitive mechanism between neurons attempting to best
+represent the input. Like many others, this model provides a good
+account of various surround modulation effects including iso- and
+cross-orientation suppression but exhibits only weak facilitatory
+effects, suggesting that it does not fully capture the mechanism that
+is behind the contrast- and context-dependent interactions between
+suppression and facilitation. Furthermore, it is very difficult to
+relate the interactions between explicitly predictive or error-coding
+neurons to the real interactions taking place in the cortex.
 
 Another avenue of study has been the approach by the Schwartz lab, who
-have for a long time investigated the interaction between natural-image statistics and surround-modulation effects. This is perhaps one
-of the most interesting approaches, because it treats contextual
-phenomena not as a by-product of some underlying computational
-process, but rather supposes that they are driven by the statistics of
-the visual input and are therefore closely tied to the computational
-task that is actually being solved. In \cite{Coen2015} they describe
-an extension of a simple normalization framework that computes the
-homogeneity in an image between center and surround, gating the divisive
-normalization component accordingly, which directly leads to feature-specific surround modulation effects observed in experiments. In this
-framework, surround modulation is simply the measurable effect of
-statistical inference, improving the efficient encoding of the
-stimulus.
+have for a long time investigated the interaction between
+natural-image statistics and surround-modulation effects. This is
+perhaps one of the most interesting approaches, because it treats
+contextual phenomena not as a by-product of some underlying
+computational process, but rather supposes that they are driven by the
+statistics of the visual input and are therefore closely tied to the
+computational task that is actually being solved. In \cite{Coen2015}
+they describe an extension of a simple normalization framework that
+computes the homogeneity in an image between center and surround,
+gating the divisive normalization component accordingly, which
+directly leads to feature-specific surround modulation effects
+observed in experiments. In this framework, surround modulation is
+simply the measurable effect of statistical inference, improving the
+efficient encoding of the stimulus.
 
-All of these models capture important parts of the phenomena involved, highlighting
-how network interactions between neurons with different tuning
-properties can give rise to complex contextual modulation effects
-\citep{Li2002}, where the sources of this input could originate from
-\citep{Schwabe2006} and how these interactions might fit into a
-general computational paradigm that is concerned with prediction and
-inference \citep{Spratling2010, Coen2015}. However, all of these
-models are static, presupposing an existing profile of
-connectivity, and thus cannot directly address how different cell types
-could interact to give rise to a circuit, 
-mechanistically explaining how these effects emerge.
+All of these models capture important parts of the phenomena involved,
+highlighting how network interactions between neurons with different
+tuning properties can give rise to complex contextual modulation
+effects \citep{Li2002}, where the sources of this input could
+originate from \citep{Schwabe2006} and how these interactions might
+fit into a general computational paradigm that is concerned with
+prediction and inference \citep{Spratling2010, Coen2015}. However, all
+of these models are static, presupposing an existing profile of
+connectivity, and thus cannot directly address how different cell
+types could interact to give rise to a circuit, mechanistically
+explaining how these effects emerge.
 
 \subsection{Developmental models} \label{devmodels}
 
@@ -1848,23 +1827,22 @@ streams to construct internal models of the world, it is clear that
 function, structure and development are closely linked. Indeed it is
 now clear that V1 is a dynamic and adaptive circuit, which exhibits
 learning and learns to optimally encode and represent its inputs. In
-other words, V1 is not a static circuit, organizing solely based
-on genetic cues, but rather self-organizes through a complex interplay
-of genetic triggers, intrinsic mechanisms such as retinal waves and
+other words, V1 is not a static circuit, organizing solely based on
+genetic cues, but rather self-organizes through a complex interplay of
+genetic triggers, intrinsic mechanisms such as retinal waves and
 perhaps most importantly, external visual input. A number of models
-have been developed using these ideas, explaining the development
-and self-organization of the V1 circuit as fundamentally being driven
-by activity-dependent and correlation-based processes.
+have been developed using these ideas, explaining the development and
+self-organization of the V1 circuit as fundamentally being driven by
+activity-dependent and correlation-based processes.
 
 The original principles for what became the class of self-organizing
 map (SOM) models were first formulated by \citep{VonderMalsburg1973},
 who recognized this connection and sought to explain the
-self-organization of neurons into topographic maps via the
-simple process of Hebbian learning. The \cite{VonderMalsburg1973} model showed for the first
-time that very simple mechanisms such as \ref{MexicanHat} connectivity
-can
-give rise to the smooth organization of individual neurons into a
-topographic map.
+self-organization of neurons into topographic maps via the simple
+process of Hebbian learning. The \cite{VonderMalsburg1973} model
+showed for the first time that very simple mechanisms such as
+\ref{MexicanHat} connectivity can give rise to the smooth organization
+of individual neurons into a topographic map.
 
 Since then a variety of models has sought to explain the
 self-organizations of individual neurons into an overall functional
@@ -1878,66 +1856,70 @@ orientation-selective simple and complex cells has received
 significant attention.
 
 Applying this correlation-based paradigm, \cite{Miller1989} were able
-to show that the development of realistic stripy ocular dominance columns could
-be explained, demonstrating the role of neurons competing to
-represent specific visual features in the input. The \cite{Somers1995}
-model also applied this paradigm, once again to the development of
-orientation selectivity.  They argued for a strong role for recurrent
-excitations to bind the responses of neurons together, which
-strengthens the weak orientation selective input from the thalamus,
-with strong unselective inhibition keeping the circuit in balance and
-sharpening the orientation tuning of the principal neurons.
+to show that the development of realistic stripy ocular dominance
+columns could be explained, demonstrating the role of neurons
+competing to represent specific visual features in the input. The
+\cite{Somers1995} model also applied this paradigm, once again to the
+development of orientation selectivity.  They argued for a strong role
+for recurrent excitations to bind the responses of neurons together,
+which strengthens the weak orientation selective input from the
+thalamus, with strong unselective inhibition keeping the circuit in
+balance and sharpening the orientation tuning of the principal
+neurons.
 
 The idea that the development of highly complex cortical circuits can
 be explained using a small set of mechanisms therefore has received a
 significant amount of attention and has been able to explain the
 development of not just visual receptive fields but also somatosensory
-\citep{Wilson2010}, auditory \cite{Khan2011} and other feature maps. The
-fundamental principles underlying these computations are generally the
-same, with individual neurons competing to represent an input, leading
-to a smooth mapping of an underlying feature of the input onto the
-cortical surface. So while the precise process which allows neurons to
-compete and the learning rule that allows these maps to robustly, yet
-adaptively develop has not been conclusively established, a lot is now
-known about self-organization of the cortex.
+\citep{Wilson2010}, auditory \cite{Khan2011} and other feature
+maps. The fundamental principles underlying these computations are
+generally the same, with individual neurons competing to represent an
+input, leading to a smooth mapping of an underlying feature of the
+input onto the cortical surface. So while the precise process which
+allows neurons to compete and the learning rule that allows these maps
+to robustly, yet adaptively develop has not been conclusively
+established, a lot is now known about self-organization of the cortex.
 
-In recent years some effort has been put into making the SOM-based models more
-closely represent the functional organization of the cortex, starting
-with the LISSOM model \citep{Bednar2003} and more recently
-the simpler and more robust GCAL \citep{Stevens2013} model. In these models the retina,
-LGN and V1 are modeled as a set of neuronal sheets with feedforward
-and lateral connectivity self-organizing into the complex topographic
-maps. These models provide a very good match to the known
-developmental time course and replicate a large range of phenomena
-observed in the mammalian cortex, yet work with only a small set of
-mechanism including contrast-gain control, an adaptive per-neuron
-threshold, and lateral connectivity \citep{Stevens2013}. Extensions of
-this model explaining the development of complex cells and of contrast-dependent size tuning \citep{Antolik2011} as well as a continuous time
-model matching LGN/V1 temporal reaponse functions have also been
-developed \citep{Stevens2011}.
+In recent years some effort has been put into making the SOM-based
+models more closely represent the functional organization of the
+cortex, starting with the LISSOM model \citep{Bednar2003} and more
+recently the simpler and more robust GCAL \citep{Stevens2013}
+model. In these models the retina, LGN and V1 are modeled as a set of
+neuronal sheets with feedforward and lateral connectivity
+self-organizing into the complex topographic maps. These models
+provide a very good match to the known developmental time course and
+replicate a large range of phenomena observed in the mammalian cortex,
+yet work with only a small set of mechanism including contrast-gain
+control, an adaptive per-neuron threshold, and lateral connectivity
+\citep{Stevens2013}. Extensions of this model explaining the
+development of complex cells and of contrast-dependent size tuning
+\citep{Antolik2011} as well as a continuous time model matching LGN/V1
+temporal reaponse functions have also been developed
+\citep{Stevens2011}.
 
-The GCAL (gain control, adaptive, lateral) model is based on several core observations about
-information-processing in V1 and the cortex in general. As previous
-sections have shown, the primary visual cortex of primates responds
-strongly to specific low-level features in its visual input, including
-orientation, color and direction. Selectivity to these features is
-conserved across a wide range of contrasts, and neurons form
-topographic feature maps across the surface of V1 by virtue of
-self-organization. While these experimentally confirmed findings are
-specific to vision, the concept of equipotentiality proposes that
-different areas in the cerebral cortex are originally cytoarchitectonically
-highly similar, becoming differentiated based largely on the
-statistical patterns in their inputs during development and are thus
-capable of capturing any sensory modality. While the validity of this hypothesis remains controversial, experiments such as those by
-\cite{Sur1990} have at least partly validated this view. In this
-particular study, experimentalists rewired optic nerve axons to
+The GCAL (gain control, adaptive, lateral) model is based on several
+core observations about information-processing in V1 and the cortex in
+general. As previous sections have shown, the primary visual cortex of
+primates responds strongly to specific low-level features in its
+visual input, including orientation, color and direction. Selectivity
+to these features is conserved across a wide range of contrasts, and
+neurons form topographic feature maps across the surface of V1 by
+virtue of self-organization. While these experimentally confirmed
+findings are specific to vision, the concept of equipotentiality
+proposes that different areas in the cerebral cortex are originally
+cytoarchitectonically highly similar, becoming differentiated based
+largely on the statistical patterns in their inputs during development
+and are thus capable of capturing any sensory modality. While the
+validity of this hypothesis remains controversial, experiments such as
+those by \cite{Sur1990} have at least partly validated this view. In
+this particular study, experimentalists rewired optic nerve axons to
 interface with neurons in the medial geniculate nucleus (MGN), part of
 the pre-cortical auditory pathway, and subsequently showed that
 neurons in the primary auditory cortex (A1) would become receptive to
-features usually associated with V1. This idea is behind much of what has
-made V1 such a popular model area for neuroscience, and suggests that
-many of the insights that can be gleaned from the study of V1 could be
-applied to the cortex as a whole.
+features usually associated with V1. This idea is behind much of what
+has made V1 such a popular model area for neuroscience, and suggests
+that many of the insights that can be gleaned from the study of V1
+could be applied to the cortex as a whole.
 
 \begin{figure}
 	\centering \includegraphics[width=1.0\textwidth]{GCAL.pdf}
@@ -1963,34 +1945,34 @@ applied to the cortex as a whole.
 
 % jbednar: explain ``sheet''?
 The architecture of the GCAL model in its simplest form and as it will
-initially be used in this project relies on only four sets of neurons, a
-retinal sheet for the presentation of stimuli, two RGC/LGN sheets and
-a V1 sheet. Neurons in these sheets are connected with different intra- and
-inter-areal connection fields. This simple model can only be used to
-demonstrate retinotopy, orientation preference and the emergence of
-simple cell-like RFs, but more complex models have been shown to
-additionally account for complex cells, ocular dominance, motion
-direction, spatial frequency, temporal frequency, disparity and
-color \citep{Bednar2012a}. All these models are trained by presenting a visual
-input on the retina, allowing the response to propagate through the
-different sheets and then adjusting the connections weights to V1
-neurons based on a local learning rule.
+initially be used in this project relies on only four sets of neurons,
+a retinal sheet for the presentation of stimuli, two RGC/LGN sheets
+and a V1 sheet. Neurons in these sheets are connected with different
+intra- and inter-areal connection fields. This simple model can only
+be used to demonstrate retinotopy, orientation preference and the
+emergence of simple cell-like RFs, but more complex models have been
+shown to additionally account for complex cells, ocular dominance,
+motion direction, spatial frequency, temporal frequency, disparity and
+color \citep{Bednar2012a}. All these models are trained by presenting
+a visual input on the retina, allowing the response to propagate
+through the different sheets and then adjusting the connections
+weights to V1 neurons based on a local learning rule.
 
 This limited number of mechanisms already gives rise to an incredibly
 robust model of development of topographic map development and
 generates different experimentally observed RF profiles. To add
-further robustness to the LISSOM model and to allow it to respond across a
-wide range of contrasts, in GCAL contrast-gain control was introduced in the
-LGN sheets (marked as Lateral GC). This mechanism was closely modeled
-on the divisive normalization model introduced and validated by
-\cite{Bonin2005}. Finally, the lateral excitatory and inhibitory
-fields in the V1 sheet give rise not only to the topographic map
-structure but also to some surround-modulation effects. In particular,
-it can explain some of the size-tuning properties of V1 neurons, as the
-excitatory field will boost the response to a growing centered disk up
-to a certain peak, after which point the lateral inhibitory field
-dominates and reduces the response to the stimulus as it grows
-further.
+further robustness to the LISSOM model and to allow it to respond
+across a wide range of contrasts, in GCAL contrast-gain control was
+introduced in the LGN sheets (marked as Lateral GC). This mechanism
+was closely modeled on the divisive normalization model introduced and
+validated by \cite{Bonin2005}. Finally, the lateral excitatory and
+inhibitory fields in the V1 sheet give rise not only to the
+topographic map structure but also to some surround-modulation
+effects. In particular, it can explain some of the size-tuning
+properties of V1 neurons, as the excitatory field will boost the
+response to a growing centered disk up to a certain peak, after which
+point the lateral inhibitory field dominates and reduces the response
+to the stimulus as it grows further.
 % cite?
 It may also explain effects such as iso-orientation
 suppression, but these phenomena have not yet been explored in detail.
@@ -2003,13 +1985,13 @@ contribution of feedforward and lateral components to the response and
 function of V1. Most importantly it provides an alternative to other
 static models of the visual cortex, which are unconstrained by the
 requirement of having to developing into a functional circuit that can
-actually capture features of the visual input. Therefore the GCAL model
-sits at the three-way intersection between anatomical organization,
-circuit-level and algorithmic implementation and the actual functional
-consequences on the response and computation performed by this brain
-area. However, while existing models have focused on the overall
-principles of self-organization, they have not been used to study
-specific interactions between cell classes, how those contribute to
-development and how the cortical circuit can adapt to the specific
-computational requirements driven by a task.  These topics will be the
-focus of the remaining chapters.
+actually capture features of the visual input. Therefore the GCAL
+model sits at the three-way intersection between anatomical
+organization, circuit-level and algorithmic implementation and the
+actual functional consequences on the response and computation
+performed by this brain area. However, while existing models have
+focused on the overall principles of self-organization, they have not
+been used to study specific interactions between cell classes, how
+those contribute to development and how the cortical circuit can adapt
+to the specific computational requirements driven by a task.  These
+topics will be the focus of the remaining chapters.
