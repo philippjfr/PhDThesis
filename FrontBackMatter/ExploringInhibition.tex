@@ -571,6 +571,8 @@ then confirmed the model still matches the other spatial and
 orientation tuning properties we carefully evaluated in the SCAL
 model.
 
+\subsection{The role of inhibition in development}
+
 In the first experiment we asked what happens when we decouple the
 responses of the inhibitory population from that of the excitatory
 population. In the SCAL model and all most previous SOM based models
@@ -598,20 +600,6 @@ inhibitory population was upregulated in this way. At the same time
 however the column size actually narrowed, which is the opposite
 effect to what was observed in those experiments.
 
-In analyzing the model size and contrast response we showed very good
-agreement with experiment and indeed the variability in responses was
-greatly improved over what was observed in the SCAL model. By
-decoupling the excitatory and inhibitory neurons we showed we could
-achieve a greater contrast dependent size tuning shift both
-qualitatively and and quantitatively much closer to the kinds of
-shifts that are seen in experiment (see \ref{SEPI_DoG_Contrast} and
-\ref{ContrastShift}). This agree very well with the idea that the PV
-neurons exert strong control over the response gain of principal
-neurons via a divisive mechanism \citep{Wilson2012}. Indeed through
-artificial upregulation of the PV population we could mirror the
-effects of decreasing the contrast, a result that was first confirmed
-by \cite{Nienborg2013} in mouse visual cortex.
-
 Finally we compared how the SCAL model compared to the SEPI model in
 terms of robustness to lateral excitation and varying levels of
 contrast. These results clearly showed that the SEPI model
@@ -626,6 +614,58 @@ lateral excitation and contrast values tested here even this model had
 trouble canceling out this additional excitation. It is also worth
 noting these models were both trained on simple Gaussian patterns,
 which exhibit no long-range correlations, which might disrupt the map.
+
+\subsection{Feature tuning and Inhibition}
+
+In analyzing the model size and contrast response we showed very good
+agreement with experiment and indeed the variability in responses was
+greatly improved over what was observed in the SCAL model. By
+decoupling the excitatory and inhibitory neurons we showed we could
+achieve a greater contrast dependent size tuning shift both
+qualitatively and and quantitatively much closer to the kinds of
+shifts that are seen in experiment (see \ref{SEPI_DoG_Contrast} and
+\ref{ContrastShift}). This agree very well with the idea that the PV
+neurons exert strong control over the response gain of principal
+neurons via a divisive mechanism \citep{Wilson2012}. Indeed through
+artificial upregulation of the PV population we could mirror the
+effects of decreasing the contrast, a result that was first confirmed
+by \cite{Nienborg2013} in mouse visual cortex.
+
+One major question in the literature surrounded the question of the
+tuning properties of PV neurons. A number of theoretical studies had
+suggested that untuned or broadly tuned inhibition in the visual
+cortex was required for the development of orientation selectivity or
+its contrast invariance \citep{Somers1995, Troyer1998}. The work by
+\cite{Cardin2007} challenged this assumption as they had found that
+the fast-spiking cells in layer 4 of cat area 17 did not exhibit
+significantly broader tuning than the regular spiking excitatory
+population. However, they did find broader tuning in the spiking
+response in this population and similar studies had found conflicting
+results \citep{Hirsch2003, Nowak2008}. In the SEPI model the cells
+generally display orientation tuning, however they are overall
+significantly more broadly tuned than the excitatory population, this
+is largely driven by the fact that the modeled cells do not have any
+spiking threshold. \cite{Cardin2007} argue studies such as
+\cite{Nelson1994}, which demonstrated no widening in orientation
+tuning of excitatory cells under GABAergic inactivation suggests that
+broad inhibitory tuning does not significantly contribute to
+sharpening of orientation tuning. However this ignores the role of
+inhibitory neurons in shaping the responses and tuning of neurons
+during development, such that the instantaneous responses of the
+inhibitory population aren't needed to significantly sharpen the
+tuning of excitatory cells, as their tuning has already been encoded
+in the feedforward connections.
+
+Another difficulty is in determining layer specific effects,
+\cite{Cardin2007} primarily measured from fast-spiking cells in layer
+4. It may be the case that fast-spiking neurons in layer 4 are more
+closely involved in a push-pull inhibitory regime, which would require
+sharper orientation tuning \citep{Hirsch2003, Hirsch2006a}. Further
+investigation will be required to determine the precise properties of
+the PV-ir neuron population across layers in species with maps, in
+order to determine whether there are functionally distinct subgroups.
+
+\subsection{Conclusion}
 
 Overall the results here indicate that the PV population is very well
 suited towards mediating the kinds of tasks that are important both

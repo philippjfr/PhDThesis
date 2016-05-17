@@ -10,7 +10,7 @@ model can robustly develop and respond even when strong long-range
 excitatory patchy connections are introduced to the model. However
 since these long-range projections are purely excitatory they cannot
 mediate long-range suppressive effects directly and due to the weakly
-tuned nature of the PV cell population they too aren't very good
+tuned nature of the PV cell population they too are not viable
 candidates to mediate feature specific contextual modulation effects
 such as iso-orientation suppression.
 
@@ -34,8 +34,10 @@ second population integrates large and high-contrast stimuli providing
 strong suppression feature specific inhibition under those conditions,
 while only very weakly responding in low contrast conditions.
 
-Using this model we will demonstrate realistic long-range contextual
-modulation effects such as flanker enhancement and suppression.
+Once we have characterized how these neurons respond under varying
+stimulus conditions, we will demonstrate realistic long-range
+contextual modulation effects such as flanker enhancement and
+suppression.
 
 \section{Methods}
 
@@ -48,6 +50,21 @@ neurons, which is entirely recurrently driven via short- and
 long-range projections by the two other populations. The diagram in
 \ref{LESPIDiagram} shows how the three populations of V1 neurons are
 recurrently connected.
+
+The newly introduced Sst population will differ from the PV population
+in a number of respects. First of all it receives no afferent input
+from the LGN, as this population is thought to be enriched in
+supra-granular layers, which do not receive direct afferent
+input. Secondly this population has a much more restricted spatial
+profile being not nearly as extensive in their lateral extent as the
+PV expressing basket cells. Most importantly however the facilitating
+response properties of this population is modeled via an exponential
+non-linearity in their response function, in order to capture their
+differential activation under weak and strong stimulus
+conditions. Finally to model the more sluggish responses among this
+population a hysteresis term is introduced. In this way this
+population responds strongly after sustained and strong local and
+long-range stimulation.
 
 The influence of the aggregate long-range excitatory and di-synaptic
 inhibition via the Sst population is expressed as an additional
@@ -69,7 +86,7 @@ and the surround modulation term $\eta_{SM}$ is defined as:
 where $\eta_{LAT}$ represents the long-range lateral excitatory
 contribution and $\eta_{S}$ is the Sst inhibitory contribution. In the
 SEPI model the $\eta_{SM}$ term simply reduces to 1, eliminating all
-long-range interactions. The surround modulatorion term provides gain
+long-range interactions. The surround modulation term provides gain
 when excitation exceeds inhibition and shunting inhibition when the
 reverse is true. As such, this term provides a convenient abstraction
 to model the modulatory influence of the dendritic integration of
@@ -121,6 +138,40 @@ effectively disabled, activating only under high contrast input.
       preference, while the Sst population integrates both local and
       long-range input to provide tuned orientation suppression under
       high contrast input.}
+    \label{circuit_diagram}
+\end{figure}
+
+
+\subsection{Visual statistics}
+
+So far we have mostly ignored the effect of visual statistics on the
+model. This is in large part because the current model is based on
+simple cells, which exhibit strong phase tuning and will result in
+fractures and disrupted retinotopy of the orientation map. While this
+could be addressed in a further extension of the model it is outside
+the scope of this thesis. Therefore we will generate synthetic stimuli
+with varying statistics in order to model the role of lateral
+connections in learning statistics of the input.
+
+The stimuli generated for this purpose are simple extensions of the
+elongated 2D Gaussian stimuli used to train the models up to this
+point. The model will draw 1 stimulus per unit area, which consists of
+a chain of three Gaussian pattern, the patterns can be seen in
+\ref{GaussianStatistics}. The middle Gaussian determines the overall
+orientation ($\theta_M$) of the pattern, and the outer Gaussians are
+offset in orientation by a value drawn from a vonMises distribution
+with a mean of $\theta_M$ and a $\kappa$ of ${0.5, 2, 8}$. The
+patterns are then spatially offset so that they form a chain forming
+either 'S' shaped or 'U' shaped providing circular and anti-circular
+statistics respectively. By varying the $\kappa$ we can vary how the
+distribution of co-occurence statistics increasing the preference for
+simple elongated bars.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{./results/lespi/gaussian_statistics.pdf}
+	\caption[Example of Gaussian patterns with co-occurence statistics]
+            {Gaussian patterns with co-occurence statistics}
     \label{circuit_diagram}
 \end{figure}
 
@@ -193,3 +244,33 @@ qualitatively.
       a target stimulus. Reproduced from \cite{Kapadia1995}.}
 	\label{Flanker}
 \end{figure}
+
+\section{Results}
+
+Before investigating the surround modulation properties of the LESPI
+model we will investigate how the neurons respond and compare the
+response profile of the two inhibitory populations. Specifically we
+are interested in looking at the time course and tuning properties of
+the two inhibitory components. An analysis by \cite{Webb2005} was able
+to distinguish between two distinct components to surround inhibition,
+one that is prominent under high-contrast stimulation of the central
+receptive field, which is orientation selective and exhibits sharp
+tuning. The second is more prominent under low-contrast drive to the
+CRF and exhibits much broader tuning. In the previous chapter we
+already showed that the PV population can provide this fast, but broad
+suppression, however it is not quite clear what role the Sst
+population will serve in the model.
+
+\subsection{Co-occurence statistics}
+
+
+\subsection{Inhibitory responses}
+
+
+\subsection{Orientation contrast suppression}
+
+
+\subsection{Flanker Modulation}
+
+
+\section{Discussion}

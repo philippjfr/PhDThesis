@@ -1115,13 +1115,15 @@ mechanism to sharpen orientation preference.
 
 In terms of their spiking behavior Pv-ir cells are characterized as
 being fast fast-spiking (FS) neurons, often firing in bursts with a
-very short response latency. Further, evidence from somatosensory
+very short response latency. It is important to note however that not
+all fast-spiking cells are immunoreactive for parvalbumin and that not
+all PV neurons are fast-spiking. Further, evidence from somatosensory
 cortex in rodent and lagomorph species suggests they receive strong
 input from thalamocortical afferents arriving in layer 4 and very
 effectively suppress sustained firing from spiny neurons receiving
 inputs from the thalamus \citep{Swadlow2003}, implicating them in
-feedforward inhibition. A possible feedforward inhibition circuit is shown
-in Figure \ref{burkhalterpv}. Their effectiveness in suppressing
+feedforward inhibition. A possible feedforward inhibition circuit is
+shown in Figure \ref{burkhalterpv}. Their effectiveness in suppressing
 feedforward activity can be explained by the large number of
 thalamocortical axons they receive, which exhibit faster kinetics than
 those targeting spiny neurons \citep{Cruikshank2007,Gabernet2005}, and
@@ -1208,26 +1210,29 @@ mouse Pv-ir cells displayed broad orientation tuning
 results identifying a class of inhibitory complex cells in layer 4
 exhibiting weak orientation tuning \citep{Hirsch2003}, which can
 primarily be accounted for by the tuning of synaptic responses and a
-lower spike threshold \citep{Nowak2008}. A more recent study in
+lower spike threshold \citep{Nowak2008}.  A more recent study in
 auditory cortex seems to affirm these conclusions, hypothesizing that
 `while PV neurons may provide broadly tuned feedforward inhibition for
 a rapid control of ascending inputs to excitatory neurons, the delayed
 and more selective inhibition from SOM neurons may provide a specific
 modulation of feedback inputs on their distal dendrites`
-\citep{Li2014}. Further study will be needed to confirm whether these
-results extend to the primate, however it is clear that basket cells
-generally display weaker tuning than spiny neurons in V1.
+\citep{Li2014}. However a more extensive study in layer 4 of the cat
+found no significant broadening in the synaptic orientation tuning of
+fast-spiking interneurons over that exhibited by regular spiking cells
+in the same region \citep{Cardin2007}, only when looking at spiking
+responses was a significant broadening found. As an explanation of
+this apparent difference in tuning between simple mammals, which
+exhibit no orientation maps, and higher mammals, it has been suggested
+that these cells pool the input from nearby neurons and inherit their
+orientation preference \citep{Isaacson2011}.
 
 Based on our current knowledge of Pv-ir cell population and more
 specifically the basket cells, it is clear that they provide a good
 candidate mechanism to account for a number of phenomena. Their fast
-response profile, large spatial extent and relatively broad
+response profile, large spatial extent and seemingly broader
 orientation tuning may allow them to carry out fast, adaptive gain
 control and broadly tuned suppression and thereby sharpen the
-orientation preference of the PNs in their vicinity. So while synaptic
-depression may still provide an alternative explanation for many of
-these phenomena, it is likely that the Pv-ir population carries out at
-least some of these functions.
+orientation preference of the PNs in their vicinity.
 
 \subsubsection{Somatostatin Immunoreactive cells}
 
@@ -1307,9 +1312,9 @@ dependent manner.
       \cite{Adesnik2012}.]{Schematic illustration of the cortical
       circuit in layer 2/3 contributing to surround suppression. As a
       visual stimulus expands (larger stimuli are shown in lighter
-      grey), recruitment of adjacent principal cells (PCs) increases Sst-ir excitation
-      through horizontal axons (horizontal arrows). Reproduced from
-      \cite{Adesnik2012}.}
+      grey), recruitment of adjacent principal cells (PCs) increases
+      Sst-ir excitation through horizontal axons (horizontal
+      arrows). Reproduced from \cite{Adesnik2012}.}
 	\label{som}
 \end{figure}
 
@@ -1322,12 +1327,13 @@ inactivating layer 4 Pv-ir cells.
 
 \subsubsection{Vasointestinal peptide expressing interneurons}
 
-The material reviewed so far has focused primarily on the two most common types of
-inhibitory interneurons, the Parvalbumin (PV) and
-Somatostatin-expressing (Sst) cells.  Since that initial work, a number of studies
-have focused on the role of 5HT3ar-expressing interneurons and
-particularly the vasointestinal peptide (Vip)-expressing subgroup
-\citep{Fu2014, Higley2014, Kepecs2014, Lee2013}.
+The material reviewed so far has focused primarily on the two most
+common types of inhibitory interneurons, the Parvalbumin (PV) and
+Somatostatin-expressing (Sst) cells.  Since that initial work, a
+number of studies have focused on the role of 5HT3ar-expressing
+interneurons and particularly the vasointestinal peptide
+(Vip)-expressing subgroup \citep{Fu2014, Higley2014, Kepecs2014,
+  Lee2013}.
 
 The Vip subgroup is particularly concentrated in upper, associative
 layers and feedback layers of the cortex, as shown in figure
@@ -1353,7 +1359,6 @@ of activity in sensory cortex by behavioral state.
       immunohistological marker. Reproduced from \cite{Rudy2011}.}
 	\label{GABADistribution}
 \end{figure}
-
 
 \subsubsection{Connectivity between different cell types}
 
@@ -1469,9 +1474,8 @@ redundancy in order to achieve a sparse representation of the input or
 if there is insufficient information to fill in the missing
 information based on remembered statistics of the visual world.
 % cites?  Explain why sparse coding?
-Sparse
-coding in developmental models of the primary visual cortex can be
-achieved by allowing lateral inhibitory connections to develop
+Sparse coding in developmental models of the primary visual cortex can
+be achieved by allowing lateral inhibitory connections to develop
 non-isotropic connectivity, which allows the network to learn the
 redundant features of the input and suppress them. If such development
 is not allowed to take place and isotropic surround suppression is
