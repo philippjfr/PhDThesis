@@ -1,20 +1,106 @@
 %!TEX root = ../PhDthesis.tex
 \chapter{General Discussion}
 
-\subsection{Simple and complex cells}
+In this thesis we presented a series of models of the primary visual
+cortex to integrate our understanding of how different cell classes
+and their synaptic connections can give rise to a robust, yet dynamic
+circuit to extract and encode visual features and statistics of the
+world. While these models provide valuable contributions and have
+allowed us to make a variety of predictions about the role of
+inhibitory cell classes in development and contextual modulation, they
+also simplify the full complexity in a number of crucial ways. These
+simplifications have important implications about the interpretation
+of the results but also offer opportunities to extend our modeling
+framework.
+
+In this discussion we will explore some of the implications of the
+predictions made in the results chapters and place them into context
+given our understanding of the underlying circuits. In doing so we
+will.
+
+
+\subsection{Spatial tuning diversity}
+
+* Tuning diversity is limited
+* Cannot capture full image statistics
+* Variability in responses could affects
+
+
+\subsection{Sparsity of connections}
+
+* Afferent connections more stable
+* Lateral connections more focused (+ and stable)
+* Stronger surround modulation effects
+
+\subsection{Interactions between inhibitory cells}
+
+* PV and Sst suppress each other, Sst can disinhibit
+
+\subsection{Complex cells}
 
 Outline the issues with modeling only simple cells and offer
 suggestions on extending the model to complex cells
 
-\subsection{Inhibitory subtypes}
+* No more phase disruptions
+* Loss of phase specificity for lateral connections
+* Inhibition in different circuits
 
-Summarize what we have learned about the role of PV in visual cortex
-and how it fits into current research on plasticity
+\subsection{Layer specific circuits}
 
-Discuss role of Sst in gating feedback connectivity and suggest
-roles for ViP population.
+* Clutch cells and push-pull
+* PV cells for gain control
+* SOM cells for spatial integration
+* ViP cell modulation of lateral connections
 
 \subsection{Neuromodulation of visuo-cortical information processing}
 
-Detail plans on modeling modulatory influences on the developed
-circuitry.
+One of the original aims when developing the models that were
+presented as part of this thesis was to develop a circuit, which would
+allow for realistic modulation of specific neural subtypes and
+connections. In particular the models are well suited to investigate
+how the circuit can be dynamically modulated for task specific
+demands, e.g. to model attentional modulation effects.
+
+Specifically the existence of individual populations of inhibitory
+neurons and a real long-range excitatory network could be used to
+investigate how different neuromodulatory inputs to the cortex affect
+the balance between feedforward and recurrent processing. In
+particular it is hypothesized that cholinergic and adrenergic
+neuromodulators are associated with attentional modulation.
+
+\subsubsection{Cholinergic modulation}
+
+One particular target of interest for further investigation is the
+role of cholinergic inputs from the basal forebrain in mediating
+attentional effects. Currently there are two main competing theories
+of how cholinergic inputs to the cortex alters circuit dynamics,
+outlined in the review by \cite{Thiele2013}. The first has been around
+for at least two decades and suggests that cholinergic release
+increases the feedforward drive and indiscriminately dis- rupts
+intracortical processing. Recent evidence on the other seems to
+contradict this hypothesis as a gross simplification pointing out that
+different intracortical circuits are affected heterogeneously,
+suggesting that while feedforward drive may be increased, layer 4
+spiny cell firing is decreased, leading to weak inputs being filtered
+out, while Sst-ir cell firing is also up-regulated indicating some
+similarity between cholinergic modulation and the regular processing
+taking place within the circuit under high contrast.
+
+In order to test these hypothesis they could be be put to the test
+through specific and well defined manipulations to the LESPI
+model. The most basic manipulation would involve increasing
+thalamocortical drive and reducing the strength of lateral excitatory
+connections in the cortex decreased, shifting the balance of the
+circuit towards feedforward processing. Additionally more specific
+modulations could be applied by suppressing the Pv-ir neurons and the
+Sst-ir neuron activation function steepened. Overall this should shift
+the circuit towards a regime akin to the processing that occurs under
+high-contrast, reducing spatial and contextual integration in favor of
+more accurately representing feedforward input \citep{Roberts2005,
+  Roberts2008a, Roberts2008b}.
+
+These types of manipulations offer the chance to test various
+hypothesis about how the cortical circuit can be dynamically modulated
+to serve a specific task and because could even be used to model the
+effect of attention on various perceptual tasks including orientation
+discrimination and noisy distractor tasks.
