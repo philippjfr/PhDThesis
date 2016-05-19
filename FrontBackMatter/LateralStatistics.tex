@@ -4,12 +4,64 @@
 One of the major problems in computational neuroscience is in
 understanding how the brain can robustly capture information about its
 environment to improve how new information is encoded and
-processed. One of the major benefits of the models developed in the
-previous chapter is that we can not only access synaptic weights that
-have developed through activity-dependent processes but due to the
-spatial calibration and sub-type specific connectivity we can extract
-the visual statistics embedded in them, compare them against existing
-experimental measurements.
+processed. One of the major benefits of the developmental models such
+as those developed in the previous chapters is that the developed
+synaptic connections reflect the visual statistics of the
+input. Therefore we can make predictions about how the statistics
+embedded in the visual inputs is reflected in the organization of the
+model and could be used to aid cortical computations.
+
+A number of studies have investigated the role visual statistics play
+in shaping the organization of cortex. In particular it is well
+established that the distribution of orientations in the orientation
+maps can be strongly affected by altering the visual experience of an
+animal through manipulations like goggle rearing
+\cite{Tanaka2006}. However the evidence for the encoding of
+second-order statistics in lateral connections has been much harder to
+study and even coarse approaches such as measuring the isotropy of
+lateral connections has yielded conflicting results depending on the
+species \citep{Sincich2001, Bosking1997, Schmidt1997, Angelucci2002}.
+Whether this reflects differences in rearing environments or actual
+species differences still is not fully clear, as the tracer injections
+required to reconstruct the lateral connections can be performed at
+most on a few cells in a single element, making the collection of a
+lot of data infeasible.
+
+Although there is a clear lack of data in this area a few attempts
+have been made to go further and establish whether the lateral
+projections connect co-circular orientation domains, relecting the
+co-circularity in natural images \citep{Hunt2011}.
+
+Using the model introduced in the previous chapter we will analyze the
+second order statistics embedded in the long-range excitatory
+connections to determine to what extent they can capture the
+statistics of the training dataset and establish whether considerable
+biases in the inputs could affect the isotropy of
+connections. Additionally we can also fit the vonMises model
+introduced in \ref{BuzasEquations} to the lateral connectivity, which
+will provide a numerical measure of the isotropy by letting it fit the
+aspect ratio of the long-range Gaussian component.
+
+\section{Methods}
+
+\subsection{First Order Statistics}
+
+Before analyzing the second-order statistics embedded in the lateral
+connectivity it is important to establish that the first-order
+statistics are flat to ensure that they do not significantly influence
+the results of more complex analyses. The orientation map was
+therefore simply binned.
+
+\subsection{Weight Isotropy}
+
+The isotropy of the long-range projecting lateral excitatory
+projections was analyzed by computing the angle between the
+post-synaptic cells' preferred orientation and the pre-synaptic cell
+location and was then binned into a polar histogram. This provides a
+simple measure of whether the weights are anisotropic along the axis
+of preferred orientation of a neuron.
+
+\subsection{Second order statistics}
 
 In collaboration with Laurent Perrinet we developed analyses that
 allow characterizing the effect of natural image statistics on the
@@ -101,9 +153,8 @@ separately, which matches the fact that the classifier employed by
 \cite{Perrinet2015} could extract little information from the
 distance. In order to reduce the local contribution the central
 weights within the same microcolumn were masked out. The resultant
-% jbednar: broken ref?
-plots are shown in figure \ref{cooccurrence}. Generally a good match is
-found between the co-occurence statistics in the dataset and the
+plots are shown in figure \ref{cooccurrence}. Generally a good match
+is found between the co-occurence statistics in the dataset and the
 statistics encoded in the long-range connections of the model. The
 difference is clearest when comparing the laboratory dataset to the
 natural dataset, likely because the statistics are so radically
@@ -118,7 +169,7 @@ different between these datasets.
           from the lateral connection patterns of the LESPI model,
           highlighting that the model was able to capture the most
           characteristic features of this dataset.}
-	\label{cooccurence}
+	\label{cooccurrence}
 \end{figure}
 
 
