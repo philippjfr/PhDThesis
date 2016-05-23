@@ -44,9 +44,9 @@ contrast and strong lateral excitation.
 \subsection{The SEPI Model}
 
 The \textbf{S}hort-\textbf{R}ange \textbf{E}xcitation \textbf{P}V
-\textbf{Inhibition} (SEPI) model is based on the same principles and
-spatial profiles that were described for the SCAL model in the
-previous chapter. However unlike SCAL the model has a distinct
+\textbf{Inhibition} (SEPI) model is based on the same principles,
+spatial profiles and equations that were described for the SCAL model
+in the previous chapter. However unlike SCAL the model has a distinct
 excitatory and inhibitory V1 population, which both receive afferent
 input and are connected to each other recurrently. The architecture
 diagram in \ref{SEPIDiagram} shows the two sheets and projections
@@ -87,10 +87,10 @@ inhibitory population are also unchanged, driven by summing the
 excitatory input and divided by the inhibitory activity. This closely
 matches what we know about PV neurons in the cortex, which provide
 strong peri-somatic synaptic inputs to spiny neurons, providing
-shunting inhibition \citep{Atallah2012, Wilson2012}. Based on tracing studies we
-know that excitatory and inhibitory neurons and specifically the
-Parvalbumin expressing subpopulation strongly and densely innervate
-each other and themselves \citep{Buzas2001, Ma2011,
+shunting inhibition \citep{Atallah2012, Wilson2012}. Based on tracing
+studies we know that excitatory and inhibitory neurons and
+specifically the Parvalbumin expressing subpopulation strongly and
+densely innervate each other and themselves \citep{Buzas2001, Ma2011,
   Pfeffer2013}. Additionally these PV population receive strong
 afferent input \citep{Burkhalter2008}. All three of these properties
 are captured directly by the model.
@@ -105,6 +105,27 @@ properties distinguish them from the other major class of inhibitory
 interneurons the somatostatin (Sst) expressing population, which
 receive weaker but facilitating inputs
 \citep{Beierlein2003,Bartley2008,Tan2008}.
+
+In order to control the temporal properties of the PV population we
+introduce a hysteresis term, which is disabled in the final
+model. This will allow us to test the importance of fast inhibition in
+the model. The hysteresis function is defined as a discrete
+exponential weighting between the previous activation and the new
+activity, expressed as:
+
+\begin{equation}
+  \eta_h (t + \delta\eta) = \eta(t) + \tau \big[ \eta(t+\delta\eta - \eta(t) \big]
+\end{equation}
+
+where $\tau$ is the time constant. This will effectively slow down PV
+responses relative to the excitatory population. In the final model
+this term is eliminated simply by setting $\tau = 1$.
+
+The long-range excitatory connections are again ineffective in this
+model but can be used to assess how robust the model is to the
+introduction of long-range excitatory interactions. When the lateral
+excitation has been activated the response of a model excitatory
+neuron is therefore given by \ref{eqn:latexc}.
 
 \subsection{Assessing the quality of orientation maps} \label{metrics}
 
@@ -245,10 +266,10 @@ model presents a number of challenges. Additionally a lot of the data
 about these cell classes comes from mouse data where the genetic
 manipulation of specific cell classes has recently become possible. At
 the same time this provides a great opportunity to establish whether
-the response kinetics of the neurons can predict their final tuning
-properties in the model and how manipulating them can affect both
-development and the instantaneous response of the model to specific
-stimuli.
+the coarse response properties of the neurons can predict their final
+tuning properties in the model and how manipulating them can affect
+both development and the instantaneous response of the model to
+specific stimuli.
 
 In spatially calibrating the connections between neurons in the SCAL
 model we had already focused on the PV population, so calibrating the
@@ -261,7 +282,7 @@ neurons can quickly and robustly balance out the excitation arriving
 from the LGN \citep{Swadlow2003, Burkhalter2008}, by linearly matching
 the response of the pyramidal cell population and providing contrast
 gain control to sparsify the activity and thereby sharpen the
-orientation tuning \citep{Wilson2012}, then a non-linear or slow
+orientation tuning \citep{Wilson2012}, then a non-linear and very slow
 response among this population should disrupt map development.
 
 \subsubsection{Linearity and time profile of inhibitory responses}
@@ -284,17 +305,13 @@ used to assess the quality of the maps.
 The immediately striking result is that narrow band of good (near
 $\pi$) pinwheel densities in the linear region of the response. Apart
 from that we can clearly see that orientation selectivity, stability
-and the CoG distortion are linked and seemingly anti-correlated with
-the LHI. In particular we can see increasing distortion of the
-retinotopy as the inhibitory population responds more strongly, which
-causes serious disruptions to the map quality. At the same time
-sub-linear responses seem to induce very weak selectivity, which
-causes relatively low stability and high homogeneity.
-
-This analysis makes it clear that the model is highly sensitive to the
-non-linearity in inhibitory responses, with both sub- and supra-linear
-responses causing significant disruptions to self-organization,
-however for seemingly very different reasons.
+and the CoG distortion are strongly correlated, while they are
+anti-correlated with the LHI. In particular, we can see increasing
+distortion of the retinotopy as the inhibitory population responds
+more strongly, which causes serious disruptions to the map quality. At
+the same time sub-linear responses seem to induce very weak
+selectivity, which causes relatively low stability and high
+homogeneity.
 
 \begin{figure}
 	\centering
