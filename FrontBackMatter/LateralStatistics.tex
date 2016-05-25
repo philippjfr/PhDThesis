@@ -12,45 +12,68 @@ embedded in the visual inputs is reflected in the organization of the
 model and could be used to aid cortical computations.
 
 A number of studies have investigated the role visual statistics play
-in shaping the organization of cortex. In particular it is well
-established that the distribution of orientations in the orientation
-maps can be strongly affected by altering the visual experience of an
-animal through manipulations like goggle rearing
-\cite{Tanaka2006}. However the evidence for the encoding of
-second-order statistics in lateral connections has been much harder to
-study and even coarse approaches such as measuring the isotropy of
-lateral connections has yielded conflicting results depending on the
-species \citep{Sincich2001, Bosking1997, Schmidt1997, Angelucci2002}.
-Whether this reflects differences in rearing environments or actual
-species differences still is not fully clear, as the tracer injections
-required to reconstruct the lateral connections can be performed at
-most on a few cells in a single element, making the collection of a
-lot of data infeasible.
+in shaping the organization of cortex. In particular it has been shown
+that the distribution of orientations in the orientation maps can be
+strongly affected by altering the visual experience of an animal
+through manipulations like goggle rearing \cite{Tanaka2006}. However
+the evidence for the encoding of second-order statistics in lateral
+connections has been much harder to study and even coarse approaches
+such as measuring the isotropy of lateral connections along the axis
+of preferred orientation has not yielded uniform results. While a
+number of studies have found that lateral connections are elongated
+along the axis of preferred orientation in tree shrew
+\citep{Bosking1997}, cat \citep{Schmidt1997} and owl monkey
+\citep{Sincich2001} in macaque this anisotropy could be explained by
+the anisotropy in cortical magnification such that the connections are
+not elongated in visual space \citep{Angelucci2002}.  Whether this
+reflects differences in rearing environments or actual species
+differences is not fully clear, as the tracer injections required to
+reconstruct the lateral connections can be performed at most on a few
+cells in a single animal, making the collection of a lot of data
+infeasible.
 
 Although there is a clear lack of data in this area a few attempts
 have been made to go further and establish whether the lateral
 projections connect co-circular orientation domains, relecting the
-co-circularity in natural images \citep{Hunt2011}.
+co-circularity in natural images \citep{Hunt2011}. These studies have
+again been inconclusive due to the sparsity of good quality data.
 
-Using the model introduced in the previous chapter we will analyze the
-second order statistics embedded in the long-range excitatory
-connections to determine to what extent they can capture the
+In this chapter we will employ the model introduced in the previous
+chapter to analyze to what extent the statistics of the visual input
+shape the long-range excitatory connections and attempt to reconstruct
+those statistics based purely on synaptic weights and orientation
+map. In doing so we will determine to what extent they can capture the
 statistics of the training dataset and establish whether considerable
-biases in the inputs could affect the isotropy of
-connections. Additionally we can also fit the vonMises model
-introduced in \ref{BuzasEquations} to the lateral connectivity, which
-will provide a numerical measure of the isotropy by letting it fit the
-aspect ratio of the long-range Gaussian component.
+biases in the inputs could affect the isotropy of connections.
 
 \section{Methods}
 
-\subsection{First Order Statistics}
+\subsubsection{Synthetic stimuli}
 
-Before analyzing the second-order statistics embedded in the lateral
-connectivity it is important to establish that the first-order
-statistics are flat to ensure that they do not significantly influence
-the results of more complex analyses. The orientation map was
-therefore simply binned.
+The stimuli generated for this purpose are simple extensions of the
+elongated 2D Gaussian stimuli used to train the models up to this
+point. The model will draw 1 stimulus per unit area, which consists of
+a chain of three Gaussian pattern, the patterns can be seen in
+\ref{GaussianStatistics}. The middle Gaussian determines the overall
+orientation ($\theta_M$) of the pattern, and the outer Gaussians are
+offset in orientation by a value drawn from a vonMises distribution
+with a mean of $\theta_M$ and a $\kappa$ of ${0.5, 2, 8}$. The
+patterns are then spatially offset so that they form a chain forming
+either 'S' shaped or 'U' shaped providing circular and anti-circular
+statistics respectively. By varying the $\kappa$ we can vary how the
+distribution of co-occurence statistics increasing the preference for
+simple elongated bars.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{./results/lespi/gaussian_statistics.pdf}
+	\caption[Example of Gaussian patterns with co-occurence
+      statistics] {Gaussian patterns with co-occurence statistics
+      where the orientation offset is drawn from a vonMises
+      distribution with different $\kappa$ values and either co- or
+      anti-circular statistics.}
+    \label{GaussianStatistics}
+\end{figure}
 
 \subsection{Weight Isotropy}
 
@@ -61,24 +84,31 @@ location and was then binned into a polar histogram. This provides a
 simple measure of whether the weights are anisotropic along the axis
 of preferred orientation of a neuron.
 
+Additionally we will test explicitly whether the lateral connections
+are elongated along the axis of preferred orientation by fitting the
+\cite{Buzas2006} model of lateral connectivity leaving the orientation
+component as a free parameter. This will provide twofold validation,
+whether the model is actually connects to neurons nearby in the
+orientation domain but also allow us to estimate the aspect ratio of
+the connectivity.
+
 \subsection{Second order statistics}
 
-In collaboration with Laurent Perrinet we developed analyses that
-allow characterizing the effect of natural image statistics on the
-development of long-range lateral excitatory connectivity in the
-model. \cite{Perrinet2015} analyse the edge co-occurence statistics in
-a natural dataset of animals and a dataset of man made and natural
-images to demonstrate that they are sufficient to classify which class
-an image belonged to. Noting that humans are rapidly able to
-distinguish between animals and inanimate objects, they suggest that
-even early visual areas may make use of natural image statistics to
-categorize images rather than requiring the activity to propagate to
-higher visual cortices. This explanation would be more consistent with
-the rapid classification that has been observed in human
-psychophysical studies. In order to explore how the lateral
-connectivity could encode these statistics and make functional use of
-them, multiple analyses were developed to extract the statistics from
-the model.
+The afferent receptive fields in the visual cortex are usually assumed
+to act as feature detectors reducing the dimensionality of the visual
+``pixel`` space into a lower dimensional representation. Connections
+between these feature detectors could therefore at least in theory
+represent the co-occurence statistics of the low level features. In
+primary visual cortex this would just represents the co-occurence of
+simple oriented edges.
+
+In a recent paper \cite{Perrinet2015} analyzed the edge co-occurence
+statistics in natural images by labeling images with edges at varying
+frequencies, scales, orientations and phases through a greedy
+algorithm and then computing both the relative orientation between
+each pair of edges and the normalized azimuthal angle between them. An
+example image with labeled edges is shown in \ref{classifier}, along
+with a diagram showing how the co-occurence were computed.
 
 \begin{figure}
 	\centering
@@ -100,6 +130,29 @@ the model.
 	\label{classifier}
 \end{figure}
 
+This method for computing the edges was applied to the lateral
+connection fields of the LESPI model trained on a variety of
+stimuli. This was done by computing both the relative orientation and
+azimuth between each pre- and post-synaptic set of neurons and then
+binning these statistics weighted by the strength of connections
+between them as well as the orientation selectivity of both neurons.
+
+The lateral connection fields were chosen by selecting regions with a
+high local homogeneity index suggesting that the neuron is located in
+a iso-orientation domain. This matches the protocol employed by
+\cite{Bosking1997}, who chose 13 neurons in the center of orientation
+domains.
+
+\subsection{Training stimuli}
+
+The first step was to train the model on the different image datasets,
+which had already been analyzed for their co-occurence statistics (see
+figure \ref{classifier}). The datasets fed to the model comprised the
+two datasets used as part of the paper and one additional image
+dataset recorded in treeshrew cages in the David Fitzpatrick lab at
+Duke University, which features great numbers of extended,
+high-contrast bars (shown in figure \ref{datasets}).
+
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{./image_datasets.pdf}
@@ -110,42 +163,7 @@ the model.
     \label{datasets}
 \end{figure}
 
-The first step was to train the model on the different image datasets,
-which had already been analyzed for their co-occurence statistics (see
-figure \ref{classifier}). The datasets fed to the model comprised the
-two datasets used as part of the paper and one additional image
-dataset recorded in ferret cages, which features great numbers of
-extended, high-contrast bars (shown in figure \ref{datasets}).
-
-After training the model independently on each of the datasets the
-lateral connection fields were analyzed using a number of novel
-analyses. The first analysis that was performed was implemented by
-Jean-Luc Stevens and involved aligning the lateral connection field of
-each V1Exc neuron along the axis of preferred orientation and
-averaging them together. This analysis provides a way to quickly
-visually assess whether and how strongly lateral connection fields are
-biased along the axis of preferred orientation and is shown in figure
-\ref{avg_weights}.
-% jbednar: broken ref?
-
-In addition a more detailed analysis, which took into account the
-position preference of each pre- and post-synaptic neuron was
-implemented. A circular histogram of weight strength was computed by
-calculating the azimuth, $\phi$, between the pre- and post-synaptic
-neuron for each connection in all the lateral connection fields.
-
-Finally the co-occurence statistics encoded within the lateral
-connections were computed. This analysis was largely based around the
-\cite{Perrinet2015} code to compute the co-occurence statistics from
-sets of sparse labelled edges. As before the azimuth was computed for
-all the connections, however additionally the difference in the pre-
-and post-synaptic orientation preference $\theta$, angular location of
-the second edge relative to the reference edge $\phi$ and the distance
-$d$ were calculated. Furthermore we define angle $\psi = \phi
--\theta/2$, which reduces to $\psi = 0$ for co-circular edges. By
-binning and weighting each connection weight according to these
-properties a co-occurence histogram was computed for various
-distances.
+\section{Results}
 
 It was found that for the distances that are contained within one
 lateral field there was very little difference when binning the data
@@ -183,3 +201,9 @@ different between these datasets.
 \item Better decoding of position preference
 \item Include orientation selectivity in Buzas model
 \end{itemize}
+
+
+
+\section{Discussion}
+
+* 
