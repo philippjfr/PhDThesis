@@ -106,6 +106,32 @@ interneurons the somatostatin (Sst) expressing population, which
 receive weaker but facilitating inputs
 \citep{Beierlein2003,Bartley2008,Tan2008}.
 
+\subsubsection{Activation}
+
+The activation for both the excitatory and inhibitory population is
+given by:
+
+\begin{equation}
+  \eta_{exc/inh} = \frac{\eta_{A} + \eta_{LOC-EXC}}{1 + \eta_{PV-INH}}
+\end{equation}
+
+where $\eta_{A}$ is the LGN afferent activity, $\eta_{LOC-EXC}$ the
+local excitatory contribution and $\eta_{PV-INH}$ the PV inhibitory
+contribution. In other words both population integrate over afferent
+and local excitatory input and are then divisively normalized by the
+PV population. Optionally an additional long-range excitation term can
+be added to modulate the activity dependent on long-range excitatory
+input:
+
+\begin{equation}
+  \eta_{exc} = \frac{\eta_{A} + \eta_{LOC-EXC}}{1 + \eta_{PV-INH}} (1+\eta_{LAT-EXC})
+\end{equation}
+
+where $\eta_{LAT-EXC}$ is the input from the lateral excitatory
+projection.
+
+\subsubsection{Hysteresis}
+
 In order to control the temporal properties of the PV population we
 introduce a hysteresis term, which is disabled in the final
 model. This will allow us to test the importance of fast inhibition in
@@ -120,6 +146,8 @@ activity, expressed as:
 where $\tau$ is the time constant. This will effectively slow down PV
 responses relative to the excitatory population. In the final model
 this term is eliminated simply by setting $\tau = 1$.
+
+\subsubsection{Long-range excitation}
 
 The long-range excitatory connections are again ineffective in this
 model but can be used to assess how robust the model is to the
@@ -631,6 +659,16 @@ lateral excitation and contrast values tested here even this model had
 trouble canceling out this additional excitation. It is also worth
 noting these models were both trained on simple Gaussian patterns,
 which exhibit no long-range correlations, which might disrupt the map.
+
+Based on these observations it seems that the PV population at least
+in the model provides a means for neurons to compete in a local region
+to represent the stimulus and repelling neurons with similar feature
+preferences which results in a smooth local mapping of the stimulus
+features into an orientation map. Since the neurons respond so quickly
+and robustly this ensures the development of a good orientation map
+even in the presence of other influences, but also means that
+pathological changes in the PV response properties could severely
+disrupt the organization of the cortex.
 
 \subsection{Feature tuning and Inhibition}
 
