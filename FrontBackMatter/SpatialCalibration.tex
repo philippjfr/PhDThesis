@@ -435,7 +435,7 @@ individually.
 
 \subsubsection{Size tuning}
 
-The size tuning measurements are modeled on the measurements by
+The size-tuning measurements are modeled on the measurements by
 \cite{Sceniak1999, Sceniak2001} presenting sine grating stimuli of
 increasing area at the preferred position, orientation and spatial
 frequency of the central neuron. Due to the uncertainty in
@@ -451,7 +451,7 @@ response curve respectively.
 \subsubsection{Frequency tuning}
 
 The frequency tuning measurements were performed the same way as the
-size tuning measurements however instead of optimizing the spatial
+size-tuning measurements, but instead of optimizing the spatial
 frequency of the pattern it was varied. The size of the stimulus was
 restricted to a 2x2\degree\ region in the retina centered around the
 measured neurons.
@@ -468,7 +468,7 @@ our model.
 
 The area summation curves were measured in the model by presenting the
 model with disks of sine gratings of increasing size and varying phase
-and at the optimal spatial frequency of each neuron. The size tuning
+and at the optimal spatial frequency of each neuron. The size-tuning
 curves obtained in this way were then fitted with the integrated
 Difference of Gaussian model described by the following equation:
 
@@ -719,7 +719,7 @@ use the subtractive DoG model.
 \begin{figure}
 	\centering
     \includegraphics[width=0.5\textwidth]{./results/SCAL/LGN_SizeTuning.pdf}
-	\caption[SCAL model size tuning curves]{LGN neuron size tuning
+	\caption[SCAL model size-tuning curves]{LGN neuron size tuning
       representing the response of a stereotyped LGN neuron to a
       sinusoidal grating disk stimulus with increasing contrast. The
       tuning curves demonstrate a small but noticeable shift toward
@@ -730,9 +730,9 @@ use the subtractive DoG model.
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/SCAL/LGN_DoG.pdf}
-	    \caption[SCAL model size tuning DoG
+	    \caption[SCAL model size-tuning DoG
           fit.]{Difference-of-Gaussian model goodness of fit
-          comparison for SCAL size tuning curves. A) LGN
+          comparison for SCAL size-tuning curves. A) LGN
           area-summation curve (gray) fitted using a subtractive
           (blue) and divisive (red) integrated DoG model. B) Fraction
           of explained variance ($r^2$) of the subtractive and
@@ -780,7 +780,7 @@ we replicate the frequency tuning measurements performed by
 \cite{Levitt2001}. The sinusoidal gratings used for measurement were
 presented in a $2x2^{\circ}$ area, well beyond the size of the
 surround field. The resulting frequency tuning curves are shown in
-\ref{LGNFrequencyTuning}, showing a slight contrast dependent shift
+\ref{LGNFrequencyTuning}, showing a slight contrast-dependent shift
 toward higher frequencies at higher contrasts.
 
 \begin{figure}
@@ -840,7 +840,7 @@ properties that make a model robust to a wide range of inputs.
       model, along with the locations of the receptive fields shown in
       B. B) Gabor fits to receptive fields measured using sparse
       random noise. C) Orientation tuning curve of a single neuron
-      across contrasts, demonstrating largely contrast dependent
+      across contrasts, demonstrating largely contrast-independent
       orientation tuning.}
 	\label{SCALORTuning}
 \end{figure}
@@ -929,7 +929,7 @@ Based on that measurement we can now explicitly state that 1 visual
 degree corresponds to 3 mm in the model, which will let us
 independently confirm that the extent of the final model weights are
 consistent with experimental measurements but also internally
-consistent with the size tuning response of the model. The next steps
+consistent with the size-tuning response of the model. The next steps
 will be to evaluate feedforward and lateral connections independently.
 
 \begin{figure}
@@ -951,7 +951,7 @@ will be to evaluate feedforward and lateral connections independently.
 
 The afferent input from the lateral geniculate nucleus is the main
 driver of responses in the primary visual cortex. It is therefore
-crucial in determining the size tuning profile of the visual cortex.
+crucial in determining the size-tuning profile of the visual cortex.
 The \ref{AfferentBackground} discussed how the integrative area of a
 neuron in V1 is made up of the combined integrative area of
 thalamocortical projections and retinogeniculate projections.
@@ -1016,12 +1016,12 @@ and median values.
 	\label{CavanaughDistribution}
 \end{figure}
 
-Additionally we also compare the shift in size tuning preference
+Additionally we also compare the shift in size-tuning preference
 between low and high contrast conditions, between experiment
 \citep{Sceniak1999} and the model. In addition to the SCAL model, the
 analysis also includes results from GCAL, which employs subtractive
 rather than divisive inhibition. The results highlight that the GCAL
-model does not really exhibit any meaningful size tuning shift between
+model does not really exhibit any meaningful size-tuning shift between
 low and high contrast. Additionally both model scatter plots clearly
 highlight the lack of diversity in the model. Generally however, the
 results are qualitatively very similar between SCAL and the
@@ -1031,14 +1031,14 @@ that is very similar (2.2x shift in experiment vs. 1.8x in the model).
 \begin{figure}
 	\centering
         \includegraphics[width=0.8\textwidth]{./V1_DoG_Contrast.pdf}
-	\caption[Contrast dependent size tuning shifts compared between
+	\caption[Contrast-dependent size-tuning shifts compared between
       GCAL, SCAL and experimental results from
-      \cite{Sceniak1999}.]{Comparison between contrast dependent size
-      tuning shifts between the GCAL model (A, B), the SCAL model (C,
+      \cite{Sceniak1999}.]{Comparison between contrast-dependent 
+      size-tuning shifts between the GCAL model (A, B), the SCAL model (C,
       D) and experimental results from \cite{Sceniak1999} (E, F). A,
       C, E) Scatter plot of DoG excitatory constant at low and high
       contrast in experiment and the model respectively. B, D, F)
-      Distribution of contrast dependent shift in excitatory
+      Distribution of contrast-dependent shift in excitatory
       constant.}
 	\label{ContrastShift}
 \end{figure}
@@ -1341,14 +1341,14 @@ features in the sensory input onto the surface of the cortex.
 
 In the literature review we had established that long-range
 connections in the cortex are almost exclusively excitatory. However
-the spatial scales involved in mediating Mexican hat like connectivity
+the spatial scales involved in mediating Mexican-hat--like connectivity
 are well below the long-range excitatory connections, which can often
 span many hypercolumns. By incorporating the empirically determined
 spatial scales of the model we were able to establish that the
-relatively long projections originating from the basket cell
-population in V1 is sufficient to account for the Mexican hat
+relatively long inhibitory projections originating from the basket cell
+population in V1 are sufficient to account for the Mexican hat
 profile. At the same time we show that long-range surround suppression
-cannot be effected directly by these projections and must instead by
+cannot be implemented directly by these projections and must instead by
 mediated by a di-synaptic mechanism, via the long-range excitatory
 projections.
 
@@ -1357,7 +1357,7 @@ SCAL model, before critically reviewing the experimental measurements
 given in the light of the model results. This will let us highlight
 issues with DoG fitting procedures employed to fit area summation
 curves in visual cortex and call into questions some conclusions made
-about the source of contrast dependent size tuning shifts. Finally we
+about the source of contrast-dependent size-tuning shifts. Finally we
 will discuss the model of lateral excitatory connectivity and how the
 addition of an aspect parameter can help us quantify the isotropy of
 patchy lateral connectivity in a way that can easily be applied to
@@ -1411,7 +1411,7 @@ to experimental results than the existing GCAL model. In addition to
 spatially calibrating the extents of afferent and lateral connections,
 the model is also the first developmental model that uses divisive
 rather than subtractive inhibition. The divisive model provides a much
-better account of size tuning responses, which shift to larger
+better account of size-tuning responses, which shift to larger
 integrative areas depending on the contrast, which agrees with a wide
 range of existing models. We also showed that the extents of
 inhibitory basket cells is sufficient to account for the Mexican hat
@@ -1421,14 +1421,14 @@ suppressing it in nearby regions, which leads to a smooth mapping of
 different feature preferences across the cortical surface.
 
 However, in exploring this model we have also encountered clear
-limitations. The most important of which is the lack of distinct
+limitations, the most important of which is the lack of distinct
 excitatory and inhibitory populations. Apart from directly violating
 Dale's law, this poses a serious problem for a developmental model.
 This is because Hebbian learning will ensure the strength and spatial
 profile of the neural connections is dependent on the response
 properties of the neuron and different cell types may respond very
 differently. This has made it difficult to directly compare the
-lateral connectivity in the model.
+lateral connectivity in the model to experimental data.
 
 \subsubsection{Differences to GCAL}
 
@@ -1438,7 +1438,7 @@ emphasized the SCAL model operates on divisive rather than subtractive
 inhibition. While inhibition in the brain generally has both divisive
 and subtractive effects, the divisive normalization paradigm has shown
 tremendous success in explaining a wide range of effects including
-modulatory effects, contrast dependent changes in responses,
+modulatory effects, contrast-dependent changes in responses,
 decorrelating the inputs and even effects associated with visual
 attention \citep{Cavanaugh2002a, Graham2011, Carandini2012,
   Reynaud2012, Coen2015}.
@@ -1484,8 +1484,8 @@ model itself does not exert any long-range influences any changes in
 the fit is must likely mediated by the relatively short-range
 connections in the model. However we did find significant shifts in
 the integration area depending on the contrast level in the SCAL model
-but not in the GCAL model. This suggests suggest the contrast
-dependent shifts in effective integration area can be explained by
+but not in the GCAL model. This suggests suggest the 
+contrast-dependent shifts in effective integration area can be explained by
 changes in the relative gain of the center and surround component in a
 ratio-of-Gaussians model, just as was proposed by
 \cite{Cavanaugh2002}. It is therefore not necessary to invoke
@@ -1568,8 +1568,8 @@ on matching the average response rather than capturing the full level
 of detail immediately. This means that the LGN stage filters the
 visual input at just one spatial frequency, which severely limits the
 variability in receptive field properties. This is particularly
-evident when comparing the distribution of spatial constants, the size
-tuning shifts and indeed the measured receptive fields themselves.
+evident when comparing the distribution of spatial constants, the 
+size-tuning shifts and indeed the measured receptive fields themselves.
 
 The receptive field Gabor analysis in particular highlights the lack
 of diversity in the receptive fields. This is a direct result of the
@@ -1588,28 +1588,28 @@ refined as we construct more complex models in later chapters.
 
 \section{Conclusions}
 
-In summary, we have presented one of the first developmental model of
+In summary, we have presented the first developmental model of
 the primary visual cortex that captures the spatial extents of various
-connections in the cortex. Unlike previous, static models performing
-this calibration and analysis in a development has several major
-benefits. Specifically because we calibrate only the initial profile
+connections in the cortex. Unlike previous static models, performing
+this calibration and analysis in a developmental model has several major
+benefits. Specifically, because we calibrate only the initial profile
 of the connectivity the developmental processes themselves provide a
-form of validation for the final results. This has allowed us to draw
-several concrete conclusions.
+form of validation for the final results. This property has allowed us
+to draw several concrete conclusions.
 
 First of all we were able to establish that the network of local
 excitatory and inhibitory connections is sufficient to account for the
 Mexican hat profile, which drives the organization of cortical neurons
 into smooth topographic maps. Indeed the estimates used for the extent
 of inhibitory projections was deliberately chosen to be very
-conservative to demonstrate that real long-range inhibitory
-connections are not needed to drive development of an orientation map.
+conservative to demonstrate that implausibly long-range inhibitory
+connections are not needed, to drive development of an orientation map.
 
 Secondly we showed that introducing divisive inhibition is indeed
-sufficient to account for contrast dependent changes in the spatial
+sufficient to account for contrast-dependent changes in the spatial
 integration of V1 neurons. Divisive normalization has been described
 as a canonical computation performed by the cortex and indeed we are
-able to account for contrast dependent changes in the response of V1
+able to account for contrast-dependent changes in the response of V1
 neurons using the divisive model. This fits the findings by
 \cite{Carandini2012} and many others and suggests that long-range
 lateral connections are not necessary to account for increases in the
