@@ -374,7 +374,27 @@ world or of various laboratory environments. The following analyses
 all use either the ``natural`` or the ``treeshrew`` dataset shown in
 \ref{image_patterns}.
 
-\subsection{orientation-contrast suppression}
+Before characterizing the responses to more complex patterns we will
+once again show how the response to a simple Gaussian pattern evolves
+over time before and after development, which is shown in
+\ref{LESPIResponse}. When comparing this response to the SCAL model
+(see \ref{SCALResponse}) it is immediately noticeable that the model
+exhibits significantly more suppression.
+
+\begin{figure}
+	\centering
+    \includegraphics[width=1.0\textwidth]{./results/lespi/LESPI_Response.pdf}
+	\caption[LEPSI responses to a simple Gaussian pattern before and
+      after self-organization.]{LESPI responses to a simple Gaussian
+      pattern before and after self-organization. Top left shows the
+      input pattern and the LGN ON/OFF response to the pattern. Top
+      right shows the evolving patterns of activity before and after
+      development. The response of the central neuron to both patterns
+      is shown at the bottom.}
+	\label{LESPIResponse}
+\end{figure}
+
+\subsection{Orientation contrast suppression}
 
 Orientation-contrast suppression is one of the most well-studied
 paradigms in the surround-modulation literature. One of the most
@@ -495,7 +515,7 @@ In order to get a better understanding of how the different cell
 classes and synaptic projections interact to give rise to the
 contextual modulation effects seen above the timecourse of the
 activity can be visualized. The timecourse of the responses under four
-different conditions is shown in \ref{ORTC_Timecourse}. The top-row
+different conditions is shown in \ref{ORTC_TimeCourse}. The top-row
 shows the response under low-contrast conditions for the
 iso-orientation and cross-orientation condition and highlights how the
 iso-orientation facilitation emerges. Comparing A and B it is clear to
@@ -542,7 +562,7 @@ allowing facilitatory effects to occur.
 
 \begin{figure}
 	\centering
-        \includegraphics[width=0.5\textwidth]{./results/lespi/LESPI_SizeTuning.pdf}
+        \includegraphics[width=1.0\textwidth]{./results/lespi/LESPI_SizeTuning.pdf}
 	\caption[Size tuning curves of the excitatory, PV and Sst
       population at various contrasts.]{Size tuning curves measured in
       the LESPI model trained on natural stimuli for the A)
