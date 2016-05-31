@@ -525,6 +525,35 @@ condition (C) than in the cross-orientation condition.
 	\label{ORTC_TimeCourse}
 \end{figure}
 
+\subsection{Size tuning}
+
+The effects of both spatial and contrast dependent effects can best be
+explained when looking at the size tuning curves of all three
+populations. A representative example of size tuning curves measured
+from all three populations at a single location is shown in
+\ref{LESPI_SizeTuning}. The excitatory neuron shows a significant
+shift towards larger size preferences at lower contrast (>3x). This is
+largely driven by the fact that both inhibitory populations
+demonstrate even more significant shifts in size tuning. The most
+striking feature of this is the very gradual increase of Sst
+activation as the stimulus grows at low contrasts. This means that for
+very small stimuli the Sst neurons provide very little inhibition
+allowing facilitatory effects to occur.
+
+\begin{figure}
+	\centering
+        \includegraphics[width=0.5\textwidth]{./results/lespi/LESPI_SizeTuning.pdf}
+	\caption[Size tuning curves of the excitatory, PV and Sst
+      population at various contrasts.]{Size tuning curves measured in
+      the LESPI model trained on natural stimuli for the A)
+      excitatory, B) PV inhibitory and C) Sst inhibitory
+      population. The curves show clear modulation by stimulus
+      contrast shifting toward higher size preferences, driven
+      primarily by the shifts towards larger maximal suppression at
+      low contrasts in the inhibitory populations.}
+	\label{LESPI_SizeTuning}
+\end{figure}
+
 \subsection{Flanker Modulation}
 
 A second often used paradigm to measure surround-modulation effects is
@@ -662,12 +691,19 @@ Since then a large number of studies have focused on different classes
 of inhibitory neurons and the Sst suppressing interneurons fit
 precisely this description. Not only does the model demonstrate the
 contrast dependent switch from facilitation to suppression that has
-been so widely described \citep{Hirsch1991,Weliky1995, Toth1996} as
-can be seen in \ref{ORTC_ContrastCurve} and \ref{ORTC_CSCurve}, but
-we can directly observe how the assymetry in the efficacy of
-excitatory-excitatory and excitatory-inhibitory connections targetting
-the excitatory and Sst populations respectively drives both phenomena
-in \ref{ORTC_ContrastDependence}.
+been so widely described \citep{Levitt1997, Polat1998, Dragoi2000,
+  Wang2009} as can be seen in \ref{ORTC_ContrastCurve} and
+\ref{ORTC_CSCurve}, but we can directly observe how the assymetry in
+the efficacy of excitatory-excitatory and excitatory-inhibitory
+connections targetting the excitatory and Sst populations respectively
+drives both phenomena in the timecourse of suppression under various
+stimulus conditions as shown in \ref{ORTC_TimeCourse} and very
+long-range integration of inputs by the Sst population under low
+contrast conditions (see \ref{LESPI_SizeTuning}). This property of
+very long-range spatial integration by the Sst population has so far
+been described only in the mouse \citep{Adesnik2012}, however we
+predict a cell class with a similar function exists in higher mammals
+as well.
 
 In the model the long-range projections integrate over both space and
 time due to their large spatial scale and hysteresis, effectively
