@@ -143,7 +143,7 @@ neurons. The response of the excitatory population is then given by:
 
 where $\eta_{A}$ is the LGN afferent activity, $\eta_{LOC-EXC}$ the local
 excitatory contribution, $\eta_{PV-INH}$ the PV inhibitory contribution
-and the surround modulation term $\eta_{SM}$ is defined as:
+and the surround-modulation term $\eta_{SM}$ is defined as:
 
 \begin{equation}
   \eta_{SM} = 1 + \eta_{LAT-EXC} - \eta_{Sst}
@@ -152,7 +152,7 @@ and the surround modulation term $\eta_{SM}$ is defined as:
 where $\eta_{LAT-EXC}$ represents the long-range lateral excitatory
 contribution and $\eta_{Sst}$ is the Sst inhibitory contribution. In
 the SEPI model the $\eta_{SM}$ term simply reduces to 1, eliminating
-all long-range interactions. The surround modulation term provides
+all long-range interactions. The surround-modulation term provides
 gain when excitation exceeds inhibition and shunting inhibition when
 the reverse is true. As such, this term provides a convenient
 abstraction to model the modulatory influence of the dendritic
@@ -291,8 +291,8 @@ environment dominated mostly by trees, grass and leafs.
 \subsection{Surround modulation}
 
 Beyond measuring simple attributes of the spatial organization in LGN
-and V1, higher order effecs can be explored through complex surround
-modulation measurement protocols. In addition to the simple area
+and V1, higher order effecs can be explored through complex 
+surround-modulation measurement protocols. In addition to the simple area
 summation curve measurements described above we replicate two further
 protocols to evaluate the spatial response properties of the model.
 In particular we are interested in the interaction between the spatial
@@ -302,10 +302,10 @@ purpose we replicate two measurement protocols, a simple annulus based
 contrast suppression measurement \cite{Jones2002} and a protocol using
 target and flanker stimuli performed by \cite{Kapadia1995}.
 
-\paragraph{Orientation contrast suppression}
+\paragraph{orientation-contrast suppression}
 
-The orientation contrast suppression is perhaps one of the most well
-studied surround modulation paradigms. The measurement involves
+The orientation-contrast suppression is perhaps one of the most well
+studied surround-modulation paradigms. The measurement involves
 presenting stimuli of a central sine grating, optimized to the
 preferred size, frequency and orientation of the neuron being
 measured. Once the baseline activity has been measured an additional
@@ -326,7 +326,7 @@ respectively.
 \begin{figure}
 	\centering
         \includegraphics[width=0.5\textwidth]{ORC_Stimulus.pdf}
-	\caption{Orientation contrast stimulus measuring modulation by a
+	\caption{orientation-contrast stimulus measuring modulation by a
       sine grating annulus on the response of a central neuron
       responding to a central sine grating disk of the same frequency.
       Stimulus is varied by center and surround contrast, surround
@@ -346,13 +346,13 @@ response to just the center stimulus.
 
 \paragraph{Pop-out}
 
-One of the most well studied effects in the surround modulation
+One of the most well studied effects in the surround-modulation
 literature is the pop-out effect, where when a visual stimulus is
 embedded within a number of dissimilar features it strongly stands
 out. It is thought this effect relies on similar features suppressing
 each other leaving the dissimilar unaffected and therefore
 ``popping-out`` of the background \citep{Kastner1997}. In order to
-test this surround modulation effect we generate visual patterns
+test this surround-modulation effect we generate visual patterns
 container a target bar stimulus surrounded by a circle of flanker
 stimuli, which are either co-aligned with the target (iso-condition)
 or orthogonal to the target (cross-condition).
@@ -364,7 +364,7 @@ simulated area.
 
 \section{Results}
 
-As previously discussed the surround modulation effects in the model
+As previously discussed the surround-modulation effects in the model
 are highly dependent on the statistics of the visual input the model
 was trained on. Since the standard Gaussian patterns used so far do
 not exhibit any long-range correlations the analyses here will use
@@ -374,10 +374,10 @@ world or of various laboratory environments. The following analyses
 all use either the ``natural`` or the ``treeshrew`` dataset shown in
 \ref{image_patterns}.
 
-\subsection{Orientation contrast suppression}
+\subsection{orientation-contrast suppression}
 
-Orientation contrast suppression is one of the most well studied
-paradigms in the surround modulation literature. One of the most
+Orientation-contrast suppression is one of the most well-studied
+paradigms in the surround-modulation literature. One of the most
 thorough analyses was performed by \cite{Jones2002}, varying the
 relative size and offset of the center stimulus and surround
 annulus. In our analysis the contrast suppression will not be
@@ -385,12 +385,12 @@ characterized to the same extent. The measurements were performed in
 the model trained on the ``natural`` dataset, which does not have as
 highly biased statistics as the laboratory datasets.
 
-As a first step the orientation contrast curve was measured for a
+As a first step the orientation-contrast curve was measured for a
 number of randomly chosen neurons under high-contrast conditions and
 all non-responding units were rejected. By normalizing the response
 and averaging the curves and computing the standard error the average
 contrast suppression curve was computed and can be seen compared to
-the orientation contrast suppression curve from a single neuron
+the orientation-contrast suppression curve from a single neuron
 measured by \cite{Jones2002} in \ref{ORTC_Jones}. The result shows
 that the neurons show strong iso-orientation suppression with a fairly
 well defined shape, which does not vary considerably in width.
@@ -398,13 +398,13 @@ well defined shape, which does not vary considerably in width.
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/lespi/ORTC_Jones_Comparison.pdf}
-	\caption[Averaged orientation contrast suppression curve compared
+	\caption[Averaged orientation-contrast suppression curve compared
       against \cite{Jones2002} example curve.]{Averaged orientation
       contrast suppression curve compared against \cite{Jones2002}
       example curve. A) Shows the normalized and averaged orientation
       contrast suppression curve from 11 neurons against the average
       orientation tuning curve of the same neurons both with standard
-      error bars. B) A sample orientation contrast suppression curve
+      error bars. B) A sample orientation-contrast suppression curve
       reproduced from \cite{Jones2002}.}
 	\label{ORTC_Jones}
 \end{figure}
@@ -458,11 +458,11 @@ surround modulation emerges from the circuit.
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/lespi/ORTC_ContrastDependence.pdf}
-	\caption[Dependence of orientation contrast suppression on local
-      and global contrast.]{Dependence of orientation contrast
+	\caption[Dependence of orientation-contrast suppression on local
+      and global contrast.]{Dependence of orientation-contrast
       suppression on local and global contrast. A, C) Low- and
-      high-contrast orientation contrast suppression patterns. B, D)
-      Corresponding orientation contrast suppression curves showing
+      high-contrast orientation-contrast suppression patterns. B, D)
+      Corresponding orientation-contrast suppression curves showing
       facilitation at low contrast and suppression at high contrast
       respectively.}
 	\label{ORTC_ContrastDependence}
@@ -527,14 +527,14 @@ condition (C) than in the cross-orientation condition.
 
 \subsection{Flanker Modulation}
 
-A second often used paradigm to measure surround modulation effects is
+A second often used paradigm to measure surround-modulation effects is
 presenting a target stimulus optimized for a particular neuron and
 then adding flanker stimuli, which vary in orientation from the
 central neuron. These patterns are much more sparse and therefore do
 not engage the circuitry in the same way a natural image stimulus or
 even sine grating stimulus would. We are particularly interested
-whether the surround suppression effects that were seen above are
-sufficient to account for various saliency based computations that are
+whether the surround-suppression effects that were seen above are
+sufficient to account for various saliency-based computations that are
 thought to originate in the early visual cortex. Specifically whether
 iso-orientation suppression can drive a pop-out effect where visual
 elements with similar orientations suppress each other, which will
@@ -572,8 +572,8 @@ condition where all flankers have the same orientation.
 In this chapter we introduced the LESPI model as an extension of the
 models presented in previous chapters and demonstrated how the model
 can mediate many of the contextual modulation effects that are known
-to occur in the primary visual cortex. Unlike many other surround
-modulation models this models explains mechanistically how the
+to occur in the primary visual cortex. Unlike many other 
+surround-modulation models this model explains mechanistically how the
 long-range patchy excitatory connections emerge in the model and how a
 specific class of inhibitory neurons can explain contrast and context
 dependent changes in surround modulation.
