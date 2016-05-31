@@ -980,20 +980,19 @@ increases transmission efficacy as presynaptic firing rates increase
 
 The suggestion that inhibitory neurons have a higher contrast
 threshold has become very popular in the theoretical literature of the
-past 20 years.  However, as of yet there is only limited evidence to
+past 20 years. However, as of yet there is only limited evidence to
 support this core assumption, and there are a number of alternative or
 concurrent mechanisms that may explain all or at least some of the
 contrast-dependent effects.
 
-% jbednar: what are ``different inhibitory components''?  Sounds
-% unmotivated here.  Perhaps ``the variety of different types of inihibitory interactions''?
 The fact that the V1 circuit seems to exhibit both a Mexican hat
-profile and long-range facilitation, at least under some stimulus conditions,
-seems contradictory. In particular, dissociating different inhibitory
-components has been very difficult from electrophysiological
-measurements alone. In order to begin separating the origins of these
-different influences on a V1 neuron's response, we will therefore
-more closely investigate the source of surround suppression in the cortex.
+profile and long-range facilitation, at least under some stimulus
+conditions, seems contradictory. In particular, dissociating the
+variety of different types of inihibitory interactions has been very
+difficult from electrophysiological measurements alone. In order to
+begin separating the origins of these different influences on a V1
+neuron's response, we will therefore more closely investigate the
+source of surround suppression in the cortex.
 
 \subsection{Surround Suppression: Feedforward or Feedback?}
 
@@ -1103,17 +1102,15 @@ macaque V1 have identified basket cells 1-2 mm in extent
 \citep{Somogyi1983,Lund1987,Lund1991,Martin1983} and single-cell
 tracing studies have even identified large basket cells, which give
 off a roughly uniform number of boutons across a large diameter
-spanning up to two hypercolumns \citep{Buzas2001}. A schematic
-%% jbednar: Don't say hypercolums, say mm (right?).  Unless you've rigorously
-%% defined hypercolumn?
-representation of the basket cell connectivity profile is summarized
-and compared against both the orientation column structure and the
-excitatory connection profile in Figure
-\ref{BasketCellExtent}. Functionally such a connectivity profile may
-indicate that basket cells can suppress neurons with widely varying
-orientations, which may implicate basket cells as an important
-mechanism to sharpen orientation preference and would also lead to
-cross-orientation contextual effects.
+extending up to two hypercolumns \citep{Buzas2001}, which corresponds
+to about 1.5 mm in macaque. A schematic representation of the basket
+cell connectivity profile is summarized and compared against both the
+orientation column structure and the excitatory connection profile in
+Figure \ref{BasketCellExtent}. Functionally such a connectivity
+profile may indicate that basket cells can suppress neurons with
+widely varying orientations, which may implicate basket cells as an
+important mechanism to sharpen orientation preference and would also
+lead to cross-orientation contextual effects.
 
 \begin{figure}
 	\centering
@@ -1600,12 +1597,15 @@ the processes of iso-orientation suppression and contour integration,
 they argue that iso-orientation suppression may serve to further
 reduce redundancies in neural coding, thereby achieving greater
 statistical independence, which would explain why neural responses
-appear most sparse when presented with natural stimuli. Secondly,
-observing that visual cortex can also exhibit co-linear facilitation
-under low-contrast conditions \citep{Sceniak1999, Kapadia1999}, they
-suggest that under low signal-to-noise conditions the cortex may act
-to enhance commonly encountered patterns to aid the identification of
-contours and form.
+appear most sparse when presented with natural stimuli. Furthermore
+recent findings have shown that low-level co-occurrence are sufficient
+to classify images of animals \citep{Perrinet2015}, suggesting that
+even early visual areas could be involved in high-level classification
+tasks. Secondly, observing that visual cortex can also exhibit
+co-linear facilitation under low-contrast conditions
+\citep{Sceniak1999, Kapadia1999}, they suggest that under low
+signal-to-noise conditions the cortex may act to enhance commonly
+encountered patterns to aid the identification of contours and form.
 
 These theoretical studies have hugely advanced our thinking about the
 computations performed by the early visual cortex, yet very little
@@ -1735,15 +1735,12 @@ they suggest that long-range feedback connections could be the main
 driver of these contextual influences and that the drive to inhibitory
 neurons in the local circuit determines the sign of the
 effect. However, since this is a static model it provides no account
-of how the required lateral or feedback connectivity could
-emerge. Additionally this model still uses the assumption originally
+of how the required lateral or feedback connectivity could emerge and
+since the model only represents 1D space cannot process realistic
+stimuli. Additionally this model still uses the assumption originally
 made by \cite{Somers1998}, that inhibitory neurons have a higher
 threshold than excitatory neurons, to account for contrast dependent
 effects, which has received little experimental confirmation.
-% jbednar: See ``roughly following'' above -- how's what's observed
-% different from this idea? 
-% Also explain that the model is only 1D, and thus cannot process
-% realistic stimuli?
 
 An alternative to this circuit-level analysis is to express these
 interactions in the more abstract framework of predictive coding. The
@@ -1933,11 +1930,12 @@ could be applied to the cortex as a whole.
 	\label{GCAL}
 \end{figure}
 
-% jbednar: explain ``sheet''?
 The architecture of the GCAL model in its simplest form and as it will
-initially be used in this project relies on only four sets of neurons,
-a retinal sheet for the presentation of stimuli, two RGC/LGN sheets
-and a V1 sheet. Neurons in these sheets are connected with different
+initially be used in this project relies on only four sets of neurons
+organized into 2D grids, which will be referred to as sheets. These
+sheets consist of the retinal sheet for the presentation of stimuli,
+two RGC/LGN sheets representing ON and OFF center receptive fields and
+a V1 sheet. Neurons in these layers are connected with different
 intra- and inter-areal connection fields. This simple model can only
 be used to demonstrate retinotopy, orientation preference and the
 emergence of simple cell-like RFs, but more complex models have been
@@ -1958,16 +1956,7 @@ was closely modeled on the divisive normalization model introduced and
 validated by \cite{Bonin2005}. Finally, the lateral excitatory and
 inhibitory fields in the V1 sheet give rise not only to the
 topographic map structure but also to some surround-modulation
-effects. In particular, it can explain some of the size-tuning
-properties of V1 neurons, as the excitatory field will boost the
-response to a growing centered disk up to a certain peak, after which
-point the lateral inhibitory field dominates and reduces the response
-to the stimulus as it grows further.
-% cite?
-It may also explain effects such as iso-orientation
-suppression, but these phenomena have not yet been explored in detail.
-%jbednar: Don't you need to discuss Antolik:phd in detail, explaining
-%how it differs from your approach?
+effects.
 
 Overall, due to the simplicity of its mechanisms and its explanatory
 strength, GCAL provides an ideal starting point to explore the
