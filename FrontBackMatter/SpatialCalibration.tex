@@ -470,7 +470,7 @@ The area summation curves were measured in the model by presenting the
 model with disks of sine gratings of increasing size and varying phase
 and at the optimal spatial frequency of each neuron. The size-tuning
 curves obtained in this way were then fitted with the integrated
-Difference of Gaussian model described by the following equation:
+Difference-of-Gaussian model described by the following equation:
 %%
 \begin{equation}
 R(s) = R_0 + K_e \int \int re^{-\frac{r^2}{a}} \,
@@ -495,20 +495,17 @@ R = R_e - R_i
 R = \frac{R_e}{1+R_i}
 \label{DoGDivisive}
 \end{equation}
-
-Using the estimated spatial constants and gain parameters we can also
-calculate the suppression index of each neuron:
 %%
-%% jbednar: It's almost never a good idea to use words as multiple adjacent 
-%% lowercase letters in equations--they are always ambiguous about
-%% whether it's three variables s, u, and b, or one label 'sub'.  Why
-%% not _s and _d?
+Using the estimated spatial constants and gain parameters we can also
+calculate the suppression index of each neuron from the parameters of
+both the DoG models:
+%%
 \begin{equation}
-  SI_{sub} = \frac{K_i b}{K_e a}
+  SI_s = \frac{K_i b}{K_e a}
 \end{equation}
 %%
 \begin{equation}
-  SI_{div} = 1 - \frac{1}{1+K_i b}
+  SI_d = 1 - \frac{1}{1+K_i b}
 \end{equation}
 %%
 Unlike in the original experiment we eliminate the $R_0$ and $\beta$
@@ -966,9 +963,9 @@ will be to evaluate feedforward and lateral connections independently.
 % natively?
 \begin{figure}
 	\centering
-        \includegraphics[width=1.0\textwidth]{SCAL_hypercolumns.pdf}
-	\caption[Hypercolumn and pinwheel-density fitting procedure and
-      results.]{Hypercolumn and pinwheel-density fitting procedure. A)
+        \includegraphics[width=1.0\textwidth]{./results/SCAL/PinwheelAnalysis.pdf}
+	\caption[Hypercolumn and pinwheel density fitting procedure and
+      results.]{Hypercolumn and pinwheel density fitting procedure. A)
       Orientation map in V1 overlaid with real and imaginary contours
       and pinwheels at their intersections. B) 2D FFT of the
       orientation map showing a ring identifying the periodicity of

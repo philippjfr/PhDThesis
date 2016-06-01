@@ -123,11 +123,11 @@ given by:
 %% jbednar: Should be something like
 %% \eta_E = \eta_I = \frac{\eta_{A} + \eta_L}{1 + \eta_P}
 \begin{equation}
-  \eta_{exc/inh} = \frac{\eta_{A} + \eta_{Loc-Exc}}{1 + \eta_{PV-Inh}}
+  \eta_E = \eta_I = \frac{\eta_{A} + \eta_{L}}{1 + \eta_{P}}
 \end{equation}
 %%
-where $\eta_{A}$ is the LGN afferent activity, $\eta_{Loc-Exc}$ the
-local excitatory contribution and $\eta_{PV-Inh}$ the PV inhibitory
+where $\eta_{A}$ is the LGN afferent activity, $\eta_{L}$ the
+local excitatory contribution and $\eta_{P}$ the PV inhibitory
 contribution. In other words, both populations integrate over afferent
 and local excitatory input and are then divisively normalized by the
 PV population.  To allow testing its effects, we will also allow an
@@ -135,10 +135,10 @@ optional additional long-range excitation term to modulate the
 activity dependent on long-range excitatory input:
 %%
 \begin{equation}
-  \eta_{exc} = \frac{\eta_{A} + \eta_{Loc-Exc}}{1 + \eta_{PV-Inh}} (1+\eta_{Lat-Exc})
+  \eta_{exc} = \frac{\eta_{A} + \eta_{L}}{1 + \eta_{P}} (1+\eta_{HE})
 \end{equation}
 %%
-where $\eta_{Lat-Exc}$ is the input from the lateral excitatory
+where $\eta_{HE}$ is the input from the horizontal excitatory
 projection.
 
 \subsubsection{Hysteresis}
