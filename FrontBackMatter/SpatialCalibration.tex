@@ -831,9 +831,11 @@ properties that make a model robust to a wide range of inputs.
 
 % jbednar: B would be better in red/blue, as would fig 4.13, 5.4, etc.
 \begin{figure}
-	\centering
-    \includegraphics[width=1.0\textwidth]{./results/SCAL/SCAL_V1_ORTuning.pdf}
-	\caption[Orientation tuning properties of the SCAL model.]{SCAL
+  \begin{minipage}[c]{0.67\textwidth}
+    \includegraphics[width=\textwidth]{./results/SCAL/SCAL_V1_ORTuning.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[c]{0.3\textwidth}
+    \caption[Orientation tuning properties of the SCAL model.]{SCAL
       model orientation tuning properties after presenting 20,000
       oriented Gaussian patterns. A) Orientation map measured by
       presenting sine gratings at the optimal spatial frequency to the
@@ -842,7 +844,29 @@ properties that make a model robust to a wide range of inputs.
       random noise. C) Orientation tuning curve of a single neuron
       across contrasts, demonstrating largely contrast-independent
       orientation tuning.}
-	\label{SCALORTuning}
+    \label{SCALORTuning}
+  e\end{minipage}
+\end{figure}
+
+Additionally to get a better understanding of how the model processes
+visual inputs in a single presentation and over development we have
+plotted the response of the neurons to a simple Gaussian pattern drawn
+on the retina before and after development in \ref{SCALResponse}. The
+figure highlights how the model initially responds with a diffuse
+activity pattern driven, while forming so called activity bubbles
+corresponding to individual orientation columns after development.
+
+\begin{figure}
+	\centering
+    \includegraphics[width=1.0\textwidth]{./results/SCAL/SCAL_Response.pdf}
+	\caption[SCAL Responses to a simple Gaussian pattern before and
+      after self-organization.]{SCAL Responses to a simple Gaussian
+      pattern before and after self-organization. Top left shows the
+      input pattern and the LGN ON/OFF response to the pattern. Top
+      right shows the evolving patterns of activity before and after
+      development. The response of the central neuron to both patterns
+      is shown at the bottom.}
+	\label{SCALResponse}
 \end{figure}
 
 \subsection{V1 Spatial Calibration}
@@ -1294,7 +1318,8 @@ ranges.
       projections as a function of space broken down into
       iso-orientation, oblique orientation, and cross orientations
       relative to the orientation preference of the post-synaptic
-      neuron.}
+      neuron. Top row shows model results bottom row reproduces
+      results from \cite{Kisvarday1997a} in cat area 17.}
 	\label{LatDist}
 \end{figure}
 
