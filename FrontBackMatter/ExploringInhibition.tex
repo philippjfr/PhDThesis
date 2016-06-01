@@ -112,11 +112,11 @@ The activation for both the excitatory and inhibitory population is
 given by:
 
 \begin{equation}
-  \eta_{exc/inh} = \frac{\eta_{A} + \eta_{LOC-EXC}}{1 + \eta_{PV-INH}}
+  \eta_{exc/inh} = \frac{\eta_{A} + \eta_{Loc-Exc}}{1 + \eta_{PV-Inh}}
 \end{equation}
 
-where $\eta_{A}$ is the LGN afferent activity, $\eta_{LOC-EXC}$ the
-local excitatory contribution and $\eta_{PV-INH}$ the PV inhibitory
+where $\eta_{A}$ is the LGN afferent activity, $\eta_{Loc-Exc}$ the
+local excitatory contribution and $\eta_{PV-Inh}$ the PV inhibitory
 contribution. In other words both population integrate over afferent
 and local excitatory input and are then divisively normalized by the
 PV population. Optionally an additional long-range excitation term can
@@ -124,10 +124,10 @@ be added to modulate the activity dependent on long-range excitatory
 input:
 
 \begin{equation}
-  \eta_{exc} = \frac{\eta_{A} + \eta_{LOC-EXC}}{1 + \eta_{PV-INH}} (1+\eta_{LAT-EXC})
+  \eta_{exc} = \frac{\eta_{A} + \eta_{Loc-Exc}}{1 + \eta_{PV-Inh}} (1+\eta_{Lat-Exc})
 \end{equation}
 
-where $\eta_{LAT-EXC}$ is the input from the lateral excitatory
+where $\eta_{Lat-Exc}$ is the input from the lateral excitatory
 projection.
 
 \subsubsection{Hysteresis}
@@ -146,14 +146,6 @@ activity, expressed as:
 where $\tau$ is the time constant. This will effectively slow down PV
 responses relative to the excitatory population. In the final model
 this term is eliminated simply by setting $\tau = 1$.
-
-\subsubsection{Long-range excitation}
-
-The long-range excitatory connections are again ineffective in this
-model but can be used to assess how robust the model is to the
-introduction of long-range excitatory interactions. When the lateral
-excitation has been activated the response of a model excitatory
-neuron is therefore given by \ref{eqn:latexc}.
 
 \subsection{Assessing the quality of orientation maps} \label{metrics}
 
