@@ -7,12 +7,7 @@ and their synaptic connections can give rise to a robust, yet dynamic
 circuit to extract and encode visual features and statistics of the
 world and replicate a wide range of contextual modulation
 phenomena. Additionally we presented a workflow for analyzing complex,
-high-dimensional datasets easily and reproducibly. Finally we have
-presented a wide range of analyses that can be applied to this class
-of developmental models to gain a better understanding of the
-self-organization processes and to understand how the circuit gives
-rise to robust development, contextual modulation and encode the
-statistics of the visual environment.
+high-dimensional datasets easily and reproducibly.
 
 One of the major goals set out in this thesis was to begin integrating
 across the various levels of description that David Marr laid out in
@@ -43,6 +38,23 @@ implementational level to give rise to a developed circuit, which
 exhibits many of the features observed in the visual cortex. This
 provides a significant step towards a general computational theory of
 the cortex.
+
+At the same time it is important to note the limitations of the
+modeling approach employed in this thesis. The models used here are
+particularly suited towards studying network level phenomena and lower
+level phenomena at the level of individual neurons are largely
+ignored. This allows simulating large cortical networks and studying
+the response of the network to naturalistic inputs but also means that
+lower level phenomena are ignored. This approach should be seen as
+complementary to both lower and higher level modeling frameworks,
+however it is my conviction that it is the appropriate level at which
+the computational principles of the cortex can be studied, ignoring
+details at the level of individual neurons but at the same time not
+completely ignoring interneuronal interactions. As such it is meant as
+a first order approximation of cortical function and it is highly
+probable that the more detailed biophysical interactions at the level
+of individual synapses and spiking neurons will be required to fully
+explain cortical computation.
 
 The main aim of these models then is to identify a number of canonical
 computations by the cortex that explain a wide range of phenomena. In
@@ -111,15 +123,16 @@ provide the true long-range interactions in the circuit.
 
 The spatial calibration was however only a first step, making it
 possible to relate anatomy to function in the cortex and begin
-integrating the vast amount of information surrounding the
-organization of the cortical circuit. Our main interest was in
-establishing core mechanisms in the interactions of excitatory and
-inhibitory neurons in the cortex to determine their role in cortical
-computations and if possible relate them back to the neural subtypes
-and connections that mediate them. Here we will identify these
-mechanisms, summarize the findings and make the case that they perform
-a number of canonical computations in the cortex that exist across
-sensory modalities and perhaps even non-sensory areas.
+integrating the vast amount of information that has been gathered in
+the pursuit of understanding the organization of the cortical
+circuit. Our main interest was in establishing core mechanisms in the
+interactions of excitatory and inhibitory neurons in the cortex to
+determine their role in cortical computations and if possible relate
+them back to the neural subtypes and connections that mediate
+them. Here we will identify these mechanisms, summarize the findings
+and make the case that they perform a number of canonical computations
+in the cortex that exist across sensory modalities and perhaps even
+non-sensory areas.
 
 \subsection{Feedforward inhibition}
 
@@ -215,14 +228,15 @@ Whether feedforward and feedback inhibition can be directly mapped
 onto the PV- and Sst- expressing inhibitory cell classes will have to
 be experimentally validated, however we suggest that feedback
 inhibition is another core computation performed by the
-cortex. Specifically we suggest that it allows placing the feedforward
-into context, allowing the cortex to extract salient features, as
-evidenced by features such as pop-out. Additionally feedback
-inhibition can decorrelate neurons allowing the feedforward responses
-to extract a maximally independent and therefore sparse representation
-of the inputs. However unlike many previous proposals we suggest that
-this suppression captures the statistics of the inputs through lateral
-connections.
+cortex. Specifically we suggest that it allows placing the information
+arriving via the feedforward pathways into context, allowing the
+cortex to compute visual saliency. Additionally feedback inhibition
+can decorrelate neurons allowing the feedforward responses to extract
+a maximally independent and therefore sparse representation of the
+inputs. However unlike many previous proposals we suggest that instead
+of being hard-coded this suppression emerges as a consequences of the
+fact that the statistics captures the statistics its sensory inputs in
+lateral connections.
 
 \section{Roles of lateral connectivity}
 
@@ -237,57 +251,58 @@ only that they link iso-orientation columns but also that they are
 able to capture the co-occurrence statistics of both simple synthethic
 stimuli and more complex natural images. On that basis we suggest that
 the long-range patchy connections in layer 2/3 of the cortex merely
-reflect the co-linearity that is present in natural images and that
-they also capture more subtle properties of natural image statistics
-such as co-linearity and other Gestalt rules of visual perception and
-are directly responsible for mediating contextual effects such as
-contour facilitation, iso-orientation suppression and pop-out.
+reflect the co-linearity by connecting iso-orientation regions, but
+that they also capture more subtle properties of natural image
+statistics such as co-circularity and other Gestalt rules of visual
+perception and are therefore directly responsible for mediating
+contextual effects such as contour facilitation, iso-orientation
+suppression and pop-out.
 
 In order to understand what the lateral connections were actually
 representing this thesis contributes a number of analyses based on
 existing methods for analyzing the co-occurrence statistics in natural
-images established by \cite{Geisler2001} and \cite{Perrinet2015}. By
-adapting these analyses to extract the co-occurrence statistics from
-the weight matrices in the model we were able to conclusively
-demonstrate that lateral connections could capture the co-occurrence
-statistics of the visual environment. On this basis we predict that
-lateral connections across the cortex capture higher-order statistics
-of the inputs, providing a statistical model of the relationship
-between lower level feature detectors.
+images established put forward by \cite{Geisler2001} and
+\cite{Perrinet2015}. By adapting these analyses to extract the
+co-occurrence statistics from the weight matrices in the model we were
+able to conclusively demonstrate that lateral connections could
+capture the co-occurrence statistics of the visual environment. On
+this basis we predict that lateral connections across the cortex
+capture higher-order statistics of the inputs, providing a statistical
+model of the relationship between lower level feature detectors.
 
-Based on these results we predict that the rearing environment of
-animals raised in a laboratory environment can strongly affect the
-organization of lateral connections in the cortex, which could explain
-species differences in the anisotropy of lateral connectivity. To test
-this possibility directly the model was trained on both image datasets
-drawn from nature and from treeshrew cages and were able to show
-highly significant differences in the anisotropy of the
-connectivity. This suggests that the differences in lateral connection
-isotropy between treeshrews \citep{Bosking1997} and macaques
-\citep{Angelucci2002} could at least partially be explained by the
-differences in rearing environments of the animals. Experimentalists
-should test for this possibility explicitly because it could
-significantly influence the properties of surround modulation.
+Additionally this work predictsthat the rearing environment of an
+animal strongly affect the organization of lateral connections in the
+cortex, which could explain species differences in the anisotropy of
+lateral connectivity. To test this possibility directly the model was
+trained on both image datasets drawn from nature and from treeshrew
+cages and were able to show highly significant differences in the
+anisotropy of the connectivity. This suggests that the differences in
+lateral connection isotropy between treeshrews \citep{Bosking1997} and
+macaques \citep{Angelucci2002} could at least partially be explained
+by the differences in rearing environments of the
+animals. Experimentalists should test for this possibility explicitly
+because it could significantly influence the properties of surround
+modulation.
 
 Establishing to what extent these connections are involved in higher
-order processing is so far unclear. However based on the results from
-the model we can draw several specific conclusions. First of all their
-spatial scale is sufficient to capture interactions beyond the size of
-the receptive field of most neurons, suggesting they are at least
-involved in processing contextual influences from the extra-classical
-surround. The extent to which they are involved in these processes
-probably depends on the species and cortical eccentricity, as
-receptive field sizes vary considerably across species and at least in
-some species they can cover a significant portion of the visual space
-\citep{Bosking1997}. However they are neither fast nor extensive
-enough to account for the full range of surround effects
-\citep{Bair2003}.
+order processing is still under heavy debate. However based on the
+results from the model we can draw several specific conclusions. First
+of all their spatial scale is sufficient to capture interactions
+beyond the size of the receptive field of most neurons, suggesting
+they are at least involved in processing contextual influences from
+the extra-classical surround. The extent to which they are involved in
+these processes probably depends on the species and cortical
+eccentricity, as receptive field sizes vary considerably across
+species and at least in some species they can cover a significant
+portion of the visual space \citep{Bosking1997}. However they are
+neither fast nor extensive enough to account for the full range of
+surround effects.
 
 While these results are very specific to the field of vision, lateral
 connections are found extensively across the cortex suggesting they
 play a crucial role in cortical computation. Indeed there is a growing
 amount of evidence suggesting that statistically optimal surround
-suppression can improve figure ground separation and computing of
+suppression can improve figure ground separation and computation of
 visual salience \citep{Coen2012, Coen2015}. One of the core hypothesis
 put forward in this thesis is that lateral connections provide a
 general mechanism for the cortex to generate a statistical model of
@@ -303,7 +318,7 @@ not sufficient resulting in effects like contour completion.
 
 \section{Future Work}
 
-The models, analysis and tools presented in this thesis cover a huge
+The models, analyses and tools presented in this thesis cover a huge
 range and individually provide major contributions to our
 understanding of cortical circuits and computation. However perhaps
 more importantly they lay the groundwork to study a wide range of
