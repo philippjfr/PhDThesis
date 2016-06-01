@@ -115,7 +115,7 @@ the flexibility to generate publication quality figures. In the next
 section we will outline how this fits into an overall workflow and
 demonstrate what these principles mean in practice. For a more in
 depth review of the philosophy and principles behind the library refer
-to the HoloViews paper in Appendix x.
+to the HoloViews paper in \ref{SciPyPaper}.
 
 % Insert reference to HoloViews paper and to the appendix
 
@@ -201,13 +201,14 @@ taking the cartesian product of the two varying sets of
 parameters. Finally we combine the constant and varying parameters
 into the overall parameter set for the batched experiment.
 
-\lstset{language=Python}
-\begin{lstlisting}[frame=single]
+\begin{minipage}{\linewidth}
+\begin{lstlisting}
 times = [1000*i for i in range(21)]
 constants = lancet.Args(area=3.0)
 parameter_space = lancet.Range('latexc_strength', 0, 3.0, 11) * lancet.Range('contrast', 10, 100, 10)
 batch_arguments =  constants * parameter_space * lancet.Args(times=times)
 \end{lstlisting}
+\end{minipage}
 
 \subsection{Step 2: Specifying analysis}
 
@@ -236,7 +237,9 @@ set up the experiment are recorded, the results can easily be accessed
 and the entire process can easily be replicated from the logs that are
 output by Lancet.
 
-\begin{lstlisting}[frame=single]
+
+\begin{minipage}{\linewidth}
+\begin{lstlisting}
   c = Collector()
 
   # Measurement
@@ -247,6 +250,7 @@ output by Lancet.
                      c.ref.OrientationSelectivity.V1, PinwheelAnalysis)
   c.FFTAnalysis.V1 = c.analyze(c.ref.OrientationPreference.V1, PowerSpectrumAnalysis)
 \end{lstlisting}
+\end{minipage}
 
 \subsection{Step 3: Launching jobs}
 
@@ -264,21 +268,22 @@ By providing this flexibility the analysis and simulations can be
 debugged locally and then trivially be executed on a cluster to launch
 large scale analyses or parameter explorations.
 
-% jbednar: Some parts of this show up in the wrong font in the PDF for some reason
-\begin{lstlisting}[frame=single]
+\begin{minipage}{\linewidth}
+\begin{lstlisting}
   QSUB = True
-  qsub_options = dict(b='y',
-                    pe=('sharedmem', '4'),   # Parallel environment allocation
-                    v='OMP_NUM_THREADS=4')   # Must match slot allocation above.
 
   @lancet.review_and_launch()
   def launch():
-    runbatch_cmd = RunBatchCommand(ty_file, c, metadata=batch_arguments.varying_keys, snapshot=False)
-    Launcher = lancet.QLauncher if QSUB else lancet.Launcher
-    return Launcher(batch_name, batch_arguments, runbatch_cmd,  metadata=metadata(),
-                    **({'qsub_flag_options':qsub_options} if QSUB else {}))
+      qsub_options = (b='y', pe=('sharedmem', '4'))
+      launch_options = {'qsub_flag_optionsdict': qsub_options} if QSUB else {}
+      runbatch_cmd = RunBatchCommand(ty_file, c, snapshot=False,
+                                     metadata=batch_arguments.varying_keys)
+      Launcher = lancet.QLauncher if QSUB else lancet.Launcher
+      return Launcher(batch_name, batch_arguments, runbatch_cmd,
+                    metadata=metadata(), **launch_options))
   launch()
 \end{lstlisting}
+\end{minipage}
 
 \subsection{Step 4: Monitoring progress}
 
@@ -300,7 +305,7 @@ failure.
 
 \begin{figure}
 	\centering
-        \includegraphics[width=0.7\textwidth]{workflow_progress.png}
+        \includegraphics[width=1.0\textwidth]{workflow_progress.png}
 	    \caption[Interactive dashboard to monitor workflow
           progress.]{Interactive real time dashboard to monitor the
           progress of an experiment and catch any problems or failures
@@ -329,13 +334,15 @@ Each measurement or analysis can be accessed via a tree-like
 structure, letting us access individual measurements by accessing them
 with attribute access and selecting by the parameter values.
 
-\begin{lstlisting}[frame=single]  % Start your code-block
+\begin{minipage}{\linewidth}
+\begin{lstlisting}
   :Layout
    .CFs.LateralInhibitory     :Collator   [Index,contrast,latexc_strength,tid,time,timestamps]   (filename,entries)
    .CFs.LateralExcitatory     :Collator   [Index,contrast,latexc_strength,tid,time,timestamps]   (filename,entries)
    .OrientationPreference.V1  :Collator   [Index,contrast,latexc_strength,tid,time,timestamps]   (filename,entries)
    .OrientationSelectivity.V1 :Collator   [Index,contrast,latexc_strength,tid,time,timestamps]   (filename,entries)
 \end{lstlisting}
+\end{minipage}
 
 
 \begin{figure}
