@@ -167,12 +167,12 @@ be simply elongated Gaussian patterns matching the length of the
 integrative area of a V1 neuron and with a spatial frequency that
 would allow three distinct lobes to form within this area. The
 training patterns are given by:
-
+%%
 \begin{equation}
   exp(-x^2/(2*\sigma_x^2) - y^2/(2*\sigma_y^2)
 \label{eqn:gausspattern}
 \end{equation}
-
+%%
 Additionally two image datasets will be employed one taken from a
 database of natural images and the other recorded from within the
 rearing environment of ferrets in a laboratory, which is dominated by
@@ -189,14 +189,14 @@ neurons in the sheets are firing-rate point neurons, with the main
 state being a floating point activation value.  For all models, the
 activation level $\eta$ for a unit at position $j$ in an ON/OFF sheet
 O at time $t+\delta t$ is defined as:
-
+%%
 \begin{equation}
 \eta_{j, O}(t+\delta t)=f\left(\frac{\gamma_{O}\sum_{i\in
     F_{j,P}}\Psi_{i}(t)\omega_{ij}}{k+\gamma_{S}\sum_{i\in
     F_{j,S}}\eta_{i, O}(t)\omega_{ij, S}}\right)
 \label{eqn:lgnactivation}
 \end{equation}
-
+%%
 The constant $\gamma_{O}=14.0$ is an arbitrary multiplier for the
 overall strength of connections from the photoreceptor sheet to the
 ON/OFF sheets, chosen to give typical activations in the range 0.0 to
@@ -217,12 +217,12 @@ have a positive center and negative surround, and vice versa for OFF
 units. More precisely, the weight $\omega_{ij}$ from an ON-center cell
 at location (0,0) in the ON sheet and a photoreceptor sheet in
 location $(x,y)$ on the photoreceptor sheet is given by:
-
+%%
 \begin{equation}
 \omega_{ij}=\frac{1}{Z_c}\exp{\left(-\frac{x^{2}+y^{2}}{2\sigma_{c}^{2}}\right)}-\frac{1}{Z_s}\exp\left(-\frac{x^{2}+y^{2}}{2\sigma_{s}^{2}}\right)
 \label{eqn:DoG}
 \end{equation}
-
+%%
 The kernel sizes of the central Gaussian $\sigma_{c}$ and surround
 mechanism $\sigma_{s}$ are what we will be determining here. Unlike
 simple DoG kernels, the center-surround are jointly normalized to 1.0
@@ -290,7 +290,7 @@ activation of a neuron $j$ in V1 at time t:
 \eta_{j,V}(t)=f\left(\frac{\sum_{p=\{E, A\}}\gamma_{p}C_{jp}(t)}{1+\sum_{p=\{I\}}\gamma_{p}C_{jp}(t)}\right)
 \label{eqn:activation1}
 \end{equation}
-
+%%
 The projection strength scaling factors $\gamma$ are defined for each
 projection type set to provide a balance between excitation and
 inhibition, and between afferent and lateral influences, to provide
@@ -316,11 +316,11 @@ which we let develop without any weight. This term is modelled as an
 additional multiplicative component with a constant offset of 1,
 ensuring only facilitatory modulation from the far surround. The
 activation of a model neuron is therefore given by:
-
+%%
 \begin{equation}
   \eta_{exc} = \frac{\eta_{A} + \eta_{E}}{1 + \eta_{I}}
 \end{equation}
-
+%%
 where $\eta_A$ is the afferent activity, $\eta_E$ is the local
 excitatory input, $\eta_I$ is the divisive inhibitory input and
 $\eta_{LR}$ is the long-range excitatory input.
@@ -335,7 +335,7 @@ patterns ($\overline{\eta_{j}}$):
 \overline{\eta_{j}}(t)= (1-\beta)\eta_{j}(t) + \beta\overline{\eta_{j}}(t-1)
 \label{eqn:averaging}
 \end{equation}
-
+%%
 The smoothing parameter ($\beta=0.991$) determines the degree of
 smoothing in the calculation of the average. $\overline{\eta_{j}}$ is
 initialized to the target average V1 unit activity ($\mu$), which for
@@ -471,26 +471,26 @@ model with disks of sine gratings of increasing size and varying phase
 and at the optimal spatial frequency of each neuron. The size-tuning
 curves obtained in this way were then fitted with the integrated
 Difference of Gaussian model described by the following equation:
-
+%%
 \begin{equation}
 R(s) = R_0 + K_e \int \int re^{-\frac{r^2}{a}} \,
 \mathrm{d}r\mathrm{d}\theta - K_i \int\int re^{-\frac{r^2}{b}} \,
 \mathrm{d}r\mathrm{d}\theta
 \label{iDoG}
 \end{equation}
-
+%%
 \noindent where $R_0$ is the spontaneous response rate, $K_e$ the
 excitatory gain, $K_i$ the inhibitory gain, $a$ the excitatory space
 constant and $b$ the inhibitory space constant. By separating the
 inhibitory and excitatory components in equation \ref{iDoG} and define
 them as $R_e$ and $R_i$, we can formulate a subtractive and divisive
 version of this equation:
-
+%%
 \begin{equation}
 R = R_e - R_i
 \label{DoGSubstractive}
 \end{equation}
-
+%%
 \begin{equation}
 R = \frac{R_e}{1+R_i}
 \label{DoGDivisive}
@@ -498,15 +498,15 @@ R = \frac{R_e}{1+R_i}
 
 Using the estimated spatial constants and gain parameters we can also
 calculate the suppression index of each neuron:
-
+%%
 \begin{equation}
   SI_{sub} = \frac{K_i b}{K_e a}
 \end{equation}
-
+%%
 \begin{equation}
   SI_{div} = 1 - \frac{1}{1+K_i b}
 \end{equation}
-
+%%
 Unlike in the original experiment we eliminate the $R_0$ and $\beta$
 parameters from both models since they represent the baseline activity
 and the spiking threshold respectively, which does not apply to a
@@ -548,11 +548,11 @@ to build a model of lateral connectivity with both spatial and
 orientation dependent components, expressed as the combination of
 von Mises and Gaussian distributions respectively. The orientation
 dependent component is expressed as the von Mises distribution:
-
+%%
 \begin{equation}
 V(\phi, \kappa, \mu) = \frac{1}{2 \pi I_0(\kappa)} e^{\kappa cos 2(\phi - \mu)}
 \end{equation}
-
+%%
 where $\phi$ is the difference in the orientation preference between
 the pre- and post-synaptic neuron, $\mu$ is the orientation preference
 of the post-synaptic neuron, $\kappa$ is the concentration parameter
@@ -562,28 +562,28 @@ zero order.
 The Gaussian component on the other hand is a simple 2D Gaussian
 function, where $x$ and $y$ are the cortical coordinates and $\sigma$
 the standard deviation of the Gaussian:
-
+%%
 \begin{equation}
 G(x, y, \sigma) = \frac{1}{2 \pi \sigma^2} e^{\frac{x^2+y^2}{2
     \sigma^2}}
 \end{equation}
-
+%%
 These two components can be combined into a single spatially weighted
-von Mises distribution in the orientation map by simple multiplying the
-components.
-
+von Mises distribution in the orientation map by simply multiplying the
+components:
+%%
 \begin{equation}
 D_1(x, y, \phi) = s_1 [G_{11}(x, y, \sigma_{11}) V_1(\phi, \kappa_1, \mu_1)]
 \end{equation}
-
+%%
 In order to accurately estimate the local isotropic kernel an
 additional Gaussian component is added, such that the full model is
 described by:
-
+%%
 \begin{equation}
 D_2(x, y, \phi) = s_1 [G_{11}(x, y, \sigma_{11}) V_1(\phi, \kappa_1, \mu_1) + G_{22}(x, y, \sigma_{22})]
 \end{equation}
-
+%%
 Based on this model we can obtain estimates of the spatial extent of
 the local isotropic component and separately measures of the
 orientation dependence and size of the long-range lateral connectivity
@@ -609,23 +609,23 @@ simple function provides a good approximation for the spatial
 properties of simple cell receptive fields in the visual cortex.
 
 The Gabor function in the real domain is defined as:
-
+%%
 \begin{equation}
   g(x, y, \lambda, \theta, \phi, \sigma, \gamma) = exp(-\frac{x^{\prime 2} + \gamma y^{\prime 2}}{2\sigma^2}) cos(2 \pi \frac{x^\prime}{\lambda}+\phi)
 \end{equation}
-
+%%
 where
-
+%%
 \begin{equation}
   x^\prime = x\cos(\theta) + y\sin(\theta)
 \end{equation}
-
+%%
 and
-
+%%
 \begin{equation}
 y^\prime = -x\sin(\theta) + y\cos(\theta)
 \end{equation}
-
+%%
 The spatial properties of each receptive field can be summarized by
 the width of receptive field relative to frequency of the periodic
 grating ($n_x$) and the elongation of the Gabor subregions relative to

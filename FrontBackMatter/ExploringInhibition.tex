@@ -52,7 +52,7 @@ input and are connected to each other recurrently. The architecture
 diagram in \ref{SEPIDiagram} shows the two sheets and projections
 between them. When comparing this against the SCAL model diagram (see
 \ref{SCALDiagram}), we can see that the spatial scales of the various
-projections are unchanged they have simply been split up between the
+projections are unchanged---they have simply been split up between the
 populations.
 
 \begin{figure}
@@ -71,13 +71,13 @@ interneurons, which include fast-spiking basket and clutch cells, as
 the most likely candidate to provide feedforward inhibition and
 controlling the gain of the response in of the pyramidal cells. Their
 high abundance in the thalamocortical recipient layer 4 and layers 2/3
-making up over half the population in each \citep{VanBrederode1990} as
-well as their involvement in the onset of critical period
-\citep{Fagiolini2000} and effect on the columnar organization of the
+(making up over half the population in each; \citealt{VanBrederode1990}) as
+well as their involvement in the onset of the critical period
+\citep{Fagiolini2000} and their effect on the columnar organization of the
 visual cortex \citep{Hensch2004} makes them of particular interest. The
 other defining characteristics of the PV population is their fast
 response \citep{Cruikshank2007,Gabernet2005}, and their ability to
-linearly match the excitation in the excitatory population
+linearly match the activity in the excitatory population
 \citep{Atallah2012}. This closes matches the role of the inhibitory
 projection in the SCAL model, which provides divisive gain control and
 is directly coupled to the response of the excitatory population.
@@ -97,12 +97,16 @@ are captured directly by the model.
 
 In order to capture the response of the PV population we apply only
 half-rectification to the inhibitory population, as basket cells
-generally have a very low spiking threshold \citep{Ma2011}, and the
-difficulty involved in balancing homeostatic thresholds in two
-populations. Secondly we keep the effect of the inhibition divisive in
-their effect on both each other and on pyramidal cells. These
+generally have a very low spiking threshold \citep{Ma2011}.  It would
+be possible to use homeostatic plasticity to set the thresholds
+instead,
+% jbednar: as suggested in some work cite{hennig}
+but it would be complicated to set up mechanisms to balance the
+thresholds between the populations to ensure suitable overall levels
+of activity in the network. Secondly we keep the effect of the inhibition divisive,
+both for each other and when targetting pyramidal cells. These
 properties distinguish them from the other major class of inhibitory
-interneurons the somatostatin (Sst) expressing population, which
+interneurons, the somatostatin (Sst) expressing population, which
 receive weaker but facilitating inputs
 \citep{Beierlein2003,Bartley2008,Tan2008}.
 
@@ -110,11 +114,11 @@ receive weaker but facilitating inputs
 
 The activation for both the excitatory and inhibitory population is
 given by:
-
+%%
 \begin{equation}
   \eta_{exc/inh} = \frac{\eta_{A} + \eta_{Loc-Exc}}{1 + \eta_{PV-Inh}}
 \end{equation}
-
+%%
 where $\eta_{A}$ is the LGN afferent activity, $\eta_{Loc-Exc}$ the
 local excitatory contribution and $\eta_{PV-Inh}$ the PV inhibitory
 contribution. In other words both population integrate over afferent
@@ -122,11 +126,11 @@ and local excitatory input and are then divisively normalized by the
 PV population. Optionally an additional long-range excitation term can
 be added to modulate the activity dependent on long-range excitatory
 input:
-
+%%
 \begin{equation}
   \eta_{exc} = \frac{\eta_{A} + \eta_{Loc-Exc}}{1 + \eta_{PV-Inh}} (1+\eta_{Lat-Exc})
 \end{equation}
-
+%%
 where $\eta_{Lat-Exc}$ is the input from the lateral excitatory
 projection.
 
@@ -138,11 +142,11 @@ model. This will allow us to test the importance of fast inhibition in
 the model. The hysteresis function is defined as a discrete
 exponential weighting between the previous activation and the new
 activity, expressed as:
-
+%%
 \begin{equation}
   \eta_h (t + \delta\eta) = \eta(t) + \tau \big[ \eta(t+\delta\eta - \eta(t) \big]
 \end{equation}
-
+%%
 where $\tau$ is the time constant. This will effectively slow down PV
 responses relative to the excitatory population. In the final model
 this term is eliminated simply by setting $\tau = 1$.
@@ -205,11 +209,11 @@ in the final recording for that animal. As in \cite{Stevens2013} we
 normalize these similarity values to fall between 0 (completely
 uncorrelated) to 1 (identical orientation preference). The orientation
 similarity index is therefore defined as:
-
+%%
 \begin{equation}
   OSI = 1 - \frac{4}{n\pi} \sum_{i}\abs{(F_{i}-O_{i})mod(\frac{\pi}{2})}
 \end{equation}
-
+%%
 By averaging the OSI at every 1000 development steps we can
 numerically compare the stability of the model over time. Note that
 this does not provide a measure that is comparable across models
@@ -228,13 +232,13 @@ on a specific $\sigma$ value, which should reflect the spatial
 properties of the map. Therefore we can use the mean LHI across the
 entire map as a measure of the scale of homogeneous regions of the
 map. The LHI at location x is computed as follows:
-
+%%
 \begin{equation}
   LHI(x) = \frac{1}{2\pi \sigma^2} \bigg\lvert \int
   exp\bigg(\frac{-\|x-y\|^2}{2\sigma^2}\bigg) exp(i2\theta_y) dy
   \bigg\rvert
 \end{equation}
-
+%%
 where, $\theta_y$ is the orientation preference at site y and $\sigma$
 determines the spatial scale of the analysis. In their experiments
 \cite{Nauhaus2008} used $\sigma=180\mu m$ to match the spatial extent
@@ -247,20 +251,20 @@ the center-of-gravity (CoG) of the afferent weights relative to
 position of the neuron, to determine how much distortion to the
 retinotopy each neuron exhibits. The CoG along one axis is computed as
 the mean of normalized vector product:
-
+%%
 \begin{equation}
   CoG(p, \omega) = \frac{1}{\sum_i \sum_j \omega_{i, j}} \sum_i \sum_j \omega_{i,j} p_{i,j}  
 \end{equation}
-
+%%
 where $p$ is the position along either the x- or y-axis and $\omega$
 is the weight at that location. The distortion in the CoG is then
-given by euclidean distance between the center of gravity and the
+given by Euclidean distance between the center of gravity and the
 actual location of the neuron:
-
+%%
 \begin{equation}
   CoGD(x, y) = \sqrt{(CoG_x-x)^2 + (CoG_y-y)^2}
 \end{equation}
-
+%%
 By computing the shift for all neurons in a central regions we can use
 this metric as a measure of the quality of the retinotopic mapping in
 the model, highlighting significant distortions introduced by

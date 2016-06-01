@@ -136,19 +136,19 @@ The influence of the aggregate long-range excitatory and di-synaptic
 inhibition via the Sst population is expressed as an additional
 multiplicative factor modulating the response of the excitatory
 neurons. The response of the excitatory population is then given by:
-
+%%
 \begin{equation}
   \eta_{exc} = \frac{\eta_{A} + \eta_{Loc-Exc}}{1 + \eta_{PV-Inh}} \eta_{SM}
 \end{equation}
-
+%%
 where $\eta_{A}$ is the LGN afferent activity, $\eta_{Loc-Exc}$ the local
 excitatory contribution, $\eta_{PV-Inh}$ the PV inhibitory contribution
 and the surround-modulation term $\eta_{SM}$ is defined as:
-
+%%
 \begin{equation}
   \eta_{SM} = 1 + \eta_{Lat-Exc} - \eta_{Sst}
 \end{equation}
-
+%%
 where $\eta_{Lat-Exc}$ represents the long-range lateral excitatory
 contribution and $\eta_{Sst}$ is the Sst inhibitory contribution. In
 the SEPI model the $\eta_{SM}$ term simply reduces to 1, eliminating
@@ -163,19 +163,19 @@ provide both multiplicative/divisive and additive/subtractive effects.
 
 The activation of the inhibitory Sst population is given simply by the
 summation of the local and lateral excitatory projection activity:
-
+%%
 \begin{equation}
   \eta_{Sst} = \eta_{Loc-Exc} + \eta_{Lat-Exc-Sst}
 \end{equation}
-
+%%
 Additionally the $\eta_{Lat-Exc-Sst}$ term has hysteresis and an
 exponential activation function applied to it such that it's
 contribution is given by:
-
+%%
 \begin{equation}
   \eta_{Lat-Exc-Sst} (t + \delta\eta) = (\eta(t) + \tau \big[ \eta(t+\delta\eta - \eta(t) \big])^\beta
 \end{equation}
-
+%%
 where $\tau=0.2$ and $\beta=3$. This combination of hysteresis and an
 exponential non-linearity allows the lateral connections to integrate
 over time, accelerating its response under strong and prolonged
@@ -351,11 +351,11 @@ respectively.
 \end{figure}
 
 The surround facilitation is quantified as:
-
+%%
 \begin{equation}
 F = (\frac{R_{cs}}{R_c} - 1) 100
 \end{equation}
-
+%%
 where $R_{CS}$ is the response of the combined stimulus and $R_C$ the
 response to just the center stimulus.
 
