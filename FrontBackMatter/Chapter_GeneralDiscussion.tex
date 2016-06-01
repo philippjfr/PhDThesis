@@ -5,37 +5,319 @@ In this thesis we presented a series of models of the primary visual
 cortex to integrate our understanding of how different cell classes
 and their synaptic connections can give rise to a robust, yet dynamic
 circuit to extract and encode visual features and statistics of the
-world. While these models provide valuable contributions and have
-allowed us to make a variety of predictions about the role of
-inhibitory cell classes in development and contextual modulation, they
-also simplify the full complexity in a number of crucial ways. These
-simplifications have important implications about the interpretation
-of the results but also offer opportunities to extend our modeling
-framework.
+world and replicate a wide range of contextual modulation
+phenomena. Additionally we presented a workflow for analyzing complex,
+high-dimensional datasets easily and reproducibly. Finally we have
+presented a wide range of analyses that can be applied to this class
+of developmental models to gain a better understanding of the
+self-organization processes and to understand how the circuit gives
+rise to robust development, contextual modulation and encode the
+statistics of the visual environment.
 
-In this discussion we will explore some of the implications of the
-predictions made in the results chapters and place them into context
-given our understanding of the underlying circuits. In doing so we
-will.
+The framework of models and analyses presented here provides huge
+scope for future investigations to further explore the role of
+different cell classes, neuromodulation, feedback and the development
+of lateral connections. In this chapter we will begin by discussing
+the implications of the predictions made by the current set of models
+and then focus on the different in which the presented models fall
+short of capturing the full complexity of the visual circuit and then
+suggest specific extensions that will further extend our understanding
+of the visual cortex.
+
+One of the major goals set out in this thesis was to begin integrating
+across the various levels of description that David Marr laid out in
+his seminal work on vision. While individual models describe
+individual phenomena very well and we have gathered a huge data about
+the cortex from increasingly complex and precise experimental studies,
+the theoretical frameworks of computation in the cortex has for the
+large part been unchanged. This stands in stark contrast to the field
+of machine learning, which recently has made huge advances in the area
+of deep neural networks, based losely on the architecture of the
+cortex. The models developed as part of this model closely resemble
+the architecture of these networks but also model the complexities of
+the cortical circuit to far greater detail.
+
+On this basis we have proposed a series of models, which let us relate
+the process of learning to the computational functions in the cortex
+but also mechanistically explain how different cell classes and
+synaptic connections can interact at an algorithmic and
+implementational level to give rise to a developed circuit, which
+exhibits many of the features observed in the visual cortex. It is one
+of the first models that bridges the gaps between low level circuit
+interactions with development and learning, giving rise to a developed
+circuit that exhibits many of the functional properties of the cortex.
+
+\section{A reproducible workflow for the analysis of complex datasets}
+
+As part of this thesis we have described a general workflow for the
+analysis of complex datasets using the HoloViews and Lancet Python
+libraries. Every single non-diagramatic plot in this thesis has been
+generated using the HoloViews library and is available with a
+completely reproducible record of how the figures were generated
+available at thesis.philippjfr.com. These tools in themselves provide
+a major contribution to greatly improve the productivity of
+researchers while ensuring, almost as a byproduct, that each stage of
+the research is completely reproducible. This starts with launching
+instances of a model either locally or on a cluster, monitoring and
+collecting those results and finally generating complex figures and
+analyses with minimal amounts of code. The HoloViews library in
+particular is now a popular open-source project and is in use in a
+wide range of scientific disciplines, has been used in publications
+and for teaching materials. As a core designer and developer of the
+library, this work represents one of the most fundamental
+contributions of this thesis and will improve productivity and
+reproducibility far beyond the field of neuroscience.
+
+\section{Spatial Calibration}
+
+One of the first steps in approaching this hugely complex problem was
+to adapt existing developmental models in such a way that they would
+more closely reflect the real interactions between cell classes and
+synaptic connections in the cortex. Therefore the SCAL model was
+introduced with spatially calibrated extents allowing us to relate
+known anatomical measurements directly to the model and replicate
+various measurements protocols, which are highly dependent on the
+spatial profiles of connections to the distances in the
+model. Additionally we switched from subtractive to divisive
+inhibition, as divisive contrast gain-control has long been identified
+as a canonical computation in the cortex \citep{Carandini2012}. These
+small modification were sufficient to account for contrast dependent
+size tuning shifts, suggesting that the shift toward larger size
+preferences at low contrasts could almost completely be accounted for
+by changes in the gain of the center and surround mechanisms as
+suggested by \cite{Cavanaugh2002}. Additionally the spatially
+calibrated model provides a foundation to study effects that depend on
+the precise spatial configuration of the stimuli.
+
+Furthermore through careful evaluation of the literature we have shown
+that the extent of a certain classes of inhibitory neurons is
+sufficient to account for the effective Mexican hat connectivity in
+the model, that is required for robust self-organization into an
+orientation map, while even longer range excitatory projections
+provide the true long-range interactions in the circuit.
+
+While the final model presented matched the average size tuning in
+parafoveal regions of macaque V1 very well it did not capture the full
+diversity in responses. Future modeling work should address this
+shortcoming by incorporating the full diversity of spatial tuning
+filters and receptive field sizes in the model.
+
+\section{Roles of inhibitory neurons}
+
+The next step was to separate excitatory and inhibitory neural
+populations in order to study how different inhibitory cell classes
+are suited towards particular functions in the cortex. In doing so we
+introduced one of the first developmental models that allows
+independently manipulating excitatory and inhibitory cell classes and
+were able to make specific predictions about the role of PV and Sst
+expressing interneurons in development and surround modulation.
+
+\subsection{Parvalbumin expressing interneurons}
+
+Specifically we discovered that the known properties of PV neurons
+make this class of large, feedforward and recurrently driven
+interneurons is particularly well suited towards driving the
+organization of V1 into a smoothly varying orientation maps. By
+changing the properties of the inhibition we were also able to show
+that sub- or supra-linear integration by this cell class could result
+in disruptions to the development, which may reflect the disruptions
+to visual processing that have been observed in pathologies as diverse
+as autism, schizophrenia and Parkinsons.
+
+Our analysis also suggested that the feedforward driven PV neurons are
+perfectly positioned to provide feedforward inhibition gating how much
+afferent drive arrives in the cortex thereby controlling the effective
+contrast gain of the circuit. While a model cannot directly confirm
+that PV+ neurons serve the same functions in macaque visual cortex as
+has been suggested in mouse cortex, the analysis does demonstrate that
+feedforward, gain control is an essential property to account for
+robust and stable organization and contrast dependent size tuning
+shifts. On that basis we predict that PV interneurons in higher
+mammals mediate global, feedforward driven contrast gain control as
+suggested in a number of studies in mouse V1 \citep{Ma2010,
+  Atallah2012, Wilson2012, Nienborg2013}.
+
+At the same time the PV-immunoreactive interneurons is a very broad
+classification, which may exhibit considerable
+heterogeneity. Specifically clutch cells, which are primarily enriched
+in layer 4 likely have very different properties than large basket
+cells, which can cover a large area. Indeed there is some evidence
+that clutch cells are involved in providing the pull component in a
+push-pull model of orientation selectivity and it would be worth
+investigating whether this heterogeneity could be incorporated into
+the model. This may also explain the ongoing debate about the extent
+to which this cell class is tuned for orientation, with studies in
+different layers and species coming to very different conclusions
+\citep{Cardin2007, Ma2011, Hofer2011}. Future investigations could
+also focus on narrowing down precisely how the tuning properties of
+this cell class affect the circuit organization.
+
+The major contribution of this model in the context of the thesis is
+in establishing a robust model of orientation map development that is
+spatially calibrated and has distinct excitatory and inhibitory
+populations. The model produces orientation maps, which match
+biological maps very closely \citep{Kaschube2010, Stevens2013b}, with
+high stability and selectivity very robustly and provides a framework
+to build surround modulation models on. The strong divisive gain
+control afforded by the inhibitory population also accounts for a
+contrast dependent size tuning shifts which matches experiments both
+in diversity and magnitude. As such it provides a solid basis to build
+further models on.
+
+\subsection{Somatostatin expressing interneurons}
+
+While the parvalbumin population responds very quickly to afferent
+input, surround modulation operates over longer spatial and temporal
+scales. The other major contribution of this thesis is a general
+cortical circuit to mediate long-range interactions via slowly
+integrating long-range connections, which mediate both direct
+facilitation and di-synaptic suppression through a secondary
+interneuron population. After a detailed review of the literature we
+concluded that the Sst population, which receive extensive recurrent
+inputs from lateral and feedback connections in layer 2/3 integrate
+over long spatial scales \citep{Xu2009, Adesnik2012, Nienborg2013}
+provide an excellent candidate to mediate long-range and feature
+specific surround suppression. Additionally we have shown that an
+accelerating response function on the lateral connections between the
+excitatory cells and this inhibitory population is sufficient to
+account for the contrast dependent changes from surround suppression
+to facilitation that have been well characterized in the brain
+\citep{Levitt1997, Polat1998, Dragoi2000, Wang2009}.
+
+The full proposed circuit therefore accounts for a huge range of
+response properties, developmental processes and surround modulation
+effects using a fairly small set of mechanisms and can be used to
+inform future experiments. In particular our the modeling suggests a
+strong role for a secondary laterally driven inhibitory interneuron
+population to provide long-range surround suppression. Whether
+feedforward and feedback inhibition can be directly mapped onto the
+PV- and Sst- expressing inhibitory cell classes will have to be
+experimentally validated however.
+
+\section{Relationship to other surround modulation models}
 
 
-\section{Spatial tuning diversity}
+\section{Roles of lateral connectivity}
 
-* Tuning diversity is limited
-* Cannot capture full image statistics
-* Variability in responses could affects
+In the model the inhibitory populations themselves do not exhibit any
+long-range or feature specific connectivity patterns. Long-range
+interactions are predominantly driven by long-range excitatory
+connections spanning several visual degrees and across multiple
+hypercolumns as has been extensively established in the literature
+\citep{Weliky1995, Bair2003}. Furhermore detailed analysis of the
+connectivity patterns of these long-range connections established not
+only that they link iso-orientation columns but also that they are
+able to capture the co-occurrence statistics of both simple synthethic
+stimuli and more complex natural images. On that basis we suggest that
+the long-range patchy connections in layer 2/3 of the cortex merely
+reflect the co-linearity that is present in natural images and that
+they also capture more subtle properties of natural image statistics
+such as co-linearity and other Gestalt rules of visual perception and
+are directly responsible for mediating contextual effects such as
+contour facilitation, iso-orientation suppression and pop-out.
+
+In order to understand what the lateral connections were actually
+representing we developed a number of analyses based on existing
+methods for analyzing the co-occurrence statistics in natural images
+established by \cite{Geisler2001} and \cite{Perrinet2015}. By adapting
+these analyses to extract the co-occurrence statistics from the weight
+matrices in the model we were able to conclusively demonstrate that
+lateral connections could capture the co-occurrence statistics of the
+visual environment. On this basis we predict that lateral connections
+across the cortex capture higher-order statistics of the inputs,
+providing a statistical model of the relationship between lower level
+feature detectors.
+
+Based on these results we predict that the rearing environment of
+animals raised in a laboratory environment can strongly affect the
+organization of lateral connections in the cortex, which could explain
+species differences in the anisotropy of lateral connectivity. To test
+this possibility directly the model was trained on both image datasets
+drawn from nature and from treeshrew cages and were able to show
+highly significant differences in the anisotropy of the
+connectivity. This suggests that the differences in lateral connection
+isotropy between treeshrews \citep{Bosking1997} and macaques
+\citep{Angelucci2002} could at least partially be explained by the
+differences in rearing environments of the animals. Experimentalists
+should test for this possibility explicitly because it could
+significantly influence the properties of surround modulation.
+
+Establishing to what extent these connections are involved in higher
+order processing is so far unclear. However based on the results from
+the model we can draw several specific conclusions. First of all their
+spatial scale is sufficient to capture interactions beyond the size of
+the receptive field of most neurons, suggesting they are at least
+involved in processing contextual influences from the extra-classical
+surround. The extent to which they are involved in these processes
+probably depends on the species and cortical eccentricity, as
+receptive field sizes vary considerably across species and at least in
+some species they can cover a significant portion of the visual space
+\citep{Bosking1997}. However they are neither fast nor extensive
+enough to account for the full range of surround effects
+\citep{Bair2003}.
+
+In this thesis we have demonstrated that these connections can mediate
+surround modulation effects and that they represent the statistics of
+the input. However future analyses should establish to what extent
+small differences in the statistics of the connections can affect
+surround modulation and the sparsity of representation. Now that the
+statistics embedded in the connections can be easily extracted it
+should be possible to establish how modulating the statistics of the
+inputs will affect surround modulation and the sparse coding of visual
+inputs.
+
+\subsection{Interactions between cell classes}
+
+In the current model interactions between the inhibitory cell classes
+were largely ignored. However based on experiments it is thought that
+PV and Sst neurons strongly inhibit each other. Through some
+exploratory work it was observed that Sst suppression of PV neurons
+could lead to interesting dynamics where they would essentially
+disinhibit the local excitatory population, reducing the amount of
+contrast gain-control and therefore reducing the effective integration
+area. This is a very interesting avenue to pursue as this could
+effectively model some of the features of visual attention, where
+feedforward drive is increased relative to the lateral processing,
+effectively mirroring the effects of increasing the contrast.
 
 \section{Sparsity of connections}
 
-* Afferent connections more stable
-* Lateral connections more focused (+ and stable)
-* Stronger surround modulation effects
+One major avenue of work that was developed for this thesis but
+ultimately was not used was developing a sparse matrix implementation
+of the core algorithms used to simulate the model. This work has since
+been extended to work on GPUs enabling significant speedups in
+simulating large models. This work will not only allow for the
+implementation of much larger models but also make the existing models
+more realistic. Specifically it is known that V1 neurons in layer 4
+receive afferent input from just a small number of afferent
+projections and lateral connections are highly sparse in their pattern
+of innvervation.
 
-\section{Interactions between inhibitory cells}
+Simulating sparsity could therefore improve the realism of the models
+and at the same time improve a variety of properties in the
+model. Specifically initial exploration of sprouting and retraction
+algorithms for controlling the sparsity of synaptic connections
+demonstrated that orientation map development could proceed with just
+a small fraction of the connections that are simulated in the dense
+version and the resulting models were considerably more stable because
+the afferent weights could not easily move around. This provides more
+realism for the simulation of orientation map development.
 
-* PV and Sst suppress each other, Sst can disinhibit
+More interestingly however letting the lateral connections develop
+sparsely could match the known timecourse of the emergence of patchy
+connections in the cortex very well \citep{Ruthazer1996}, emerging in
+concert with the orientation map and then slowly clustering in
+increasingly distant iso-orientation patches. This would also remove
+the need to threshold the weights after development achieving the
+sparse distribution of connections required for strong surround
+modulation without an artificial mechanism.
 
 \section{Complex cells}
+
+One major limitation of models presented in this thesis is that they
+are purely a model of simple cells, even though long-range connections
+and surround modulation effects are generally ascribed to layer 2/3,
+which has both simple and complex cells. This may have considerable
 
 Outline the issues with modeling only simple cells and offer
 suggestions on extending the model to complex cells
@@ -44,12 +326,8 @@ suggestions on extending the model to complex cells
 * Loss of phase specificity for lateral connections
 * Inhibition in different circuits
 
-\section{Layer specific circuits}
+\section{Temporal responses}
 
-* Clutch cells and push-pull
-* PV cells for gain control
-* SOM cells for spatial integration
-* ViP cell modulation of lateral connections
 
 \section{Neuromodulation of visuo-cortical information processing}
 
@@ -68,8 +346,6 @@ particular it is hypothesized that cholinergic and adrenergic
 neuromodulators are associated with attentional modulation.
 
 \subsection{Cortical feedback}
-
-
 
 
 \subsection{Cholinergic modulation}
