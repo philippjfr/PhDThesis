@@ -499,6 +499,10 @@ R = \frac{R_e}{1+R_i}
 Using the estimated spatial constants and gain parameters we can also
 calculate the suppression index of each neuron:
 %%
+%% jbednar: It's almost never a good idea to use words as multiple adjacent 
+%% lowercase letters in equations--they are always ambiguous about
+%% whether it's three variables s, u, and b, or one label 'sub'.  Why
+%% not _s and _d?
 \begin{equation}
   SI_{sub} = \frac{K_i b}{K_e a}
 \end{equation}
@@ -958,11 +962,13 @@ consistent with experimental measurements but also internally
 consistent with the size-tuning response of the model. The next steps
 will be to evaluate feedforward and lateral connections independently.
 
+% jbednar: I guess the table can't use Greek letters (latex equations)
+% natively?
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{SCAL_hypercolumns.pdf}
-	\caption[Hypercolumn and pinwheel density fitting procedure and
-      results.]{Hypercolumn and pinwheel density fitting procedure. A)
+	\caption[Hypercolumn and pinwheel-density fitting procedure and
+      results.]{Hypercolumn and pinwheel-density fitting procedure. A)
       Orientation map in V1 overlaid with real and imaginary contours
       and pinwheels at their intersections. B) 2D FFT of the
       orientation map showing a ring identifying the periodicity of
@@ -1263,7 +1269,8 @@ the orientation selectivity of the neuron. The relationship between
 these two variables is shown in \ref{LatORKappa}, and clearly predicts
 that the orientation specificity of the lateral connections received
 by a V1 neuron is highly dependent on the orientation selectivity of
-the neuron (spearman $\rho=0.59$, $p<1e-184$).
+the neuron (Spearman's $\rho=0.59$, $p<10^{-184}$).
+
 
 \begin{figure}
 	\centering

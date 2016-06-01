@@ -46,7 +46,7 @@ contrast and strong lateral excitation.
 The \textbf{S}hort-\textbf{R}ange \textbf{E}xcitation \textbf{P}V
 \textbf{Inhibition} (SEPI) model is based on the same principles,
 spatial profiles and equations that were described for the SCAL model
-in the previous chapter. However unlike SCAL the model has a distinct
+in the previous chapter. However, unlike SCAL, the model has a distinct
 excitatory and inhibitory V1 population, which both receive afferent
 input and are connected to each other recurrently. The architecture
 diagram in \ref{SEPIDiagram} shows the two sheets and projections
@@ -96,36 +96,43 @@ afferent input \citep{Burkhalter2008}. All three of these properties
 are captured directly by the model.
 
 In order to capture the response of the PV population we apply only
-half-rectification to the inhibitory population, as basket cells
+half-rectification to the inhibitory population, rather than a
+floating homeostatically determined threshold, because basket cells
 generally have a very low spiking threshold \citep{Ma2011}.  It would
 be possible to use homeostatic plasticity to set the thresholds
 instead,
 % jbednar: as suggested in some work cite{hennig}
 but it would be complicated to set up mechanisms to balance the
 thresholds between the populations to ensure suitable overall levels
-of activity in the network. Secondly we keep the effect of the inhibition divisive,
+of activity in the network. Secondly, we keep the effect of the inhibition divisive,
 both for each other and when targetting pyramidal cells. These
-properties distinguish them from the other major class of inhibitory
+properties distinguish the model PV neurons from the other major class of inhibitory
 interneurons, the somatostatin (Sst) expressing population, which
 receive weaker but facilitating inputs
 \citep{Beierlein2003,Bartley2008,Tan2008}.
 
 \subsubsection{Activation}
 
+%% jbednar: does that mean these two sheets will have *identical*
+%% activities?  If so that would mean GCAL is fine as a model, since
+%% two identical items can presumably be folded into a single entity
+%% for modeling.
 The activation for both the excitatory and inhibitory population is
 given by:
 %%
+%% jbednar: Should be something like
+%% \eta_E = \eta_I = \frac{\eta_{A} + \eta_L}{1 + \eta_P}
 \begin{equation}
   \eta_{exc/inh} = \frac{\eta_{A} + \eta_{Loc-Exc}}{1 + \eta_{PV-Inh}}
 \end{equation}
 %%
 where $\eta_{A}$ is the LGN afferent activity, $\eta_{Loc-Exc}$ the
 local excitatory contribution and $\eta_{PV-Inh}$ the PV inhibitory
-contribution. In other words both population integrate over afferent
+contribution. In other words, both populations integrate over afferent
 and local excitatory input and are then divisively normalized by the
-PV population. Optionally an additional long-range excitation term can
-be added to modulate the activity dependent on long-range excitatory
-input:
+PV population.  To allow testing its effects, we will also allow an
+optional additional long-range excitation term to modulate the
+activity dependent on long-range excitatory input:
 %%
 \begin{equation}
   \eta_{exc} = \frac{\eta_{A} + \eta_{Loc-Exc}}{1 + \eta_{PV-Inh}} (1+\eta_{Lat-Exc})
@@ -137,41 +144,44 @@ projection.
 \subsubsection{Hysteresis}
 
 In order to control the temporal properties of the PV population we
-introduce a hysteresis term, which is disabled in the final
-model. This will allow us to test the importance of fast inhibition in
-the model. The hysteresis function is defined as a discrete
+introduce a hysteresis term, which will be disabled in the final
+model but will in the meantime allow us to test the importance of fast
+inhibition in the model. The hysteresis function is defined as a discrete
 exponential weighting between the previous activation and the new
 activity, expressed as:
 %%
 \begin{equation}
-  \eta_h (t + \delta\eta) = \eta(t) + \tau \big[ \eta(t+\delta\eta - \eta(t) \big]
+  \eta_h (t + \delta\eta) = \eta(t) + \tau \big[ \eta(t+\delta\eta) - \eta(t) \big]
 \end{equation}
 %%
-where $\tau$ is the time constant. This will effectively slow down PV
-responses relative to the excitatory population. In the final model
-this term is eliminated simply by setting $\tau = 1$.
+where $\tau$ is the time constant. If $\tau < 1$, hysteresis will
+effectively slow down PV responses relative to the excitatory
+population. In the final model, the hysteresis term is eliminated simply by
+setting $\tau = 1$.
 
 \subsection{Assessing the quality of orientation maps} \label{metrics}
 
 A major component of the analysis applied in this section is to assess
 the sensitivity of the model to changes in the response properties of
-the different cell classes. Therefore we have to establish a number
+the different cell classes. Therefore we have to establish a number of
 metrics to assess the robustness of the model to changes in contrast
-by assessing the quality of orientation map organization of the
-excitatory V1 neurons map. There are a variety of measures to assess
-these properties but we will focus on three in particular, smoothness,
-stability and pinwheel density.
+by assessing the quality of orientation map organization.  To measure
+the maps, we will focus on the excitatory V1 neurons, though similar
+results would be found if we were to pool all the neural types
+together as would be done in a neuroimaging experiment.
+There are a variety of measures to assess map properties, but we will
+focus on three in particular---smoothness, stability and pinwheel density.
 
 \subsubsection{Pinwheel density}
 
-Through empirical observation that orientation maps across species
-share a fundamental property, that pinwheel count in biological
-orientation maps scales linearly with hypercolumn size, specifically
-that there are $\pi$ orientation pinwheels within the area of one
+Interestingly, it has been found that experimentally measured
+orientation maps share a fundamental property across species: pinwheel
+count scales linearly with hypercolumn size.  More specifically,
+there are $\pi$ orientation pinwheels within the area of one
 hypercolumn, when averaging over sufficiently large cortical
 areas. This dimensionless, statistical measure of pinwheel
 distribution is thought to reflect a universal constant of map
-organization, converging to across carnivorans, primates, cats, and
+organization, converging to $\pi$ across carnivorans, primates, cats, and
 tree shrews \citep{Kaschube2010, Keil2012}. This value was predicted
 by a theoretical model of map organization and has strong empirical
 evidence, with a mean pinwheel density across four species (tree
@@ -179,22 +189,31 @@ shrew, galago, cat, and ferret) statistically indistinguishable from
 $\pi$.
 
 To determine the pinwheel density for any given map, the hypercolumn
-distance is computed and all all pinwheel centers are found. Pinwheel
+distance is computed and all pinwheel centers are found. Pinwheel
 centers are located at the intersection of the zero contours of the
 real and imaginary components in the polar representation of
 orientation preference \citep{Lowel1998}. Then we simply divide the
 number of pinwheels in the modeled area by the number of hypercolumns
-to arrive at the pinwheel density.
+to arrive at the pinwheel density.  \cite{Stevens2013} introduced
+pinwheel density as a numerical metric for the biological accuracy of
+a map, for which it works well because it has a clear target value.
 
 \subsubsection{Orientation Selectivity}
 
+%% jbednar: changed---or_pref is not the pref or maximum response; it's
+%% an estimate of the preferred orientation.  E.g., if a neuron
+%% responded equally well to 45 and 90, the reported or_pref would be 67.5, but
+%% it wasn't tested at 67.5 so we don't *really* know it would respond
+%% well to that -- maybe it's a bilobed tuning curve (which might be
+%% found at a saddle point) with peaks at 45 and 90 and a *trough* at 67.5!
+%%
 When measuring an orientation map using the protocol outlined in
-\ref{ORMeasurement} two components are returned, the first is the
-orientation preference, which corresponds to the orientation at which
-there was a maximal response. Additionally there is a selectivity
-components, which provides a measure of how much the neuron responded
+\ref{ORMeasurement}, two components are returned.  The first is the
+orientation preference, which corresponds to the estimated orientation
+that would give a maximal response. Additionally there is a selectivity
+component, which provides an estimate of how much the neuron will respond
 to the preferred orientation relative to all other orientations. This
-provides a simple metric to assess how selective a neuron is and can
+value provides a simple metric to assess how selective a neuron is, and can
 easily be averaged across all neurons in a central region to get an
 average selectivity value.
 
@@ -211,15 +230,18 @@ uncorrelated) to 1 (identical orientation preference). The orientation
 similarity index is therefore defined as:
 %%
 \begin{equation}
-  OSI = 1 - \frac{4}{n\pi} \sum_{i}\abs{(F_{i}-O_{i})mod(\frac{\pi}{2})}
+  OSI = 1 - \frac{4}{n\pi} \sum_{i}\abs{(F_{i}-O_{i})\bmod\frac{\pi}{2}}
 \end{equation}
 %%
 By averaging the OSI at every 1000 development steps we can
-numerically compare the stability of the model over time. Note that
-this does not provide a measure that is comparable across models
-because this measure is heavily influenced by the speed of learning
-but it does allow us to assess the effect of changing specific
-parameters on the stability of the model.
+numerically compare the stability of the model over time, which
+provides a measure of how quickly and how smoothly the map is becoming
+organized. Note that there is no objective criterion for ``best''
+stability, since a perfectly stable map that never achieves
+selectivity would be a failure both as a model and as a visual system,
+but in conjunction with other measures the stability metric is helpful
+for evaluating the effect of changing specific parameters for a given
+model.
 
 \subsubsection{Local Homogeneity Index}
 
@@ -227,7 +249,7 @@ The local homogeneity index (LHI) was first introduced by
 \cite{Nauhaus2008} as measure of the local smoothness of the map. It
 is therefore useful to determine whether a neuron is in a smooth
 region of the orientation map or near a pinwheel region where the
-orientation preference varies considerable. The LHI is defined based
+orientation preference varies considerably. The LHI is defined based
 on a specific $\sigma$ value, which should reflect the spatial
 properties of the map. Therefore we can use the mean LHI across the
 entire map as a measure of the scale of homogeneous regions of the
@@ -239,19 +261,27 @@ map. The LHI at location x is computed as follows:
   \bigg\rvert
 \end{equation}
 %%
-where, $\theta_y$ is the orientation preference at site y and $\sigma$
+where $\theta_y$ is the orientation preference at site y and $\sigma$
 determines the spatial scale of the analysis. In their experiments
 \cite{Nauhaus2008} used $\sigma=180\mu m$ to match the spatial extent
 of dendritic fields in both cat and monkey cortex.
 
 \subsubsection{Center-of-Gravity Distortion}
 
-Since we have access to all the weights in the model we can compute
-the center-of-gravity (CoG) of the afferent weights relative to
-position of the neuron, to determine how much distortion to the
-retinotopy each neuron exhibits. The CoG along one axis is computed as
-the mean of normalized vector product:
+Since we have access to all the weights in the model, we can easily compute
+the center-of-gravity (CoG) of the afferent weights relative to the
+position of the neuron, to determine how far the neuron's preferred
+location is from its perfectly retinotopic mapping.  Some retinotopic
+distortion will always be present, due to locally smooth organization
+for features like orientation, but extreme distortions are not typical
+for biological maps, and are thus an indication of inappropriate
+parameter settings or training patterns for a model network.
+
+The CoG along one axis is computed as the mean of the normalized
+vector product: 
 %%
+%% jbednar: could simplify as \sum_{i,j} instead of \sum_i \sum_j ; your choice
+%% Not sure if CoG should be G and COGD should be G_d...
 \begin{equation}
   CoG(p, \omega) = \frac{1}{\sum_i \sum_j \omega_{i, j}} \sum_i \sum_j \omega_{i,j} p_{i,j}  
 \end{equation}
@@ -259,19 +289,22 @@ the mean of normalized vector product:
 where $p$ is the position along either the x- or y-axis and $\omega$
 is the weight at that location. The distortion in the CoG is then
 given by Euclidean distance between the center of gravity and the
-actual location of the neuron:
+actual retinotopic location of the neuron:
 %%
 \begin{equation}
   CoGD(x, y) = \sqrt{(CoG_x-x)^2 + (CoG_y-y)^2}
 \end{equation}
 %%
-By computing the shift for all neurons in a central regions we can use
+By computing this distance for all neurons in a central region, we can use
 this metric as a measure of the quality of the retinotopic mapping in
-the model, highlighting significant distortions introduced by
-unbalanced excitation and inhibition.
+the model, highlighting any distortions.
 
 \section{Results}
-
+%% jbednar: You should never have two section headings in a row.  Here, you
+%% should say something like ``The results from training the model
+%% will be presented first, followed by analysis of XXX and YYY
+%% (whatever the actual order is.  Same for any other place this
+%% happens. 
 \subsection{Development}
 
 The role of inhibition in development is hugely important, as
@@ -279,45 +312,56 @@ evidenced by the fact that a variety of pathological conditions
 including autism \citep{Wohr2015} and schizophrenia \citep{Lewis2012}
 have been tied to changes in PV-expressing interneurons in the
 cortex. Modeling the role of these cell classes in development and
-specifically a rate-based modeling requires capturing their response
-properties. Since the synaptic projection develop as a result of these
+%% jbednar: what do you mean by ``capturing''?  Reproducing, in a
+%% model? Extracting from the literature?  Measuring from animals?
+adult visual processing requires capturing their response
+properties. Since the synaptic projections develop as a result of these
 properties, the tuning properties of the modeled neurons in the
-developed model will let us concrete predictions about the role of
-these neurons in shaping the development.
+developed model will let us make concrete predictions about the role of
+these neurons in shaping V1 development.
 
+%% jbednar: can you give an example of what you mean, and what it has
+%% to do with being rate-based?  
 Accurately capturing the response of these neurons in a rate-based
-model presents a number of challenges. Additionally a lot of the data
-about these cell classes comes from mouse data where the genetic
-manipulation of specific cell classes has recently become possible. At
-the same time this provides a great opportunity to establish whether
+model presents a number of challenges.
+%% since many of the reported properties are to do with patterns of spikes?
+Additionally, much of the data about these cell classes comes from
+mouse experiments, because of the new, rich techniques for genetic
+manipulation of specific cell classes, rather than primates or
+carnivorans as for most of the functional data. At the same time, this
+%% This what? evidence?  Unclear.
+provides a great opportunity to establish whether
+%% jbednar: not sure what you mean
 the coarse response properties of the neurons can predict their final
-tuning properties in the model and how manipulating them can affect
+tuning properties in the model, and how manipulating them can affect
 both development and the instantaneous response of the model to
 specific stimuli.
 
-In spatially calibrating the connections between neurons in the SCAL
-model we had already focused on the PV population, so calibrating the
-inputs and response properties of these neurons is the next step. The
+The spatial extent of the PV neurons was already calibrated for the
+SCAL model, and so the next step is to calibrate their inputs and
+response properties. The 
 literature is very clear that PV neurons in the visual cortex receive
 strong inputs both from thalamocortical afferents and from recurrent
 inputs, so the main question to settle is how closely these neurons
-are coupled to the excitatory population. If the hypothesis that these
-neurons can quickly and robustly balance out the excitation arriving
-from the LGN \citep{Swadlow2003, Burkhalter2008}, by linearly matching
-the response of the pyramidal cell population and providing contrast
-gain control to sparsify the activity and thereby sharpen the
-orientation tuning \citep{Wilson2012}, then a non-linear and very slow
-response among this population should disrupt map development.
+are coupled to the excitatory population. It has been hypothesized
+that these neurons can quickly and robustly balance out the excitation
+arriving from the LGN \citep{Swadlow2003, Burkhalter2008}, by linearly
+matching the response of the pyramidal cell population and providing
+contrast gain control to sparsify the activity and thereby sharpen the
+orientation tuning \citep{Wilson2012}.  If so, then a non-linear and
+very slow response among this population should disrupt map
+development, which is a prediction that we will test in the model.
 
 \subsubsection{Linearity and time profile of inhibitory responses}
 
-In order to explore these effects the model was launched with varying
-activation functions. The first component would vary the linearity of
-the response by adding an exponential term after the
+To help understand how the PV population affects the behavior of the
+model, variants of the model were launched using different PV
+activation functions determined by two parameters. The parameter
+determines the linearity of the response, by adding an exponential term after the
 half-rectifier. By varying this exponential term we could vary the
-response of the neuron from between sub- and supra-linear
-values. Additionally a hysteresis term was added to control the time
-profile of the response. After training the models were then assessed
+response of the neuron from sub- to supra-linear
+values. To control the time profile of the response, a hysteresis term
+was added as well. After training, these model variants were assessed
 based on the metrics outlined in \ref{metrics}.
 
 The results of the parameter exploration are shown in figure
@@ -326,16 +370,15 @@ orientation selectivity, distortion of the retinotopy, the mean local
 homogeneity index (LHI) and finally the pinwheel density ($\rho$),
 used to assess the quality of the maps.
 
-The immediately striking result is that narrow band of good (near
+The immediately striking result is the narrow band of good (i.e., near
 $\pi$) pinwheel densities in the linear region of the response. Apart
-from that we can clearly see that orientation selectivity, stability
-and the CoG distortion are strongly correlated, while they are
+from that, we can clearly see that orientation selectivity, stability
+and the CoG distortion are strongly correlated with each other and all
 anti-correlated with the LHI. In particular, we can see increasing
 distortion of the retinotopy as the inhibitory population responds
 more strongly, which causes serious disruptions to the map quality. At
-the same time sub-linear responses seem to induce very weak
-selectivity, which causes relatively low stability and high
-homogeneity.
+the same time, sub-linear responses lead to very weak selectivity,
+which causes relatively low stability and high homogeneity.
 
 \begin{figure}
 	\centering
@@ -350,9 +393,13 @@ homogeneity.
       Pinwheel density of the model, which should approach $\pi$ for a
       perfect map. E) The Center-of-gravity (CoG) distortion provides
       a measure of how much the retinotopy in the model has been
-      disrupted.}
+      disrupted.  The model maps match biological results only when
+      the PV exponent is 1 (linear response).}
+      %% jbednar: added concluding sentence; all figures should have
+      %% them.  Maybe you want to say more?
 	\label{SEPILinearity}
 \end{figure}
+% jbednar: edited to here
 
 In order to get a better overview of the relationships between these
 variables The correlation matrix between the independent variables
