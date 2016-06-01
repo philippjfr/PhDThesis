@@ -138,18 +138,18 @@ multiplicative factor modulating the response of the excitatory
 neurons. The response of the excitatory population is then given by:
 
 \begin{equation}
-  \eta_{exc} = \frac{\eta_{A} + \eta_{LOC-EXC}}{1 + \eta_{PV-INH}} \eta_{SM}
+  \eta_{exc} = \frac{\eta_{A} + \eta_{Loc-Exc}}{1 + \eta_{PV-Inh}} \eta_{SM}
 \end{equation}
 
-where $\eta_{A}$ is the LGN afferent activity, $\eta_{LOC-EXC}$ the local
-excitatory contribution, $\eta_{PV-INH}$ the PV inhibitory contribution
+where $\eta_{A}$ is the LGN afferent activity, $\eta_{Loc-Exc}$ the local
+excitatory contribution, $\eta_{PV-Inh}$ the PV inhibitory contribution
 and the surround-modulation term $\eta_{SM}$ is defined as:
 
 \begin{equation}
-  \eta_{SM} = 1 + \eta_{LAT-EXC} - \eta_{Sst}
+  \eta_{SM} = 1 + \eta_{Lat-Exc} - \eta_{Sst}
 \end{equation}
 
-where $\eta_{LAT-EXC}$ represents the long-range lateral excitatory
+where $\eta_{Lat-Exc}$ represents the long-range lateral excitatory
 contribution and $\eta_{Sst}$ is the Sst inhibitory contribution. In
 the SEPI model the $\eta_{SM}$ term simply reduces to 1, eliminating
 all long-range interactions. The surround-modulation term provides
@@ -165,11 +165,22 @@ The activation of the inhibitory Sst population is given simply by the
 summation of the local and lateral excitatory projection activity:
 
 \begin{equation}
-  \eta_{Sst} = \eta_{LOC-EXC} + \eta_{LAT-EXC}
+  \eta_{Sst} = \eta_{Loc-Exc} + \eta_{Lat-Exc-Sst}
 \end{equation}
 
-Additionally the $\eta_{LAT-EXC}$ term has an exponential activation
-function applied to it such that it's contribution is given by
+Additionally the $\eta_{Lat-Exc-Sst}$ term has hysteresis and an
+exponential activation function applied to it such that it's
+contribution is given by:
+
+\begin{equation}
+  \eta_{Lat-Exc-Sst} (t + \delta\eta) = (\eta(t) + \tau \big[ \eta(t+\delta\eta - \eta(t) \big])^\beta
+\end{equation}
+
+where $\tau=0.2$ and $\beta=3$. This combination of hysteresis and an
+exponential non-linearity allows the lateral connections to integrate
+over time, accelerating its response under strong and prolonged
+activation, which closely models what has been observed in experiments
+\citep{Beierlein2003,Bartley2008,Tan2008}.
 
 \subsubsection{Mechanisms}
 
@@ -184,7 +195,11 @@ effectively gate horizontal excitatory and feedback inputs
 \citep{Ma2011, Gentet2012}. Additionally theoretical studies indicate
 active dendritic spike backpropagation can lead to multiplicative
 increases in gain, while reduction in spike backpropagation can lead
-to divisive scaling of the firing rate \citep{Mehaffey2005}.
+to divisive scaling of the firing rate \citep{Mehaffey2005}. Modeling
+the effect of long-range input as a single multiplicative term, which
+can act divisively given sufficient inhibitory input therefore
+provides a convenient, if simplified abstraction to model long-range
+interactions.
 
 \begin{figure}
 	\centering
