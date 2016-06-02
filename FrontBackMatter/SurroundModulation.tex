@@ -111,8 +111,8 @@ and \textbf{PV} \textbf{I}nhibition (LESPI) model again builds on the
 previous models introducing an additional population of inhibitory
 neurons, which is entirely recurrently driven via short- and
 long-range projections by the two other populations. The diagram in
-\ref{LESPIDiagram} shows how the three populations of V1 neurons are
-recurrently connected.
+Figure~\ref{LESPIDiagram} shows how the three populations of V1
+neurons are recurrently connected.
 
 The newly introduced Sst population will differ from the PV population
 in a number of respects. First of all it receives no afferent input
@@ -213,13 +213,14 @@ interactions.
 \end{figure}
 
 The overall operation of this circuit can be summarized by the
-schematic in \ref{circuit_diagram}. The diagram shows the preferential
-linking of columns with similar orientation preference via patchy
-long-range connections and the long-range integration of Sst neurons,
-which receive both local and lateral input from pyramidal neurons,
-providing di-synaptic inhibition to the local region. Furthermore it
-suggests that under low-contrast conditions the Sst population is
-effectively disabled, activating only under high contrast input.
+schematic in Figure~\ref{circuit_diagram}. The diagram shows the
+preferential linking of columns with similar orientation preference
+via patchy long-range connections and the long-range integration of
+Sst neurons, which receive both local and lateral input from pyramidal
+neurons, providing di-synaptic inhibition to the local
+region. Furthermore it suggests that under low-contrast conditions the
+Sst population is effectively disabled, activating only under high
+contrast input.
 
 \begin{figure}
 	\centering
@@ -326,9 +327,9 @@ preferred size, frequency and orientation of the neuron being
 measured. Once the baseline activity has been measured an additional
 surround anulus with the same frequency is added and varied in
 contrast, size and orientation to measure orientation dependent
-interactions between center and surround (as shown in Figure
-\ref{ORC_Stimulus}). In in-vivo experiments this measurements is
-performed using drifting gratings with varying phase, since we are
+interactions between center and surround (as shown in
+Figure~\ref{ORC_Stimulus}). In in-vivo experiments this measurements
+is performed using drifting gratings with varying phase, since we are
 only simulating simple cells the gratings are optimized for the
 preferred phase of each neuron instead.
 
@@ -387,14 +388,14 @@ models trained on natural images, which itself has some drawbacks,
 however it allows the model to learn the statistics of the natural
 world or of various laboratory environments. The following analyses
 all use either the ``natural`` or the ``treeshrew`` dataset shown in
-\ref{image_patterns}.
+Figure~\ref{image_patterns}.
 
 Before characterizing the responses to more complex patterns we will
 once again show how the response to a simple Gaussian pattern evolves
 over time before and after development, which is shown in
-\ref{LESPIResponse}. When comparing this response to the SCAL model
-(see \ref{SCALResponse}) it is immediately noticeable that the model
-exhibits significantly more suppression.
+Figure~\ref{LESPIResponse}. When comparing this response to the SCAL
+model (see Figure~\ref{SCALResponse}) it is immediately noticeable
+that the model exhibits significantly more suppression.
 
 \begin{figure}
 	\centering
@@ -450,20 +451,21 @@ In addition to measuring the classical high-contrast suppression
 curve, the equivalent measurement was performed for an individual
 neuron under both low and high-contrast conditions. The orientation
 contrast tuning curves were measured at each settling step of the
-model and are shown in \ref{ORTC_ContrastDependence}. As these results
-clearly show the neuron exhibits very different effects under the two
-conditions. When the local and global contrast is low the response of
-the neuron is enhanced while high-contrast stimulation demonstrates
-the same suppressive effect that is evident in the averaged
-suppression curve in \ref{ORTC_Jones}.
+model and are shown in Figure~\ref{ORTC_ContrastDependence}. As these
+results clearly show the neuron exhibits very different effects under
+the two conditions. When the local and global contrast is low the
+response of the neuron is enhanced while high-contrast stimulation
+demonstrates the same suppressive effect that is evident in the
+averaged suppression curve in Figure~\ref{ORTC_Jones}.
 
 In order to find the cross-over point at which facilitation turns to
 suppression the contrast of both the center and surround pattern is
 varied and the OCSI is calculated for different durations. The
-corresponding plot is shown in \ref{ORTC_ContrastCurve} highlighting
-again that suppression weakens as the response is settling but more
-important clearly shows the inflection point between excitation and
-suppression for this particular neuron lies at about 9\% contrast.
+corresponding plot is shown in Figure~\ref{ORTC_ContrastCurve}
+highlighting again that suppression weakens as the response is
+settling but more important clearly shows the inflection point between
+excitation and suppression for this particular neuron lies at about
+9\% contrast.
 
 \begin{figure}
 	\centering
@@ -530,8 +532,8 @@ In order to get a better understanding of how the different cell
 classes and synaptic projections interact to give rise to the
 contextual modulation effects seen above the timecourse of the
 activity can be visualized. The timecourse of the responses under four
-different conditions is shown in \ref{ORTC_TimeCourse}. The top-row
-shows the response under low-contrast conditions for the
+different conditions is shown in Figure~\ref{ORTC_TimeCourse}. The
+top-row shows the response under low-contrast conditions for the
 iso-orientation and cross-orientation condition and highlights how the
 iso-orientation facilitation emerges. Comparing A and B it is clear to
 see how the lateral excitation increases the excitatory response in
@@ -566,14 +568,14 @@ The effects of both spatial and contrast dependent effects can best be
 explained when looking at the size tuning curves of all three
 populations. A representative example of size tuning curves measured
 from all three populations at a single location is shown in
-\ref{LESPI_SizeTuning}. The excitatory neuron shows a significant
-shift towards larger size preferences at lower contrast (>3x). This is
-largely driven by the fact that both inhibitory populations
-demonstrate even more significant shifts in size tuning. The most
-striking feature of this is the very gradual increase of Sst
-activation as the stimulus grows at low contrasts. This means that for
-very small stimuli the Sst neurons provide very little inhibition
-allowing facilitatory effects to occur.
+Figure~\ref{LESPI_SizeTuning}. The excitatory neuron shows a
+significant shift towards larger size preferences at lower contrast
+(>3x). This is largely driven by the fact that both inhibitory
+populations demonstrate even more significant shifts in size
+tuning. The most striking feature of this is the very gradual increase
+of Sst activation as the stimulus grows at low contrasts. This means
+that for very small stimuli the Sst neurons provide very little
+inhibition allowing facilitatory effects to occur.
 
 \begin{figure}
 	\centering
@@ -608,9 +610,9 @@ The simplest means of testing this effect was to embed a target bar
 stimulus in a ring of iso- or cross-oriented flankers and computing
 the average activity in the region corresponding to the flanker
 against the region corresponding to the target for the target. The
-effect of this can be seen in \ref{Flanker_PopOut}, showing the two
-stimulus conditions and a plot of the average in the central target
-region and in an annulus around it corresponding to the flanker
+effect of this can be seen in Figure~\ref{Flanker_PopOut}, showing the
+two stimulus conditions and a plot of the average in the central
+target region and in an annulus around it corresponding to the flanker
 region. The target activity is elevated above both the flanker
 activation in the same stimulus condition but is also elevated more
 importantly is also elevated when compared to the iso-orientation
@@ -727,16 +729,16 @@ of inhibitory neurons and the Sst suppressing interneurons fit
 precisely this description. Not only does the model demonstrate the
 contrast dependent switch from facilitation to suppression that has
 been so widely described \citep{Levitt1997, Polat1998, Dragoi2000,
-  Wang2009} as can be seen in \ref{ORTC_ContrastCurve} and
+  Wang2009} as can be seen in Figure~\ref{ORTC_ContrastCurve} and
 \ref{ORTC_CSCurve}, but we can directly observe how the assymetry in
 the efficacy of excitatory-excitatory and excitatory-inhibitory
 connections targetting the excitatory and Sst populations respectively
 drives both phenomena in the timecourse of suppression under various
-stimulus conditions as shown in \ref{ORTC_TimeCourse} and very
+stimulus conditions as shown in Figure~\ref{ORTC_TimeCourse} and very
 long-range integration of inputs by the Sst population under low
-contrast conditions (see \ref{LESPI_SizeTuning}). This property of
-very long-range spatial integration by the Sst population has so far
-been described only in the mouse \citep{Adesnik2012}, however we
+contrast conditions (see Figure~\ref{LESPI_SizeTuning}). This property
+of very long-range spatial integration by the Sst population has so
+far been described only in the mouse \citep{Adesnik2012}, however we
 predict a cell class with a similar function exists in higher mammals
 as well.
 

@@ -54,15 +54,15 @@ The stimuli generated for this purpose are simple extensions of the
 elongated 2D Gaussian stimuli used to train the models up to this
 point. The model will draw 1 stimulus per unit area, which consists of
 a chain of three Gaussian pattern, the patterns can be seen in
-\ref{GaussianStatistics}. The middle Gaussian determines the overall
-orientation ($\theta_M$) of the pattern, and the outer Gaussians are
-offset in orientation by a value drawn from a vonMises distribution
-with a mean of $\theta_M$ and a $\kappa$ of ${0.5, 8}$. The patterns
-are then spatially offset so that they form a chain forming either 'S'
-shaped or 'U' shaped providing circular and anti-circular statistics
-respectively. By varying the $\kappa$ we can vary how the distribution
-of co-occurence statistics increasing the preference for simple
-elongated bars.
+Figure~\ref{GaussianStatistics}. The middle Gaussian determines the
+overall orientation ($\theta_M$) of the pattern, and the outer
+Gaussians are offset in orientation by a value drawn from a vonMises
+distribution with a mean of $\theta_M$ and a $\kappa$ of ${0.5,
+  8}$. The patterns are then spatially offset so that they form a
+chain forming either 'S' shaped or 'U' shaped providing circular and
+anti-circular statistics respectively. By varying the $\kappa$ we can
+vary how the distribution of co-occurence statistics increasing the
+preference for simple elongated bars.
 
 \begin{figure}
 	\centering
@@ -84,8 +84,8 @@ natural images by labeling images with edges at varying frequencies,
 scales, orientations and phases through a greedy algorithm and then
 computing both the relative orientation between each pair of edges and
 the normalized azimuthal angle between them. An example image with
-labeled edges is shown in \ref{classifier}, along with a diagram
-showing how the co-occurence were computed. Similar analysis
+labeled edges is shown in Figure~\ref{classifier}, along with a
+diagram showing how the co-occurence were computed. Similar analysis
 approaches have been used to visualize the co-occurrence statistics in
 natural images, such as those produced by \cite{Geisler2001} to
 predict the performance of human subjects in contour detection tasks.
@@ -121,8 +121,8 @@ were trained one various synthetic and natural image datasets and the
 statistics embedded in the lateral connections were decoded.
 
 This was done by computing the angles $\theta$, $\phi$ and $\psi$ (as
-defined in figure (C) in \ref{classifier}) as well as the euclidean
-distance of the receptive fields centers for each pre- and
+defined in figure (C) in Figure~\ref{classifier}) as well as the
+euclidean distance of the receptive fields centers for each pre- and
 post-synaptic pair of neurons and then binning them weighted by the
 strength of connections between them. The angle $\theta$ was computed
 simply as the difference between the pre- and post-synaptic neurons'
@@ -154,13 +154,13 @@ compare against the plots produced by directly extracting the edge
 co-occurrences from images in the \cite{Perrinet2015} and
 \cite{Geisler2001} studies.
 
-The first of these plots (shown in \ref{SyntheticCooccurrence}),
-called a Chevron map, presents the bivariate distribution of $\theta$
-and $\psi$, highlighting which spatial arrangement of edges is most
-likely to co-occur. In these plots the central $1^\circ$ diameter
-region of the lateral field was ignored so the plot would reflect
-co-occurrence statistics of connections outside the receptive field of
-the neuron. This also allowed comparing the co-occurrences between
+The first of these plots (Figure~\ref{SyntheticCooccurrence}), called
+a Chevron map, presents the bivariate distribution of $\theta$ and
+$\psi$, highlighting which spatial arrangement of edges is most likely
+to co-occur. In these plots the central $1^\circ$ diameter region of
+the lateral field was ignored so the plot would reflect co-occurrence
+statistics of connections outside the receptive field of the
+neuron. This also allowed comparing the co-occurrences between
 datasets by taking the ratio of normalized weights in each bins.
 
 The \cite{Geisler2001} type co-occurence plots on the other hand
@@ -183,9 +183,9 @@ azimuth were also determined by computing the vector sum.
 
 Finally the lateral weights were again fit using the vonMises model
 with both Gaussian and orientation preference dependent components,
-which was first introduced in \ref{BuzasEquations}. This allows us to
-provide a quantitative assesment of how well the lateral connections
-can be approximated with a simple model that is made up of
+which was first introduced in Section~\ref{BuzasEquations}. This
+allows us to provide a quantitative assesment of how well the lateral
+connections can be approximated with a simple model that is made up of
 orientation, direction and spatially dependent components. Most
 importantly the direction dependent component allows us to quantify
 how strongly the lateral connection fields are biased along the axis
@@ -194,8 +194,8 @@ of preferred orientation.
 \subsection{Training stimuli}
 
 The first step was to train the model on the different image datasets,
-which had already been analyzed for their co-occurence statistics (see
-figure \ref{classifier}). The datasets fed to the model comprised the
+which had already been analyzed for their co-occurence statistics
+(Figure~\ref{classifier}). The datasets fed to the model comprised the
 two datasets used as part of the paper and one additional image
 dataset recorded in treeshrew cages in the David Fitzpatrick lab at
 Duke University, which features great numbers of extended,
@@ -214,8 +214,8 @@ number of issues could disrupt the model organization.
 
 In order to keep the analysis tractable, at least initially, a
 synthetic and parameterizeable set of stimuli were used. The stimuli
-described in \label{synthetic} vary in both relative orientation and
-azimuth, which means that if the lateral connections capture the
+described in Section \ref{synthetic} vary in both relative orientation
+and azimuth, which means that if the lateral connections capture the
 correlations in the inputs these correlations should also be captured
 and vary depending on the width of the vonMises distributions the
 orientation offsets are drawn from.
@@ -244,17 +244,17 @@ understand what the lateral connections are actually capturing. The
 difference in lateral fields between a model trained on the synthetic
 stimuli with a very wide distribution ($\kappa=0.5$) and a much
 tighter distribution ($\kappa=8$) is shown in
-\ref{SyntheticDistributions}. This simple analysis already makes it
-clear that both conditions show a strong preference for similar
-orientations and co-linear stimuli, as can be seen when looking at the
-azimuth histogram, which highlights a strong isotropy along the axis
-of preferred orientation. This can indeed be seen even when just
-looking at the sample lateral connection fields directly. The analysis
-also highlights that the model trained on patterns drawn from the
-tighter distribution has a slightly stronger preference for similar
-orientations, and more weights at larger distances. This reflects the
-stronger bias for long iso-oriented, and co-linear contours in the
-input patterns.
+Figure~\ref{SyntheticDistributions}. This simple analysis already
+makes it clear that both conditions show a strong preference for
+similar orientations and co-linear stimuli, as can be seen when
+looking at the azimuth histogram, which highlights a strong isotropy
+along the axis of preferred orientation. This can indeed be seen even
+when just looking at the sample lateral connection fields
+directly. The analysis also highlights that the model trained on
+patterns drawn from the tighter distribution has a slightly stronger
+preference for similar orientations, and more weights at larger
+distances. This reflects the stronger bias for long iso-oriented, and
+co-linear contours in the input patterns.
 
 \begin{figure}
 	\centering
@@ -273,7 +273,7 @@ input patterns.
 \end{figure}
 
 The Chevron map of edge co-occurrences, shown in
-\ref{SyntheticCooccurrence}, highlights very similar trends. In
+Figure~\ref{SyntheticCooccurrence}, highlights very similar trends. In
 particular it demonstrates a greater spread in co-occurring
 orientations as the distribution of orientation offsets in the input
 pattern widens. Both the azimuth distribution and the co-occurrence
@@ -348,8 +348,8 @@ environments, which should be reflected in long range connections.
 Before investigating more complex second order statistics, we analyzed
 to check if partical orientations were hugely overrepresened in the
 orientation map, which could introduce systematic biases to the
-results. As can be seen in \ref{NatImgORs}, both dataset show some
-bias for specific orientations, with the treeshrew condition
+results. As can be seen in Figure~\ref{NatImgORs}, both dataset show
+some bias for specific orientations, with the treeshrew condition
 exhibiting a stronger bias along the horizontal and vertical
 axes. This is likely an artifact arising from the artificial border at
 the edge of the simulated sheet, which can affect the whole map
@@ -370,15 +370,15 @@ through long-range interactions.
 \subsubsection{Second order histograms}
 
 Once again we compare the isotropy, orientation and distance
-histograms between the two conditions (as shown in figure
-\ref{NatImgDistributions}, which highlight significant differences
-between the datasets. Specifically the orientation histogram is biased
-much more strongly towards iso-orientations in the natural
-condition. The natural condition is also considerably more orientation
-selective on average, which is what drives the development of the
-lateral connections. However, even though the treeshrew neurons are a
-lot less selective they actually exhibit a stronger bias along the
-axis of preferred orientation, with highly anisotropic lateral
+histograms between the two conditions (as shown in
+Figure~\ref{NatImgDistributions}, which highlight significant
+differences between the datasets. Specifically the orientation
+histogram is biased much more strongly towards iso-orientations in the
+natural condition. The natural condition is also considerably more
+orientation selective on average, which is what drives the development
+of the lateral connections. However, even though the treeshrew neurons
+are a lot less selective they actually exhibit a stronger bias along
+the axis of preferred orientation, with highly anisotropic lateral
 connection fields. Finally we can see there is a lot more weight at
 distant locations, suggesting the natural patterns exhibit more
 long-range correlations overall.
@@ -395,8 +395,8 @@ long-range correlations overall.
 
 \subsubsection{Chevron Maps}
 
-The Chevron maps offer a different view of these effects, (see
-\ref{NatImgCooccurrences}) as we can now see the relative
+The Chevron maps offer a different view of these effects,
+(Figure~\ref{NatImgCooccurrences}) as we can now see the relative
 co-occurrence along both the relative azimuth and orientation
 dimensions at the providing an overview of the likelihood of various
 geometric arrangements. The views analyzing each dataset individually
@@ -406,9 +406,9 @@ biased for similar orientations rather than specific azimuths. However
 it also demonstrates that in the natural condition co-linear lines are
 not much more likely than any other azimuth, which reaffirms the more
 circular azimuth histogram that can be seen in
-\ref{NatImgDistributions}. Comparing the distributions to ask whether
-certain configurations are more likely in one dataset than the other
-highlights some more interesting differences.
+Figure~\ref{NatImgDistributions}. Comparing the distributions to ask
+whether certain configurations are more likely in one dataset than the
+other highlights some more interesting differences.
 
 Specifically we can clearly see a stronger bias for parallel lines in
 the natural dataset and one for orthogonal lines in the treeshrew
@@ -441,21 +441,21 @@ actual differences.
 Instead of considering both orientation and azimuth co-occurrences at
 the same time we can treat each separately ensuring that one does not
 drown out the other. The co-linearity and co-circularity plots, shown
-in \ref{NatImgGeisler} alongside the results from \cite{Geisler2001}
-and \cite{Perrinet2015} make these differences very clear. Note that
-while the direct analysis can directly compute the probability, the
-model indicates both relative probability and confidence via the color
-and size respectively. Comparing just the direct analysis to the model
-results for the Serre animal dataset and the treeshrew cage dataset we
-can make several observations. The treeshrew data has a much tighter
-distribution in the co-linearity domain, is much more confident about
-the co-linearity at directions that lie on the axis of preferred
-orientation, and also extends across a much further distance. All
-three indicate a strong bias for co-linear arrangements, which can
-also be observed in the plots obtained directly from the
-datasets. However it also highlights that decoding the azimuth from
-the weights adds considerable uncertainty as the distribution is not
-nearly as tight as observed in experiments.
+in Figure~\ref{NatImgGeisler} alongside the results from
+\cite{Geisler2001} and \cite{Perrinet2015} make these differences very
+clear. Note that while the direct analysis can directly compute the
+probability, the model indicates both relative probability and
+confidence via the color and size respectively. Comparing just the
+direct analysis to the model results for the Serre animal dataset and
+the treeshrew cage dataset we can make several observations. The
+treeshrew data has a much tighter distribution in the co-linearity
+domain, is much more confident about the co-linearity at directions
+that lie on the axis of preferred orientation, and also extends across
+a much further distance. All three indicate a strong bias for
+co-linear arrangements, which can also be observed in the plots
+obtained directly from the datasets. However it also highlights that
+decoding the azimuth from the weights adds considerable uncertainty as
+the distribution is not nearly as tight as observed in experiments.
 
 The co-circularity results also show a lot of commonalities with
 almost uniformly high probability and confidence for co-circular
@@ -543,7 +543,7 @@ dependent component well we also let it fit the orientation directly
 and confirmed the fitted orientation was well correlated with the
 orientation preference in the orientation map. Overall this analysis
 showed very high correlation between the estimated and measured
-orientation as can be seen in \ref{NatImgvonMisesAspect}
+orientation as can be seen in Figure~\ref{NatImgvonMisesAspect}
 A. Additionally we plotted the aspect ratio of the long range Gaussian
 pattern against the orientation selectivity of the neurons. In the
 treeshrew model the selectivity was highly correlated with the aspect,
@@ -581,8 +581,8 @@ experiments \citep{Serre2007b}.
 
 In performing the analysis we demonstrated that the model could
 capture the statistics of simplified stimuli almost perfectly (see
-\ref{SyntheticGeisler}) and demonstrated that it could even extract
-the statistics of far more complex natural image stimuli to a
+Figure~\ref{SyntheticGeisler}) and demonstrated that it could even
+extract the statistics of far more complex natural image stimuli to a
 reasonable extent, including clear differences between various
 datasets. This provides the first demonstration that a developmental
 of V1 can indeed capture the statistics of natural images and can
