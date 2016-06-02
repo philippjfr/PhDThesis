@@ -275,11 +275,11 @@ disruptions in the map when both ON and OFF edges are present in the
 visual inputs. However since the lateral connections in the model are
 learned via Hebbian mechanisms the lack of long-range correlations
 will be reflected in them, resulting in a lack of patchy connections
-beyond the receptive field of the neuron. Therefore to observe any
-real contextual-modulation effects the visual input patterns need to
+beyond the receptive field of the neuron. To observe any real
+contextual-modulation effects the visual input patterns need to
 exhibit at least some long-range correlations. Therefore we will use a
 number of different natural image datasets and synthetic Gaussian
-stimuli with explicit long-range range correlations.
+stimuli with explicitly generated long-range range correlations.
 
 \subsubsection{Natural stimuli}
 
@@ -294,12 +294,12 @@ image \citep{Serre2007, Perrinet2015}. Therefore we will make use of
 the various image datasets used in these models to train the model on,
 allowing us to compare the effect on contextual modulation.
 
-The image datasets used for these purposes include the two target and
-distractor dataset used by \cite{Serre2007} as well as multiple
-datasets obtained by James Bednar meant to replicate the visual
-experience of an animal both a laboratory environment, dominated by
-high-contrast bars of the animal cages, and images of a natural
-environment dominated mostly by grass, leaves, and trees.
+The image datasets used for these purposes include the target dataset
+used by \cite{Serre2007}, consisting of animal images, as well as
+multiple datasets obtained by James Bednar meant to replicate the
+visual experience of an animal, both in a laboratory environment,
+dominated by high-contrast bars of the animal cages, and images of a
+natural environment dominated mostly by grass, leaves, and trees.
 
 \begin{figure}
 	\centering
@@ -361,15 +361,6 @@ respectively.
 	\label{ORC_Stimulus}
 \end{figure}
 
-The surround facilitation is quantified as:
-%%
-\begin{equation}
-F = (\frac{R_{cs}}{R_c} - 1) 100
-\end{equation}
-%%
-where $R_{CS}$ is the response of the combined stimulus and $R_C$ the
-response to just the center stimulus.
-
 \paragraph{Pop-out}
 
 One of the most well studied effects in the surround-modulation
@@ -405,7 +396,11 @@ once again show how the response to a simple Gaussian pattern evolves
 over time before and after development, which is shown in
 Figure~\ref{LESPIResponse}. When comparing this response to the SCAL
 model (see Figure~\ref{SCALResponse}) it is immediately noticeable
-that the model exhibits significantly more suppression.
+that the model exhibits significantly more suppression, which can be
+attributed to inhibition from two separate inhibitory
+populations. Later on we will see that the timecourse of responses is
+highly stimulus dependent, resulting from the richer set of
+interactions when compared to the SCAL and SEPI models.
 
 \begin{figure}
 	\centering
@@ -427,21 +422,20 @@ that the model exhibits significantly more suppression.
 Orientation-contrast suppression is one of the most well-studied
 paradigms in the surround-modulation literature. One of the most
 thorough analyses was performed by \cite{Jones2002}, varying the
-relative size and offset of the center stimulus and surround
-annulus. In our analysis the contrast suppression will not be
-characterized to the same extent. The measurements were performed in
-the model trained on the ``natural`` dataset, which does not have as
-highly biased statistics as the laboratory datasets.
+relative size and offset of the center stimulus and surround annulus.
+The measurements were performed in the model trained on the
+``natural`` dataset, which does not have as highly biased statistics
+as the laboratory datasets.
 
 As a first step the orientation-contrast curve was measured for a
 number of randomly chosen neurons under high-contrast conditions and
 all non-responding units were rejected. By normalizing the response
-and averaging the curves and computing the standard error the average
+and averaging the curves and computing the standard error an average
 contrast suppression curve was computed and can be seen compared to
-the orientation-contrast suppression curve from a single neuron
-measured by \cite{Jones2002} in \ref{ORTC_Jones}. The result shows
-that the neurons show strong iso-orientation suppression with a fairly
-well defined shape, which does not vary considerably in width.
+the orientation-tuning suppression curve from a single neuron measured
+by \cite{Jones2002} in \ref{ORTC_Jones}. The result shows that the
+neurons show strong iso-orientation suppression with a fairly well
+defined shape, which does not vary considerably in width.
 
 \begin{figure}
 	\centering
@@ -470,6 +464,19 @@ response of the neuron is enhanced while high-contrast stimulation
 demonstrates the same suppressive effect that is evident in the
 averaged suppression curve in Figure~\ref{ORTC_Jones}.
 
+\begin{figure}
+	\centering
+        \includegraphics[width=1.0\textwidth]{./results/lespi/ORTC_ContrastDependence.pdf}
+	\caption[Dependence of orientation-contrast suppression on local
+      and global contrast.]{Dependence of orientation-contrast
+      suppression on local and global contrast. A, C) Low- and
+      high-contrast orientation-contrast suppression patterns. B, D)
+      Corresponding orientation-contrast suppression curves showing
+      facilitation at low contrast and suppression at high contrast
+      respectively.}
+	\label{ORTC_ContrastDependence}
+\end{figure}
+
 In order to find the cross-over point at which facilitation turns to
 suppression the contrast of both the center and surround pattern is
 varied and the OCSI is calculated for different durations. The
@@ -478,6 +485,17 @@ highlighting again that suppression weakens as the response is
 settling but more important clearly shows the inflection point between
 excitation and suppression for this particular neuron lies at about
 9\% contrast.
+
+This analysis also demonstrates how the suppression varies over the
+time course of the response, beginning shortly after onset (which
+occurs after a duration of about 0.25 and is excluded from analysis)
+and peaking at around 0.7 before weakening again. Since there is no
+real model of time in this model it is hard to relate this to
+experiments but it is clear that long-range effects, resulting from
+the integration over a larger area must occur after the
+onset. Investigating the precise time-course of the different cell
+classes will make it clearer how the contrast dependence of the
+surround modulation emerges from the circuit.
 
 \begin{figure}
 	\centering
@@ -493,50 +511,6 @@ excitation and suppression for this particular neuron lies at about
 	\label{ORTC_ContrastCurve}
 \end{figure}
 
-This analysis also demonstrates how the suppression varies over the
-time course of the response, beginning shortly after onset (which
-occurs after a duration of about 0.25 and is excluded from analysis)
-and peaking at around 0.7 before weakening again. Since there is no
-real model of time in this model it is hard to relate this to
-experiments but it is clear that long-range effects, resulting from
-the integration over a larger area must occur after the
-onset. Investigating the precise time-course of the different cell
-classes will make it clearer how the contrast dependence of the
-surround modulation emerges from the circuit.
-
-\begin{figure}
-	\centering
-        \includegraphics[width=1.0\textwidth]{./results/lespi/ORTC_ContrastDependence.pdf}
-	\caption[Dependence of orientation-contrast suppression on local
-      and global contrast.]{Dependence of orientation-contrast
-      suppression on local and global contrast. A, C) Low- and
-      high-contrast orientation-contrast suppression patterns. B, D)
-      Corresponding orientation-contrast suppression curves showing
-      facilitation at low contrast and suppression at high contrast
-      respectively.}
-	\label{ORTC_ContrastDependence}
-\end{figure}
-
-\subsubsection{Spatial dependence}
-
-As the LESPI model has inherited the spatial calibration from the
-previous models we can directly relate the extent of surround
-suppression in the model to the cortex, allowing us to draw
-conclusions about the surround modulation. In doing so we are only
-limited by the area that can feasible simulated in the model. We
-therefore vary the offset between center pattern and the surrounding
-annulus and measure the effect on the OCSI.
-
-\begin{figure}
-	\centering
-        \includegraphics[width=0.5\textwidth]{./results/lespi/ORTC_Offsets.pdf}
-	\caption[Spatial dependence of surround suppression.]{The
-      relationship between the distance between the center pattern and
-      the surrounding annulus on the OCSI, demonstrating a slow
-      falloff in surround suppression strength as the surround
-      suppression stimulus is moved further away from the central stimulus.}
-	\label{ORTC_OffsetCurve}
-\end{figure}
 
 \subsubsection{Timecourse}
 
@@ -623,12 +597,12 @@ stimulus in a ring of iso- or cross-oriented flankers and computing
 the average activity in the region corresponding to the flanker
 against the region corresponding to the target for the target. The
 effect of this can be seen in Figure~\ref{Flanker_PopOut}, showing the
-two stimulus conditions and a plot of the average in the central
-target region and in an annulus around it corresponding to the flanker
-region. The target activity is elevated above both the flanker
-activation in the same stimulus condition but is also elevated more
-importantly is also elevated when compared to the iso-orientation
-condition where all flankers have the same orientation.
+two stimulus conditions and a plot of the average non-zero response in
+the central target region and in an annulus around it corresponding to
+the flanker region. The target activity is elevated above both the
+flanker activation in the same stimulus condition but more importantly
+it is also elevated when compared to the iso-orientation condition
+where all flankers have the same orientation.
 
 \begin{figure}
 	\centering
@@ -650,7 +624,7 @@ condition where all flankers have the same orientation.
 In this chapter we introduced the LESPI model as an extension of the
 models presented in previous chapters and demonstrated how the model
 can mediate many of the contextual-modulation effects that are known
-to occur in the primary visual cortex. Unlike many other 
+to occur in the primary visual cortex. Unlike many other
 surround-modulation models this model explains mechanistically how the
 long-range patchy excitatory connections emerge in the model and how a
 specific class of inhibitory neurons can explain contrast and context
@@ -716,12 +690,6 @@ the lateral connections could mediate effects at the borders of
 different textures and perhaps at higher eccentricities where they
 cover a much larger visual area.
 
-Some previous theoretical models have provided models of surround
-modulation that approach the problem at a more computational level. In
-particular there is growing amounts of evidence that the sensory
-cortices make use of the statistical relationships in their inputs to
-optimize the representation
-
 \subsection{Contrast-dependent changes in suppression}
 
 The contrast-dependence of surround-modulation effects has been of
@@ -742,26 +710,26 @@ precisely this description. Not only does the model demonstrate the
 contrast dependent switch from facilitation to suppression that has
 been so widely described \citep{Levitt1997, Polat1998, Dragoi2000,
   Wang2009} as can be seen in Figure~\ref{ORTC_ContrastCurve} and
-\ref{ORTC_ContrastDependence}, but we can directly observe how the asymmetry in
-the efficacy of excitatory-excitatory and excitatory-inhibitory
-connections targeting the excitatory and Sst populations respectively
-drives both phenomena in the timecourse of suppression under various
-stimulus conditions as shown in Figure~\ref{ORTC_TimeCourse} and very
-long-range integration of inputs by the Sst population under low
-contrast conditions (see Figure~\ref{LESPI_SizeTuning}). This property
-of very long-range spatial integration by the Sst population has so
-far been described only in the mouse \citep{Adesnik2012}, however we
-predict a cell class with a similar function exists in higher mammals
-as well.
+\ref{ORTC_ContrastDependence}, but we can directly observe how the
+asymmetry in the efficacy of excitatory-excitatory and
+excitatory-inhibitory connections, targeting the excitatory and Sst
+populations respectively, emerges. This is evident both in the
+timecourse of responses under various stimulus conditions as shown in
+Figure~\ref{ORTC_TimeCourse} and in the spatial integration properties
+(see Figure~\ref{LESPI_SizeTuning}). The property of very long-range
+spatial integration by the Sst population has so far been described
+only in the mouse \citep{Adesnik2012}, however we predict a cell class
+with a similar function should also exist for the various reasons
+outlined above.
 
 In the model the long-range projections integrate over both space and
 time due to their large spatial scale and hysteresis, effectively
-computing based on the local stimulus drive and the contextual
-activations whether to suppress or enhance the neural response. While
+computing, based on the local stimulus drive and the contextual
+activations, whether to suppress or enhance the neural response. While
 the contrast interactions have been characterized well and correspond
 well with experimental results, further analysis should focus on how
 modulating the strength affects the sparsity of responses thereby
-influences the developmental processes in the model.
+influencing the developmental processes in the model.
 
 \subsection{Spatial dependence}
 
@@ -790,33 +758,27 @@ and the extent of its lateral connections as that would provide a
 clearer indication whether the lateral connections are involved purely
 in local processing in the classical RF or also mediate non-classical
 receptive field effects. Indeed since this relationship varies
-considerably between species, that the role of lateral connections
-could also be to a large part species dependent. In species with a
-smaller cortex these connections can span a considerable fraction of
-the visual field and could therefore mediate even long range surround
+considerably between species, the role of lateral connections could
+also be to a large part species dependent. In species with a smaller
+cortex these connections can span a considerable fraction of the
+visual field and could therefore mediate even long range surround
 modulation effects, while in species with larger brains such as
-macaques their role would be limited to near-surround suppression.
+macaques their role would be limited to near-surround suppression and
+facilitation.
 
 \subsection{Temporal scales}
 
 In the current model the temporal properties of the neurons is only
 modeled on a very coarse level. Nonetheless the classical shape of
 PSTHs emerges naturally from the model. Combining this model with
-temporally calibrated models as developed in \citep{Stevens2016}
-would shed more light on the propagation speeds of the lateral
-connections, however based on a rough calculation the long-range
-projections propagate at a speed of up to 0.2 m/s, in the model which
-is well within the physiological range of 0.1-0.3 m/s. This means the
-surround modulation arriving from lateral connections act fast enough
-to have an effect, however any longer-range effects would have to be
-mediated by longer-range connections.
-
-The spatial scales of surround modulation are of great interest as
-well as there is a lot of discussion centered around the question of
-where these effects originate. As the model that we are using has been
-spatially calibrated we can make concrete predictions about the
-spatial extents to which lateral connections in layer 2/3 could
-mediate surround suppression.
+temporally calibrated models as developed in \citep{Stevens2016} would
+shed more light on the propagation speeds of the lateral connections,
+however based on a rough calculation the long-range projections
+propagate at a speed of up to 0.2 m/s, in the model which is well
+within the physiological range of 0.1-0.3 m/s. This means the surround
+modulation arriving from lateral connections act fast enough to have
+an effect, however any longer-range effects would have to be mediated
+by longer-range connections.
 
 \subsection{Simple and Complex cells}
 
@@ -845,10 +807,11 @@ organize a patchy architecture connecting iso-orientation regions
 after development and finally they are thresholded as to reflect the
 highly sparse organization that is observed in tracing studies. This
 is likely not a good approximation of their actual development, as
-they do not emerge until after development. It also partially disrupts
-the organization of the model as the initially diffuse and isotropic
-connections introduce destructive long-range correlation to the model
-\citep{Miikkulainen2005}.
+neurons slowly develop patchy connections in concert with orientation
+map development. The existence long-range excitation also partially
+disrupts the organization of the model as the initially diffuse and
+isotropic connections introduce destructive long-range correlation to
+the model \citep{Miikkulainen2005}.
 
 As part of this thesis a sparse matrix implementation of the core
 algorithms was implemented, along with a variety of sprouting and
@@ -868,23 +831,17 @@ distribution and therefore good coverage of features, it also reduces
 the precise correlations it is trying to learn. In other words if the
 long-range suppression reduces correlations in the input it is
 eliminating the exact thing it is trying to capture. Indeed through
-initial investigation in the model we were able to show that
+initial investigation (not shown), we were able to show that
 increasing the strength of lateral excitatory connections targeting
 the Sst population reduces the strength of both iso-orientation biases
-and isotropy biases. This suggests that the lateral connections might
-learn differently from afferent connections, i.e. that afferent
-connections should learn on the final settled response, while the
-lateral connections should strengthen depending on the coherence of
-the signals arriving from afferent and lateral connections. Indeed
-this provides an interesting connection to predictive coding models
-\citep{Rao1999}, where the sign of the lateral modulation represents
-the sign of the error. If the lateral excitatory-inhibitory
-connections were to strengthen in the facilitatory regime and
-excitatory-excitatory connections were enhanced in the suppressive
-regime. In other words the difference between lateral excitation and
-lateral inhibition encodes an implicit error in the prediction of the
-model, which could be used to adjust the lateral connectivity to more
-accurately reflect the statistics of the input.
+and isotropy biases in the lateral connections. This suggests that the
+lateral connections might learn differently from afferent connections,
+i.e. that afferent connections should learn on the final settled
+response, while the lateral connections should strengthen depending on
+the coherence of the signals arriving from afferent and lateral
+connections. Indeed this provides an intriguing connection to
+predictive coding models, where the sign of the lateral modulation
+represents the sign of the error \citep{Rao1999}.
 
 \subsection{Effects of natural image statistics on the model}
 
