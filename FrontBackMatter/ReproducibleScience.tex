@@ -10,23 +10,26 @@ easier and more reproducible at every step. In particular this chapter
 describes how the HoloViews library developed to aid the work as part
 of the PhD achieves these goals and provides a general solution to
 data visualization, storage and analysis that is now used in a number
-of research projects.
+of research projects. Every result in this thesis was generated using
+this workflow and a fully reproducible record of the work is available
+at \url{thesis.philippjfr.com}.
 
 Developing such a workflow was essential to allow quick exploration of
-the highly non-linear models developed as part of this research. In
-particular, when dealing with complex models with a large number of
-parameters, which also evolve over time, existing tools were not
-suited for the job. This is because a major component of this work and
-work in other fields is an iterative process exploring some parameter
-space, gaining insight into the behavior of the model and then
-refining the model with the insights gained by careful analysis. For
-this purpose we present a workflow, starting with the declaration of a
-parameter space to explore, demonstrating how the simulations can
-easily be launched locally or on a distributed cluster and then be
-collected together for analysis. Finally we demonstrate how the
-HoloViews library let's you load the data as it is generated, monitor
-the progress and then provides powerful tools to visualize and analyze
-the resulting data up to and including publication quality figures.
+the highly non-linear models developed as part of this
+research. Specifically, when dealing with complex models with a large
+number of parameters, which also evolve over time, existing tools were
+not suited for the job. This is because a major component of this work
+and work in other fields is an iterative process exploring some
+parameter space, gaining insight into the behavior of the model and
+then refining the model with the insights gained by careful
+analysis. For this purpose we present a workflow, starting with the
+declaration of a parameter space to explore, demonstrating how the
+simulations can easily be launched locally or on a distributed cluster
+and then be collected together for analysis. Finally we demonstrate
+how the HoloViews library let's you load the data as it is generated,
+monitor the progress and then provides powerful tools to visualize and
+analyze the resulting data up to and including publication quality
+figures.
 
 We will begin by outlining the overall workflow and the philosophy
 behind the individual components, before providing a case study on
