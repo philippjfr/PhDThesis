@@ -100,8 +100,8 @@ the idea of 2D sheets of firing-rate point neurons and projections
 between them, representing the synaptic connections between the
 neurons. All models we will introduce share the same basic
 organization at the retinal and lateral geniculate nucleus level, but
-will introduce increasingly complex models of the interactions in the
-primary visual cortex. In Figure~\ref{LGNDiagram} you can see the
+we will introduce increasingly complex models of the interactions in
+the primary visual cortex. In Figure~\ref{LGNDiagram} you can see the
 organization of the retinal and lateral geniculate nucleus ON and OFF
 sheets.
 
@@ -161,13 +161,15 @@ developing brain connections are formed depending on the statistics of
 the sensory experience of the strongly influencing the spatial
 organization of the model. In order to accurately assess how the
 models respond to and self-organize in different visual environments
-we will use three different visual stimuli to present to the model.
+we will use three different visual stimuli to present to the model,
+however the results in this chapter will be based purely on the simple
+Gaussian stimuli.
 
-The simplest pattern used as the baseline for most measurements will
-be simply elongated Gaussian patterns matching the length of the
-integrative area of a V1 neuron and with a spatial frequency that
-would allow three distinct lobes to form within this area. The
-training patterns are given by:
+These patterns, used as the baseline for most measurements, are simply
+elongated Gaussian shapes matching the length of the integrative area
+of a V1 neuron and with a spatial frequency that would allow three
+distinct lobes to form within this area. The training patterns are
+given by:
 %%
 \begin{equation}
   exp(-x^2/(2*\sigma_x^2) - y^2/(2*\sigma_y^2)
@@ -257,7 +259,8 @@ the V1 sheet.
 As we saw above in the LGN section the model described here is heavily
 based on the GCAL model \citep{Stevens2013}, however it does differ in
 one major respect---it employs divisive rather than subtractive
-inhibition.
+inhibition. Here we will describe the equations that govern the model
+and point out where they differ to previous models.
 
 Each V1 neuron in each model receives connections from three different
 connection types or `projections' ($p$), i.e., the afferent projection
@@ -418,21 +421,22 @@ number of connections per connection field in the afferent projection.
 \subsection{Measurements}
 
 Measurements in the model are performed by presenting patterns varying
-by one or more features and computing the average of maximum response
-across one or more of those features. This closely matches the
-protocol usually employed in experiments ranging from optical imaging
-to measure orientation maps and electrophysiological measurements to
-capture individual tuning curves.
+by one or more features and computing the maximum response across one
+or more of those features. This closely matches the protocol usually
+employed in experiments ranging from optical imaging to measure
+orientation maps and electrophysiological measurements to capture
+individual tuning curves.
 
 \subsubsection{Orientation tuning} \label{ORMeasurement}
 
 The orientation map measurements in the model follow the procedure by
-\cite{Blasdel1992}, presenting orientations at 12 different
-orientations and 18 different phases computing the maximum response
-across the phases and returning the phase averaged orientation
+\cite{Blasdel1992}, presenting sine gratings at 12 different
+orientations and 18 different phases computing computing the vector
+average across the phases and returning the phase averaged orientation
 preference and selectivity maps. Since the model does not have
-direction tuning or complex cells each phase is presented
-individually.
+direction tuning or complex cells each phase is presented individually
+rather than as directionally drifting gratings as is usually done in
+experiments.
 
 \subsubsection{Size tuning}
 
@@ -525,7 +529,7 @@ studied in detail in various animal species and precise estimates for
 their spatial scales are known. \cite{Kaschube2010} were able to
 provide a detailed account of the hypercolumn distances in different
 species. The hypercolumn distance is defined as the distance on the
-cortical surface at which the orientation preference wraps around.
+cortical surface at which the orientation preference repeats a cycle.
 
 The hypercolumn distance is determined by taking the 2D fast Fourier
 transform of the orientation map and collapse the real component to
@@ -542,13 +546,13 @@ process used for tracing the axonal projections. The only quantitatively
 rigorous assessment of the extent of long-range patchy connectivity in
 primary visual cortex was performed by \cite{Buzas2006} in cat.
 
-By injecting pre-synaptic neurons with a tracer which stains synaptic
-boutons they were able to identify the location of each bouton
+By injecting pre-synaptic neurons with a tracer, which stains synaptic
+boutons, they were able to identify the location of each bouton
 relative to the injected neuron and correlate it with the orientation
 preference map at pre- and post-synaptic locations. This allowed them
 to build a model of lateral connectivity with both spatial and
-orientation dependent components, expressed as the combination of
-von Mises and Gaussian distributions respectively. The orientation
+orientation dependent components, expressed as the combination of von
+Mises and Gaussian distributions respectively. The orientation
 dependent component is expressed as the von Mises distribution:
 %%
 \begin{equation}
@@ -737,7 +741,7 @@ all analyses going forward will use the subtractive DoG model.
           comparison for SCAL size-tuning curves. A) LGN
           area-summation curve (gray) fitted using a subtractive
           (blue) and divisive (red) integrated DoG model. B) Fraction
-          of explained variance ($r^2$) of the subtractive and
+          of explained variance ($R^2$) of the subtractive and
           divisive DoG models.}
 	\label{LGNSizeFit}
 \end{figure}
@@ -747,7 +751,7 @@ variability we cannot compare the distributions directly. To compare
 the responses with the experimental results we will treat the 10\%
 contrast response as the low contrast response and 70\% contrast as
 the high contrast response. This matches the experiment where the
-contrast with 20-50\% and 70-90\% of the maximal contrast are taken as
+contrast with 20-50\% and 70-90\% of the maximal response are taken as
 low- and high-contrast responses respectively. To compare the data
 directly to the experimental data, we have overlaid the low and high
 contrast estimates of the excitatory and inhibitory constant directly
@@ -757,7 +761,7 @@ Figure~\ref{LGNDistribution}).
 The excitatory space constant $a$ was estimated at $0.16\degree$ at
 high contrast, expanding to $0.294\degree$ at low contrast. The
 inhibitory or surround space constant on the other hand was
-$0.62\degree$ at high contrast and $0.56\degree$ at high contrast. 
+$0.62\degree$ at low contrast and $0.56\degree$ at high contrast.
 These values fall well in the distributions that have been measured in
 experiments, even if they are reaching toward the smaller end of what
 was measured in thalamocortical afferents in the visual cortex.
@@ -782,8 +786,8 @@ we replicate the frequency tuning measurements performed by
 \cite{Levitt2001}. The sinusoidal gratings used for measurement were
 presented in a $2x2^{\circ}$ area, well beyond the size of the
 surround field. The resulting frequency tuning curves are shown in
-Figure~\ref{LGNFrequencyTuning}, showing a slight contrast-dependent
-shift toward higher frequencies at higher contrasts.
+Figure~\ref{LGNFrequencyTuning}, largely displaying contrast
+invariance.
 
 \begin{figure}
 	\centering
@@ -818,9 +822,9 @@ Before going into the spatial calibration of the V1 stage of SCAL
 model, we will first review how the model self-organizes into a
 smooth, high-quality orientation map. The model was in most cases
 simulated as a $4^\circ x 4^\circ$ area, which corresponds to around
-$12 mm^2$ of cortical area. After training using one of the three
-datasets a wide range of measurements were performed to confirm the
-model developed correctly and exhibited the same properties as GCAL.
+$12 mm^2$ of cortical area. After training a wide range of
+measurements were performed to confirm the model developed correctly
+and exhibited the same properties as GCAL.
 
 The orientation map, receptive fields and orientation tuning curve for
 the fully developed model are shown in
@@ -852,8 +856,8 @@ inputs.
   \end{minipage}
 \end{figure}
 
-Additionally to get a better understanding of how the model processes
-visual inputs in a single presentation and over development we have
+Additionally, to get a better understanding of how the model processes
+visual inputs in a single presentation and over development, we have
 plotted the response of the neurons to a simple Gaussian pattern drawn
 on the retina before and after development in \ref{SCALResponse}. The
 figure highlights how the model initially responds with a diffuse
@@ -937,22 +941,24 @@ To give actual scale to our model, we can therefore measure the
 orientation map hypercolumn distance. Using estimates provided by the
 Wolf group the hypercolumn distance in macaque V1 has been estimated
 at roughly ($710 \pm 50 \mu m$). By combining this information with
-the magnification factor, we can establish that we would expect roughly 4.2
-hypercolumns per visual degree ($3 mm/\degree * 710 \mu m$). We will also
-define an acceptable range of hypercolumn cycles per degree to ensure
-later models do not diverge too far from the spatial tuning
-implemented here. Taking the confidence intervals for both the
-magnification factor and hypercolumn distance into account the
-acceptable range of hypercolumns per sheet coordinate is between 3.29
-and 5.3.
+the magnification factor, we can establish that we would expect
+roughly 4.2 hypercolumns per visual degree ($3 mm/\degree \cdot 710
+\mu m$). We will also define an acceptable range of hypercolumn cycles
+per degree to ensure later models do not diverge too far from the
+spatial tuning implemented here. Taking the confidence intervals for
+both the magnification factor and hypercolumn distance into account
+the acceptable range of hypercolumns per sheet coordinate is between
+3.29 and 5.3.
 
 The hypercolumn distance in the model was calculated by taking the 2D
 Fourier transform of the orientation map, reducing it to one dimension
 and applying a least-squares fit of a Gaussian curve with additional
 linear and quadratic terms (see \cite{Kaschube2010} for more
 details). A sample fit to an SCAL orientation map can be seen in
-Figure~\ref{SCALhypercolumns}. The final model has ~4.03 hypercolumns
-per visual degree, which falls well within the acceptable range.
+Figure~\ref{SCALhypercolumns}. The final model has ~3.86 hypercolumns
+per visual degree, which falls well within the allowed range. Models
+trained on natural images not shown here, generally fall in the range
+of 4-4.5 hypercolumns per visual degree.
 
 Based on that measurement we can now explicitly state that 1 visual
 degree corresponds to 3 mm in the model, which will let us
@@ -1000,24 +1006,27 @@ obtained from comparable studies in macaque visual cortex.
   \centering
   \begin{adjustbox}{width=1\textwidth}
   \begin{tabular}{l | l l l l}
-    Measurement              & Literature            & Species & Layer & Diameter \\
+    Measurement              & Literature            & Layer & Diameter \\
     \hline
-    V1 hsRF                  & \cite{Levitt2002}     & macaque & 2-6 & $1.0 \pm 0.1\degree$ (0.15 - 1.1) \\
+    V1 hsRF                  & \cite{Levitt2002}     & 2-6 & $1.0 \pm 0.1\degree$ (0.15 - 1.1) \\
     \hline
-    V1 Excitatory DoG fit    & \cite{Levitt2002}     & macaque & 2-6 & $0.9\degree$ \\
-                             & \cite{Sceniak2001}    & macaque & 2-6 & $2.0\degree$ \\
-                             & \cite{Cavanaugh2002}  & macaque & 2-6 & $1.4\degree$ \\
-                             & \cite{Solomon2002}    & macaque & not stated & $0.94\degree$ \\
+    V1 Excitatory DoG fit    & \cite{Levitt2002}     & 2-6 & $0.9\degree$ \\
+                             & \cite{Sceniak2001}    & 2-6 & $2.0\degree$ \\
+                             & \cite{Cavanaugh2002}  & 2-6 & $1.4\degree$ \\
+                             & \cite{Solomon2002}    & not stated & $0.94\degree$ \\
     \hline
-    V1 Inhibitory DoG fit    & \cite{Levitt2002}     & macaque & 2-6 & $1.9\degree$ \\
-                             & \cite{Sceniak2001}    & macaque & 2-6 & $4.4\degree$ \\
-                             & \cite{Cavanaugh2002}  & macaque & 2-6 & $2.7\degree$ \\
-                             & \cite{Solomon2002}    & macaque & not stated & $2.97\degree$ \\
+    V1 Inhibitory DoG fit    & \cite{Levitt2002}     & 2-6 & $1.9\degree$ \\
+                             & \cite{Sceniak2001}    & 2-6 & $4.4\degree$ \\
+                             & \cite{Cavanaugh2002}  & 2-6 & $2.7\degree$ \\
+                             & \cite{Solomon2002}    & not stated & $2.97\degree$ \\
     \hline
   \end{tabular}
   \end{adjustbox}
-  \caption{Functional estimates of V1 receptive field size using
-    Difference-of-Gaussian models.}
+  \caption[Functional estimates of V1 receptive field size using
+    Difference-of-Gaussian models.]{Functional estimates of V1
+    receptive field size using Difference-of-Gaussian
+    models. Measurements differ due to measurement protocols used. All
+    measurements come from macaque V1.}
   \label{electrophystable}
 \end{table}
 
@@ -1302,7 +1311,8 @@ further than 1.5-2 mm with most synaptic boutons being distributed in
 a central regions approximately 1 mm in diameter. In the absence of
 any precise fits, equivalent to the Gaussian and von Mises model
 available for the excitatory connectivity, we restrict inhibitory
-connectivity to a conservative 1.2 mm in diameter.
+connectivity to a conservative 1.2 mm in diameter, which excludes the
+long tail of these connections.
 
 By binning the strength of connections by their distance and the
 orientation difference between pre- and post-synaptic neurons we can
@@ -1427,10 +1437,10 @@ obtained by \cite{Levitt2001} in the visual cortex of macaques.
 The extent of the gain control projection in LGN could not be
 experimentally verified as there is little to no data about the
 precise anatomical profile of inhibitory neurons in the LGN. Therefore
-we chose a value that would allow normalize everything within the
-receptive field of a single V1 neuron.
+we chose a value that would provide divisive gain-control over the
+span of the receptive field of a single V1 neuron.
 
-The final model parameters are summarized in Table~\ref{LGNTuning} and
+The final model parameters are summarized in Appendix~\ref{LGNTuning} and
 visualized in Figure~\ref{LGNDiagram}. In future this model may be
 extended by drawing the extent of these afferent connections from a
 distribution. For the purposes of this thesis, this level of
@@ -1542,7 +1552,7 @@ chapter also demonstrated how the anatomical distribution of synaptic
 boutons can be compared to the lateral connectivity in the model. By
 fitting a model made up of a local Gaussian kernel and an orientation
 dependent long-range kernel, first devised by \cite{Buzas2006}, to the
-data we are able to achieve good fits demonstrating that the lateral
+data, we are able to achieve good fits demonstrating that the lateral
 connectivity captures the statistics of the visual input. In addition
 the results indicated that at least the extent of the long-range
 connectivity is consistent with experimental results. However, the
@@ -1569,15 +1579,15 @@ connectivity.
 \paragraph{Inhibitory}
 
 The literature surrounding inhibitory connectivity is much more
-limited and no good estimates of cell-type specific spatial profiles
-particularly for the primate visual cortex exist. Therefore we have
-had to extrapolate from existing data. In the literature review we
-explored the known properties of various cell classes and identified
-fast-spiking Parvalbumin-expressing interneurons as the most likely
-source of connectivity to drive developmental processes, particularly
-due to their broad tuning profile
-\citep{Albus1994,Kisvarday1997a,Hofer2011,Ma2011} and high abundance
-in the thalamocortical recipient layers
+limited and no detailed estimates of cell-type specific spatial
+profiles for the primate visual cortex currently exist. Therefore we
+have had to extrapolate from the limited existing data. In the
+literature review we explored the known properties of various cell
+classes and identified fast-spiking Parvalbumin-expressing
+interneurons as the most likely source of connectivity to drive
+developmental processes, particularly due to their broad tuning
+profile \citep{Albus1994,Kisvarday1997a,Hofer2011,Ma2011} and high
+abundance in the thalamocortical recipient layers
 \citep{VanBrederode1990,Hogan1992,Huxlin2001} but also because they
 have been implicated in developmental disruptions
 \citep{Fagiolini2004,Hensch2004}.
@@ -1637,18 +1647,18 @@ Mexican hat profile, which drives the organization of cortical neurons
 into smooth topographic maps. Indeed the estimates used for the extent
 of inhibitory projections was deliberately chosen to be very
 conservative to demonstrate that implausibly long-range inhibitory
-connections are not needed, to drive development of an orientation map.
+connections are not needed to drive development of an orientation map.
 
-Secondly we showed that introducing divisive inhibition is indeed
-sufficient to account for contrast-dependent changes in the spatial
-integration of V1 neurons. Divisive normalization has been described
-as a canonical computation performed by the cortex and indeed we are
-able to account for contrast-dependent changes in the response of V1
+Secondly we showed that introducing divisive inhibition is sufficient
+to account for contrast-dependent changes in the spatial integration
+of V1 neurons. Divisive normalization has been described as a
+canonical computation performed by the cortex and indeed we are able
+to account for contrast-dependent changes in the response of V1
 neurons using the divisive model. This fits the findings by
 \cite{Carandini2012} and many others and suggests that long-range
 lateral connections are not necessary to account for increases in the
-integration area at low contrast as has been suggested in the
-literature \citep{Levitt2002, Schwabe2006}.
+integration area at low contrast as has been suggested by some models
+\citep{Levitt2002, Schwabe2006}.
 
 Finally we were able to show that the model develops realistic
 long-range patchy connectivity that we were able to fit with an
