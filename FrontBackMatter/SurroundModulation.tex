@@ -1,26 +1,30 @@
 %!TEX root = ../PhDthesis.tex
 \chapter{Long-range interactions in the visual cortex}
 
+%% jbednar: would be good to add a more recent citation or two to this
+%% list, as the newest is 14 years old.
 One of the most striking features in the early visual cortex is the
-presence of patchy long-range excitatory connections linking regions
+patchy long-range lateral connections linking regions
 with similar feature preferences. These connections have been
-suggested to drive a wide range of contextual modulation effects
-including pop-out, iso-orientation suppression, contour completion and
+suggested to drive a wide range of contextual-modulation effects
+including pop-out, iso-orientation suppression, contour completion, and
 more \citep{Gilbert1983, Hirsch1991, McGuire1991, Grinvald1994,
-  Fitzpatrick2000, Hupe2001, Stettler2002}. Even though these
-connections are excitatory it is now well established that they also
-provide inhibition via a di- or poly-synaptic mechanism
-\citep{Weliky1995}. While both the SCAL and SEPI models optionally
-have long-range excitation these connections, since these connections
-are purely excitatory they cannot mediate long-range suppressive
-effects directly and due to the weakly tuned nature of the PV cell
-population they too are not viable candidates to mediate feature
-specific contextual modulation effects such as iso-orientation
-suppression.
+  Fitzpatrick2000, Hupe2001, Stettler2002}.  The most commonly
+reported effects are suppressive, and even though the connections are
+known to be excitatory and to primarily target other excitatory cells,
+a strong minority of connections target local inhibitory neurons and
+thus could provide di- or poly-synaptic inhibition
+\citep{Hirsch1991,Weliky1995}.  While both the SCAL and SEPI models
+optionally support long-range excitation, these purely excitatory connections
+cannot mediate long-range suppressive effects directly.  Moreover,
+because the PV cell population is so weakly tuned for features like
+orientation preference, these connections are not suitable for
+feature-specific contextual-modulation effects like iso-orientation 
+suppression via a di-synaptic mechanism.
 
 A major feature of the neural code in the cortex is the elimination of
 redundancy in order to achieve a sparse representation of the input
-\citep{Olshausen1996}. Indeed it has been found that modulation from
+\citep{barlow:comneuron89,Olshausen1996}. Indeed it has been found that modulation from
 the nonclassical receptive field suppresses redundant information in
 the input sparsifying the neural code \citep{Vinje2000}. In previous
 developmental models of the primary visual cortex it was shown that
@@ -95,7 +99,7 @@ considerable advance over previous models, which differ in that they
 usually hard-code the statistical relationships encoded in the lateral
 connections and generally explain contrast dependent changes through a
 higher inhibitory threshold, which is generally not supported by
-evidence. The contextual modulation effects are therefore an emergent
+evidence. The contextual-modulation effects are therefore an emergent
 phenomenon, arising from the correlations present in the training
 patterns. Identifying and modeling the circuits involved in these
 processes is a fundamental challenge for neuroscience and will hugely
@@ -265,7 +269,7 @@ visual inputs. However since the lateral connections in the model are
 learned via Hebbian mechanisms the lack of long-range correlations
 will be reflected in them, resulting in a lack of patchy connections
 beyond the receptive field of the neuron. Therefore to observe any
-real contextual modulation effects the visual input patterns need to
+real contextual-modulation effects the visual input patterns need to
 exhibit at least some long-range correlations. Therefore we will use a
 number of different natural image datasets and synthetic Gaussian
 stimuli with explicit long-range range correlations.
@@ -288,7 +292,7 @@ distractor dataset used by \cite{Serre2007} as well as multiple
 datasets obtained by James Bednar meant to replicate the visual
 experience of an animal both a laboratory environment, dominated by
 high-contrast bars of the animal cages, and images of a natural
-environment dominated mostly by trees, grass and leafs.
+environment dominated mostly by grass, leaves, and trees.
 
 \begin{figure}
 	\centering
@@ -296,9 +300,9 @@ environment dominated mostly by trees, grass and leafs.
 	\caption[Example image patterns used to train the model] {Example
       image patterns sampled from different image datasets and then
       randomly positioned and rotated. A) Forest and grass taken in
-      Gif-sur-Yvette B) Inside of a treeshrew cage taken in David
-      Fitzpatrick lab C) \cite{Serre2007} target patterns of animals
-      and natural landscapes.}
+      Gif-sur-Yvette. B) Inside of a tree-shrew cage taken in David
+      Fitzpatrick's animal rearing facilities at Duke University.
+      C) \cite{Serre2007} target patterns of animals and natural landscapes.}
     \label{image_patterns}
 \end{figure}
 
@@ -530,7 +534,7 @@ annulus and measure the effect on the OCSI.
 
 In order to get a better understanding of how the different cell
 classes and synaptic projections interact to give rise to the
-contextual modulation effects seen above the timecourse of the
+contextual-modulation effects seen above the timecourse of the
 activity can be visualized. The timecourse of the responses under four
 different conditions is shown in Figure~\ref{ORTC_TimeCourse}. The
 top-row shows the response under low-contrast conditions for the
@@ -637,7 +641,7 @@ condition where all flankers have the same orientation.
 
 In this chapter we introduced the LESPI model as an extension of the
 models presented in previous chapters and demonstrated how the model
-can mediate many of the contextual modulation effects that are known
+can mediate many of the contextual-modulation effects that are known
 to occur in the primary visual cortex. Unlike many other 
 surround-modulation models this model explains mechanistically how the
 long-range patchy excitatory connections emerge in the model and how a
@@ -730,7 +734,7 @@ precisely this description. Not only does the model demonstrate the
 contrast dependent switch from facilitation to suppression that has
 been so widely described \citep{Levitt1997, Polat1998, Dragoi2000,
   Wang2009} as can be seen in Figure~\ref{ORTC_ContrastCurve} and
-\ref{ORTC_ContrastDependence}, but we can directly observe how the assymetry in
+\ref{ORTC_CSCurve}, but we can directly observe how the assymetry in
 the efficacy of excitatory-excitatory and excitatory-inhibitory
 connections targetting the excitatory and Sst populations respectively
 drives both phenomena in the timecourse of suppression under various
@@ -790,14 +794,14 @@ macaques their role would be limited to near-surround suppression.
 In the current model the temporal properties of the neurons is only
 modeled on a very coarse level. Nonetheless the classical shape of
 PSTHs emerges naturally from the model. Combining this model with
-temporally calibrated models as developed in \citep{Stevens2016} would
-shed more light on the propagation speeds of the lateral connections,
-however based on a rough calculation the long-range projections
-propagate at a speed of up to 0.2 m/s, in the model which is well
-within the physiological range of 0.1-0.3 m/s. This means the surround
-modulation arriving from lateral connections act fast enough to have
-an effect, however any longer-range effects would have to be mediated
-by longer-range connections.
+temporally calibrated models as developed in \citep{Stevens2016}
+would shed more light on the propagation speeds of the lateral
+connections, however based on a rough calculation the long-range
+projections propagate at a speed of up to 0.2 m/s, in the model which
+is well within the physiological range of 0.1-0.3 m/s. This means the
+surround modulation arriving from lateral connections act fast enough
+to have an effect, however any longer-range effects would have to be
+mediated by longer-range connections.
 
 The spatial scales of surround modulation are of great interest as
 well as there is a lot of discussion centered around the question of
