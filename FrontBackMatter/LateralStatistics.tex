@@ -265,9 +265,13 @@ co-linear contours in the input patterns.
       weighted by connection strength for the natural dataset (top
       left), treeshrew dataset (top right) and the difference between
       them. Modelled after \cite{Perrinet2015} co-occurrence analysis
-      of natural images. Highlights the stronger bias for connecting
-      iso-orientation regions in the model trained on narrowly
-      distributed synthetic patterns.}
+      of natural images. Each `chevron` represents on particular
+      configuration of two edges, varying by $\psi$ (relative azimuth)
+      along the x-axis and $\theta$ (orientation difference) along the
+      y-axis. Increased probability is shown in red, and lower
+      probabilities shown in blue. Highlights the stronger bias for
+      connecting iso-orientation regions in the model trained on
+      narrowly distributed synthetic patterns.}
 	\label{SyntheticCooccurrence}
 \end{figure}
 
@@ -478,8 +482,11 @@ interactions, which reduce the confidence and probabilities at short
 distances.
 
 \begin{figure}
-	\centering
-        \includegraphics[width=1.0\textwidth]{./results/lespi/Geisler_NatImg_Cooccurrence.pdf}
+  \begin{minipage}[t]{0.67\textwidth}
+    \mbox{}\\[-\baselineskip]    \includegraphics[width=\textwidth]{./results/lespi/Geisler_NatImg_Cooccurrence.pdf}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.3\textwidth}
+    \mbox{}\\[-\baselineskip]
 	\caption{Comparison between co-linearity and co-circularity
       statistics extracted from the model and measured directly from
       the image datasets. Animals and treeshrew analyses were provided
@@ -491,6 +498,7 @@ distances.
       model results. Model results additionally indicate confidence
       through the size of the edge. }
 	\label{NatImgGeisler}
+    \end{minipage}
 \end{figure}
 
 \subsubsection{Quantifying the anisotropy}
