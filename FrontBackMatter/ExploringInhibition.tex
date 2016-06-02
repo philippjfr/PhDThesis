@@ -46,14 +46,15 @@ contrast and strong lateral excitation.
 The \textbf{S}hort-\textbf{R}ange \textbf{E}xcitation \textbf{P}V
 \textbf{Inhibition} (SEPI) model is based on the same principles,
 spatial profiles and equations that were described for the SCAL model
-in the previous chapter. However, unlike SCAL, the model has a distinct
-excitatory and inhibitory V1 population, which both receive afferent
-input and are connected to each other recurrently. The architecture
-diagram in \ref{SEPIDiagram} shows the two sheets and projections
-between them. When comparing this against the SCAL model diagram (see
-\ref{SCALDiagram}), we can see that the spatial scales of the various
-projections are unchanged---they have simply been split up between the
-populations.
+in the previous chapter. However, unlike SCAL, the model has a
+distinct excitatory and inhibitory V1 population, which both receive
+afferent input and are connected to each other recurrently. The
+architecture diagram (Figure~\ref{SEPIDiagram}) shows the two sheets
+and projections between them. When comparing this against the SCAL
+model diagram (Figure~\ref{SCALDiagram}), we can see that the
+spatial scales of the retinotopy, which generally indicates poor
+orientation map organization various projections are unchanged---they
+have simply been split up between the populations.
 
 \begin{figure}
 	\centering
@@ -194,9 +195,9 @@ a map, for which it works well because it has a clear target value.
 \subsubsection{Orientation Selectivity}
 
 When measuring an orientation map using the protocol outlined in
-\ref{ORMeasurement}, two components are returned. The first is the
-orientation preference computed as the vector averaged estimate of the
-neurons preference. Additionally there is a selectivity component,
+Figure~\ref{ORMeasurement}, two components are returned. The first is
+the orientation preference computed as the vector averaged estimate of
+the neurons preference. Additionally there is a selectivity component,
 which provides an estimate of how much the neuron will respond to the
 preferred orientation relative to all other orientations. This value
 provides a simple metric to assess how selective a neuron is, and can
@@ -298,7 +299,7 @@ important to understand what they actually measure and how it relates
 to the quality of the model. The pinwheel density is the only
 scale-free measurement and has been discussed sufficiently in the
 previous chapter. The other metrics are shown for each unit in the
-model in figure \ref{Metrics} and will be averaged to get a single
+model in Figure~\ref{MetricPlots} and will be averaged to get a single
 value to assess the model.
 
 \begin{figure}
@@ -318,7 +319,7 @@ value to assess the model.
     distortion represents a measure of how precise the retinotopy in
     the model is. Significant amounts of CoG distortion indicates poor
     retinotopy, which generally indicates poor orientation map organization.
-	\label{Metrics}
+	\label{MetricPlots}
 \end{figure}
 
 
@@ -363,12 +364,12 @@ prediction that we will test in the model.
 To help understand how the PV population affects the behavior of the
 model, variants of the model were launched using different PV
 activation functions determined by two parameters. The parameter
-determines the linearity of the response, by adding an exponential term after the
-half-rectifier. By varying this exponential term we could vary the
-response of the neuron from sub- to supra-linear
+determines the linearity of the response, by adding an exponential
+term after the half-rectifier. By varying this exponential term we
+could vary the response of the neuron from sub- to supra-linear
 values. To control the time profile of the response, a hysteresis term
 was added as well. After training, these model variants were assessed
-based on the metrics outlined in \ref{metrics}.
+based on the metrics outlined in Section~\ref{metrics}.
 
 The results of the parameter exploration are shown in figure
 \ref{SEPILinearity}. They include a measure of stability over time,
@@ -406,14 +407,14 @@ which causes relatively low stability and high homogeneity.
 \end{figure}
 
 In order to get a better overview of the relationships between these
-variables, Figure \ref{SEPILinearityCorr} shows the correlation matrix
+variables, Figure~\ref{SEPILinearityCorr} shows the correlation matrix
 between the independent variables we are exploring and the
-metrics. The results highlight once again the strong
-relationship between orientation selectivity, stability, and the CoG
-shift and supra-linear PV cell responses. This view makes it clear
-that the PV cell exponent has a much greater effect on the various
-metrics than the time constant of the response, which does not show
-significant effects until the response is very slow.
+metrics. The results highlight once again the strong relationship
+between orientation selectivity, stability, and the CoG shift and
+supra-linear PV cell responses. This view makes it clear that the PV
+cell exponent has a much greater effect on the various metrics than
+the time constant of the response, which does not show significant
+effects until the response is very slow.
 
 \begin{figure}
 	\centering
@@ -448,13 +449,14 @@ contrast-dependent responses in the model, while continuing to develop
 high quality maps and exhibiting robust and stable self-organization.
 
 The linearity analysis already confirmed the model could produce
-high-quality orientation maps. In \ref{SEPIORTuning} this is further
-confirmed with a high-quality map, and clearly defined receptive
-fields, which exhibit contrast-invariant orientation tuning that
-rivals previous models. Without going into detail, we can
-also confirm that the spatial calibration still holds,
-with ~3.5 cycles per visual degree, well within the acceptable
-margins that were established in \ref{SCALHypercolumns}.
+high-quality orientation maps. In Figure~\ref{SEPIORTuning} this is
+retinotopy, which generally indicates poor orientation map
+organization further confirmed with a high-quality map, and clearly
+defined receptive fields, which exhibit contrast-invariant orientation
+tuning that rivals previous models. Without going into detail, we can
+also confirm that the spatial calibration still holds, with ~3.5
+cycles per visual degree, well within the acceptable margins that were
+established in Figure~\ref{SCALHypercolumns}.
 
 \begin{figure}
 	\centering
@@ -480,14 +482,14 @@ model showed very little contrast-dependent size-tuning changes due to
 the inhibition being purely subtractive. The SCAL model demonstrated a
 strong shift, but it lacked the diversity observed in the experimental
 data. Repeating this same protocol in the SEPI model as is shown in
-\ref{SEPI_DoG_Contrast}, demonstrates a slightly larger shift in
-contrast-dependent size tuning, which is in fact exactly in line with
-other measurements performed in macaque ($\approx 2.2\times$). Even
-more strikingly, the model now exhibits diversity in size tuning
-shifts that makes it a much better match to experimental results (see
-\ref{ContrastShift}), this can largely be attributed to the fact that
-a separate inhibitory population can mediate much stronger divisive
-gain-control without inhibiting itself.
+figure \ref{SEPI_DoG_Contrast}, demonstrates a slightly larger shift
+in contrast-dependent size tuning, which is in fact exactly in line
+with other measurements performed in macaque ($\approx
+2.2\times$). Even more strikingly, the model now exhibits diversity in
+size tuning shifts that makes it a much better match to experimental
+results (Figure~\ref{ContrastShift}), this can largely be
+attributed to the fact that a separate inhibitory population can
+mediate much stronger divisive gain-control without inhibiting itself.
 
 \begin{figure}
 	\centering
@@ -496,18 +498,19 @@ gain-control without inhibiting itself.
       the DoG model. A) Spatial constant of the excitatory center of
       the DoG model at low vs. high contrast. B) Distribution of
       contrast-dependent shifts, showing a much better match to the
-      experimental data than GCAL or SCAL (see \ref{ContrastShift}).}
+      experimental data than GCAL or SCAL (see figure
+      \ref{ContrastShift}).}
 	\label{SEPI_DoG_Contrast}
 \end{figure}
 
 Introducing a separate inhibitory population also allows us to compare
 the spatial and orientation profile of inhibitory neurons more
-realistically, since they no longer reflect the activation of the joint
-excitatory/inhibitory population. When comparing
-\ref{SEPI_OR_Distributions} we can see that the neurons are no longer
-as strongly biased toward the preferred orientation of the excitatory
-neuron, which is a direct result of much broader orientation tuning in
-the inhibitory PV population.
+realistically, since they no longer reflect the activation of the
+joint excitatory/inhibitory population. When comparing
+Figure~\ref{SEPI_OR_Distributions} to \ref{LatDist} we can see
+that the neurons are no longer as strongly biased toward the preferred
+orientation of the excitatory neuron, which is a direct result of much
+broader orientation tuning in the inhibitory PV population.
 
 \begin{figure}
 	\centering
@@ -526,10 +529,10 @@ we can directly compare the distribution of the LHI to experimental
 data. The $\sigma$ value was therefore set to $180 \mu m$ and plotted
 against the orientation tuning width of all neurons in a central
 region of the simulated map. The resulting scatter plot is shown in
-\ref{SEPILHI}, compared directly to equivalent measurements in macaque
-and cat visual cortex. Both the distribution of tuning widths and LHI
-values closely match the experimental data from macaque, but not cat,
-which is exactly what was desired.
+Figure~\ref{SEPILHI}, compared directly to equivalent measurements in
+macaque and cat visual cortex. Both the distribution of tuning widths
+and LHI values closely match the experimental data from macaque, but
+not cat, which is exactly what was desired.
 
 \begin{figure}
 	\centering
@@ -597,28 +600,29 @@ entire model.
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/SCAL/SCAL_Robustness.pdf}
 	\caption{Parameter explorations of three separate metrics of
-          orientation map development using the SCAL model from Chapter~\ref{SCALmodel}. Plotted on
-          $x$ and $y$ are the strength of long-range lateral excitation
-          and the stimulus contrast during training. The three metrics are \textbf{A}
-          the $\rho$ pinwheel density metric, which characterizes the
-          quality of the map, \textbf{B} the average selectivity over
-          the time course of development, and \textbf{C} the stability
-          metric, measuring how much the map changes throughout the
-          course of development. The model is highly robust to
-          varying stimulus contrasts at low levels of lateral
-          excitation, but quickly deteriorates with increasing levels
-          of excitation. Pure white values indicate instabilities in the
-          model causing the model to terminate.}
+      orientation map development using the SCAL model from
+      Chapter~\ref{SCALmodel}. Plotted on $x$ and $y$ are the strength
+      of long-range lateral excitation and the stimulus contrast
+      during training. The three metrics are \textbf{A} the $\rho$
+      pinwheel density metric, which characterizes the quality of the
+      map, \textbf{B} the average selectivity over the time course of
+      development, and \textbf{C} the stability metric, measuring how
+      much the map changes throughout the course of development. The
+      model is highly robust to varying stimulus contrasts at low
+      levels of lateral excitation, but quickly deteriorates with
+      increasing levels of excitation. Pure white values indicate
+      instabilities in the model causing the model to terminate.}
 	\label{SCALStability}
 \end{figure}
 
-The correlation matrix shown in \ref{SCALRobustnessCorr} highlights
-what is going wrong as we increase the lateral excitation. It
-demonstrates a strong relation to CoG distortion and increasing
-homogeneity, with clear anti-correlation with orientation selectivity
-and stability. As a result we can conclude that the lateral excitation
-leads to disruptions in retinotopy and lower selectivity, which in
-turn disrupt the stability and pinwheel density of the model.
+The correlation matrix shown in Figure~\ref{SCALRobustnessCorr}
+highlights what is going wrong as we increase the lateral
+excitation. It demonstrates a strong relation to CoG distortion and
+increasing homogeneity, with clear anti-correlation with orientation
+selectivity and stability. As a result we can conclude that the
+lateral excitation leads to disruptions in retinotopy and lower
+selectivity, which in turn disrupt the stability and pinwheel density
+of the model.
 
 \begin{figure}
 	\centering
@@ -742,9 +746,9 @@ responses was much more realistic compared to the SCAL model. By
 decoupling the excitatory and inhibitory neurons, we were able to
 achieve a greater contrast-dependent size-tuning shift, both
 qualitatively and and quantitatively much closer to the kinds of
-shifts that are seen in experiment (see \ref{SEPI_DoG_Contrast} and
-\ref{ContrastShift}). This result fits very well with the idea that
-the PV neurons exert strong control over the response gain of
+shifts that are seen in experiment (see Figure~\ref{SEPI_DoG_Contrast}
+and \ref{ContrastShift}). This result fits very well with the idea
+that the PV neurons exert strong control over the response gain of
 principal neurons via a divisive mechanism \citep{Wilson2012}. Indeed,
 through artificial upregulation of the PV population, not currently
 shown, we could mirror the effects of decreasing the contrast,
