@@ -1586,7 +1586,6 @@ independence of the normalized responses. Additionally, they
 demonstrated that the optimal weights were at least partly due to the
 prevalence of extended contours in natural images.
 
-% jbednar: also cite perrinet SR 2015
 Attempting to quantify the co-occurence statistics of contours in
 natural images, \cite{Geisler2001} demonstrated that the performance
 in contour-detection tasks could be predicted by a local grouping rule
@@ -1805,8 +1804,6 @@ explaining how these effects emerge.
 
 \subsection{Developmental models} \label{devmodels}
 
-%% Still need to address comments and discuss Antolik Thesis
-
 As it is thought that the cortex captures statistics about the sensory
 streams to construct internal models of the world, it is clear that
 function, structure and development are closely linked. Indeed it is
@@ -1892,22 +1889,22 @@ to these features is conserved across a wide range of contrasts, and
 neurons form topographic feature maps across the surface of V1 by
 virtue of self-organization.
 
-While these experimentally confirmed
-findings are specific to vision, the concept of equipotentiality
-proposes that different areas in the cerebral cortex are originally
-cytoarchitectonically highly similar, becoming differentiated based
-largely on the statistical patterns in their inputs during development
-and are thus capable of capturing any sensory modality. While the
-validity of this hypothesis remains controversial, experiments such as
-those by \cite{Sur1990} have at least partly validated this view. In
-this particular study, experimenters rewired optic nerve axons to
-interface with neurons in the medial geniculate nucleus (MGN), part of
-the pre-cortical auditory pathway, and subsequently showed that
-neurons in the primary auditory cortex (A1) would become receptive to
-visual features usually associated with V1. This idea is behind much of what
-has made V1 such a popular model area for neuroscience, and suggests
-that many of the insights that can be gleaned from the study of V1
-could be applied to the cortex as a whole.
+While these experimentally confirmed findings are specific to vision,
+the concept of equipotentiality proposes that different areas in the
+cerebral cortex are originally cytoarchitectonically highly similar,
+becoming differentiated based largely on the statistical patterns in
+their inputs during development and are thus capable of capturing any
+sensory modality. While the validity of this hypothesis remains
+controversial, experiments such as those by \cite{Sur1990} have at
+least partly validated this view. In this particular study,
+experimenters rewired optic nerve axons to interface with neurons in
+the medial geniculate nucleus (MGN), part of the pre-cortical auditory
+pathway, and subsequently showed that neurons in the primary auditory
+cortex (A1) would become receptive to visual features usually
+associated with V1. This idea is behind much of what has made V1 such
+a popular model area for neuroscience, and suggests that many of the
+insights that can be gleaned from the study of V1 could be applied to
+the cortex as a whole.
 
 \begin{figure}
 	\centering \includegraphics[width=1.0\textwidth]{GCAL.pdf}
@@ -1956,8 +1953,27 @@ introduced in the LGN sheets (marked as Lateral GC). This mechanism
 was closely modeled on the divisive normalization model introduced and
 validated by \cite{Bonin2005}. Finally, the lateral excitatory and
 inhibitory fields in the V1 sheet give rise not only to the
-topographic map structure but also to some surround-modulation
+topographic map structure but also to some limited surround-modulation
 effects.
+
+Indeed there are existing models based on this architecture designed
+to account for both complex cells and surround modulation
+\cite{Antolik2010}. This model mirrors the approach taken in this
+thesis in some ways, however modeling complex cells adds significant
+additional computational overhead and makes it more difficult to
+reason about the roles of different inhibitory
+components. Additionally, the model is only coarsely spatially
+calibrated making it more difficult about the precise extents of
+individual connections. The major real difference is in the profile of
+activation of inhibitory neurons, as excitatory neurons activate
+inhibitory cells in a larger radius than other excitatory cells, while
+the models here assume that excitatory cells project over the same
+distance and it is the the inhibitory neurons that target a larger
+area, mirroring the properties of large basket cells. Finally it is
+not quite clear to what extent the model exhibits long-range
+facilitation. However, the model should be seen as complementary to
+the models that will be introduced in this thesis and may be combined
+in future.
 
 Overall, due to the simplicity of its mechanisms and its explanatory
 strength, GCAL provides an ideal starting point to explore the
