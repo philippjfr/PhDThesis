@@ -100,28 +100,21 @@ half-rectification to the inhibitory population, rather than a
 floating homeostatically determined threshold, because basket cells
 generally have a very low spiking threshold \citep{Ma2011}.  It would
 be possible to use homeostatic plasticity to set the thresholds
-instead,
-% jbednar: as suggested in some work cite{hennig}
-but it would be complicated to set up mechanisms to balance the
-thresholds between the populations to ensure suitable overall levels
-of activity in the network. Secondly, we keep the effect of the inhibition divisive,
-both for each other and when targetting pyramidal cells. These
-properties distinguish the model PV neurons from the other major class of inhibitory
-interneurons, the somatostatin (Sst) expressing population, which
-receive weaker but facilitating inputs
+instead as suggested by studies in the retina \citep{Hennig2011}, but
+it would be complicated to set up mechanisms to balance the thresholds
+between the populations to ensure suitable overall levels of activity
+in the network. Secondly, we keep the effect of the inhibition
+divisive, both for each other and when targetting pyramidal
+cells. These properties distinguish the model PV neurons from the
+other major class of inhibitory interneurons, the somatostatin (Sst)
+expressing population, which receive weaker but facilitating inputs
 \citep{Beierlein2003,Bartley2008,Tan2008}.
 
 \subsubsection{Activation}
 
-%% jbednar: does that mean these two sheets will have *identical*
-%% activities?  If so that would mean GCAL is fine as a model, since
-%% two identical items can presumably be folded into a single entity
-%% for modeling.
 The activation for both the excitatory and inhibitory population is
 given by:
 %%
-%% jbednar: Should be something like
-%% \eta_E = \eta_I = \frac{\eta_{A} + \eta_L}{1 + \eta_P}
 \begin{equation}
   \eta_E = \eta_I = \frac{\eta_{A} + \eta_{L}}{1 + \eta_{P}}
 \end{equation}
@@ -200,20 +193,13 @@ a map, for which it works well because it has a clear target value.
 
 \subsubsection{Orientation Selectivity}
 
-%% jbednar: changed---or_pref is not the pref or maximum response; it's
-%% an estimate of the preferred orientation.  E.g., if a neuron
-%% responded equally well to 45 and 90, the reported or_pref would be 67.5, but
-%% it wasn't tested at 67.5 so we don't *really* know it would respond
-%% well to that -- maybe it's a bilobed tuning curve (which might be
-%% found at a saddle point) with peaks at 45 and 90 and a *trough* at 67.5!
-%%
 When measuring an orientation map using the protocol outlined in
-\ref{ORMeasurement}, two components are returned.  The first is the
-orientation preference, which corresponds to the estimated orientation
-that would give a maximal response. Additionally there is a selectivity
-component, which provides an estimate of how much the neuron will respond
-to the preferred orientation relative to all other orientations. This
-value provides a simple metric to assess how selective a neuron is, and can
+\ref{ORMeasurement}, two components are returned. The first is the
+orientation preference computed as the vector averaged estimate of the
+neurons preference. Additionally there is a selectivity component,
+which provides an estimate of how much the neuron will respond to the
+preferred orientation relative to all other orientations. This value
+provides a simple metric to assess how selective a neuron is, and can
 easily be averaged across all neurons in a central region to get an
 average selectivity value.
 
@@ -280,10 +266,8 @@ parameter settings or training patterns for a model network.
 The CoG along one axis is computed as the mean of the normalized
 vector product: 
 %%
-%% jbednar: could simplify as \sum_{i,j} instead of \sum_i \sum_j ; your choice
-%% Not sure if CoG should be G and COGD should be G_d...
 \begin{equation}
-  CoG(p, \omega) = \frac{1}{\sum_i \sum_j \omega_{i, j}} \sum_i \sum_j \omega_{i,j} p_{i,j}  
+  G(p, \omega) = \frac{1}{\sum_{i,j} \omega_{i, j}} \sum_{i,j} \omega_{i,j} p_{i,j}
 \end{equation}
 %%
 where $p$ is the position along either the x- or y-axis and $\omega$
@@ -292,7 +276,7 @@ given by Euclidean distance between the center of gravity and the
 actual retinotopic location of the neuron:
 %%
 \begin{equation}
-  CoGD(x, y) = \sqrt{(CoG_x-x)^2 + (CoG_y-y)^2}
+  G_d(x, y) = \sqrt{(CoG_x-x)^2 + (CoG_y-y)^2}
 \end{equation}
 %%
 By computing this distance for all neurons in a central region, we can use
@@ -312,45 +296,34 @@ evidenced by the fact that a variety of pathological conditions
 including autism \citep{Wohr2015} and schizophrenia \citep{Lewis2012}
 have been tied to changes in PV-expressing interneurons in the
 cortex. Modeling the role of these cell classes in development and
-%% jbednar: what do you mean by ``capturing''?  Reproducing, in a
-%% model? Extracting from the literature?  Measuring from animals?
-adult visual processing requires capturing their response
-properties. Since the synaptic projections develop as a result of these
-properties, the tuning properties of the modeled neurons in the
-developed model will let us make concrete predictions about the role of
-these neurons in shaping V1 development.
+adult visual processing requires accurately modeling their response
+properties. Since the synaptic projections develop as a result of
+these properties, the tuning properties of the modeled neurons in the
+developed model will let us make concrete predictions about the role
+of these neurons in shaping V1 development.
 
-%% jbednar: can you give an example of what you mean, and what it has
-%% to do with being rate-based?  
 Accurately capturing the response of these neurons in a rate-based
-model presents a number of challenges.
-%% since many of the reported properties are to do with patterns of spikes?
-Additionally, much of the data about these cell classes comes from
-mouse experiments, because of the new, rich techniques for genetic
-manipulation of specific cell classes, rather than primates or
-carnivorans as for most of the functional data. At the same time, this
-%% This what? evidence?  Unclear.
-provides a great opportunity to establish whether
-%% jbednar: not sure what you mean
-the coarse response properties of the neurons can predict their final
-tuning properties in the model, and how manipulating them can affect
-both development and the instantaneous response of the model to
-specific stimuli.
+model presents a number of challenges because we cannot explicitly
+model fast-spiking properties. Additionally, much of the data about
+these cell classes comes from mouse experiments, because of the new,
+rich techniques for genetic manipulation of specific cell classes,
+rather than primates or carnivorans as for most of the functional
+data.
 
 The spatial extent of the PV neurons was already calibrated for the
 SCAL model, and so the next step is to calibrate their inputs and
-response properties. The 
-literature is very clear that PV neurons in the visual cortex receive
-strong inputs both from thalamocortical afferents and from recurrent
-inputs, so the main question to settle is how closely these neurons
-are coupled to the excitatory population. It has been hypothesized
-that these neurons can quickly and robustly balance out the excitation
-arriving from the LGN \citep{Swadlow2003, Burkhalter2008}, by linearly
-matching the response of the pyramidal cell population and providing
-contrast gain control to sparsify the activity and thereby sharpen the
-orientation tuning \citep{Wilson2012}.  If so, then a non-linear and
-very slow response among this population should disrupt map
-development, which is a prediction that we will test in the model.
+response properties. The literature is very clear that PV neurons in
+the visual cortex receive strong inputs both from thalamocortical
+afferents and from recurrent inputs, so the main question to settle is
+how closely these neurons are coupled to the excitatory population. It
+has been hypothesized that these neurons can quickly and robustly
+balance out the excitation arriving from the LGN \citep{Swadlow2003,
+  Burkhalter2008}, by linearly matching the response of the pyramidal
+cell population and providing contrast gain control to sparsify the
+activity and thereby sharpen the orientation tuning
+\citep{Wilson2012}.  If so, then a non-linear and very slow response
+among this population should disrupt map development, which is a
+prediction that we will test in the model.
 
 \subsubsection{Linearity and time profile of inhibitory responses}
 
@@ -394,9 +367,8 @@ which causes relatively low stability and high homogeneity.
       perfect map. E) The Center-of-gravity (CoG) distortion provides
       a measure of how much the retinotopy in the model has been
       disrupted.  The model maps match biological results only when
-      the PV exponent is 1 (linear response).}
-      %% jbednar: added concluding sentence; all figures should have
-      %% them.  Maybe you want to say more?
+      the PV exponent is 1 (linear response) and does not respond too
+      slowly.}
 	\label{SEPILinearity}
 \end{figure}
 
@@ -434,14 +406,13 @@ The idea behind developing a model with distinct excitatory and
 inhibitory populations was based on three main observations. The first
 is straightforward: we know that in biology a single class of neurons
 will essentially never provide excitation at some synapses and
-inhibition at others, a principle known as
-Dale's law. From this perspective the SEPI model already provides an
-advantage over the SCAL model, showing how SCAL could be implemented
-in neural circuitry. However we also wanted to see whether
-this model could improve the diversity in responses and more
-accurately capture contrast-dependent responses in the model, while
-continuing to develop high quality maps and exhibiting robust and
-stable self-organization.
+inhibition at others, a principle known as Dale's law. From this
+perspective the SEPI model already provides an advantage over the SCAL
+model, showing how SCAL could be implemented in neural
+circuitry. However we also wanted to see whether this model could
+improve the diversity in responses and more accurately capture
+contrast-dependent responses in the model, while continuing to develop
+high quality maps and exhibiting robust and stable self-organization.
 
 The linearity analysis already confirmed the model could produce
 high-quality orientation maps. In \ref{SEPIORTuning} this is further
@@ -452,8 +423,6 @@ also confirm that the spatial calibration still holds,
 with ~3.5 cycles per visual degree, well within the acceptable
 margins that were established in \ref{SCALHypercolumns}.
 
-%% jbednar: Should use blue/white/red colormap for RFs (where white is avg luminance)
-%% I guess that means update it like SCAL's (ideally)?
 \begin{figure}
 	\centering
     \includegraphics[width=1.0\textwidth]{./results/sepi/SEPI_V1_ORTuning.pdf}
@@ -463,25 +432,29 @@ margins that were established in \ref{SCALHypercolumns}.
       the model, along with the locations of the receptive fields
       shown in B. B) Gabor-fits to receptive fields measured using
       sparse random noise. C) Orientation tuning curve of a single
-      neuron across contrasts, demonstrating largely
-      contrast-independent orientation tuning.}
+      excitatory neuron across contrasts, demonstrating largely
+      contrast-independent orientation tuning. D) Orientation tuning
+      curve of a PV neuron displaying a weakly tuned response, with a
+      certain baseline of activity which is only weakly modulated by
+      orientation.}
 	\label{SEPIORTuning}
 \end{figure}
 
-The main thing we are interested in, however, is how decoupling the two
-populations affects contrast-dependent size-tuning shifts, which rely
-on strong divisive inhibition. Recall for example that the GCAL model
-showed very little contrast-dependent size-tuning changes due to the
-inhibition being purely subtractive. The SCAL model demonstrated a
+The main thing we are interested in, however, is how decoupling the
+two populations affects contrast-dependent size-tuning shifts, which
+rely on strong divisive inhibition. Recall for example that the GCAL
+model showed very little contrast-dependent size-tuning changes due to
+the inhibition being purely subtractive. The SCAL model demonstrated a
 strong shift, but it lacked the diversity observed in the experimental
 data. Repeating this same protocol in the SEPI model as is shown in
 \ref{SEPI_DoG_Contrast}, demonstrates a slightly larger shift in
 contrast-dependent size tuning, which is in fact exactly in line with
-other measurements performed in macaque ($\approx 2.2\times$). Even more
-strikingly, the model now exhibits diversity in size tuning shifts
-that makes it a much better match to experimental results (see
-\ref{ContrastShift}).
-%% jbednar: why?
+other measurements performed in macaque ($\approx 2.2\times$). Even
+more strikingly, the model now exhibits diversity in size tuning
+shifts that makes it a much better match to experimental results (see
+\ref{ContrastShift}), this can largely be attributed to the fact that
+a separate inhibitory population can mediate much stronger divisive
+gain-control without inhibiting itself.
 
 \begin{figure}
 	\centering
@@ -547,11 +520,11 @@ of the cortex.
 
 \subsubsection{Robustness to long-range excitation}
 
-At this point two separate but very similar models have been introduced, SCAL and
-SEPI, which differ mostly in that
-the latter has distinct excitatory and inhibitory populations. The
-major reason why the populations were split in this way is to match
-the anatomy, but does this change actually buy us anything from a functional
+At this point two separate but very similar models have been
+introduced, SCAL and SEPI, which differ mostly in that the latter has
+distinct excitatory and inhibitory populations. The major reason why
+the populations were split in this way is to match the anatomy, but
+does this change actually buy us anything from a functional
 perspective? In order for long-range excitation to mediate contextual
 modulation phenomena, these projections need to be able to
 meaningfully modulate neuron activity at long distances. However, from
@@ -566,27 +539,26 @@ which have been shown to play crucial roles in self-organization.
 Therefore assessing how the models hold up in the presence of strong
 lateral excitation under varying contrast levels will help us
 establish how robust the model is and lay the groundwork for a model
-that exhibits both long-range excitation and suppression. Thus we
-will compare how the SCAL and SEPI models deal with varying levels of
+that exhibits both long-range excitation and suppression. Thus we will
+compare how the SCAL and SEPI models deal with varying levels of
 contrast and lateral excitation to investigate whether separating the
 populations has any benefits in addition to being more anatomically
 realistic.
 
 The results of this analysis, once again assessed by the list of
-metrics described above, are shown above in \ref{SCALStability}. The first
-thing to note is that increasing lateral excitation leads to immediate
-disruptions to the self-organization of the model until we reach a
-transition point at which the model fails to self-organize completely,
-presumably the point where the additional excitation can no longer be
-balanced by increases in the gain of inhibition. Indeed, the CoG
-distortion increases with increasing lateral excitation, suggesting
-that activity is allowed to propagate horizontally from where it arrives in V1,
-leading to disruptions in retinotopy. In summary, we can see that
-adding strong lateral excitation to SCAL causes disruptions to the stability,
-orientation selectivity, pinwheel density, and CoG distortion, causing
-the eventual breakage of the entire model.
-%% Anything to do with SCAL or the methods could be moved to the
-%% previous chapter, but only if it's not much work.
+metrics described above, are shown above in \ref{SCALStability}. The
+first thing to note is that increasing lateral excitation leads to
+immediate disruptions to the self-organization of the model until we
+reach a transition point at which the model fails to self-organize
+completely, presumably the point where the additional excitation can
+no longer be balanced by increases in the gain of inhibition. Indeed,
+the CoG distortion increases with increasing lateral excitation,
+suggesting that activity is allowed to propagate horizontally from
+where it arrives in V1, leading to disruptions in retinotopy. In
+summary, we can see that adding strong lateral excitation to SCAL
+causes disruptions to the stability, orientation selectivity, pinwheel
+density, and CoG distortion, causing the eventual breakage of the
+entire model.
 
 \begin{figure}
 	\centering
@@ -627,18 +599,14 @@ turn disrupt the stability and pinwheel density of the model.
 
 When applying the same analysis to the SEPI model
 (Figure~\ref{SEPIStability}), we can immediately see that the model
-shows very little disruption at equivalent levels of lateral excitation.  
-The model shows basically no CoG distortion, and very little variation in
-pinwheel density, stability, and LHI. The orientation selectivity, 
-conversely, actually increases with both excitation and contrast,
-opposite to what was observed in SCAL. Of course, even this model
-begins to break down under very high contrast and strong lateral
-excitation.
-%%
-% jbednar: previously said ``the pinwheel metric is not as robust to
-% changes in contrast'' as SCAL, but I see the opposite; don't you?
-% Also removed `` but absence of a homeostatic mechanism may disrupt map
-% formation at low contrasts.'' for the same reason.
+shows very little disruption at equivalent levels of lateral
+excitation.  The model shows basically no CoG distortion, and very
+little variation in pinwheel density, stability, and LHI. The
+orientation selectivity, conversely, actually increases with both
+excitation and contrast, opposite to what was observed in SCAL. Of
+course, even this model begins to break down under very high contrast
+and strong lateral excitation.
+
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/sepi/SEPI_Robustness.pdf}
@@ -652,7 +620,7 @@ excitation.
           and responsive way.}
 	\label{SEPIStability}
 \end{figure}
-%%
+
 Overall, however, the SEPI model is significantly more robust to
 variations in the strength of afferent input and even lateral
 excitation, which is usually thought to cause problems for models
@@ -686,35 +654,39 @@ From a theoretical perspective these results make sense: a linearly
 responding PV population is able to match the level of excitation that
 is arriving in the cortex from thalamocortical afferents and recurrent
 intra-cortical connections; shifting that balance in either direction
-will disrupt the development. Indeed, if we compare the effect of upregulating the
-PV responses, we can see some parallels to what happens during
-pharmacological upregulation of $GABA_A$ neurons by administering the
-$GABA_A$ agonist benzodiazepine (diazepam)
-\citep{Fagiolini2004,Hensch2004}, which looked at ocular dominance
+will disrupt the development. Indeed, if we compare the effect of
+upregulating the PV responses, we can see some parallels to what
+happens during pharmacological upregulation of $GABA_A$ neurons by
+administering the $GABA_A$ agonist benzodiazepine (diazepam)
+\citep{Fagiolini2004,Hensch2004} and looked at ocular dominance
 columns rather than orientation columns. Much like in those
 experiments, the neurons become more segregated and selective when the
-inhibitory population was upregulated in this way. At the same time,
-however, the column size actually narrowed, which is the opposite
-effect to what was observed in those experiments.
-% jbednar: were those chronic expts?  If so say so. Any explanation
-% for the discrepancy?
+inhibitory population was upregulated in this way. The results predict
+that the orientation column spacing narrowed with increasing
+inhibition, which does not match the results obtained for ocular
+dominance columns. This difference may be explained by the fact that
+inhibition in the model does not slowly emerge over the course of
+development, but rather immediately acts to sparsify activity to a
+narrow activity bubble. Broader and weaker initial inhibition would
+likely drive columns furher apart rather than narrowing the activation
+in the column from the start.
 
 Finally, we compared how the SCAL model compared to the SEPI model in
 terms of robustness to lateral excitation and varying levels of
 contrast. These results clearly showed that the SEPI model
 self-organizes for a much wider range of lateral excitation values,
-indicating it can deal with the destabilizing introduction of 
+indicating it can deal with the destabilizing introduction of
 long-range excitation much better. This property is likely a direct
 result of separating the two populations. Although separating the
-populations allows these 
-neurons to become uncoupled, it also ensures that the inhibitory
-population can effectively respond and cancel out the additional
-excitation arriving via long-range connections. However, at the very highest
-lateral excitation and contrast values tested here, even this model had
-trouble canceling out this additional excitation.  Moreover, the
-training patterns used in these tests did not contain any long-range
-correlations, since they were localized Gaussian patterns, and such
-correlations would be a much stronger test of robustness.
+populations allows these neurons to become uncoupled, it also ensures
+that the inhibitory population can effectively respond and cancel out
+the additional excitation arriving via long-range
+connections. However, at the very highest lateral excitation and
+contrast values tested here, even this model had trouble canceling out
+this additional excitation.  Moreover, the training patterns used in
+these tests did not contain any long-range correlations, since they
+were localized Gaussian patterns, and such correlations would be a
+much stronger test of robustness.
 %% jbednar: don't you need to discuss that earlier and more
 %% noticeably, so people realize it?  It's a crucial motivation for LESPI!
 
@@ -731,47 +703,45 @@ the cortex.
 
 \subsection{Feature tuning and inhibition}
 
-When analyzing the model size and contrast response, we found very good
-agreement with experiment, and even found that the variability in
+When analyzing the model size and contrast response, we found very
+good agreement with experiment, and even found that the variability in
 responses was much more realistic compared to the SCAL model. By
 decoupling the excitatory and inhibitory neurons, we were able to
 achieve a greater contrast-dependent size-tuning shift, both
 qualitatively and and quantitatively much closer to the kinds of
 shifts that are seen in experiment (see \ref{SEPI_DoG_Contrast} and
-\ref{ContrastShift}). This result fits very well with the idea that the PV
-neurons exert strong control over the response gain of principal
-neurons via a divisive mechanism \citep{Wilson2012}. Indeed, through
-artificial upregulation of the PV population, we could mirror the
-effects of decreasing the contrast, matching results found
-by \cite{Nienborg2013} in mouse visual cortex.
-% jbednar: not shown?
+\ref{ContrastShift}). This result fits very well with the idea that
+the PV neurons exert strong control over the response gain of
+principal neurons via a divisive mechanism \citep{Wilson2012}. Indeed,
+through artificial upregulation of the PV population, not currently
+shown, we could mirror the effects of decreasing the contrast,
+matching results found by \cite{Nienborg2013} in mouse visual cortex.
 
-One major question in the literature has been the
-tuning properties of PV neurons. A number of theoretical studies had
-suggested that untuned or broadly tuned inhibition in the visual
-cortex was required for the development of orientation selectivity or
-its contrast invariance \citep{Somers1995, Troyer1998}. The work by
-\cite{Cardin2007} challenged this assumption, because they found that
-the fast-spiking inhibitory cells in layer 4 of cat area 17 did not exhibit
-significantly broader tuning than the regular spiking excitatory
-population. However, they did find broader tuning in the spiking
-%% jbednar: I'm now confused -- were the FS cells broader tuned or not?
-%% Seems to say both.
-response in this population, and similar studies had found conflicting
-results \citep{Hirsch2003, Nowak2008}. In the SEPI model, the PV cells
-generally display orientation tuning, but they are overall
-significantly more broadly tuned than the excitatory population, which
-is largely driven by the fact that the modeled cells do not have any
-spiking threshold. \cite{Cardin2007} argue that studies such as
-\cite{Nelson1994}, which demonstrated no widening in orientation
-tuning of excitatory cells under GABAergic inactivation, suggest that
-broad inhibitory tuning does not significantly contribute to
-sharpening of orientation tuning. However, this argument ignores the role of
-inhibitory neurons in shaping the responses and tuning of neurons
-during development, such that the instantaneous responses of the
-inhibitory population are no longer needed to significantly sharpen the
-tuning of excitatory cells, as their tuning has already been encoded
-in the feedforward connections (as noted by \citealt{Miikkulainen2005}).
+One major question in the literature has been the tuning properties of
+PV neurons. A number of theoretical studies had suggested that untuned
+or broadly tuned inhibition in the visual cortex was required for the
+development of orientation selectivity or its contrast invariance
+\citep{Somers1995, Troyer1998}. The work by \cite{Cardin2007}
+challenged this assumption, because they found that the fast-spiking
+inhibitory cells in layer 4 of cat area 17 did not exhibit
+significantly broader tuning in the subthreshold response than the
+regular spiking excitatory population. However, they did find broader
+tuning in the spiking response in this population, and similar studies
+had found conflicting results \citep{Hirsch2003, Nowak2008}. In the
+SEPI model, the PV cells generally display orientation tuning, but
+they are overall significantly more broadly tuned than the excitatory
+population, which is largely driven by the fact that the modeled cells
+do not have any spiking threshold. \cite{Cardin2007} argue that
+studies such as \cite{Nelson1994}, which demonstrated no widening in
+orientation tuning of excitatory cells under GABAergic inactivation,
+suggest that broad inhibitory tuning does not significantly contribute
+to sharpening of orientation tuning. However, this argument ignores
+the role of inhibitory neurons in shaping the responses and tuning of
+neurons during development, such that the instantaneous responses of
+the inhibitory population are no longer needed to significantly
+sharpen the tuning of excitatory cells, as their tuning has already
+been encoded in the feedforward connections (as noted by
+\citealt{Miikkulainen2005}).
 
 Another difficulty is in determining layer specific effects; e.g.,
 \cite{Cardin2007} primarily measured from fast-spiking cells in layer
@@ -785,30 +755,18 @@ order to determine whether there are functionally distinct subgroups.
 \subsection{Conclusion}
 
 Overall, the results here indicate that the PV population is very well
-suited towards mediating the kinds of tasks that are important
-for robust development. Specifically, they can linearly track the
+suited towards mediating the kinds of tasks that are important for
+robust development. Specifically, they can linearly track the
 responses of pyramidal cells in their vicinity by integrating
 feedforward and recurrent input and matching the levels of excitation
-in these neurons. Including PV neurons leads to a model that is highly robust to
-long-range excitation, but still exhibits the good properties of
-the SCAL model, including contrast-invariant orientation tuning and the
-same spatial tuning. At the same time, however, the model still has no
-way of mediating any true long-range inhibitory effects.
-%% jbednar: don't you need to show (examples of?) the self-organized
-%% ``long-range'' connections, perhaps at the end of Results,
-%% demonstrating that they are in fact short range and thus not
-%% suitable for driving surround modulation?  That way you can point
-%% towards the next chapter, where this problem will be resolved.
-%% Right now, it's very hard for people to see what's wrong with SEPI;
-%% it sounds perfect from what you show!
-
-%% jbednar: probably will need revising after addressing the above comment.
-Since the PV population is only weakly tuned for orientation, it is not
-clear how they could mediate any orientation-specific effects such as
-iso-orientation suppression, which are well established in the
-cortex. Indeed, we have not yet established whether long-range
-statistical relationships in the visual input would cause significant
-disruptions to the self-organization of the model. In the next chapter
-we will therefore investigate the interaction between visual
-statistics, surround modulatory effects, and the effect of both on the
-development of the model.
+in these neurons. Including PV neurons leads to a model that is highly
+robust to long-range excitation, but still exhibits the good
+properties of the SCAL model, including contrast-invariant orientation
+tuning and the same spatial tuning. At the same time, however, the
+model still has no way of mediating any true long-range orientation
+specific inhibitory effects because the PV neurons are so broadly
+tuned and would therefore receive very diffuse inputs. Additionally
+due to the strong inputs they receive and their internal dynamics PV
+neurons are very fast in their response, making it difficult to
+envision how they could integrate activity that arrives over longer
+temporal and spatial scales.
