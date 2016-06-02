@@ -72,16 +72,18 @@ interneurons, which include fast-spiking basket and clutch cells, as
 the most likely candidate to provide feedforward inhibition and
 controlling the gain of the response in of the pyramidal cells. Their
 high abundance in the thalamocortical recipient layer 4 and layers 2/3
-(making up over half the population in each; \citealt{VanBrederode1990}) as
-well as their involvement in the onset of the critical period
-\citep{Fagiolini2000} and their effect on the columnar organization of the
-visual cortex \citep{Hensch2004} makes them of particular interest. The
-other defining characteristics of the PV population is their fast
-response \citep{Cruikshank2007,Gabernet2005}, and their ability to
-linearly match the activity in the excitatory population
-\citep{Atallah2012}. This closes matches the role of the inhibitory
-projection in the SCAL model, which provides divisive gain control and
-is directly coupled to the response of the excitatory population.
+(making up over half the population in each;
+\citealt{VanBrederode1990}) as well as their involvement in the onset
+of the critical period \citep{Fagiolini2000} and their effect on the
+columnar organization of the visual cortex \citep{Hensch2004} makes
+them of particular interest. The other defining characteristics of the
+PV population is their fast response
+\citep{Cruikshank2007,Gabernet2005}, and their ability to linearly
+match the activity in the excitatory population
+\citep{Atallah2012}. These properties describe the role of the
+inhibitory projection in the SCAL model, which provides divisive gain
+control and is directly coupled to the response of the excitatory
+population.
 
 The equations governing the responses of both the excitatory and
 inhibitory population are also unchanged, driven by summing the
@@ -93,10 +95,10 @@ studies we know that excitatory and inhibitory neurons and
 specifically the Parvalbumin expressing subpopulation strongly and
 densely innervate each other and themselves \citep{Buzas2001, Ma2011,
   Pfeffer2013}. Additionally these PV population receive strong
-afferent input \citep{Burkhalter2008}. All three of these properties
-are captured directly by the model.
+afferent input \citep{Burkhalter2008}. All of these properties are
+captured by the model..
 
-In order to capture the response of the PV population we apply only
+In order to model the response of the PV population we apply only
 half-rectification to the inhibitory population, rather than a
 floating homeostatically determined threshold, because basket cells
 generally have a very low spiking threshold \citep{Ma2011}.  It would
@@ -105,11 +107,7 @@ instead as suggested by studies in the retina \citep{Hennig2011}, but
 it would be complicated to set up mechanisms to balance the thresholds
 between the populations to ensure suitable overall levels of activity
 in the network. Secondly, we keep the effect of the inhibition
-divisive, both for each other and when targeting pyramidal
-cells. These properties distinguish the model PV neurons from the
-other major class of inhibitory interneurons, the somatostatin (Sst)
-expressing population, which receive weaker but facilitating inputs
-\citep{Beierlein2003,Bartley2008,Tan2008}.
+divisive, both for each other and when targeting pyramidal cells.
 
 \subsubsection{Activation}
 
@@ -120,13 +118,13 @@ given by:
   \eta_E = \eta_I = \frac{\eta_{A} + \eta_{L}}{1 + \eta_{P}}
 \end{equation}
 %%
-where $\eta_{A}$ is the LGN afferent activity, $\eta_{L}$ the
-local excitatory contribution and $\eta_{P}$ the PV inhibitory
+where $\eta_{A}$ is the LGN afferent activity, $\eta_{L}$ the local
+excitatory contribution and $\eta_{P}$ the PV inhibitory
 contribution. In other words, both populations integrate over afferent
 and local excitatory input and are then divisively normalized by the
-PV population.  To allow testing its effects, we will also allow an
-optional additional long-range excitation term to modulate the
-activity dependent on long-range excitatory input:
+PV population. To allow testing its effects, we will also allow an
+optional additional long-range excitation term to modulate the neuron
+activity depending on long-range excitatory input:
 %%
 \begin{equation}
   \eta_{E} = \frac{\eta_{A} + \eta_{L}}{1 + \eta_{P}} (1+\eta_{HE})
@@ -162,9 +160,10 @@ metrics to assess the robustness of the model to changes in contrast
 by assessing the quality of orientation map organization.  To measure
 the maps, we will focus on the excitatory V1 neurons, though similar
 results would be found if we were to pool all the neural types
-together as would be done in a neuroimaging experiment.
-There are a variety of measures to assess map properties, but we will
-focus on three in particular---smoothness, stability and pinwheel density.
+together as would be the case in optical imaging experiment.  There
+are a variety of measures to assess map properties, but we will focus
+on four specific measures in particular---smoothness, stability,
+selectivity and pinwheel density.
 
 \subsubsection{Pinwheel density}
 
@@ -303,22 +302,22 @@ model in Figure~\ref{MetricPlots} and will be averaged to get a single
 value to assess the model.
 
 \begin{figure}
-	\centering
-        \includegraphics[width=1.0\textwidth]{./results/sepi/Metrics.pdf}
-	\caption[Metrics used to evaluate orientation map
-      development.]{Metrics used to evaluate orientation map
-      development taken from a $1x1^\circ$} region in the model. A)
-    Local homogeneity index representing how similar neurons in a
-    local region are, poor organization will lead to large
-    high-homogeneity regions or low global homogeneity. B) Orientation
-    selectivity measures the overall selectivity of the neurons. Low
-    mean selectivity indicates poor and unstable development. C)
-    Stability measures the self-similarity of the orientation
-    preference over time. Low stability values indicate continuous
-    reorganization of the orientation map. D) Center-of-gravity
-    distortion represents a measure of how precise the retinotopy in
-    the model is. Significant amounts of CoG distortion indicates poor
-    retinotopy, which generally indicates poor orientation map organization.
+  \includegraphics[width=1.0\textwidth]{./results/sepi/Metrics.pdf}
+  \caption[Metrics used to evaluate orientation map
+    development.]{Metrics used to evaluate orientation map
+    development taken from a $2x2^\circ$ region in the model. A)
+  Local homogeneity index representing how similar neurons in a
+  local region are, poor organization will lead to large
+  high-homogeneity regions or low global homogeneity. B) Orientation
+  selectivity measures the overall selectivity of the neurons. Low
+  mean selectivity indicates poor and unstable development. C)
+  Stability measures the self-similarity of the orientation
+  preference over time. Low stability values indicate continuous
+  reorganization of the orientation map. D) Center-of-gravity
+  distortion represents a measure of how precise the retinotopy in
+  the model is. Significant amounts of CoG distortion indicates poor
+  retinotopy, which generally indicates poor orientation map
+  organization.}
 	\label{MetricPlots}
 \end{figure}
 
@@ -371,22 +370,6 @@ values. To control the time profile of the response, a hysteresis term
 was added as well. After training, these model variants were assessed
 based on the metrics outlined in Section~\ref{metrics}.
 
-The results of the parameter exploration are shown in figure
-\ref{SEPILinearity}. They include a measure of stability over time,
-orientation selectivity, distortion of the retinotopy, the mean local
-homogeneity index (LHI) and finally the pinwheel density ($\rho$),
-used to assess the quality of the maps.
-
-The immediately striking result is the narrow band of good (i.e., near
-$\pi$) pinwheel densities in the linear region of the response. Apart
-from that, we can clearly see that orientation selectivity, stability
-and the CoG distortion are strongly correlated with each other and all
-anti-correlated with the LHI. In particular, we can see increasing
-distortion of the retinotopy as the inhibitory population responds
-more strongly, which causes serious disruptions to the map quality. At
-the same time, sub-linear responses lead to very weak selectivity,
-which causes relatively low stability and high homogeneity.
-
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/sepi/SEPI_Linearity.pdf}
@@ -406,6 +389,22 @@ which causes relatively low stability and high homogeneity.
 	\label{SEPILinearity}
 \end{figure}
 
+The results of the parameter exploration are shown in figure
+\ref{SEPILinearity}. They include a measure of stability over time,
+orientation selectivity, distortion of the retinotopy, the mean local
+homogeneity index (LHI) and finally the pinwheel density ($\rho$),
+used to assess the quality of the maps.
+
+The immediately striking result is the narrow band of good (i.e., near
+$\pi$) pinwheel densities in the linear region of the response. Apart
+from that, we can clearly see that orientation selectivity, stability
+and the CoG distortion are strongly correlated with each other and all
+anti-correlated with the LHI. In particular, we can see increasing
+distortion of the retinotopy as the inhibitory population responds
+more strongly, which causes serious disruptions to the map quality. At
+the same time, sub-linear responses lead to very weak selectivity,
+which causes relatively low stability and high homogeneity.
+
 In order to get a better overview of the relationships between these
 variables, Figure~\ref{SEPILinearityCorr} shows the correlation matrix
 between the independent variables we are exploring and the
@@ -418,7 +417,7 @@ effects until the response is very slow.
 
 \begin{figure}
 	\centering
-        \includegraphics[width=0.7\textwidth]{./results/sepi/SEPI_Linearity_Correlations.pdf}
+    \includegraphics[width=0.7\textwidth]{./results/sepi/SEPI_Linearity_Correlations.pdf}
 	\caption{A correlation matrix of the various dependent and
       independent variables of the linearity analysis. Plots the
       Pearson correlation of the various metrics with each other,
@@ -448,16 +447,6 @@ improve the diversity in responses and more accurately capture
 contrast-dependent responses in the model, while continuing to develop
 high quality maps and exhibiting robust and stable self-organization.
 
-The linearity analysis already confirmed the model could produce
-high-quality orientation maps. In Figure~\ref{SEPIORTuning} this is
-retinotopy, which generally indicates poor orientation map
-organization further confirmed with a high-quality map, and clearly
-defined receptive fields, which exhibit contrast-invariant orientation
-tuning that rivals previous models. Without going into detail, we can
-also confirm that the spatial calibration still holds, with ~3.5
-cycles per visual degree, well within the acceptable margins that were
-established in Figure~\ref{SCALHypercolumns}.
-
 \begin{figure}
 	\centering
     \includegraphics[width=1.0\textwidth]{./results/sepi/SEPI_V1_ORTuning.pdf}
@@ -475,21 +464,14 @@ established in Figure~\ref{SCALHypercolumns}.
 	\label{SEPIORTuning}
 \end{figure}
 
-The main thing we are interested in, however, is how decoupling the
-two populations affects contrast-dependent size-tuning shifts, which
-rely on strong divisive inhibition. Recall for example that the GCAL
-model showed very little contrast-dependent size-tuning changes due to
-the inhibition being purely subtractive. The SCAL model demonstrated a
-strong shift, but it lacked the diversity observed in the experimental
-data. Repeating this same protocol in the SEPI model as is shown in
-figure \ref{SEPI_DoG_Contrast}, demonstrates a slightly larger shift
-in contrast-dependent size tuning, which is in fact exactly in line
-with other measurements performed in macaque ($\approx
-2.2\times$). Even more strikingly, the model now exhibits diversity in
-size tuning shifts that makes it a much better match to experimental
-results (Figure~\ref{ContrastShift}), this can largely be
-attributed to the fact that a separate inhibitory population can
-mediate much stronger divisive gain-control without inhibiting itself.
+The linearity analysis already confirmed the model could produce
+high-quality orientation maps. In \ref{SEPIORTuning} this is further
+confirmed with a high-quality map, and clearly defined receptive
+fields, which exhibit contrast invariant orientation tuning, which
+rivals previous models. Without going into detail, we can also confirm
+that the spatial calibration still holds, with ~3.5 cycles per visual
+degree, well within the acceptable margins that were established in
+Figure~\ref{SCALHypercolumns}.
 
 \begin{figure}
 	\centering
@@ -502,6 +484,23 @@ mediate much stronger divisive gain-control without inhibiting itself.
       \ref{ContrastShift}).}
 	\label{SEPI_DoG_Contrast}
 \end{figure}
+
+The main thing we are interested in, however, is how decoupling the
+two populations affects contrast-dependent size-tuning shifts, which
+rely on strong divisive inhibition. Recall for example that the GCAL
+model showed very little contrast-dependent size-tuning changes due to
+the inhibition being purely subtractive. The SCAL model demonstrated a
+strong shift, but it lacked the diversity observed in the experimental
+data. Repeating this same protocol in the SEPI model as is shown in
+figure \ref{SEPI_DoG_Contrast}, demonstrates a slightly larger shift
+in contrast-dependent size tuning, which is in fact exactly in line
+with other measurements performed in macaque ($\approx
+2.2\times$). Even more strikingly, the model now exhibits diversity in
+size tuning shifts that provide a far better match to experimental
+results (Figure~\ref{ContrastShift}). This likely can be attributed to
+the greater strength and variation of inhibition that is made possible
+by partially decoupling the excitatory and inhibitory population.
+
 
 Introducing a separate inhibitory population also allows us to compare
 the spatial and orientation profile of inhibitory neurons more
@@ -581,20 +580,7 @@ contrast and lateral excitation to investigate whether separating the
 populations has any benefits in addition to being more anatomically
 realistic.
 
-The results of this analysis, once again assessed by the list of
-metrics described above, are shown above in \ref{SCALStability}. The
-first thing to note is that increasing lateral excitation leads to
-immediate disruptions to the self-organization of the model until we
-reach a transition point at which the model fails to self-organize
-completely, presumably the point where the additional excitation can
-no longer be balanced by increases in the gain of inhibition. Indeed,
-the CoG distortion increases with increasing lateral excitation,
-suggesting that activity is allowed to propagate horizontally from
-where it arrives in V1, leading to disruptions in retinotopy. In
-summary, we can see that adding strong lateral excitation to SCAL
-causes disruptions to the stability, orientation selectivity, pinwheel
-density, and CoG distortion, causing the eventual breakage of the
-entire model.
+\paragraph{SCAL}
 
 \begin{figure}
 	\centering
@@ -615,6 +601,21 @@ entire model.
 	\label{SCALStability}
 \end{figure}
 
+The results of this analysis, once again assessed by the list of
+metrics described above, are shown above in \ref{SCALStability}. The
+first thing to note is that increasing lateral excitation leads to
+immediate disruptions to the self-organization of the model until we
+reach a transition point at which the model fails to self-organize
+completely, presumably the point where the additional excitation can
+no longer be balanced by increases in the gain of inhibition. Indeed,
+the CoG distortion increases with increasing lateral excitation,
+suggesting that activity is allowed to propagate horizontally from
+where it arrives in V1, leading to disruptions in retinotopy. Overall,
+we can see that adding strong lateral excitation to SCAL causes
+disruptions to the stability, orientation selectivity, pinwheel
+density, and CoG distortion, causing the eventual breakage of the
+entire model.
+
 The correlation matrix shown in Figure~\ref{SCALRobustnessCorr}
 highlights what is going wrong as we increase the lateral
 excitation. It demonstrates a strong relation to CoG distortion and
@@ -626,13 +627,15 @@ of the model.
 
 \begin{figure}
 	\centering
-       \includegraphics[width=1.0\textwidth]{./results/SCAL/SCAL_Robustness_Correlations.pdf}
+    \includegraphics[width=1.0\textwidth]{./results/SCAL/SCAL_Robustness_Correlations.pdf}
 	\caption{A correlation matrix of the various dependent and
       independent variables of the linearity analysis. Plots the
       Pearson correlation of each variable against each other
       variable, for the SCAL model from Chapter~\ref{SCALmodel}.}
 	\label{SCALRobustnessCorr}
 \end{figure}
+
+\paragraph{SEPI}
 
 When applying the same analysis to the SEPI model
 (Figure~\ref{SEPIStability}), we can immediately see that the model
@@ -698,15 +701,14 @@ administering the $GABA_A$ agonist benzodiazepine (diazepam)
 \citep{Fagiolini2004,Hensch2004} and looked at ocular dominance
 columns rather than orientation columns. Much like in those
 experiments, the neurons become more segregated and selective when the
-inhibitory population was up-regulated in this way. The results predict
-that the orientation column spacing narrowed with increasing
+inhibitory population was up-regulated in this way. The results
+predict that the orientation column spacing narrows with increasing
 inhibition, which does not match the results obtained for ocular
-dominance columns. This difference may be explained by the fact that
-inhibition in the model does not slowly emerge over the course of
-development, but rather immediately acts to sparsify activity to a
-narrow activity bubble. Broader and weaker initial inhibition would
-likely drive columns further apart rather than narrowing the activation
-in the column from the start.
+dominance columns. This may be explained by the fact that the
+development of ocular dominance columns precedes that of an
+orientation map, and the diffuse and unorganized initial pattern of
+GABAergic connections acts to patches of correlated activity further
+apart rather than concentrating it in a smaller column.
 
 Finally, we compared how the SCAL model compared to the SEPI model in
 terms of robustness to lateral excitation and varying levels of
@@ -720,12 +722,7 @@ that the inhibitory population can effectively respond and cancel out
 the additional excitation arriving via long-range
 connections. However, at the very highest lateral excitation and
 contrast values tested here, even this model had trouble canceling out
-this additional excitation.  Moreover, the training patterns used in
-these tests did not contain any long-range correlations, since they
-were localized Gaussian patterns, and such correlations would be a
-much stronger test of robustness.
-%% jbednar: don't you need to discuss that earlier and more
-%% noticeably, so people realize it?  It's a crucial motivation for LESPI!
+this additional excitation.
 
 Based on the overall observations, it seems that the model's PV
 population provide a means for the neurons in a local region to
@@ -797,13 +794,16 @@ robust development. Specifically, they can linearly track the
 responses of pyramidal cells in their vicinity by integrating
 feedforward and recurrent input and matching the levels of excitation
 in these neurons. Including PV neurons leads to a model that is highly
-robust to long-range excitation, but still exhibits the good
+robust to long-range excitation, but still exhibits all the desirable
 properties of the SCAL model, including contrast-invariant orientation
-tuning and the same spatial tuning. At the same time, however, the
-model still has no way of mediating any true long-range orientation
-specific inhibitory effects because the PV neurons are so broadly
-tuned and would therefore receive very diffuse inputs. Additionally
-due to the strong inputs they receive and their internal dynamics PV
-neurons are very fast in their response, making it difficult to
-envision how they could integrate activity that arrives over longer
-temporal and spatial scales.
+tuning and the same spatial tuning.
+
+At the same time, however, the model still has no way of mediating any
+true long-range orientation specific inhibitory effects. This is
+because the PV neurons are very broadly tuned and if allowed to
+develop only receive very weakly tuned long-range excitatory
+connections. Additionally, due to the strong inputs they receive and
+their internal dynamics, PV neurons are very fast in their response
+and adapt very quickly, making it difficult to envision how they could
+integrate activity that arrives over longer spatial and temporal
+scales.
