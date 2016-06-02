@@ -1,5 +1,5 @@
 %!TEX root = ../PhDthesis.tex
-\chapter{Modelling the effects of visual statistics on long-range lateral connectivity in visual cortex}
+\chapter{Modeling the effects of visual statistics on long-range lateral connectivity in visual cortex}
 
 One of the major problems in computational neuroscience is in
 understanding how the brain can robustly capture information about its
@@ -34,7 +34,7 @@ infeasible.
 
 Although there is a clear lack of data in this area a few attempts
 have been made to go further and establish whether the lateral
-projections connect co-circular orientation domains, relecting the
+projections connect co-circular orientation domains, reflecting the
 co-circularity in natural images \citep{Hunt2011}. These studies have
 again been inconclusive due to the sparsity of good quality data.
 
@@ -56,7 +56,7 @@ point. The model will draw 1 stimulus per unit area, which consists of
 a chain of three Gaussian pattern, the patterns can be seen in
 Figure~\ref{GaussianStatistics}. The middle Gaussian determines the
 overall orientation ($\theta_M$) of the pattern, and the outer
-Gaussians are offset in orientation by a value drawn from a vonMises
+Gaussians are offset in orientation by a value drawn from a von Mises
 distribution with a mean of $\theta_M$ and a $\kappa$ of ${0.5,
   8}$. The patterns are then spatially offset so that they form a
 chain forming an 'S' shape. By varying the $\kappa$ we can vary how
@@ -68,7 +68,7 @@ for simple elongated bars.
 	\includegraphics[width=1.0\textwidth]{./results/lespi/gaussian_statistics.pdf}
 	\caption[Example of Gaussian patterns with co-occurence
       statistics] {Gaussian patterns with co-occurence statistics
-      where the orientation offset is drawn from a vonMises
+      where the orientation offset is drawn from a von Mises
       distribution with different $\kappa$ values changing the
       distribution of orientation offsets.}
     \label{GaussianStatistics}
@@ -92,7 +92,7 @@ predict the performance of human subjects in contour detection tasks.
 \begin{figure}
 	\centering
     \includegraphics[width=0.8\textwidth]{./classifier.pdf}
-	\caption[] {Diagramatic representation of how a classifier is
+	\caption[] {Diagrammatic representation of how a classifier is
       trained to distinguish between natural images and inanimate
       objects. A) The different layers used to train the
       classifier. The natural images are first fed through a model
@@ -102,7 +102,7 @@ predict the performance of human subjects in contour detection tasks.
       image are selected. Using this set of edges the edge
       co-occurence statistics were computed and finally the classifier
       was trained based on these statistics. B) The sparse set
-      of labelled edges extracted from a single image. C) Diagram
+      of labeled edges extracted from a single image. C) Diagram
       showing how the angular difference $\theta$ and azimuth angle
       $\phi$ and relative azimuth $\psi$ are computed from two
       edges. Reproduced from \cite{Perrinet2015}.}
@@ -121,7 +121,7 @@ statistics embedded in the lateral connections were decoded.
 
 This was done by computing the angles $\theta$, $\phi$ and $\psi$ (as
 defined in figure (C) in Figure~\ref{classifier}) as well as the
-euclidean distance of the receptive fields centers for each pre- and
+Euclidean distance of the receptive fields centers for each pre- and
 post-synaptic pair of neurons and then binning them weighted by the
 strength of connections between them. The angle $\theta$ was computed
 simply as the difference between the pre- and post-synaptic neurons'
@@ -178,12 +178,12 @@ decode the statistics from. In addition to taking the weight to
 compute each co-occurrence the selectivity for each orientation and
 azimuth were also determined by computing the vector sum.
 
-\subsubsection{vonMises Model}
+\subsubsection{von Mises Model}
 
-Finally the lateral weights were again fit using the vonMises model
+Finally the lateral weights were again fit using the von Mises model
 with both Gaussian and orientation preference dependent components,
 which was first introduced in Section~\ref{BuzasEquations}. This
-allows us to provide a quantitative assesment of how well the lateral
+allows us to provide a quantitative assessment of how well the lateral
 connections can be approximated with a simple model that is made up of
 orientation, direction and spatially dependent components. Most
 importantly the direction dependent component allows us to quantify
@@ -212,11 +212,11 @@ number of issues could disrupt the model organization.
 \subsection{Synthetic Stimuli}
 
 In order to keep the analysis tractable, at least initially, a
-synthetic and parameterizeable set of stimuli were used. The stimuli
+synthetic and parameterizable set of stimuli were used. The stimuli
 described in Section \ref{synthetic} vary in both relative orientation
 and azimuth, which means that if the lateral connections capture the
 correlations in the inputs these correlations should also be captured
-and vary depending on the width of the vonMises distributions the
+and vary depending on the width of the von Mises distributions the
 orientation offsets are drawn from.
 
 \begin{figure}
@@ -264,7 +264,7 @@ co-linear contours in the input patterns.
       and azimuth differences between pre- and post-synaptic neurons
       weighted by connection strength for the natural dataset (top
       left), treeshrew dataset (top right) and the difference between
-      them. Modelled after \cite{Perrinet2015} co-occurrence analysis
+      them. Modeled after \cite{Perrinet2015} co-occurrence analysis
       of natural images. Each `chevron` represents on particular
       configuration of two edges, varying by $\psi$ (relative azimuth)
       along the x-axis and $\theta$ (orientation difference) along the
@@ -325,7 +325,7 @@ visual cortex. So far we have seen that the LESPI model can indeed
 capture the statistics of a simplified input pattern. Now we will a
 train the model on a number of different image datasets either from
 natural environments or artificial structures such as laboratory
-environments. Using detailed labelling and analysis of these datasets,
+environments. Using detailed labeling and analysis of these datasets,
 which include those used by \citep{Perrinet2015} and \citep{Serre2007}
 we will demonstrate that the lateral connections in V1 can already
 capture the differences between different datasets, which may suggest
@@ -349,7 +349,7 @@ environments, which should be reflected in long range connections.
 \subsubsection{First order statistics}
 
 Before investigating more complex second order statistics, we analyzed
-to check if partical orientations were hugely overrepresened in the
+to check if particular orientations were hugely overrepresented in the
 orientation map, which could introduce systematic biases to the
 results. As can be seen in Figure~\ref{NatImgORs}, both dataset show
 some bias for specific orientations, with the treeshrew condition
@@ -535,9 +535,9 @@ feature the Buzas model does not capture.
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/lespi/NatImg_vonMises_Fit.pdf}
-	\caption[Comparison of \cite{Buzas2006} vonMises model fit between
+	\caption[Comparison of \cite{Buzas2006} von Mises model fit between
       the natural and treeshrew trained models.]{Comparison of
-      \cite{Buzas2006} vonMises model fits between the natural and
+      \cite{Buzas2006} von Mises model fits between the natural and
       treeshrew trained models. A, D) Thresholded lateral fields in
       the natural and treeshrew condition. B, E) Model fitting result
       for the two conditions. C, F) Error between fitted and actual
@@ -750,5 +750,5 @@ rearing environment. If the statistics play a significant role then
 matching the statistics should maximize the surround modulation
 effects and result in a sparser representation. This may indeed be
 sufficient to explain why the responses to natural images are sparser
-than those for articifial stimuli.
+than those for artificial stimuli.
 

@@ -19,7 +19,7 @@ cortex has for the large part been unchanged since the early days of
 neuroscience when concepts like the receptive and association field
 were first developed. This stands in stark contrast to the field of
 machine learning, which recently has made huge advances in the area of
-deep neural networks, based losely on the architecture of the
+deep neural networks, based loosely on the architecture of the
 cortex. The models developed as part of this model closely resemble
 the architecture of these networks but also model the complexities of
 the cortical circuit to far greater detail. Integrative models are
@@ -50,7 +50,7 @@ complementary to both lower and higher level modeling frameworks,
 however it is my conviction that it is the appropriate level at which
 the computational principles of the cortex can be studied, ignoring
 details at the level of individual neurons but at the same time not
-completely ignoring interneuronal interactions. As such it is meant as
+completely ignoring inter-neuronal interactions. As such it is meant as
 a first order approximation of cortical function and it is highly
 probable that the more detailed biophysical interactions at the level
 of individual synapses and spiking neurons will be required to fully
@@ -73,7 +73,7 @@ appropriately using feedforward information and statistical inference.
 
 As part of this thesis we have described a general workflow for the
 analysis of complex datasets using the HoloViews and Lancet Python
-libraries. Every single non-diagramatic plot in this thesis has been
+libraries. Every single non-diagrammatic plot in this thesis has been
 generated using the HoloViews library and is available with a
 completely reproducible record of how the figures were generated
 available at \url{thesis.philippjfr.com}. These tools in themselves
@@ -93,7 +93,7 @@ reproducibility far beyond the field of neuroscience.
 \section{Spatial Calibration}
 
 One of the first steps in approaching the hugely complex problem of
-modelling the neuronal interactions that give rise to development of a
+modeling the neuronal interactions that give rise to development of a
 cortical circuit was to adapt existing developmental models in such a
 way that they would more closely reflect the real interactions between
 cell classes and synaptic connections in the cortex. Therefore the
@@ -144,7 +144,7 @@ inhibition we were also able to show that sub- or supra-linear
 integration by this cell class could result in disruptions to the
 development, which may reflect the changes in visual processing that
 have been observed in pathologies as diverse as autism, schizophrenia
-and Parkinsons.
+and Parkinson's.
 
 Our analysis also suggested that the feedforward driven PV neurons are
 perfectly positioned to provide feedforward inhibition gating how much
@@ -248,7 +248,7 @@ hypercolumns as has been extensively established in the literature
 \citep{Weliky1995, Bair2003}. Furthermore detailed analysis of the
 connectivity patterns of these long-range connections established not
 only that they link iso-orientation columns but also that they are
-able to capture the co-occurrence statistics of both simple synthethic
+able to capture the co-occurrence statistics of both simple synthetic
 stimuli and more complex natural images. On that basis we suggest that
 the long-range patchy connections in layer 2/3 of the cortex merely
 reflect the co-linearity by connecting iso-orientation regions, but
@@ -270,7 +270,7 @@ this basis we predict that lateral connections across the cortex
 capture higher-order statistics of the inputs, providing a statistical
 model of the relationship between lower level feature detectors.
 
-Additionally this work predictsthat the rearing environment of an
+Additionally this work predicts that the rearing environment of an
 animal strongly affect the organization of lateral connections in the
 cortex, which could explain species differences in the anisotropy of
 lateral connectivity. To test this possibility directly the model was
@@ -308,11 +308,11 @@ put forward in this thesis is that lateral connections provide a
 general mechanism for the cortex to generate a statistical model of
 the inputs to a particular cortical area, which the cortex uses
 dynamically for a number of crucial computations, depending on the
-sensory and behavioural context. Specifically through interaction with
+sensory and behavioral context. Specifically through interaction with
 the inhibitory interneurons they can aid in discrimination through
 suppression of similar stimuli and detection of surprising stimuli,
 which are not well captured by their statistical model and are
-therefore unsupressed. At the same time they provide a substrate for
+therefore unsuppressed. At the same time they provide a substrate for
 the cortex to make statistical inferences, when feedforward input is
 not sufficient resulting in effects like contour completion.
 
@@ -390,7 +390,7 @@ the afferent weights could not easily move around. This provides more
 realism for the simulation of orientation map development.
 
 More interestingly however letting the lateral connections develop
-sparsely could match the known timecourse of the emergence of patchy
+sparsely could match the known time-course of the emergence of patchy
 connections in the cortex very well \citep{Ruthazer1996}, emerging in
 concert with the orientation map and then slowly clustering in
 increasingly distant iso-orientation patches. This would also remove
@@ -452,14 +452,14 @@ response of the model neurons bears close resemblance to the
 peri-stimulus time histogram (PSTH) profiles that have been measured
 in experiments, followed by strong suppression and a period of
 settling reflecting the modulatory inputs to the neuron. Incorporating
-a more realistic model of the timecourse of neuronal responses by
+a more realistic model of the time-course of neuronal responses by
 applying some of the proposals set out in \cite{Stevens2016}, such as
 a finer temporal resolution, latency scatter, and distance dependent
 delays, could be used to study a wide range of phenomena.
 
 Specifically combining models of different cell classes and the large
 spatial spread of lateral connections could be used to explain the
-spatiotemporal properties of the VSD and optical imaging
+spatio-temporal properties of the VSD and optical imaging
 techniques. Additionally precisely characterizing the speed of
 propagation could help in disentangling the role of lateral and
 feedback connections in contextual modulation.
@@ -478,7 +478,7 @@ visual processing hierarchy and other cortical areas such as those
 devoted to auditory or somatosensory cortex or even motor areas to
 understand to what extent these mechanisms are truly general.
 
-Modelling other sensory cortices in this way may shed light on the
+Modeling other sensory cortices in this way may shed light on the
 organization and computational principles behind other sensory
 areas. This is particularly interesting because while visual
 neuroscience has been extensively characterized other sensory areas
@@ -496,7 +496,7 @@ could shed light on the kinds of computations they are involved in by
 decoding the higher-order correlations embedded in their
 connectivity. This is particularly important because many hierarchical
 models of vision ignore recurrent and feedback processing entirely in
-favour of a simpler feedforward arrangement, which ignores a lot of
+favor of a simpler feedforward arrangement, which ignores a lot of
 the complexity and models the cortical hierarchy as a static circuit,
 ignoring context or task dependent modulation of neuronal
 responses. This could have wide ranging consequences even for modern

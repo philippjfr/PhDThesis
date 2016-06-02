@@ -96,7 +96,7 @@ transparently - the data should simply reveal itself.
 The second core principle of HoloViews is that there should be a very
 clear distinction between the details of visualization and actual data
 and metadata required to describe a dataset. This means that the
-atomic data objects (or Elements) should be very lighweight wrappers
+atomic data objects (or Elements) should be very lightweight wrappers
 around the actual datastructure along with a small amount of semantic
 metadata. This allows creating, working with and storing the data
 independent of the plotting code or any concerns about the visual
@@ -137,7 +137,7 @@ load just the required subset of data for further analysis.
 
 Through a concrete example we'll explore how to specify each stage in
 this analysis pipeline, highlighting the ease with which we can
-launch, analyse and revise a model using this system. For this purpose
+launch, analyze and revise a model using this system. For this purpose
 we'll use a parameter exploration that is part of one of the results
 chapters, skipping over the evaluation of the actual results for the
 time being. While this is just one example, all the results produced
@@ -148,7 +148,7 @@ project.
 \subsection{The Jupyter notebook environment}
 
 In order to generate truly reproducible research it is not enough
-simply to make sure that the analysis code is rerunnable but rather
+simply to make sure that the analysis code is re-runnable but rather
 guiding someone who is trying to reproduce the results through each
 step so that they can not replicate the results but also understand
 each step so that they can begin modifying the workflow to take the
@@ -197,7 +197,7 @@ model. Secondly we declare the varying parameters, in this case we
 simply combine a ``Range`` of lateral excitatory strength
 (``latexc\_strength``) with another ``Range`` of contrasts. The
 multiplication operator automatically expands this parameter space by
-taking the cartesian product of the two varying sets of
+taking the Cartesian product of the two varying sets of
 parameters. Finally we combine the constant and varying parameters
 into the overall parameter set for the batched experiment.
 
