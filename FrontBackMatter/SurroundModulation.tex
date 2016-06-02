@@ -25,7 +25,7 @@ suppression via a di-synaptic mechanism.
 A major feature of the neural code in the cortex is the elimination of
 redundancy in order to achieve a sparse representation of the input
 \citep{barlow:comneuron89,Olshausen1996}. Indeed it has been found that modulation from
-the nonclassical receptive field suppresses redundant information in
+the non-classical receptive field suppresses redundant information in
 the input sparsifying the neural code \citep{Vinje2000}. In previous
 developmental models of the primary visual cortex it was shown that
 allowing lateral inhibitory connections to develop non-isotropic
@@ -194,7 +194,7 @@ be strongly voltage dependent \citep{Hirsch1991}. Since Sst neurons
 generally target distal dendrites they have generally been associated
 with subtractive inhibition, they do however also have a
 multiplicative component \citep{Wilson2012}. Additionally, their
-preference for targetting distal dendrites may allow them to
+preference for targeting distal dendrites may allow them to
 effectively gate horizontal excitatory and feedback inputs
 \citep{Ma2011, Gentet2012}. Additionally theoretical studies indicate
 active dendritic spike backpropagation can lead to multiplicative
@@ -209,10 +209,9 @@ interactions.
 	\centering
         \includegraphics[width=1.0\textwidth]{LESPI_Diagram.pdf}
 	\caption{Diagram of the LESPI V1 stage of the model showing the
-          spatial scales of the various excitatory (red) and
-          inhibitory (blue) connections. Satured colors indicate the
-          kernel radii, while lightly shaded regions indicate kernel
-          cut-off extents.}
+      spatial scales of the various excitatory (red) and inhibitory
+      (blue) connections. Saturated colors indicate the kernel radii,
+      while lightly shaded regions indicate kernel cut-off extents.}
 	\label{LESPIDiagram}
 \end{figure}
 
@@ -309,16 +308,17 @@ environment dominated mostly by grass, leaves, and trees.
 \subsection{Surround modulation}
 
 Beyond measuring simple attributes of the spatial organization in LGN
-and V1, higher order effecs can be explored through complex 
-surround-modulation measurement protocols. In addition to the simple area
-summation curve measurements described above we replicate two further
-protocols to evaluate the spatial response properties of the model.
-In particular we are interested in the interaction between the spatial
-arrangement of visual patterns presented to an animal and the contrast
-on the response properties of visually responding neurons. For that
-purpose we replicate two measurement protocols, a simple annulus based
-contrast suppression measurement \cite{Jones2002} and a protocol using
-target and flanker stimuli performed by \cite{Kapadia1995}.
+and V1, higher order effects can be explored through complex
+surround-modulation measurement protocols. In addition to the simple
+area summation curve measurements described above we replicate two
+further protocols to evaluate the spatial response properties of the
+model.  In particular we are interested in the interaction between the
+spatial arrangement of visual patterns presented to an animal and the
+contrast on the response properties of visually responding
+neurons. For that purpose we replicate two measurement protocols, a
+simple annulus based contrast suppression measurement \cite{Jones2002}
+and a protocol using target and flanker stimuli performed by
+\cite{Kapadia1995}.
 
 \paragraph{Orientation-contrast suppression}
 
@@ -327,7 +327,7 @@ studied surround-modulation paradigms. The measurement involves
 presenting stimuli of a central sine grating, optimized to the
 preferred size, frequency and orientation of the neuron being
 measured. Once the baseline activity has been measured an additional
-surround anulus with the same frequency is added and varied in
+surround annulus with the same frequency is added and varied in
 contrast, size and orientation to measure orientation dependent
 interactions between center and surround (as shown in
 Figure~\ref{ORC_Stimulus}). In in-vivo experiments this measurements
@@ -402,7 +402,7 @@ that the model exhibits significantly more suppression.
 \begin{figure}
 	\centering
     \includegraphics[width=1.0\textwidth]{./results/lespi/LESPI_Response.pdf}
-	\caption[LEPSI responses to a simple Gaussian pattern before and
+	\caption[LESPI responses to a simple Gaussian pattern before and
       after self-organization.]{LESPI responses to a simple Gaussian
       pattern before and after self-organization. Top left shows the
       input pattern and the LGN ON/OFF response to the pattern. Top
@@ -492,7 +492,7 @@ and peaking at around 0.7 before weakening again. Since there is no
 real model of time in this model it is hard to relate this to
 experiments but it is clear that long-range effects, resulting from
 the integration over a larger area must occur after the
-onset. Investigating the precise timecourse of the different cell
+onset. Investigating the precise time-course of the different cell
 classes will make it clearer how the contrast dependence of the
 surround modulation emerges from the circuit.
 
@@ -627,7 +627,7 @@ condition where all flankers have the same orientation.
         \includegraphics[width=1.0\textwidth]{./results/lespi/Flanker_Popout.pdf}
 	\caption[Pop-out effect in simple flanker paradigm.]{Demonstration
       of pop-out effect by presenting target with either
-      iso-orientated or cross-oriented flankers and averaging the
+      iso-oriented or cross-oriented flankers and averaging the
       response in two annuli corresponding to the target and flanker
       region. Shows the V1Exc sheet responses, colored by the
       orientation preference of the neurons. The averaged responses
@@ -650,7 +650,7 @@ dependent changes in surround modulation.
 
 Specifically using standard experimental paradigms for assessing the
 surround modulation in the primary visual cortex we show that the
-combination of long-range lateral connectivity targetting both
+combination of long-range lateral connectivity targeting both
 excitatory and inhibitory neurons can provide a good match to
 electrophysiological and psychophysical results. It also allows
 inspecting the responses of every single neuron providing a much more
@@ -718,15 +718,15 @@ optimize the representation
 
 The contrast-dependence of surround modulation effects has been of
 great interest for a long time and a number of models have been
-proposed to explain it. Specifically some form of assymetry between
+proposed to explain it. Specifically some form of asymmetry between
 excitatory and inhibitory neurons is required as \cite{Somers1998}
-suggested. Their original proposal relied on an assymmetry in
+suggested. Their original proposal relied on an asymmetry in
 thresholds between excitatory and inhibitory, which is only supported
 by limited evidence. However they also suggested that
 excitatory-inhibitory connections which increase in efficacy under
 strong stimulation in contrast to excitatory-excitatory connections,
-which seemingly integrate sublinearly with increasing contrast
-\citep{Abbott1997, Tsodyks1997}, could account for this assymmetry.
+which seemingly integrate sub-linearly with increasing contrast
+\citep{Abbott1997, Tsodyks1997}, could account for this asymmetry.
 
 Since then a large number of studies have focused on different classes
 of inhibitory neurons and the Sst suppressing interneurons fit
@@ -734,9 +734,9 @@ precisely this description. Not only does the model demonstrate the
 contrast dependent switch from facilitation to suppression that has
 been so widely described \citep{Levitt1997, Polat1998, Dragoi2000,
   Wang2009} as can be seen in Figure~\ref{ORTC_ContrastCurve} and
-\ref{ORTC_CSCurve}, but we can directly observe how the assymetry in
+\ref{ORTC_CSCurve}, but we can directly observe how the asymmetry in
 the efficacy of excitatory-excitatory and excitatory-inhibitory
-connections targetting the excitatory and Sst populations respectively
+connections targeting the excitatory and Sst populations respectively
 drives both phenomena in the timecourse of suppression under various
 stimulus conditions as shown in Figure~\ref{ORTC_TimeCourse} and very
 long-range integration of inputs by the Sst population under low
@@ -823,7 +823,7 @@ been demonstrated previously \citep{Antolik2010}. This is of
 particular interest because it is unclear to what extent lateral
 connections will capture the relative phase between different edges if
 they are primarily connecting complex cells in layer 2/3, which could
-haave strong implications for their ability to represent specific
+have strong implications for their ability to represent specific
 spatial arrangements and mediate contour integration effects. This is
 a very important question and more experimental work should focus on
 the differences in lateral connections in simple and complex cells.
@@ -861,7 +861,7 @@ the precise correlations it is trying to learn. In other words if the
 long-range suppression reduces correlations in the input it is
 eliminating the exact thing it is trying to capture. Indeed through
 initial investigation in the model we were able to show that
-increasing the strength of lateral excitatory connections targetting
+increasing the strength of lateral excitatory connections targeting
 the Sst population reduces the strength of both iso-orientation biases
 and isotropy biases. This suggests that the lateral connections might
 learn differently from afferent connections, i.e. that afferent
