@@ -284,11 +284,44 @@ this metric as a measure of the quality of the retinotopic mapping in
 the model, highlighting any distortions.
 
 \section{Results}
-%% jbednar: You should never have two section headings in a row.  Here, you
-%% should say something like ``The results from training the model
-%% will be presented first, followed by analysis of XXX and YYY
-%% (whatever the actual order is.  Same for any other place this
-%% happens. 
+
+In this section we will present results analyzing the results from
+both the SCAL and SEPI models. First establishing the role of
+inhibitory neurons in development in the SEPI model and then comparing
+how robust the models are to varying levels of contrast and long-range
+excitation. These results will primarily be based on four different
+metrics the local homogeneity index (LHI), orientation selectivity,
+stability, Center-of-Gravity distortion and pinwheel density.
+
+Before using these metrics to evaluate the different models it is
+important to understand what they actually measure and how it relates
+to the quality of the model. The pinwheel density is the only
+scale-free measurement and has been discussed sufficiently in the
+previous chapter. The other metrics are shown for each unit in the
+model in figure \ref{Metrics} and will be averaged to get a single
+value to assess the model.
+
+\begin{figure}
+	\centering
+        \includegraphics[width=1.0\textwidth]{./results/sepi/Metrics.pdf}
+	\caption[Metrics used to evaluate orientation map
+      development.]{Metrics used to evaluate orientation map
+      development taken from a $1x1^\circ$} region in the model. A)
+    Local homogeneity index representing how similar neurons in a
+    local region are, poor organization will lead to large
+    high-homogeneity regions or low global homogeneity. B) Orientation
+    selectivity measures the overall selectivity of the neurons. Low
+    mean selectivity indicates poor and unstable development. C)
+    Stability measures the self-similarity of the orientation
+    preference over time. Low stability values indicate continuous
+    reorganization of the orientation map. D) Center-of-gravity
+    distortion represents a measure of how precise the retinotopy in
+    the model is. Significant amounts of CoG distortion indicates poor
+    retinotopy, which generally indicates poor orientation map organization.
+	\label{Metrics}
+\end{figure}
+
+
 \subsection{Development}
 
 The role of inhibition in development is hugely important, as
