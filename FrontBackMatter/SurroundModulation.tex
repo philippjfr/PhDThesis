@@ -3,107 +3,115 @@
 
 %% jbednar: would be good to add a more recent citation or two to this
 %% list, as the newest is 14 years old.
-One of the most striking features in the early visual cortex is the
-patchy long-range lateral connections linking regions
-with similar feature preferences. These connections have been
+Patchy long-range lateral connections that link regions with similar
+visual preferences are one of the most intriguing features of the
+early visual cortex. These connections have been
 suggested to drive a wide range of contextual-modulation effects
 including pop-out, iso-orientation suppression, contour completion, and
 more \citep{Gilbert1983, Hirsch1991, McGuire1991, Grinvald1994,
   Fitzpatrick2000, Hupe2001, Stettler2002}.  The most commonly
 reported effects are suppressive, and even though the connections are
 known to be excitatory and to primarily target other excitatory cells,
-a strong minority of connections target local inhibitory neurons and
-thus could provide di- or poly-synaptic inhibition
+some connections target local inhibitory neurons that 
+provide strong di- or poly-synaptic inhibition
 \citep{Hirsch1991,Weliky1995}.  While both the SCAL and SEPI models
-optionally support long-range excitation, these purely excitatory connections
-cannot mediate long-range suppressive effects directly.  Moreover,
-because the PV cell population is so weakly tuned for features like
-orientation preference, these connections are not suitable for
-feature-specific contextual-modulation effects like iso-orientation 
-suppression via a di-synaptic mechanism.
+optionally support long-range excitation that could provide such
+suppression di-synaptically via the PV inhibitory cells, the
+suppression would not be specific for features like orientation,
+because the PV cell population is so weakly tuned.
 
-A major feature of the neural code in the cortex is the elimination of
-redundancy in order to achieve a sparse representation of the input
-\citep{barlow:comneuron89,Olshausen1996}. Indeed it has been found that modulation from
-the non-classical receptive field suppresses redundant information in
-the input sparsifying the neural code \citep{Vinje2000}. In previous
-developmental models of the primary visual cortex it was shown that
-allowing lateral inhibitory connections to develop non-isotropic
-connectivity, which allows the network to learn the redundant features
-of the input and suppress them, results in a sparser representation
-\citep{Miikkulainen2005}. If such development is not allowed to take
-place and isotropic surround suppression is employed,
-cross-orientation stimuli, belonging to a separate object or contour
-may be suppressed, thus reducing the information content encoded by
-the network.
+On theoretical grounds, it has been hypothesized that the neural code
+in the cortex achieves a sparse representation of the input by
+eliminating redundancy \citep{barlow:comneuron89,Olshausen1996}.
+Indeed, modulation from the non-classical receptive field has been
+shown to suppress redundant information in the input, sparsifying the
+representation \citep{Vinje2000}. Here it is crucial that the
+target of the suppression is \emph{redundant} activity; achieving
+sparsity by simply globally or randomly reducing activity will
+increase sparseness but lose information.  For instance, 
+in previous developmental models of V1 with long-range lateral
+inhibition, it was shown that both isotropic and feature-specific
+connections could achieve a given level of sparsity, but the
+isotropic connections did so by reducing information
+about the input patterns \citep{Miikkulainen2005}.  For instance, if
+two unrelated contours are nearby in an image, isotropic suppression
+will eliminate the representation of the weaker one, achieving
+sparsity by losing information about the input, while feature-specific
+will reduce the number of neurons responding to each contour
+separately.
 
-This suggests a difference between short scale interactions where the
+These considerations suggest a difference between short-range interactions, where the
 cortex is trying to ensure it achieves maximal coverage of the feature
-space and long-range interactions where the neuron is competing to
-represent the stimulus itself in an efficient way, i.e. by using a
-sparse code. In the previous models the PV inhibition drove the local
-competition resulting in a smooth coverage of the visual space with
-orientation feature detectors, i.e. an orientation map. Since these
-neurons act over a fairly small range and are not highly tuned in the
-orientation domain they are generally isotropic in the spatial
-distribution and cannot mediate feature specific modulation.
+space, and long-range interactions, where the neuron is competing to
+represent the stimulus efficiently, i.e., by using a
+sparse code. In the previous models, PV inhibition drove the local
+competition, resulting in a smooth coverage of the visual space with
+orientation feature detectors, forming an orientation map. Since the PV
+neurons act over a local range and are not highly tuned in the
+orientation domain, they are generally isotropic in the spatial
+distribution and large enough to cover neurons with a wide range of
+feature preferences, and thus cannot mediate feature-specific modulation.
 
-In the literature we have identified a second population of inhibitory
-interneurons with interesting properties. The Somatostatin
-immunoreactive (Sst) neurons are the second largest group of
-interneurons \citep{Gonchar2007,Xu2010} and exhibit very different
-properties from the PV population, which makes them interesting as a
-candidate to perform long-range integration of inputs. Specifically
-they are enriched in layer 2/3 where a lot of the long-range patchy
-connectivity is found and they seem to respond strongly only under
+Interestingly, the next-most-common type of inhibitory interneurons
+has properties that do seem suitable for mediating specific modulation.
+The Somatostatin immunoreactive (Sst) neurons \citep{Gonchar2007,Xu2010} 
+are enriched in layer 2/3, where the longest-range patchy
+connectivity is found, and they seem to respond strongly only under
 strong, sustained stimulation \citep{Ma2011} or for very large stimuli
-\citep{Adesnik2012}. Additionally the input scaling does not seem to
-be linear, with a accelerating response function driving much stronger
-responses when they recruited consistently and robustly (as would be
-the case for large or high contrast stimuli)
-\citep{Beierlein2003,Bartley2008,Tan2008}.
+\citep{Adesnik2012}. Additionally, their input scaling does not seem to
+be linear, with an accelerating response function driving much stronger
+responses when recruited consistently and robustly (as they would be
+for large or high contrast stimuli; \citealt{Beierlein2003,Bartley2008,Tan2008}).
 
 On the basis of what we have learned about the PV population from the
 previous models and what we know about Somatostatin neurons from the
-literature we therefore propose a general theory of how the circuit
+literature, we therefore propose a general theory of how the circuit
 performs specific computations. Afferent input provides strong,
 low-latency excitation to the Pv-ir neurons in the thalamocortical
 recipient layer 4, which in turn act as both a feedforward inhibition
 and dynamic gain control mechanism on the broadly activated excitatory
-cell population. This results in local decorrelation of the neural
-activity, which allows recurrent excitation to amplify the activity in
-a local column, which leads to the formation of a smooth orientation
+%% jbednar: changed from local to medium-range
+cell population. This process results in medium-range decorrelation of the neural
+activity, which allows short-range recurrent excitation to amplify the activity in
+a local column.  The smooth local blobs of activity that emerge as the
+response settles then lead to the formation of a well-organized orientation
 map.
 
-At the same time Sst-ir neurons begin to integrate the local activity
+At the same time, Sst-ir neurons begin to integrate the local activity
 through the local and long-range orientation-specific lateral
 connections. If their inputs are sufficiently strong they will
-activate strongly allowing this polysynaptic circuit to reduce
+activate strongly, allowing this polysynaptic circuit to reduce
 long-range correlation in the input activity, further reducing
 redundancy. If they are only weakly activated, as would occur when
 presented with low-contrast or very sparse input patterns, long-range
 lateral excitatory connections are not outcompeted and the circuit can
 fill in weak or missing information based on past statistics. In such
-a regime the differential recruitment of the two separate inhibitory
+a regime, the differential recruitment of the two separate inhibitory
 populations would be responsible for a shift in cortical state from a
 mode of redundancy-reduction and feature discrimination to one of
-visual inference and feature completion.
+visual inference and feature completion.  Note that because Hebbian
+learning is proportional to the activity levels, strong inputs should
+dominate the learning process, avoiding having the network learn
+significantly from the filled-in activations typical of responses to
+weak inputs.
 
-In this chapter we further extend the existing SEPI model by adding
+In this chapter we further extend the SEPI model by adding
 this second population of inhibitory neurons modelled after the Sst
 interneuron population. In doing so we will demonstrate how this
-second population integrates large and high-contrast stimuli providing
-feature specific inhibition under those conditions, while only very
-weakly responding in low contrast conditions. This provides a
-considerable advance over previous models, which differ in that they
-usually hard-code the statistical relationships encoded in the lateral
-connections and generally explain contrast dependent changes through a
-higher inhibitory threshold, which is generally not supported by
-evidence. The contextual-modulation effects are therefore an emergent
-phenomenon, arising from the correlations present in the training
-patterns. Identifying and modeling the circuits involved in these
-processes is a fundamental challenge for neuroscience and will hugely
-contribute to extending our understanding of cortical information
+second population modulates responses to large and high-contrast stimuli, providing
+feature-specific inhibition under those conditions, while only very
+weakly responding in low contrast conditions. This circuit provides a
+considerable advance over previous models of surround modulation,
+%% jbednar: need to cite some of those models here, right?
+which typically hard-code the statistical relationships encoded in the lateral
+connections while explaining contrast-dependent changes through a
+higher inhibitory threshold that conflicts with the experimental
+evidence. In this model, the contextual-modulation effects are an emergent
+phenomenon, arising directly from the correlations present in the training
+patterns, and thus automatically constructed to match the statistics
+of the visual inputs. Identifying and understanding  the circuits involved in these
+processes is a fundamental challenge for neuroscience, and will hugely
+contribute to extending our knowledge of cortical information
 processing.
 
 \section{Methods}
@@ -659,7 +667,7 @@ comprehensive view of how neural responses are modulated.
 \subsection{Feature dependent modulation}
 
 There are a wide range of models that have been used to explain
-feature specific surround modulation effects in the visual
+feature-specific surround-modulation effects in the visual
 cortex. These models usually start by modeling a number of feature
 detectors, which are connected according to their similarity in the
 feature space \citep{Li2002, Schwabe2006}. When modeling V1 this
@@ -671,7 +679,7 @@ and narrow explanation of cortical function, which does not generalize
 across different brain regions and sensory modalities.
 
 Developmental models such as the model presented here explain the
-emergence of surround modulation effects as a consequence of the way
+emergence of surround-modulation effects as a consequence of the way
 the circuit self-organizes and learns the statistics of the natural
 world. In other words, unlike other models none of the surround
 modulation effects are hard-coded, instead they emerge naturally due
@@ -716,7 +724,7 @@ optimize the representation
 
 \subsection{Contrast-dependent changes in suppression}
 
-The contrast-dependence of surround modulation effects has been of
+The contrast-dependence of surround-modulation effects has been of
 great interest for a long time and a number of models have been
 proposed to explain it. Specifically some form of asymmetry between
 excitatory and inhibitory neurons is required as \cite{Somers1998}
@@ -759,12 +767,12 @@ influences the developmental processes in the model.
 
 One of the major features of this model over previous models is the
 calibration of spatial profiles of connectivity. This of great
-importance to understand the contributions to surround modulation
+importance to understand the contributions to surround-modulation
 effects in the cortex. A lot of work has focused on teasing apart the
 contributions of lateral connectivity and feedback connections to
 surround suppression \citep{Angelucci2002, Bair2003, Schwabe2006}. As
 many other studies suggest the LESPI model demonstrates that while the
-lateral connections can mediate significant surround modulation
+lateral connections can mediate significant surround-modulation
 effects, there relatively small spatial scales, covering up 6-7 mm in
 total diameter, translating to a visuotopic extent of about
 $2.5^\circ$, is not sufficient to account for true long-range surround
@@ -817,7 +825,7 @@ cells, which causes disruptions to the map organization when trained
 on natural images. This also means that neurons respond optimally at
 one particular phase, so all surround modulations are dependent on the
 phase of the stimuli. In future the model could be extended to
-incorporate layer specific circuits allowing the emergence of complex
+incorporate layer-specific circuits allowing the emergence of complex
 cells and improving the organization of the orientation map as has
 been demonstrated previously \citep{Antolik2010}. This is of
 particular interest because it is unclear to what extent lateral
@@ -831,7 +839,7 @@ the differences in lateral connections in simple and complex cells.
 \subsection{Development}
 
 In this chapter we mainly examined the role of lateral connectivity in
-surround modulation effects. In the current model the lateral
+surround-modulation effects. In the current model the lateral
 connections are simulated as initially diffuse connections, which
 organize a patchy architecture connecting iso-orientation regions
 after development and finally they are thresholded as to reflect the
@@ -883,10 +891,10 @@ accurately reflect the statistics of the input.
 In this chapter we switched from simple Gaussian patterns for training
 the model to samples from natural images, to allow the model to learn
 co-occurrence statistics in the lateral connections, which give rise
-to the surround modulation effects observed here. However the
+to the surround-modulation effects observed here. However the
 statistics of various natural image datasets can differ considerably
 and relating the statistics of the sensory environment an animal is
-reared in and the surround modulation effects would be a huge step
+reared in and the surround-modulation effects would be a huge step
 forward in understanding how the cortex learns higher-order
 correlations in the natural world.
 
