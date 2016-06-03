@@ -35,26 +35,26 @@ cortex. Unlike many other models, integrative models such as those
 proposed here can mechanistically explain how different cell classes
 and synaptic connections interact at an algorithmic and
 implementational level to give rise to a developed circuit, which
-exhibits many of the features observed in the visual cortex. This
-provides a significant step towards a general computational theory of
-the cortex.
+exhibits many of the features observed in the visual cortex.
 
 At the same time it is important to note the limitations of the
 modeling approach employed in this thesis. The models used here are
-particularly suited towards studying network level phenomena and lower
-level phenomena at the level of individual neurons are largely
-ignored. This allows simulating large cortical networks and studying
-the response of the network to naturalistic inputs but also means that
-lower level phenomena are ignored. This approach should be seen as
-complementary to both lower and higher level modeling frameworks,
-however it is my conviction that it is the appropriate level at which
-the computational principles of the cortex can be studied, ignoring
-details at the level of individual neurons but at the same time not
-completely ignoring inter-neuronal interactions. As such it is meant as
-a first order approximation of cortical function and it is highly
-probable that the more detailed biophysical interactions at the level
-of individual synapses and spiking neurons will be required to fully
-explain cortical computation.
+particularly suited towards studying network level phenomena, while
+lower level phenomena at the level of individual neurons or even
+synapses are largely ignored. This allows simulating large cortical
+networks and studying the response of the network to naturalistic
+inputs but also means that the precise details of the molecular
+interactions giving rise to them are not accounted. This approach
+should be seen as complementary to both lower and higher level
+modeling frameworks, however it is my conviction that it is the
+appropriate level at which the computational principles of the cortex
+can be studied, ignoring details at the level of individual neurons
+but at the same time not completely ignoring inter-neuronal
+interactions. As such it is meant as a first order approximation of
+cortical function and it is highly probable that the more detailed
+biophysical interactions at the level of individual synapses and
+spiking neurons will be required to fully explain cortical
+computation.
 
 The main aim of these models then is to identify a number of canonical
 computations by the cortex that explain a wide range of phenomena. In
@@ -143,8 +143,8 @@ of V1 into a smooth orientation map. By changing the properties of the
 inhibition we were also able to show that sub- or supra-linear
 integration by this cell class could result in disruptions to the
 development, which may reflect the changes in visual processing that
-have been observed in pathologies as diverse as autism, schizophrenia
-and Parkinson's.
+have been observed in pathologies as diverse as autism and
+schizophrenia.
 
 Our analysis also suggested that the feedforward driven PV neurons are
 perfectly positioned to provide feedforward inhibition gating how much
@@ -152,12 +152,12 @@ afferent drive arrives in the cortex thereby controlling the effective
 contrast gain of the circuit. While a model cannot directly confirm
 that PV+ neurons serve the same functions in macaque visual cortex as
 has been suggested in mouse cortex, the analysis does demonstrate that
-feedforward, gain control is an essential property to account for
-robust and stable organization and contrast dependent size tuning
-shifts. On that basis we predict that PV interneurons in higher
-mammals mediate global, feedforward driven contrast gain control, as
-suggested in a number of studies in mouse V1 \citep{Ma2010,
-  Atallah2012, Wilson2012, Nienborg2013}.
+feedforward inhibition, implemented as divisive gain-control, is an
+essential property to account for robust and stable organization and
+contrast dependent size tuning shifts. On that basis we predict that
+PV interneurons in higher mammals mediate global, feedforward driven
+contrast gain control, as suggested in a number of studies in mouse V1
+\citep{Ma2010, Atallah2012, Wilson2012, Nienborg2013}.
 
 At the same time the PV-immunoreactive interneurons is a very broad
 classification, which may exhibit considerable
@@ -206,7 +206,7 @@ facilitation and di-synaptic suppression through a secondary
 interneuron population. After a detailed review of the literature we
 concluded that the Sst population, which receive extensive recurrent
 inputs from lateral and feedback connections in layer 2/3 integrate
-over long spatial scales \citep{Xu2009, Adesnik2012, Nienborg2013}
+over long spatial scales \citep{Xu2009, Adesnik2012, Nienborg2013},
 provide an excellent candidate to mediate long-range and feature
 specific surround suppression. Additionally we have shown that an
 accelerating response function on the lateral connections between the
@@ -230,13 +230,14 @@ be experimentally validated, however we suggest that feedback
 inhibition is another core computation performed by the
 cortex. Specifically we suggest that it allows placing the information
 arriving via the feedforward pathways into context, allowing the
-cortex to compute visual saliency. Additionally feedback inhibition
-can decorrelate neurons allowing the feedforward responses to extract
-a maximally independent and therefore sparse representation of the
-inputs. However unlike many previous proposals we suggest that instead
-of being hard-coded this suppression emerges as a consequences of the
-fact that the statistics captures the statistics its sensory inputs in
-lateral connections.
+cortex to compute visual saliency and fill in missing
+information. Additionally feedback inhibition can decorrelate neurons
+across wider spatial scales allowing the feedforward responses to
+extract a maximally independent and therefore sparse representation of
+the inputs. However unlike many previous proposals we suggest that
+instead of being hard-coded this suppression emerges as a consequences
+of the fact that the statistics captures the statistics its sensory
+inputs in lateral connections.
 
 \section{Roles of lateral connectivity}
 
@@ -287,7 +288,7 @@ modulation.
 Establishing to what extent these connections are involved in higher
 order processing is still under heavy debate. However based on the
 results from the model we can draw several specific conclusions. First
-of all their spatial scale is sufficient to capture interactions
+of all, their spatial scale is sufficient to capture interactions
 beyond the size of the receptive field of most neurons, suggesting
 they are at least involved in processing contextual influences from
 the extra-classical surround. The extent to which they are involved in
@@ -303,18 +304,18 @@ connections are found extensively across the cortex suggesting they
 play a crucial role in cortical computation. Indeed there is a growing
 amount of evidence suggesting that statistically optimal surround
 suppression can improve figure ground separation and computation of
-visual salience \citep{Coen-Cagli2013, Coen2015}. One of the core hypothesis
-put forward in this thesis is that lateral connections provide a
-general mechanism for the cortex to generate a statistical model of
-the inputs to a particular cortical area, which the cortex uses
-dynamically for a number of crucial computations, depending on the
-sensory and behavioral context. Specifically through interaction with
-the inhibitory interneurons they can aid in discrimination through
-suppression of similar stimuli and detection of surprising stimuli,
-which are not well captured by their statistical model and are
-therefore unsuppressed. At the same time they provide a substrate for
-the cortex to make statistical inferences, when feedforward input is
-not sufficient resulting in effects like contour completion.
+visual salience \citep{Coen-Cagli2013, Coen2015}. One of the core
+hypothesis put forward in this thesis is that lateral connections
+provide a general mechanism for the cortex to generate a statistical
+model of the inputs to a particular cortical area, which the cortex
+uses dynamically for a number of crucial computations, depending on
+the sensory and behavioral context. Specifically through interaction
+with the inhibitory interneurons they can aid in discrimination
+through suppression of similar stimuli and detection of surprising
+stimuli, which are not well captured by their statistical model and
+are therefore unsuppressed. At the same time they provide a substrate
+for the cortex to make statistical inferences, when feedforward input
+is not sufficient resulting in effects like contour completion.
 
 \section{Future Work}
 
