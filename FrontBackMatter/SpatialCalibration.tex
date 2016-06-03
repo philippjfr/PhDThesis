@@ -93,7 +93,7 @@ model develops in a realistic manner. Before analyzing the behavior of
 the model we describe its overall architecture and the equations
 governing its behavior.
 
-\subsubsection{Architecture}
+\subsubsection*{Architecture}
 
 The architecture of this family of models builds on two main concepts,
 the idea of 2D sheets of firing-rate point neurons and projections
@@ -152,7 +152,7 @@ layer 2/3 in the visual cortex of higher mammals.
 	\label{SCALDiagram}
 \end{figure}
 
-\subsubsection{Input patterns}
+\subsubsection*{Input patterns}
 
 The organization of the self-organizing map (SOM) based developmental
 models of the cortex, is determined by a complex interplay between the
@@ -172,7 +172,7 @@ distinct lobes to form within this area. The training patterns are
 given by:
 %%
 \begin{equation}
-  exp(-x^2/(2*\sigma_x^2) - y^2/(2*\sigma_y^2)
+  exp(-x^2/(2\sigma_x^2) - y^2/(2\sigma_y^2)
 \label{eqn:gausspattern}
 \end{equation}
 %%
@@ -184,7 +184,7 @@ allow us to explore the effect of the natural image statistics on the
 organization of the models and confirm robustness against a wide range
 of visual input.
 
-\subsubsection{Activation}
+\subsubsection*{Activation}
 
 All the models operate by presenting a new retinal input at each
 iteration updating the activation of each unit in each sheet. The
@@ -254,7 +254,7 @@ weights $\omega_{ij}$ to neuron $j$ sum to 1.0. This gain-control
 projection is activated once per iteration before activity is sent to
 the V1 sheet.
 
-\subsubsection{The V1 model}
+\subsubsection*{The V1 model}
 
 As we saw above in the LGN section the model described here is heavily
 based on the GCAL model \citep{Stevens2013}, however it does differ in
@@ -427,7 +427,7 @@ employed in experiments ranging from optical imaging to measure
 orientation maps and electrophysiological measurements to capture
 individual tuning curves.
 
-\subsubsection{Orientation tuning} \label{ORMeasurement}
+\subsubsection*{Orientation tuning} \label{ORMeasurement}
 
 The orientation map measurements in the model follow the procedure by
 \cite{Blasdel1992}, presenting sine gratings at 12 different
@@ -438,7 +438,7 @@ direction tuning or complex cells each phase is presented individually
 rather than as directionally drifting gratings as is usually done in
 experiments.
 
-\subsubsection{Size tuning}
+\subsubsection*{Size tuning}
 
 The size-tuning measurements are modeled on the measurements by
 \cite{Sceniak1999} and \cite{Sceniak2001} presenting sine grating
@@ -453,7 +453,7 @@ The low and high contrast values were chosen to fall into the lower
 linear region and just below the saturation point of the contrast
 response curve respectively.
 
-\subsubsection{Frequency tuning}
+\subsubsection*{Frequency tuning}
 
 The frequency tuning measurements were performed the same way as the
 size-tuning measurements, but instead of optimizing the spatial
@@ -469,7 +469,7 @@ electrophysiological, optical imaging and anatomical data obtained in
 vivo allowing us to compare directly between experimental results and
 our model.
 
-\subsubsection{Area summation curves} \label{DoG_Section}
+\subsubsection*x{Area summation curves} \label{DoG_Section}
 
 The area summation curves were measured in the model by presenting the
 model with disks of sine gratings of increasing size and varying phase
@@ -518,7 +518,7 @@ parameters from both models since they represent the baseline activity
 and the spiking threshold respectively, which does not apply to a
 firing-rate model.
 
-\subsubsection{Hypercolumn distance}
+\subsubsection*{Hypercolumn distance}
 
 One of the major features of the development of the visual cortex in
 higher mammals is the organization of neurons into orderly topographic
@@ -537,7 +537,7 @@ transform of the orientation map and collapse the real component to
 simple kernel to the collapsed FFT and finding the frequency of the
 strongest component.
 
-\subsubsection{Modeling lateral connectivity} \label{BuzasEquations}
+\subsubsection*{Modeling lateral connectivity} \label{BuzasEquations}
 
 Assessing the organization and extent of lateral connectivity in a way
 that is consistent with experimental measures is difficult as they
@@ -605,7 +605,7 @@ the axis of preferred orientation of the pre-synaptic neuron. This
 additional component allows us to capture the effect of highly
 co-linear training patterns on the model connectivity.
 
-\subsubsection{Receptive field fitting} \label{rffitting}
+\subsubsection*{Receptive field fitting} \label{rffitting}
 
 The receptive fields of neurons in primary visual cortex are often
 described in terms of simple Gabor functions characterized by the
@@ -667,7 +667,7 @@ experiments are confirmed to be internally consistent, i.e. if a
 particular measurement provides inconsistent result it should be clear
 why it diverges.
 
-\subsubsection{Spatial Tuning}
+\subsubsection*{Spatial Tuning}
 
 Unfortunately the measurements of LGN center and surround components
 in the literature have a huge degree of variance largely due to
@@ -777,7 +777,7 @@ was measured in thalamocortical afferents in the visual cortex.
 	\label{LGNDistribution}
 \end{figure}
 
-\subsubsection{Frequency Tuning}
+\subsubsection*{Frequency Tuning}
 
 The frequency tuning of LGN neurons in macaque V1 is strongly
 correlated with the size tuning, nonetheless we want to confirm the
@@ -812,7 +812,10 @@ Figure~\ref{LGNFrequencyLevitt}).
       frequency tuning of neurons in the LGN of normally reared and
       visually deprived macaque monkeys overlaid with the optimal
       spatial frequency of the stereotyped SCAL LGN neuron (red
-      circle). Adapted from \cite{Levitt2001}.}
+      circle). Preferred spatial frequency is within the range of
+      preferred spatial frequencies and is well adapted to provide
+      appropriate input for the V1 models. Adapted from
+      \cite{Levitt2001}.}
 	\label{LGNFrequencyLevitt}
 \end{figure}
 
@@ -851,7 +854,9 @@ inputs.
       B. B) Gabor fits to receptive fields measured using sparse
       random noise. C) Orientation tuning curve of a single neuron
       across contrasts, demonstrating largely contrast-independent
-      orientation tuning.}
+      orientation tuning. The model exhibits some diversity in tuning
+      properties with different tuning bandwidths and even very
+      broadly tuned neurons.}
     \label{SCALORTuning}
   \end{minipage}
 \end{figure}
@@ -872,8 +877,11 @@ corresponding to individual orientation columns after development.
       pattern before and after self-organization. Top left shows the
       input pattern and the LGN ON/OFF response to the pattern. Top
       right shows the evolving patterns of activity before and after
-      development. The response of the central neuron to both patterns
-      is shown at the bottom.}
+      development. The response of the central neuron at various
+      stages of development is shown at the bottom. Demonstrates
+      initial randomness of connections, the process of settling, and
+      finally a selective response reflecting the process of
+      self-organization. }
 	\label{SCALResponse}
 \end{figure}
 
@@ -898,8 +906,7 @@ measurement, replicating the measurements in the model and comparing
 the results. Finally we will summarize the model parameters that were
 chosen and will be carried over to later models.
 
-%jbednar: no section should have four numbers; use * or reorganize to avoid
-\subsubsection{Magnification factors \& Hypercolumn Distance} \label{SCALHypercolumns}
+\subsubsection*{Magnification factors \& Hypercolumn Distance} \label{SCALHypercolumns}
 
 As we outlined above most studies of V1 particularly in the surround
 modulation literature focus on parafoveal regions between $2-5\degree$
@@ -980,11 +987,14 @@ will be to evaluate feedforward and lateral connections independently.
       the map. C) 1D histogram of the FFT along with Gaussian fit
       marking the best fit hypercolumn distance. D) Summary table
       showing various parameters of the fit, along with pinwheel
-      density ($\rho$) which classifies the quality of the map.}
+      density ($\rho$) which classifies the quality of the map. The
+      SCAL model exhibits near $\pi$ pinwheel density a measure that
+      has been associated with realistic orientation maps
+      \citep{Kaschube2010, Stevens2013b}.}
 	\label{SCALhypercolumns}
 \end{figure}
 
-\subsubsection{Feedforward}
+\subsubsection*{Feedforward}
 
 The afferent input from the lateral geniculate nucleus is the main
 driver of responses in the primary visual cortex. It is therefore
@@ -1073,13 +1083,14 @@ that is very similar (2.2x shift in experiment vs. 1.8x in the model).
         \includegraphics[width=0.8\textwidth]{./V1_DoG_Contrast.pdf}
 	\caption[Contrast-dependent size-tuning shifts compared between
       GCAL, SCAL and experimental results from
-      \cite{Sceniak1999}.]{Comparison between contrast-dependent 
-      size-tuning shifts between the GCAL model (A, B), the SCAL model (C,
-      D) and experimental results from \cite{Sceniak1999} (E, F). A,
-      C, E) Scatter plot of DoG excitatory constant at low and high
-      contrast in experiment and the model respectively. B, D, F)
+      \cite{Sceniak1999}.]{Comparison between contrast-dependent
+      size-tuning shifts between the GCAL model (A, B), the SCAL model
+      (C, D) and experimental results from \cite{Sceniak1999} (E,
+      F). A, C, E) Scatter plot of DoG excitatory constant at low and
+      high contrast in experiment and the model respectively. B, D, F)
       Distribution of contrast-dependent shift in excitatory
-      constant.}
+      constant. The introduction of divisive gain control results in a
+      significant contrast-dependent size-tunign shift.}
 	\label{ContrastShift}
 \end{figure}
 
@@ -1125,7 +1136,7 @@ toward greater $n_x$ values as compared to the experimental data.
 	\label{RFFits}
 \end{figure}
 
-\subsubsection{Intracortical connectivity}
+\subsubsection*{Intracortical connectivity}
 
 We have already settled that afferent activity is the major driver of
 responses in primary visual cortex but intracortical, recurrent
@@ -1203,8 +1214,9 @@ the iDoG protocol.
 	\centering
         \includegraphics[width=1.0\textwidth]{Buzas.png}
 	\caption{Lateral excitatory projection bouton density and
-          orientation maps in layer 2/3 of cat V1 fit using a Gaussian
-          and von Mises model, replicated from \cite{Buzas2006}.}
+      orientation maps in layer 2/3 of cat V1 demonstrating the
+      application of a Gaussian and von Mises model of lateral
+      connectivity. Reproduced from \cite{Buzas2006}.}
 	\label{Buzas}
 \end{figure}
 
@@ -1262,10 +1274,16 @@ distributed bi-modally.
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/SCAL/SCAL_Buzas_Distributions.pdf}
 	\caption[Distribution of spatial constants obtained by fitting
-      Gaussian+vonMises model.]{Distribution of spatial constant
-      obtained by fitting the \cite{Buzas2006} von Mises+Gaussian
+      Gaussian and vonMises model.]{Distribution of spatial constant
+      obtained by fitting the \cite{Buzas2006} von Mises and Gaussian
       model to long-range lateral excitatory connections developed as
-      part of the SCAL model.}
+      part of the SCAL model. A) Distribution of kernel sizes of the
+      local excitatory component. B) Distribution of kernel sizes of
+      the long-range excitatory component C) Comparison between naive
+      model with orientation dependent component (i.e. pure Gaussian),
+      the vonMises model including the orientation dependent component
+      and additionally versions of both with an additional term for
+      the anisotropy in the connectivity.}
 	\label{LatDist}
 \end{figure}
 
@@ -1298,7 +1316,7 @@ selectivity of the neuron (Spearman's $\rho=0.59$, $p<10^{-184}$).
 	\label{LatORKappa}
 \end{figure}
 
-\subsubsection{Inhibitory connectivity}
+\subsubsection*{Inhibitory connectivity}
 
 Since the SCAL model does not have distinct populations of V1 we will
 consider the joint spatial and orientation distribution of basket
@@ -1338,11 +1356,13 @@ ranges.
       iso-orientation, oblique orientation, and cross orientations
       relative to the orientation preference of the post-synaptic
       neuron. Top row shows model results bottom row reproduces
-      results from \cite{Kisvarday1997a} in cat area 17.}
+      results from \cite{Kisvarday1997a} in cat area 17. Comparison
+      highlights similarity although the model truncates the heavy
+      tail of the distribution.}
 	\label{LatORDist}
 \end{figure}
 
-\subsubsection{Sparsity of connections}
+\subsubsection*{Sparsity of connections}
 
 The implementation of the GCAL and SCAL models has generally meant
 that neurons densely innervate neurons within the defined spatial
@@ -1475,7 +1495,7 @@ properties of the neuron and different cell types may respond very
 differently. This has made it difficult to directly compare the
 lateral connectivity in the model to experimental data.
 
-\subsubsection{Differences to GCAL}
+\subsubsection*{Differences to GCAL}
 
 There are a number of major changes between the GCAL model and the
 SCAL model that was introduced in this chapter. As we have already
@@ -1520,7 +1540,7 @@ development under varying stimulus conditions and still exhibits all
 the nice properties of the GCAL model, including contrast invariant
 orientation tuning as well as robust, yet adaptive self-organization.
 
-\subsubsection{Size tuning}
+\subsubsection*{Size tuning}
 
 A major component of the analysis we applied here was in comparing
 applying a Difference-of-Gaussian model to the area summation curves
@@ -1544,7 +1564,7 @@ excitation and inhibition without corresponding long-range projections
 between neurons, which are themselves tuned for those specific
 features.
 
-\subsubsection{Lateral Connectivity}
+\subsubsection*{Lateral Connectivity}
 
 \paragraph{Excitatory}
 
@@ -1603,7 +1623,7 @@ similarity however, something we will investigate in more detail when
 we have a model that actually expresses distinct excitatory and
 inhibitory populations.
 
-\subsubsection{Diversity of responses}
+\subsubsection*{Diversity of responses}
 
 One of the major design decisions in creating this model was to decide
 on whether to match the average response of neurons in V1 or to try to

@@ -40,12 +40,13 @@ co-circularity in natural images \citep{Hunt2011}. These studies have
 again been inconclusive due to the sparsity of clear data.
 
 In this chapter, we will employ the model introduced in the previous
-chapter to analyze to what extent the detailed statistics of the visual input
-shape the long-range excitatory connections.  In particular, we will attempt to reconstruct
-those statistics based purely on synaptic weights and the orientation
-map. In doing so we will determine to what extent the network has captured the
-statistics of the training dataset, and establish whether considerable
-biases in the inputs could affect the isotropy of connections.
+chapter to analyze to what extent the detailed statistics of the
+visual input shape the long-range excitatory connections.  In
+particular, we will attempt to reconstruct those statistics based
+purely on synaptic weights and the orientation map. In doing so we
+will determine to what extent the network has captured the statistics
+of the training dataset, and establish whether considerable biases in
+the inputs could affect the isotropy of connections.
 
 \section{Methods}
 
@@ -54,9 +55,6 @@ statistics for natural images and for the LESPI network, which we can
 use to analyze how well the network has extracted the underlying
 patterns in the training data.
 
-%% jbednar: Shouldn't ever use subsubsection, shouldn't jump two
-%% levels at once, and shouldn't have two headings in a row with no
-%% text between (though I've added a brief bit above).
 \subsection{Co-occurence statistics}
 
 Natural image statistics have been well
@@ -121,7 +119,7 @@ homogeneity index above the 50th percentile, to mirror the procedure
 of \cite{Bosking1997}. The resulting histograms and lateral connection
 plots could then be further analyzed.
 
-\subsubsection{Univariate statistics}
+\subsubsection*{Univariate statistics}
 
 The simplest way to analyze these statistics is to collapse across
 the dimensions to visualize the univariate distributions of the
@@ -131,7 +129,7 @@ connections are biased for similar orientations and co-linear
 directions, (2) an indication of how isotropic the lateral connections
 are in the model, and finally (3) the distances.
 
-\subsubsection{Multi-variate statistics}
+\subsubsection*{Multi-variate statistics}
 
 Using the computed histogram, various plots can be generated to
 compare against the plots produced by directly extracting the edge
@@ -163,7 +161,7 @@ decode the statistics. In addition to taking the weight to
 compute each co-occurrence, the selectivity for each orientation and
 azimuth were also determined by computing the vector sum.
 
-\subsubsection{von Mises Model}
+\subsubsection*{von Mises Model}
 
 Finally, the lateral weights were again fit using the von Mises model
 with both Gaussian and orientation-preference--dependent components,
@@ -208,15 +206,15 @@ for simple elongated bars.
 
 We will also train the model on two natural-image datasets that had
 previously been analyzed for their co-occurence statistics
-(\citealt{Perrinet2015}; see Figure~\ref{classifier}), plus an additional
-image dataset recorded in 2010 in juvenile tree-shrew cages in David
-Fitzpatrick's lab at Duke University.  The tree-shrew cage images
-feature great numbers of highly extended, high-contrast bars (shown in
-figure \ref{image_patterns}), and are examples of the rearing
-environment for the animals in the \cite{Bosking1997} study.  Thus the
-statistics of these patterns could be what the \cite{Bosking1997} tree
-shrews encoded in their visual cortex, if the hypotheses from this
-chapter are valid.
+(\citealt{Perrinet2015}; see Figure~\ref{classifier}), plus an
+additional image dataset recorded in 2010 in juvenile tree-shrew cages
+in David Fitzpatrick's lab at Duke University.  The tree-shrew cage
+images feature great numbers of highly extended, high-contrast bars
+(shown in figure \ref{image_patterns}), and are examples of the
+rearing environment for the animals in the \cite{Bosking1997} study.
+Thus the statistics of these patterns could be what the
+\cite{Bosking1997} tree shrews encoded in their visual cortex, if the
+hypotheses from this chapter are valid.
 
 \section{Results}
 
@@ -226,11 +224,11 @@ to the more complex natural-image--trained models.
 
 \subsection{Synthetic Stimuli}
 
-The stimuli described in Section \ref{synthetic} vary in both relative orientation
-and azimuth, which means that if the lateral connections capture the
-correlations in the inputs, then these correlations should also be captured
-and vary depending on the width of the von Mises distributions the
-orientation offsets are drawn from.
+The stimuli described in Section \ref{synthetic} vary in both relative
+orientation and azimuth, which means that if the lateral connections
+capture the correlations in the inputs, then these correlations should
+also be captured and vary depending on the width of the von Mises
+distributions the orientation offsets are drawn from.
 
 \begin{figure}
 	\centering
@@ -261,13 +259,12 @@ makes it clear that both conditions show a strong preference for
 similar orientations and co-linear stimuli, as can be seen when
 looking at the azimuth histogram, which highlights a strong isotropy
 along the axis of preferred orientation. This can indeed be seen even
-when just looking at the sample lateral connection fields
-directly (Figure~\ref{SyntheticDistributions}A,B). The analysis also
-highlights that the model trained on 
-patterns drawn from the tighter distribution has a slightly stronger
-preference for similar orientations, and more weights at larger
-distances. This reflects the stronger bias for long iso-oriented and
-co-linear contours in the input patterns.
+when just looking at the sample lateral connection fields directly
+(Figure~\ref{SyntheticDistributions}A,B). The analysis also highlights
+that the model trained on patterns drawn from the tighter distribution
+has a slightly stronger preference for similar orientations, and more
+weights at larger distances. This reflects the stronger bias for long
+iso-oriented and co-linear contours in the input patterns.
 
 \begin{figure}
 	\centering
@@ -276,16 +273,17 @@ co-linear contours in the input patterns.
       azimuth differences between pre- and post-synaptic
       neurons.]{Chevron map showing the distribution of orientation
       and azimuth differences between pre- and post-synaptic neurons
-      weighted by connection strength for the wide distribution (left),
-      narrow distribution (middle), and the difference between 
-      them (right). Modeled after the \cite{Perrinet2015} co-occurrence analysis
-      of natural images. Each `chevron` represents one particular
-      configuration of two edges, varying by $\psi$ (relative azimuth)
-      along the x-axis and $\theta$ (orientation difference) along the
-      y-axis. Increased probability is shown in red, and lower
-      probabilities shown in blue. These results highlight the stronger bias for
-      connecting iso-orientation regions in the model trained on
-      narrowly distributed synthetic patterns.}
+      weighted by connection strength for the wide distribution
+      (left), narrow distribution (middle), and the difference between
+      them (right). Modeled after the \cite{Perrinet2015}
+      co-occurrence analysis of natural images. Each `chevron`
+      represents one particular configuration of two edges, varying by
+      $\psi$ (relative azimuth) along the x-axis and $\theta$
+      (orientation difference) along the y-axis. Increased probability
+      is shown in red, and lower probabilities shown in blue. These
+      results highlight the stronger bias for connecting
+      iso-orientation regions in the model trained on narrowly
+      distributed synthetic patterns.}
 	\label{SyntheticCooccurrence}
 \end{figure}
 
@@ -294,15 +292,13 @@ Figure~\ref{SyntheticCooccurrence} highlights very similar trends. In
 particular it demonstrates a greater spread in co-occurring
 orientations as the distribution of orientation offsets in the input
 pattern widens. Both the azimuth distribution and the co-occurrence
-histogram also emphasize an increased preference of parallel
-alignment for the tighter distribution. It is not quite clear what
-drives these correlations, but through parameter exploration not shown
-here it was determined that they could be reduced by presenting fewer
-overlapping patterns, suggesting that they were due to increased
-likelihood of chance alignments.
+histogram also emphasize an increased preference of parallel alignment
+for the tighter distribution. It is not quite clear what drives these
+correlations, but through parameter exploration not shown here it was
+determined that they could be reduced by presenting fewer overlapping
+patterns, suggesting that they were due to increased likelihood of
+chance alignments.
 
-% jbednar: where is the color key?  Not clear which colors are in what
-% order, even.
 \begin{figure}
 	\centering
     \includegraphics[width=1.0\textwidth]{./results/lespi/Geisler_Synthetic_Cooccurrence.pdf}
@@ -312,7 +308,11 @@ likelihood of chance alignments.
       most likely azimuth for each orientation and distance (bottom
       row). The colormap represents the relative probability of each
       configuration, while the size reflects the selectivity for that
-      particular arrangement.}
+      particular arrangement. The more narrow distribution ($\kappa$)
+      results in more weight at the furthest distances and greater
+      confidence in co-circular arrangements, however in both
+      conditions co-linearity and co-circularity are decoded almost
+      perfectly. }
 	\label{SyntheticGeisler}
 \end{figure}
 
@@ -323,13 +323,13 @@ almost perfectly reflects the statistics of the input, in that the
 same orientation is encountered along the axis of preferred
 orientation and as we move away from this axis the preferred angle
 slowly shifts away from this orientation, which is precisely how the
-input pattern is defined. The model trained on the
-dataset with a narrower distribution also exhibits a narrower
-distribution in the co-circularity plots. This means the model has
-captured not just the rough characteristics of the input but also some
-subtle relationships that are not immediately obvious. Even so, the statistics of
-the synthetic training patterns are very simplistic, and capturing the
-far broader distribution of visual statistics, including spatial
+input pattern is defined. The model trained on the dataset with a
+narrower distribution also exhibits a narrower distribution in the
+co-circularity plots. This means the model has captured not just the
+rough characteristics of the input but also some subtle relationships
+that are not immediately obvious. Even so, the statistics of the
+synthetic training patterns are very simplistic, and capturing the far
+broader distribution of visual statistics, including spatial
 frequencies and spatial arrangements of patterns that are present in
 natural images is a more difficult task.
 
@@ -342,26 +342,25 @@ capture the statistics of a simplified input pattern. Now we will
 train the model on a number of different image datasets, either from
 natural environments or artificial structures such as laboratory
 environments in which animals are raised. Using detailed labeling and
-analysis of these datasets, 
-which include those used by \cite{Perrinet2015} and \cite{Serre2007},
-we will demonstrate that the lateral connections in V1 can already
-capture the differences between different datasets.  We will suggest that
-the rearing environment of an animal can have strong effects on the
-organization of the visual system, which should be considered when
-using animal models.
+analysis of these datasets, which include those used by
+\cite{Perrinet2015} and \cite{Serre2007}, we will demonstrate that the
+lateral connections in V1 can already capture the differences between
+different datasets.  We will suggest that the rearing environment of
+an animal can have strong effects on the organization of the visual
+system, which should be considered when using animal models.
 
-Man-made environments are characterized by co-linear,
-parallel, and orthogonal arrangements of edges, while true natural
-images, i.e., images of natural environments, exhibit more curvature
-and textured patterns \citep{Perrinet2015}. In order to test whether
-the model would capture these differences, three natural-image datasets
-were used: (1) the ``natural`` dataset containing a lot of grass
-textures, (2) the ``treeshrew`` laboratory cage containing long, high
-contrast bars, and (3) the \cite{Serre2007} target dataset of natural
-scenes and animals. These represent three highly distinct visual
+Man-made environments are characterized by co-linear, parallel, and
+orthogonal arrangements of edges, while true natural images, i.e.,
+images of natural environments, exhibit more curvature and textured
+patterns \citep{Perrinet2015}. In order to test whether the model
+would capture these differences, three natural-image datasets were
+used: (1) the ``natural`` dataset containing a lot of grass textures,
+(2) the ``treeshrew`` laboratory cage containing long, high contrast
+bars, and (3) the \cite{Serre2007} target dataset of natural scenes
+and animals. These represent three highly distinct visual
 environments, which should be reflected in long range connections.
 
-\subsubsection{First-order statistics}
+\subsubsection*{First-order statistics}
 
 Before investigating more complex second-order statistics, we analyzed
 whether particular orientations were hugely overrepresented in the
@@ -370,8 +369,8 @@ results. As can be seen in Figure~\ref{NatImgORs}, both datasets show
 some bias for specific orientations, with the tree shrew condition
 exhibiting a stronger bias along the horizontal and vertical
 axes. These biases are likely an artifact arising from the artificial
-border at the edge of the simulated sheet, which can affect the whole map
-through long-range interactions.
+border at the edge of the simulated sheet, which can affect the whole
+map through long-range interactions.
 
 % jbednar: change 'natural' to 'outdoor' throughout if possible;
 % natural is just so vague!
@@ -388,7 +387,7 @@ through long-range interactions.
 	\label{NatImgORs}
 \end{figure}
 
-\subsubsection{Second-order histograms}
+\subsubsection*{Second-order histograms}
 
 Once again we compare the isotropy and the orientation and distance
 histograms between the two conditions (see
@@ -409,12 +408,16 @@ long-range correlations overall.
         \includegraphics[width=1.0\textwidth]{./results/lespi/NatImg_Distributions.pdf}
 	\caption[Distributions of lateral weights broken down by azimuth,
       orientation, and distance.]{Distributions of lateral weights
-      broken down by (A) azimuth, (B) orientation, and (C) distance for
-      the natural and treeshrew datasets.}
+      broken down by (A) azimuth, (B) orientation, and (C) distance
+      for the natural and treeshrew datasets. The treeshrew dataset
+      statistics are reflected via much stronger co-linear bias in the
+      azimuth histogram even though they are more weakly selective and
+      do not extend as far, emphasizing just how strong the co-linear
+      bias in the data is.}
 	\label{NatImgDistributions}
 \end{figure}
 
-\subsubsection{Chevron Maps}
+\subsubsection*{Chevron Maps}
 
 The chevron maps offer a different view of these effects
 (Figure~\ref{NatImgCooccurrences}), as we can now see the relative
@@ -423,50 +426,52 @@ dimensions, providing an overview of the likelihood of various
 geometric arrangements. The views analyzing each dataset individually
 highlight once again just how much more biased the connections are
 along the $\theta$ dimension, i.e. that the connections are more
-biased for similar orientations rather than specific azimuths. However,
-the results also demonstrate that in the natural condition co-linear lines are
-not much more likely than any other azimuth, which reaffirms the more
-circular azimuth histogram that can be seen in
-Figure~\ref{NatImgDistributions}.
+biased for similar orientations rather than specific
+azimuths. However, the results also demonstrate that in the natural
+condition co-linear lines are not much more likely than any other
+azimuth, which reaffirms the more circular azimuth histogram that can
+be seen in Figure~\ref{NatImgDistributions}.
 
-Comparing the distributions to ask
-whether certain configurations are more likely in one dataset than the
-other highlights some more interesting differences.
-Specifically, we can clearly see a stronger bias for parallel lines in
-the natural dataset and one for orthogonal lines in the treeshrew
-dataset. This may reflect the difference between textured grass
-patterns with numerous parallel arrangements, and man-made structures
-with far more right-angles than would usually be seen in
-nature. At the same time, certain curvatures are seen more strongly in
-the tree-shrew condition, which is surprising but may merely reflect
-the lower orientation selectivity that is evident when training on
-that dataset. An analysis that considers the relative orientation
-independently from the azimuth may therefore shed more light on the
-actual differences.
+Comparing the distributions to ask whether certain configurations are
+more likely in one dataset than the other highlights some more
+interesting differences.  Specifically, we can clearly see a stronger
+bias for parallel lines in the natural dataset and one for orthogonal
+lines in the treeshrew dataset. This may reflect the difference
+between textured grass patterns with numerous parallel arrangements,
+and man-made structures with far more right-angles than would usually
+be seen in nature. At the same time, certain curvatures are seen more
+strongly in the tree-shrew condition, which is surprising but may
+merely reflect the lower orientation selectivity that is evident when
+training on that dataset. An analysis that considers the relative
+orientation independently from the azimuth may therefore shed more
+light on the actual differences.
 
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/lespi/NatImg_Cooccurrences.pdf}
-	\caption[Chevron map of highlighting co-occurrence statistics of
-      geometrical arrangements in natural images.]{Chevron map of
+	\caption[Chevron map highlighting co-occurrence statistics of
+      geometrical arrangements in natural images.]{Chevron map
       highlighting co-occurrence statistics of geometrical
       arrangements in natural images. Red indicates higher probability
       of co-occurrence, while blue indicates lower
       probability. Chevron maps for natural and tree-shrew dataset
       shown on top and probability ratios comparing one dataset
-      against the other below.}
+      against the other below. Highlights strong bias for co-linear
+      and fewer parallel arrangements in the treeshrew dataset, in
+      addition to a greater bias towards perpendicular arrangements,
+      which are rare in natural images. }
 	\label{NatImgCooccurrences}
 \end{figure}
 
-\subsubsection{Co-linearity and co-circularity}
+\subsubsection*{Co-linearity and co-circularity}
 
 Instead of considering both orientation and azimuth co-occurrences at
-the same time, we can treat each separately to ensure that one does not
-drown out the other. The co-linearity and co-circularity plots, shown
-in Figure~\ref{NatImgGeisler} alongside the results from
-\cite{Geisler2001} and \cite{Perrinet2015}, make these differences very
-clear. Note that while the direct analysis can directly compute the
-probability, the model indicates both relative probability and
+the same time, we can treat each separately to ensure that one does
+not drown out the other. The co-linearity and co-circularity plots,
+shown in Figure~\ref{NatImgGeisler} alongside the results from
+\cite{Geisler2001} and \cite{Perrinet2015}, make these differences
+very clear. Note that while the direct analysis can directly compute
+the probability, the model indicates both relative probability and
 confidence via the color and size respectively. Comparing just the
 direct analysis to the model results for the Serre animal dataset and
 the tree-shrew--cage dataset, we can make several observations. The
@@ -488,17 +493,17 @@ co-linear edges co-occur almost equally strongly at all azimuths. The
 other striking feature about the natural condition model results is
 the high confidence it has assigned to orthogonal orientations at the
 axes orthogonal to the preferred orientation, even though they have
-such a low overall probability. This finding may be due to criss-crossing
-textures such as blades of grass. Similar cross-orientation arrangements can be
-observed in the Geisler results, even though it also does not assign
-them very high probability. In all three model conditions, the lateral
-weights assign high probability to co-circular patterns however, which
-is exactly what was predicted by \citep{Geisler2001}. Additionally,
-there are clear dataset-dependent differences, which seem to match the
-apparent statistics of the inputs. However, there also seems to be
-considerable error in decoding the relative azimuths and local
-interactions, which reduce the confidence and probabilities at short
-distances.
+such a low overall probability. This finding may be due to
+criss-crossing textures such as blades of grass. Similar
+cross-orientation arrangements can be observed in the Geisler results,
+even though it also does not assign them very high probability. In all
+three model conditions, the lateral weights assign high probability to
+co-circular patterns however, which is exactly what was predicted by
+\citep{Geisler2001}. Additionally, there are clear dataset-dependent
+differences, which seem to match the apparent statistics of the
+inputs. However, there also seems to be considerable error in decoding
+the relative azimuths and local interactions, which reduce the
+confidence and probabilities at short distances.
 
 \begin{figure}
   \begin{minipage}[t]{0.67\textwidth}
@@ -508,20 +513,31 @@ distances.
     \mbox{}\\[-\baselineskip]
 	\caption{Comparison between co-linearity and co-circularity
       statistics extracted from the model and measured directly from
-      the image datasets. Animals and tree-shrew analyses were provided
-      by Laurent Perrinet by sparsely labeling edges in the image
-      datasets and computing the statistics directly and should be
-      directly comparable to the corresponding model
+      the image datasets. Animals and tree-shrew analyses were
+      provided by Laurent Perrinet by sparsely labeling edges in the
+      image datasets and computing the statistics directly and should
+      be directly comparable to the corresponding model
       results. Probability is indicated through the alpha level in the
-      animals/tree-shrew analysis, and through color in the Geisler and
-      model results. Model results additionally indicate confidence
-      through the size of the edge. }
-        % jbednar: add conclusions; there's a lot going on here!
+      animals/tree-shrew analysis, and through color in the Geisler
+      and model results. Model results additionally indicate
+      confidence through the size of the edge. A number of clear
+      conclusions can be drawn. First of all co-linear arrangements
+      and extended contours are recognizeable in all datasets. In the
+      treeshrew condition the lateral decoding is very confident about
+      these arrangements, while in the natural conditions similarly
+      oriented edges occur at almost all azimuths. Cross-oriented
+      edges co-occur with low probability (i.e. strength) but at least
+      in the natural condition it is confident those do not generally
+      occur on the co-aligned axis. Overall this provides strong
+      evidence the lateral connections have captured the statistics of
+      the input well and strong parallels to the statistics extracted
+      directly from the images by \cite{Geisler2001} and
+      \cite{Perrinet2015} can be seen.}
 	\label{NatImgGeisler}
     \end{minipage}
 \end{figure}
 
-\subsubsection{Quantifying the anisotropy}
+\subsubsection*{Quantifying the anisotropy}
 
 The analyses so far have allowed us to make qualitative assessments of
 how well the lateral connections in the model match the statistics in
@@ -537,20 +553,20 @@ lateral connections observed in experiments \citep{Bosking1997} could
 be explained by differences in rearing environments.
 
 After fitting the model to all the neurons we selected the best fits
-for the tree shrew and natural conditions and the error between the fit
-and the actual weight pattern, allowing us to see features the model
-did not capture very well. The comparison between the two fits is
-shown in \ref{NatImgvonMises}. It is immediately obvious that the
+for the tree shrew and natural conditions and the error between the
+fit and the actual weight pattern, allowing us to see features the
+model did not capture very well. The comparison between the two fits
+is shown in \ref{NatImgvonMises}. It is immediately obvious that the
 tree shrew weights are considerably more elongated along the axis of
 preferred orientation. The patterns of the error also highlight
-several issues, however.  First of all, the fitting procedure seems to assign too little
-weight to the nearby iso-orientation patches, which are strongly
-connected in the actual weights. There are also patches that
-have been assigned weight, yet do not have any in the actual weight
-patterns. These are likely associated with phase-inversions, since the
-model consists entirely of simple cells, which means that locally
-iso-orientation patches with opposite phase are anti-correlated, a
-feature the Buzas model does not capture.
+several issues, however.  First of all, the fitting procedure seems to
+assign too little weight to the nearby iso-orientation patches, which
+are strongly connected in the actual weights. There are also patches
+that have been assigned weight, yet do not have any in the actual
+weight patterns. These are likely associated with phase-inversions,
+since the model consists entirely of simple cells, which means that
+locally iso-orientation patches with opposite phase are
+anti-correlated, a feature the Buzas model does not capture.
 
 \begin{figure}
 	\centering
@@ -570,15 +586,14 @@ dependent component well we also let it fit the orientation directly
 and confirmed the fitted orientation was well correlated with the
 orientation preference in the orientation map. Overall this analysis
 showed very high correlation between the estimated and measured
-orientation, as can be seen in Figure~\ref{NatImgvonMisesAspect}A
-We also plotted the aspect ratio of the long range Gaussian
-pattern against the orientation selectivity of the neurons. In the
-treeshrew model, the selectivity was highly correlated with the aspect,
-while in the natural condition this correlation was much
-weaker. Overall, the mean aspect ratio for the natural condition was
-1.29, while the treeshrew trained model exhibited an aspect ratio of
-2.2, suggesting a much higher anisotropy along the axis of preferred
-orientation.
+orientation, as can be seen in Figure~\ref{NatImgvonMisesAspect}A We
+also plotted the aspect ratio of the long range Gaussian pattern
+against the orientation selectivity of the neurons. In the treeshrew
+model, the selectivity was highly correlated with the aspect, while in
+the natural condition this correlation was much weaker. Overall, the
+mean aspect ratio for the natural condition was 1.29, while the
+treeshrew trained model exhibited an aspect ratio of 2.2, suggesting a
+much higher anisotropy along the axis of preferred orientation.
 
 \begin{figure}
 	\centering
@@ -587,7 +602,10 @@ orientation.
       model fitting. A) Correspondence between neurons' preferred
       orientations and the orientation estimated based on the lateral
       connection field. B) Dependence between orientation selectivity
-      and aspect ratio for the two conditions.}
+      and aspect ratio for the two conditions. Clearly highlights the
+      anisotropy in lateral connections trained on the treeshrew
+      dataset. Also suggests the model does not capture local
+      interactions very well.}
 	\label{NatImgvonMisesAspect}
 \end{figure}
 
@@ -598,13 +616,13 @@ statistics of the visual training on the long-range lateral
 connections in a developmental model of V1, in order to test whether
 various results concerning the co-circularity \citep{Hunt2011} and
 anisotropy of lateral connections \citep{Bosking1997} could be
-explained by differences rearing environments. We are also
-interested to what extent the early visual cortex is involved in
-computations concerning the co-occurrence statistics, to determine
-whether they could be involved in computing higher-order properties
-such as the difference between animal and non-animal objects, which
-has been shown to be computed very rapidly in human psychophysics
-experiments \citep{Serre2007b}.
+explained by differences rearing environments. We are also interested
+to what extent the early visual cortex is involved in computations
+concerning the co-occurrence statistics, to determine whether they
+could be involved in computing higher-order properties such as the
+difference between animal and non-animal objects, which has been shown
+to be computed very rapidly in human psychophysics experiments
+\citep{Serre2007b}.
 
 In performing the analysis we demonstrated that the model could
 capture the statistics of simplified stimuli almost perfectly (see
@@ -614,29 +632,30 @@ reasonable extent, including clear differences between various
 datasets. This provides the first demonstration that a developmental
 of V1 can indeed capture the statistics of natural images and can
 learn various Gestalt rules for edge co-linearity and co-circularity
-without hard-coding them. The results suggest that encoding higher-order
-statistics in the lateral connections is a general principle in the
-cortex and predict that early sensory cortices of all modalities
-should capture these correlations in some way. The model also makes it
-clear that the common assumption that patchy connections in the primary visual
-cortex specifically link columns with similar orientation preference is highly
-simplistic, with the more interesting story that such connectivity may
-simply reflect the co-occurrence probabilities in the natural world,
-whatever they may be for a given modality.
+without hard-coding them. The results suggest that encoding
+higher-order statistics in the lateral connections is a general
+principle in the cortex and predict that early sensory cortices of all
+modalities should capture these correlations in some way. The model
+also makes it clear that the common assumption that patchy connections
+in the primary visual cortex specifically link columns with similar
+orientation preference is highly simplistic, with the more interesting
+story that such connectivity may simply reflect the co-occurrence
+probabilities in the natural world, whatever they may be for a given
+modality.
 
 Furthermore, we quantify the effect of training the model in a
-laboratory environment with very long, high-contrast cage bars, and suggest
-that this highly biased rearing environment will have large
+laboratory environment with very long, high-contrast cage bars, and
+suggest that this highly biased rearing environment will have large
 implications for the organization of long-range lateral connections.
-Specifically, such images exhibit a considerably stronger anisotropy along the axis of
-preferred orientation than do outdoor images of nature.  The 
-tree shrew lateral-connection patterns 
-have an average anisotropy ratio of 2.2, which is
-considerably higher than the anisotropy ratio of 1.29 in the model
-trained on natural images. On this basis we predict that the large
-anisotropy ratios observed by \citep{Bosking1997} may be at least
-partially explained by the rearing environment of these animals, which
-is very different from outdoor images of nature.
+Specifically, such images exhibit a considerably stronger anisotropy
+along the axis of preferred orientation than do outdoor images of
+nature.  The tree shrew lateral-connection patterns have an average
+anisotropy ratio of 2.2, which is considerably higher than the
+anisotropy ratio of 1.29 in the model trained on natural images. On
+this basis we predict that the large anisotropy ratios observed by
+\citep{Bosking1997} may be at least partially explained by the rearing
+environment of these animals, which is very different from outdoor
+images of nature.
 
 The novel analyses described in this chapter provide a framework to
 answer questions about how higher-order correlations are captured in
@@ -650,45 +669,43 @@ should be addressed.
 
 The spatial frequency distribution of natural images has been well
 described in the literature as having a $\frac{1}{f}$
-distribution. \cite{Perrinet2015} have shown that the
-co-occurrence statistics are generally independent of the spatial
-frequency. However, the models in this thesis currently only uses a single
-spatial frequency filter at the level of the LGN, meaning that the other
-spatial frequencies will be filtered out. The image patterns in the
-tree shrew dataset appear to diverge considerably from the $\frac{1}{f}$
-distribution that has been found empirically. Indeed, by investigating
-the selectivity of the model trained on tree shrew images, we could show
-that they generally have lower spatial frequency preference than the
-model trained on the natural dataset. This in turn affects the
-selectivity of the model, since broader spatial frequency tuning also
-results in lower orientation selectivity for a given CF size. A future
-analysis should
-either employ a wider range of spatial frequency filters at the LGN
-level or ensure that the distribution of spatial frequency is
-approximately equal across the tested datasets.  
+distribution. \cite{Perrinet2015} have shown that the co-occurrence
+statistics are generally independent of the spatial
+frequency. However, the models in this thesis currently only uses a
+single spatial frequency filter at the level of the LGN, meaning that
+the other spatial frequencies will be filtered out. The image patterns
+in the tree shrew dataset appear to diverge considerably from the
+$\frac{1}{f}$ distribution that has been found empirically. Indeed, by
+investigating the selectivity of the model trained on tree shrew
+images, we could show that they generally have lower spatial frequency
+preference than the model trained on the natural dataset. This in turn
+affects the selectivity of the model, since broader spatial frequency
+tuning also results in lower orientation selectivity for a given CF
+size. A future analysis should either employ a wider range of spatial
+frequency filters at the LGN level or ensure that the distribution of
+spatial frequency is approximately equal across the tested datasets.
 
-Such calibration may be particularly important because the orientation selectivity
-between the models trained on the treeshrew and natural dataset
-differs quite considerably, which makes comparing between them very
-difficult. The chevron maps in particular are dominated by the
+Such calibration may be particularly important because the orientation
+selectivity between the models trained on the treeshrew and natural
+dataset differs quite considerably, which makes comparing between them
+very difficult. The chevron maps in particular are dominated by the
 difference in orientation selectivity, which partially obscures the
 the differences in azimuths.
 
 \subsection{Complex cells and phase preference}
 
 Another major question regarding the current analysis concerns the
-fact that all the modeled neurons are inherently simple cells. As it is
-known that long-range patchy connections emerge in layer 2/3, where
+fact that all the modeled neurons are inherently simple cells. As it
+is known that long-range patchy connections emerge in layer 2/3, where
 there is a mix of simple and complex cells, having only simple cells
-in the model makes drawing concrete 
-conclusions very difficult. In particular, complex cells pool over
-phase, which means they discard some of the positional information,
-complicating the encoding of relative azimuth between two
-edges. Extending the model to incorporate complex cells as outlined in
-\cite{Antolik2010} may address some of these questions and would allow
-us to make concrete predictions about the differences of lateral
-connections linking simple and complex cells, which could be tested in
-experiments.
+in the model makes drawing concrete conclusions very difficult. In
+particular, complex cells pool over phase, which means they discard
+some of the positional information, complicating the encoding of
+relative azimuth between two edges. Extending the model to incorporate
+complex cells as outlined in \cite{Antolik2010} may address some of
+these questions and would allow us to make concrete predictions about
+the differences of lateral connections linking simple and complex
+cells, which could be tested in experiments.
 
 Indeed, the large difference in anisotropy that are observed in
 tree-shrew lateral connections compared to other species could reflect
@@ -706,14 +723,15 @@ likely reflect properties of the underlying circuit. Since the cortex
 has to map high-dimensional visual features onto the 2D surface of the
 cortex, there are some tradeoffs in representing all the features
 perfectly. In particular, since orientation is mapped onto discrete
-columns with other orientations intervening, there is some distortion in the way
-position is represented locally.  These distortions can be seen in some of the
-co-circularity plots, which show maximal co-linear enhancement
-slightly offset from the center. Additionally, the local isotropic
-suppression provided by the PV population will strongly suppress
-cross-oriented stimuli locally, which means they do not generally show
-up in the co-circularity plots as is particularly evident in the
-natural condition, where they do appear at longer distances.
+columns with other orientations intervening, there is some distortion
+in the way position is represented locally.  These distortions can be
+seen in some of the co-circularity plots, which show maximal co-linear
+enhancement slightly offset from the center. Additionally, the local
+isotropic suppression provided by the PV population will strongly
+suppress cross-oriented stimuli locally, which means they do not
+generally show up in the co-circularity plots as is particularly
+evident in the natural condition, where they do appear at longer
+distances.
 
 From a functional perspective, these do not seem like major issues,
 if the lateral connections are primarily concerned
@@ -740,18 +758,19 @@ Having confirmed that lateral connections can capture the
 co-occurrence statistics of the input, it is important to ask what
 purpose this may serve. One of the guiding hypothesis of this thesis
 and the developmental models on which the thesis is built is that the
-mammalian brain self-organizes based on activity-dependent
-processes in order to best represent the statistics of the input. This
-approach means that identical processes can give rise to the development of
+mammalian brain self-organizes based on activity-dependent processes
+in order to best represent the statistics of the input. This approach
+means that identical processes can give rise to the development of
 orientation maps in visual cortex and tonotopic maps in the auditory
-cortex. Rather than encoding the precise function of each brain region,
-the brain robustly yet adaptively organizes in such a way that it can
-nearly optimally represent whatever input it is given. This idea is supported
-by experiments performed by the Sur lab, where the retinal projections
-to the LGN were rewired to the auditory thalamus.  Sur et al.\ found that
-animals would develop visual receptive fields in auditory cortex,
-and were even able to perform various visual tasks with no primary
-visual cortex other than the rewired area \citep{vonMelchner2000}.
+cortex. Rather than encoding the precise function of each brain
+region, the brain robustly yet adaptively organizes in such a way that
+it can nearly optimally represent whatever input it is given. This
+idea is supported by experiments performed by the Sur lab, where the
+retinal projections to the LGN were rewired to the auditory thalamus.
+Sur et al.\ found that animals would develop visual receptive fields
+in auditory cortex, and were even able to perform various visual tasks
+with no primary visual cortex other than the rewired area
+\citep{vonMelchner2000}.
 
 Based on this evidence and the results presented here, we argue that
 the organization of the visual cortex is to a large extent an
@@ -765,10 +784,10 @@ the geometric arrangement of the stimuli, the contrast and other
 contextual information. By learning that edges in the visual
 environment are generally co-linearly and co-circularly arranged, even
 the very earliest stages of visual processing can contribute towards
-complex computations.  For instance, such a system could detect visually salient features
-through the learned Gestalt grouping laws, and it can fall into 
-configurations that have historically been more likely when incoming
-information is sparse and weak.
+complex computations.  For instance, such a system could detect
+visually salient features through the learned Gestalt grouping laws,
+and it can fall into configurations that have historically been more
+likely when incoming information is sparse and weak.
 
 In order to predict to what extent the visual statistics of the
 rearing environment affect surround modulation, future

@@ -101,21 +101,22 @@ modulates responses to large and high-contrast stimuli, providing
 feature-specific inhibition under those conditions, while only very
 weakly responding in low contrast conditions. This circuit provides a
 considerable advance over previous models of surround modulation,
-%% jbednar: need to cite some of those models here, right?
 which typically hard-code the statistical relationships encoded in the
 lateral connections while explaining contrast-dependent changes
 through a higher inhibitory threshold that conflicts with the
-experimental evidence. In this model, the contextual-modulation
-effects are an emergent phenomenon, arising directly from the
-correlations present in the training patterns (as transformed
-subcortically).  Identifying and understanding the circuits involved
-in these processes is a fundamental challenge for neuroscience, and
-will hugely contribute to extending our knowledge of cortical
-information processing.
+experimental evidence \citep{Li2002, Schwabe2006}. In this model, the
+contextual-modulation effects are an emergent phenomenon, arising
+directly from the correlations present in the training patterns (as
+transformed subcortically).  Identifying and understanding the
+circuits involved in these processes is a fundamental challenge for
+neuroscience, and will hugely contribute to extending our knowledge of
+cortical information processing.
 
 \section{Methods}
-% jbednar: always need an intro sentence or two between section
-% headings
+
+In this section we will first introduce the organization and equations
+describing the LESPI model and then describe various measurements to
+apply to the model to characterize surround modulation effects.
 
 \subsection{The LESPI model}
 
@@ -139,27 +140,26 @@ neurons are connected.
 	\label{LESPIDiagram}
 \end{figure}
 
-The newly introduced Sst population differs from the PV population
-in several important respects. First of all, it receives no afferent connections
-from the LGN, as this population is most numerous in the
+The newly introduced Sst population differs from the PV population in
+several important respects. First of all, it receives no afferent
+connections from the LGN, as this population is most numerous in the
 supra-granular layers, which do not typically receive direct afferent
 input. Secondly, this population has a much more restricted spatial
-profile, being not nearly as extensive laterally as the
-PV-expressing basket cells. Most importantly, however, to model the
-facilitating response properties of lateral synaptic connections
-contacting this population, the model Sst neurons have an exponential
-non-linearity in their 
-response. This property allows Sst neurons to activate weakly in
+profile, being not nearly as extensive laterally as the PV-expressing
+basket cells. Most importantly, however, to model the facilitating
+response properties of lateral synaptic connections contacting this
+population, the model Sst neurons have an exponential non-linearity in
+their response. This property allows Sst neurons to activate weakly in
 low-contrast conditions, while providing strong suppression when the
 input is strong or dense enough. Finally, to model the more sluggish
 responses typical of Sst neurons, a hysteresis term is added. In this
-way this population will respond strongly after sustained and strong local
-and long-range stimulation.
+way this population will respond strongly after sustained and strong
+local and long-range stimulation.
 
 The full set of parameters for the SEPI model are listed in Appendix
 \ref{Appendix:Parameters}.
 
-\subsubsection{Excitatory Activation}
+\subsubsection*{Excitatory Activation}
 
 The activity of the excitatory population is computed from all of the
 incoming projections, with the Sst population acting as a
@@ -175,24 +175,18 @@ excitatory contribution, $\eta_{P}$ the PV inhibitory contribution,
 and the surround-modulation term $\eta_{SM}$ is defined as:
 %%
 \begin{equation}
-  \eta_{SM} = 1 + \eta_{HE} - \eta_{S}
+  \eta_{SM} = 1 + \eta_{H} - \eta_{S}
 \end{equation}
 %%
-%% jbednar: s/HE/H ?
-where $\eta_{HE}$ represents the long-range lateral excitatory
-contribution and $\eta_{S}$ is the Sst inhibitory contribution.
-In the standard SEPI model the $\eta_{SM}$ term simply reduces to 1,
+where $\eta_{H}$ represents the long-range horizontal excitatory
+contribution and $\eta_{S}$ is the Sst inhibitory contribution.  In
+the standard SEPI model the $\eta_{SM}$ term simply reduces to 1,
 eliminating all long-range interactions, while in the long-range SEPI
 model $\eta_{SM} = 1 + \eta_{HE}$, with only long-range excitation.
 Here LESPI's surround-modulation term provides gain when excitation
 exceeds inhibition, and shunting inhibition when the reverse is true.
-%% jbednar: Commented out, since it is discussed in detail below
-%As such, this term provides a convenient abstraction
-%to model the modulatory influence of the dendritic integration of
-%long-range inputs, although in reality any such inputs will provide both
-%multiplicative/divisive and additive/subtractive effects.
 
-\subsubsection{Inhibitory Sst Activation}
+\subsubsection*{Inhibitory Sst Activation}
 
 The activation of the inhibitory Sst population is given simply by the
 summation of the local and lateral excitatory projection activity:
@@ -215,23 +209,23 @@ over time, accelerating its response under strong and prolonged
 activation, which closely models what has been observed in experiments
 \citep{Beierlein2003,Bartley2008,Tan2008}.
 
-\subsubsection{Mechanisms}
+\subsubsection*{Mechanisms}
 
 The mathematical effect of long-range horizontal connections is
 controversial and complex.  The connections typically target distal
 dendrites rather than the soma, which would suggest a subtractive
 model.  However, there is evidence for multiplicative effects as well
 \citep{Wilson2012}, including strong voltage dependence
-\citep{Hirsch1991}.  The connections may act multiplicatively by locally gating
-excitatory horizontal and feedback inputs at the dendrites
-\citep{Ma2011, Gentet2012}. Theoretical studies also suggest that
-active dendritic spike backpropagation can lead to multiplicative
+\citep{Hirsch1991}.  The connections may act multiplicatively by
+locally gating excitatory horizontal and feedback inputs at the
+dendrites \citep{Ma2011, Gentet2012}. Theoretical studies also suggest
+that active dendritic spike backpropagation can lead to multiplicative
 increases in gain, while reduction in spike backpropagation can lead
 to divisive scaling of the firing rate \citep{Mehaffey2005}. Modeling
-the net effect of long-range input as a single multiplicative term, which
-can act divisively given sufficient inhibitory input, therefore
-provides a convenient but highly simplified abstraction of
-long-range interactions.
+the net effect of long-range input as a single multiplicative term,
+which can act divisively given sufficient inhibitory input, therefore
+provides a convenient but highly simplified abstraction of long-range
+interactions.
 
 The overall operation of this circuit can be summarized by the
 schematic in Figure~\ref{circuit_diagram}. The diagram shows the
@@ -259,10 +253,7 @@ contrast input.
     \label{circuit_diagram}
 \end{figure}
 
-% jbednar: should never use subsubsection unless you are writing an
-% encyclopedia or spec for the defense department, though you can use
-% subsubsection*
-\subsubsection{Sparsity}
+\subsubsection*{Sparsity}
 
 In the current form of the model, both afferent and lateral connection
 fields are simulated as dense projections of weights in a local
@@ -313,7 +304,7 @@ model can include complex cells to remove this restriction, at a cost
 of greatly increased computational and memory requirements and
 additional parameters \citep{Antolik2010}. 
 
-\subsubsection{Natural stimuli}
+\subsubsection*{Natural stimuli}
 
 The visual statistics in different natural stimuli can vary
 considerably.  For instance, man-made objects often have very
@@ -520,7 +511,7 @@ shape, which does not vary considerably in width.
 	\label{ORTC_Jones}
 \end{figure}
 
-\subsubsection{Contrast Dependence}
+\subsubsection*{Contrast Dependence}
 
 In addition to measuring the classical high-contrast suppression
 curve, the equivalent measurement was performed for an individual
@@ -581,7 +572,7 @@ surround modulation emerges from the circuit.
 \end{figure}
 
 
-\subsubsection{Timecourse}
+\subsubsection*{Timecourse}
 
 In order to get a better understanding of how the different cell
 classes and synaptic projections interact to give rise to the
@@ -606,7 +597,9 @@ to the feature selectivity of the Sst neurons.
       switch between facilitation and suppression occurs]{Time-course
       of neural and synaptic projection responses under four
       conditions, demonstrating how a contrast-dependent switch
-      between facilitation and suppression occurs. A) In the
+      between facilitation and suppression occurs. Visualizes how
+      inerneuron activity and lateral excitatory projection affect the
+      response of the excitatory projection (in red). A) In the
       low-contrast iso-orientation condition, lateral excitation
       exceeds the activation of the V1 Sst population, resulting in
       facilitation. B) In the low-contrast cross-orientation
@@ -676,7 +669,6 @@ flanker activation in the same stimulus condition but more importantly
 it is also elevated when compared to the iso-orientation condition
 where all flankers have the same orientation.
 
-% jbednar: color key?
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/lespi/Flanker_Popout.pdf}
@@ -691,12 +683,12 @@ where all flankers have the same orientation.
       but pops out when surrounded by cross-oriented flankers.
       %% jbednar: doesn't there need to be a third case, of no
       %% surround, to say whether it's really pop-out or just lack of
-      suppression?  The averaged responses highlight pop-out of the
-      target stimulus from the background in the cross-orientation
-      condition, but not the iso-orientation condition. Results from
-      model trained on treeshrew dataset.}
-        % jbednar: could explain those curves better; it takes a while
-        % to figure out which is which
+      suppression?  The average response in the target region in both
+      conditions is represented by the solid lines, while the annulus
+      region is shown as dotted lines. The averaged responses
+      highlight pop-out of the target stimulus from the background in
+      the cross-orientation condition, but not the iso-orientation
+      condition. Results from model trained on treeshrew dataset.}
 	\label{Flanker_PopOut}
 \end{figure}
 
@@ -706,20 +698,18 @@ In this chapter we introduced the LESPI model as an extension of the
 models presented in previous chapters, demonstrating how the model
 will exhibit many of the contextual-modulation effects that are known
 to occur in the primary visual cortex. Unlike other
-surround-modulation models, this model explains mechanistically how the
-long-range patchy excitatory connections emerge in the model, and how a
-specific class of inhibitory neurons can explain contrast- and
+surround-modulation models, this model explains mechanistically how
+the long-range patchy excitatory connections emerge in the model, and
+how a specific class of inhibitory neurons can explain contrast- and
 context-dependent changes in surround modulation.
 
-Using standard experimental paradigms for assessing
-surround modulation in the primary visual cortex, we show that
-long-range lateral connectivity targeting both
-excitatory and inhibitory neurons can provide a good match to
-electrophysiological and psychophysical results. The model allows
-inspecting the responses of every single neuron, providing
-comprehensive predictions for how neural responses are modulated.
-%% jbednar: Need to put in more predictions in all the discussion
-%% sections, preferably more concrete than this one!
+Using standard experimental paradigms for assessing surround
+modulation in the primary visual cortex, we show that long-range
+lateral connectivity targeting both excitatory and inhibitory neurons
+can provide a good match to electrophysiological and psychophysical
+results. The model allows inspecting the responses of every single
+neuron, providing comprehensive predictions for how neural responses
+are modulated.
 
 \subsection{Feature-dependent modulation}
 

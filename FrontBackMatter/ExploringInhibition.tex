@@ -109,7 +109,7 @@ between the populations to ensure suitable overall levels of activity
 in the network. Secondly, we keep the effect of the inhibition
 divisive, both for each other and when targeting pyramidal cells.
 
-\subsubsection{Activation}
+\subsubsection*{Activation}
 
 The activation for both the excitatory and inhibitory population is
 given by:
@@ -134,7 +134,7 @@ where $\eta_{HE}$ is the input from the horizontal excitatory
 projection. The full set of parameters for the SEPI model are list in
 Appendix \ref{Appendix:Parameters}.
 
-\subsubsection{Hysteresis}
+\subsubsection*{Hysteresis}
 
 In order to control the temporal properties of the PV population we
 introduce a hysteresis term, which will be disabled in the final
@@ -166,7 +166,7 @@ are a variety of measures to assess map properties, but we will focus
 on four specific measures in particular---smoothness, stability,
 selectivity and pinwheel density.
 
-\subsubsection{Pinwheel density}
+\subsubsection*{Pinwheel density}
 
 Interestingly, it has been found that experimentally measured
 orientation maps share a fundamental property across species: pinwheel
@@ -192,7 +192,7 @@ to arrive at the pinwheel density.  \cite{Stevens2013} introduced
 pinwheel density as a numerical metric for the biological accuracy of
 a map, for which it works well because it has a clear target value.
 
-\subsubsection{Orientation Selectivity}
+\subsubsection*{Orientation Selectivity}
 
 When measuring an orientation map using the protocol outlined in
 Figure~\ref{ORMeasurement}, two components are returned. The first is
@@ -204,7 +204,7 @@ provides a simple metric to assess how selective a neuron is, and can
 easily be averaged across all neurons in a central region to get an
 average selectivity value.
 
-\subsubsection{Stability}
+\subsubsection*{Stability}
 
 The stability of orientation maps is determined by determining the
 average orientation similarity index of the orientation map over the
@@ -230,7 +230,7 @@ but in conjunction with other measures the stability metric is helpful
 for evaluating the effect of changing specific parameters for a given
 model.
 
-\subsubsection{Local Homogeneity Index}
+\subsubsection*{Local Homogeneity Index}
 
 The local homogeneity index (LHI) was first introduced by
 \cite{Nauhaus2008} as measure of the local smoothness of the map. It
@@ -253,7 +253,7 @@ determines the spatial scale of the analysis. In their experiments
 \cite{Nauhaus2008} used $\sigma=180\mu m$ to match the spatial extent
 of dendritic fields in both cat and monkey cortex.
 
-\subsubsection{Center-of-Gravity Distortion}
+\subsubsection*{Center-of-Gravity Distortion}
 
 Since we have access to all the weights in the model, we can easily compute
 the center-of-gravity (CoG) of the afferent weights relative to the
@@ -359,7 +359,7 @@ activity and thereby sharpen the orientation tuning
 among this population should disrupt map development, which is a
 prediction that we will test in the model.
 
-\subsubsection{Linearity and time profile of inhibitory responses}
+\subsubsection*{Linearity and time profile of inhibitory responses}
 
 To help understand how the PV population affects the behavior of the
 model, variants of the model were launched using different PV
@@ -374,19 +374,22 @@ based on the metrics outlined in Section~\ref{metrics}.
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/sepi/SEPI_Linearity.pdf}
-	\caption{Parameter exploration to determine how the linearity and
-      time constant of inhibitory responses affect development. A) A
-      measure of stability of the model over time, integrating the
-      similarity index of the model over time. B) Orientation
-      selectivity in the model measured using orientation map
-      measurements. C) The average local homogeneity index measuring
-      the smoothness of the map at a particular spatial scale. D)
-      Pinwheel density of the model, which should approach $\pi$ for a
-      perfect map. E) The Center-of-gravity (CoG) distortion provides
-      a measure of how much the retinotopy in the model has been
-      disrupted.  The model maps match biological results only when
-      the PV exponent is 1 (linear response) and does not respond too
-      slowly.}
+	\caption[Analysis of development in SEPI model when varying time
+      constant and linearity of responses]{Parameter exploration to
+      determine how the linearity and time constant of inhibitory
+      responses affect development. A) A measure of stability of the
+      model over time, integrating the similarity index of the model
+      over time. B) Orientation selectivity in the model measured
+      using orientation map measurements. C) The average local
+      homogeneity index measuring the smoothness of the map at a
+      particular spatial scale. D) Pinwheel density of the model,
+      which should approach $\pi$ for a perfect map. E) The
+      Center-of-gravity (CoG) distortion provides a measure of how
+      much the retinotopy in the model has been disrupted. The color
+      mapping was chosen to match Figure \ref{MetricPlots} and
+      simplify comparison. The model maps match biological results
+      only when the PV exponent is 1 (linear response) and does not
+      respond too slowly.}
 	\label{SEPILinearity}
 \end{figure}
 
@@ -422,7 +425,9 @@ effects until the response is very slow.
 	\caption{A correlation matrix of the various dependent and
       independent variables of the linearity analysis. Plots the
       Pearson correlation of the various metrics with each other,
-      showing how these metrics are related.}
+      showing how these metrics are related. Highlights the strong
+      correlation between a super-linear response and high
+      selectivity, stability and retinotopic distortions.}
 	\label{SEPILinearityCorr}
 \end{figure}
 
@@ -517,7 +522,10 @@ broader orientation tuning in the inhibitory PV population.
         \includegraphics[width=1.0\textwidth]{./results/sepi/SEPI_Inh_OR_Distributions.pdf}
 	\caption{Spatial distribution of weights targeting A)
       iso-orientation regions, B) oblique-orientation regions and C)
-      cross-orientation regions.}
+      cross-orientation regions. Inhibitory neurons in the SEPI model
+      have a much broader distribution of connections in the
+      orientation domain, more closely matching \cite{Kisvarday1997a}
+      than the SCAL model.}
 	\label{SEPI_OR_Distributions}
 \end{figure}
 
@@ -539,7 +547,9 @@ not cat, which is exactly what was desired.
         \includegraphics[width=0.6\textwidth]{./results/sepi/SEPI_LHI.pdf}
 	\caption{Local homogeneity index against tuning width in the SEPI
       model compared to experimental results from macaque monkey and
-      cat. Reproduced from \cite{Nauhaus2008}.}
+      cat. Reproduced from \cite{Nauhaus2008}. Provides another
+      confirmation of appropriate spatial calibration, as the LHI is
+      dependent on the scale of orientation columns.}
 	\label{SEPILHI}
 \end{figure}
 
@@ -554,7 +564,7 @@ can robustly develop even in the presence of the long-range patchy
 connections that are so characteristic of pyramidal cells in layer 2/3
 of the cortex.
 
-\subsubsection{Robustness to long-range excitation}
+\subsubsection*{Robustness to long-range excitation}
 
 At this point two separate but very similar models have been
 introduced, SCAL and SEPI, which differ mostly in that the latter has
