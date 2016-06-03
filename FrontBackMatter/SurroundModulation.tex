@@ -40,17 +40,18 @@ sparsity by losing information about the input, while feature-specific
 will reduce the number of neurons responding to each contour
 separately.
 
-These considerations suggest a difference between short-range interactions, where the
-cortex is trying to ensure it achieves maximal coverage of the feature
-space, and long-range interactions, where the neuron is competing to
-represent the stimulus efficiently, i.e., by using a
-sparse code. In the previous models, PV inhibition drove the local
-competition, resulting in a smooth coverage of the visual space with
-orientation feature detectors, forming an orientation map. Since the PV
-neurons act over a local range and are not highly tuned in the
+These considerations suggest a difference between short-range
+interactions, where the cortex is trying to ensure it achieves maximal
+coverage of the feature space, and long-range interactions, where the
+neuron is competing to represent the stimulus efficiently, i.e., by
+using a sparse code. In the previous models, PV inhibition drove the
+local competition, resulting in a smooth coverage of the visual space
+with orientation feature detectors, forming an orientation map. Since
+the PV neurons act over a local range and are not highly tuned in the
 orientation domain, they are generally isotropic in the spatial
 distribution and large enough to cover neurons with a wide range of
-feature preferences, and thus cannot mediate feature-specific modulation.
+feature preferences, and thus cannot mediate feature-specific
+modulation.
 
 Interestingly, the next-most-common type of inhibitory interneurons
 has properties that do seem suitable for mediating specific modulation.
@@ -142,6 +143,9 @@ responses among this population a hysteresis term is added. In this
 way this population responds strongly after sustained and strong local
 and long-range stimulation.
 
+The full set of parameters for the SEPI model are list in Appendix
+\ref{Appendix:Parameters}.
+
 \subsubsection{Excitatory Activation}
 
 The influence of the aggregate long-range excitatory and di-synaptic
@@ -162,14 +166,14 @@ and the surround-modulation term $\eta_{SM}$ is defined as:
 \end{equation}
 %%
 where $\eta_{HE}$ represents the long-range lateral excitatory
-contribution and $\eta_{S}$ is the Sst inhibitory contribution. In
-the SEPI model the $\eta_{SM}$ term simply reduces to 1, eliminating
-all long-range interactions. The surround-modulation term provides
-gain when excitation exceeds inhibition and shunting inhibition when
-the reverse is true. As such, this term provides a convenient
-abstraction to model the modulatory influence of the dendritic
-integration of long-range inputs, although in reality they will
-provide both multiplicative/divisive and additive/subtractive effects.
+contribution and $\eta_{S}$ is the Sst inhibitory contribution. In the
+SEPI model the $\eta_{SM}$ term simply reduces to 1, eliminating all
+long-range interactions. The surround-modulation term provides gain
+when excitation exceeds inhibition and shunting inhibition when the
+reverse is true. As such, this term provides a convenient abstraction
+to model the modulatory influence of the dendritic integration of
+long-range inputs, although in reality they will provide both
+multiplicative/divisive and additive/subtractive effects.
 
 \subsubsection{Inhibitory Sst Activation}
 
