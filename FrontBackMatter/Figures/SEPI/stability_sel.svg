@@ -1,0 +1,3494 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="863.13824"
+   height="374.13031"
+   id="svg217479"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="tuning_curves.svg">
+  <defs
+     id="defs217481"
+     style="stroke-linecap:butt;stroke-linejoin:round">
+    <clipPath
+       id="p2ffeafdf5c">
+      <rect
+         id="rect218561"
+         y="34.755501"
+         x="59.736561"
+         width="223.2"
+         height="223.2"
+         style="stroke-linecap:butt;stroke-linejoin:round" />
+    </clipPath>
+    <clipPath
+       id="pee9969e54c">
+      <rect
+         id="rect218558"
+         y="34.755501"
+         x="394.53656"
+         width="223.2"
+         height="223.2"
+         style="stroke-linecap:butt;stroke-linejoin:round" />
+    </clipPath>
+    <style
+       id="style217491"
+       type="text/css">
+*{stroke-linecap:butt;stroke-linejoin:round;}
+  </style>
+    <clipPath
+       id="p92da7d893d">
+      <rect
+         id="rect221271"
+         y="114.99207"
+         x="215.0451"
+         width="223.2"
+         height="223.2"
+         style="stroke-linecap:butt;stroke-linejoin:round" />
+    </clipPath>
+    <clipPath
+       id="p1de978af26">
+      <rect
+         id="rect221268"
+         y="114.99207"
+         x="549.84509"
+         width="223.2"
+         height="223.2"
+         style="stroke-linecap:butt;stroke-linejoin:round" />
+    </clipPath>
+    <style
+       id="style220129"
+       type="text/css">
+*{stroke-linecap:butt;stroke-linejoin:round;}
+  </style>
+    <defs
+       id="defs220929">
+      <path
+         id="AndaleMono-43"
+         d="M 52.2969,4.29688 Q 44.1875,-1.3125 33.5,-1.3125 q -13.375,0 -20.3438,9.17188 -6.95308,9.18752 -6.95308,26.56252 0,16.7969 6.73438,26.2969 6.7344,9.5 20.5625,9.5 4.9844,0 9.8594,-1.2813 4.8906,-1.2656 7.8594,-3.3594 l -2.6407,-6.2969 q -6.875,3.9063 -15.0781,3.9063 -9.5312,0 -14.1719,-6.9219 -4.625,-6.9062 -4.625,-21.8437 0,-28.70315 18.7969,-28.70315 7.9531,0 16.3125,4.87505 z"
+         inkscape:connector-curvature="0"
+         style="stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         id="AndaleMono-66"
+         d="m 50.2031,68.1094 -2.0156,-6.1875 q -5.4063,1.5625 -9.7031,1.5625 -4.1094,0 -5.6563,-2.3282 -1.5312,-2.3124 -1.5312,-9.3437 l 0,-0.9375 17.0937,0 0,-6.5938 -17.0937,0 0,-44.2812 -7.6094,0 0,44.2812 -12.7969,0 0,6.5938 12.7969,0 0,1.7188 q 0,9.7187 3.3125,13.625 3.3281,3.9062 11.4844,3.9062 5.2656,0 11.7187,-2.0156"
+         inkscape:connector-curvature="0"
+         style="stroke-linecap:butt;stroke-linejoin:round" />
+      <path
+         id="AndaleMono-50"
+         d="m 12.5,68.8906 17.4844,0 q 9.9062,0 15.8594,-4.9844 5.9687,-4.9687 5.9687,-13.7031 0,-8.7969 -5.9375,-14.0469 -5.9375,-5.25 -15.5469,-5.25 l -9.8125,0 L 20.5156,0 12.5,0 z m 8.0156,-31 8.6875,0 q 14.1094,0 14.1094,11.8125 0,5.4688 -3.8437,8.8438 -3.8282,3.375 -9.875,3.375 l -9.0782,0 z"
+         inkscape:connector-curvature="0"
+         style="stroke-linecap:butt;stroke-linejoin:round" />
+    </defs>
+    <defs
+       id="defs220539">
+      <path
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         inkscape:connector-curvature="0"
+         d="M 57.1719,68.8906 34.7188,0 25.0938,0 2.59375,68.8906 l 8.39065,0 L 29.8906,9.28125 48.875,68.8906 z"
+         id="AndaleMono-56" />
+      <path
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         inkscape:connector-curvature="0"
+         d="m 44,23.7812 -29.0156,0 0,7.4219 29.0156,0 z"
+         id="AndaleMono-2d" />
+      <path
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         inkscape:connector-curvature="0"
+         d="M 48.4844,0 12.5,0 l 0,68.8906 35.6875,0 0,-6.9687 -27.6719,0 0,-21.3438 26.6094,0 0,-6.9843 -26.6094,0 0,-26.60942 27.9688,0 z"
+         id="AndaleMono-45" />
+      <path
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         inkscape:connector-curvature="0"
+         d="M 51.5156,0 42.9219,0 29.2969,19.9219 15.1875,0 7.07812,0 25.2031,25.4844 7.07812,50.875 l 8.74998,0 L 29.5,31.1094 43.4062,50.875 l 8.1094,0 L 33.5,25.7812 z"
+         id="AndaleMono-78" />
+    </defs>
+    <defs
+       id="defs220661">
+      <path
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         inkscape:connector-curvature="0"
+         d="M 49.6094,0 42,0 42,7.51562 q -8.2031,-8.73437 -17.2969,-8.73437 -14.2969,0 -14.2969,17.32815 l 0,34.7656 7.6094,0 0,-32.5625 q 0,-6.5 2.0469,-9.70312 2.0625,-3.1875 6.9375,-3.1875 6.9844,0 15,8.68752 l 0,36.7656 7.6094,0 z"
+         id="AndaleMono-75" />
+      <path
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         inkscape:connector-curvature="0"
+         d="m 10.2031,68.8906 13.5781,0 q 13.5313,0 21.6719,-9.2031 8.1563,-9.2031 8.1563,-25.2656 Q 53.6094,18.0156 45.3281,9 37.0625,0 24.125,0 L 10.2031,0 z m 8.0157,-61.90622 5.6562,0 q 9.8125,0 15.5312,7.26562 5.7188,7.2812 5.7188,20.1719 0,12.7969 -5.75,20.1406 -5.7344,7.3594 -15.5,7.3594 l -5.6562,0 z"
+         id="AndaleMono-44" />
+      <path
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         inkscape:connector-curvature="0"
+         d="m 53.0781,41.8906 -46.18748,0 0,6.4063 46.18748,0 z m 0,-19.5781 -46.18748,0 0,6.4063 46.18748,0 z"
+         id="AndaleMono-3d" />
+    </defs>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="336.07042"
+     inkscape:cy="567.6489"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata217484">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(7.193091,-152.49374)">
+    <g
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       id="patch_1"
+       transform="matrix(1.25,0,0,1.25,-56.682236,211.77433)">
+      <path
+         inkscape:connector-curvature="0"
+         d="m 0,293.512 799.263,0 L 799.263,0 0,0 z"
+         style="fill:#ffffff;stroke-linecap:butt;stroke-linejoin:round"
+         id="path217495" />
+    </g>
+    <use
+       id="use220547"
+       xlink:href="#AndaleMono-20"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+    <use
+       id="use220559"
+       xlink:href="#AndaleMono-20"
+       x="360.05859"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+    <use
+       id="use220583"
+       xlink:href="#AndaleMono-20"
+       x="1080.1758"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+    <use
+       id="use220607"
+       xlink:href="#AndaleMono-20"
+       x="1800.293"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+    <use
+       id="use220611"
+       xlink:href="#AndaleMono-20"
+       x="1920.3125"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+    <use
+       id="use220613"
+       xlink:href="#AndaleMono-20"
+       x="1980.3223"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+    <use
+       id="use220637"
+       xlink:href="#AndaleMono-20"
+       x="2700.4395"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+    <use
+       height="1"
+       width="1"
+       y="0"
+       x="0"
+       style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+       xlink:href="#AndaleMono-20"
+       id="use220936"
+       transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)" />
+    <use
+       height="1"
+       width="1"
+       y="0"
+       style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+       x="360.05859"
+       xlink:href="#AndaleMono-20"
+       id="use220948"
+       transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)" />
+    <use
+       height="1"
+       width="1"
+       y="0"
+       style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+       x="1080.1758"
+       xlink:href="#AndaleMono-20"
+       id="use220972"
+       transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)" />
+    <use
+       height="1"
+       width="1"
+       y="0"
+       style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+       x="1740.2832"
+       xlink:href="#AndaleMono-20"
+       id="use220994"
+       transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)" />
+    <use
+       height="1"
+       width="1"
+       y="0"
+       style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+       x="2160.3516"
+       xlink:href="#AndaleMono-20"
+       id="use221008"
+       transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)" />
+    <use
+       id="use221039"
+       xlink:href="#AndaleMono-20"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)" />
+    <use
+       id="use221051"
+       xlink:href="#AndaleMono-20"
+       x="360.05859"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)" />
+    <use
+       id="use221075"
+       xlink:href="#AndaleMono-20"
+       x="1080.1758"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)" />
+    <use
+       id="use221097"
+       xlink:href="#AndaleMono-20"
+       x="1740.2832"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)" />
+    <use
+       id="use221111"
+       xlink:href="#AndaleMono-20"
+       x="2160.3516"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)" />
+    <g
+       id="g223894"
+       style="stroke-linecap:butt;stroke-linejoin:round">
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         id="patch_2">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 215.045,338.192 223.2,0 0,-223.2 -223.2,0 z"
+           style="fill:#bcbcbc;stroke-linecap:butt;stroke-linejoin:round"
+           id="path220137" />
+      </g>
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         id="line2d_1">
+        <path
+           inkscape:connector-curvature="0"
+           clip-path="url(#p92da7d893d)"
+           d="m 215.045,290.188 11.16,48.004 11.16,-53.621 11.16,-57.242 11.16,-39.448 11.16,-16.611 11.16,-18.596 11.16,-10.275 11.16,-10.576 11.16,-0.326 11.16,-3.284 11.16,-3.941 11.16,-2.846 11.16,-0.443 11.16,-0.307 11.16,-2.398 11.16,1.509 11.16,-3.89 11.16,2.063 11.16,-2.304 11.16,-0.664"
+           style="fill:none;stroke:#e24a33;stroke-width:2;stroke-linecap:square;stroke-linejoin:round"
+           id="path220140" />
+      </g>
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         id="matplotlib.axis_1">
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="xtick_1">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_2">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p92da7d893d)"
+               d="m 215.045,338.192 0,-223.2"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220145" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_3">
+            <defs
+               id="defs220148">
+              <path
+                 inkscape:connector-curvature="0"
+                 d="M 0,0 0,0"
+                 id="m8bc147ca23"
+                 style="stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round" />
+            </defs>
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220151">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="215.0451"
+                 xlink:href="#m8bc147ca23"
+                 y="338.19208"
+                 id="use220153" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_1">
+            <!-- 0 -->
+            <defs
+               id="defs220156">
+              <path
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0"
+                 d="m 29.8906,70.2188 q 10.9375,0 16.8125,-9.4063 5.8907,-9.3906 5.8907,-26.3906 0,-16.4531 -5.7188,-26.09378 -5.7188,-9.64062 -16.9844,-9.64062 -10.8906,0 -16.8125,9.375 -5.90622,9.375 -5.90622,26.3594 0,16.5 5.73432,26.1406 5.75,9.6563 16.9844,9.6563 m 0,-64.50005 q 7.2188,0 10.7032,6.85935 3.5,6.8594 3.5,21.8438 0,15.0469 -3.5,21.8593 -3.4844,6.8126 -10.7032,6.8126 -7.1406,0 -10.6562,-6.9844 -3.5156,-6.9844 -3.5156,-21.6875 0,-14.8907 3.4843,-21.7969 3.5,-6.90625 10.6875,-6.90625 M 29.6875,41.75 q 3.0781,0 5.2031,-2.125 2.125,-2.125 2.125,-5.2031 0,-3.1719 -2.1562,-5.4531 -2.1406,-2.2657 -5.1719,-2.2657 -2.9844,0 -5.1094,2.2657 -2.1093,2.2812 -2.1093,5.4531 0,3.125 2.0624,5.2187 2.0782,2.1094 5.1563,2.1094"
+                 id="AndaleMono-30" />
+            </defs>
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,212.09268,353.14784)"
+               id="g220159">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-30"
+                 id="use220161" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="xtick_2">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_4">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p92da7d893d)"
+               d="m 259.685,338.192 0,-223.2"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220165" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_5">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220168">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="259.68509"
+                 xlink:href="#m8bc147ca23"
+                 y="338.19208"
+                 id="use220170" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_2">
+            <!-- 4000 -->
+            <defs
+               id="defs220173">
+              <path
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0"
+                 d="m 52.3906,15.9219 -8.5,0 0,-15.9219 -8,0 0,15.9219 -29.98435,0 0,6.0937 27.20315,46.875 10.7812,0 0,-45.9844 8.5,0 z m -16.5,6.9843 0,38.0782 -21.875,-38.0782 z"
+                 id="AndaleMono-34" />
+            </defs>
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,244.94737,353.14784)"
+               id="g220176">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-34"
+                 id="use220178" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-30"
+                 id="use220180" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-30"
+                 id="use220182" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-30"
+                 id="use220184" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="xtick_3">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_6">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p92da7d893d)"
+               d="m 304.325,338.192 0,-223.2"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220188" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_7">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220191">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="304.3251"
+                 xlink:href="#m8bc147ca23"
+                 y="338.19208"
+                 id="use220193" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_3">
+            <!-- 8000 -->
+            <defs
+               id="defs220196">
+              <path
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0"
+                 d="m 36.9219,37.7969 q 7.0312,-2.0469 10.9062,-6.9844 3.875,-4.9375 3.875,-11.5313 0,-9.4687 -6.2812,-15.0312 -6.2657,-5.5625 -15.4375,-5.5625 -9.625,0 -15.7969,5.60938 -6.17188,5.60937 -6.17188,14.89062 0,6.5469 3.99998,11.5156 4,4.9844 11.1719,7.0938 -5.7031,1.4687 -9.1563,5.6406 -3.4374,4.1719 -3.4374,9.3437 0,6.6407 5.2656,12.0313 5.2812,5.4063 13.9218,5.4063 8.5469,0 14.1407,-5.375 5.5937,-5.375 5.5937,-12.0626 0,-5.0312 -3.5156,-9.25 -3.5156,-4.2187 -9.0781,-5.7343 m -7.1407,3.3125 q 0.25,0 2.3438,0.5781 2.1094,0.5937 3.5938,1.4531 1.4843,0.8594 2.75,2.1719 1.2812,1.3125 2.0624,3.0937 0.7813,1.7969 0.7813,3.9844 0,4.6875 -3.375,7.7813 -3.3594,3.1093 -8.1563,3.1093 -4.6406,0 -7.9687,-3.1718 Q 18.5,56.9375 18.5,52.3906 q 0,-2.875 1.2031,-5.0312 1.2031,-2.1406 2.9844,-3.4688 1.7813,-1.3125 4.0937,-2.0468 2.3282,-0.7344 3,-0.7344 m 0,-6.8282 q -13.375,-3.9062 -13.375,-14.7031 0,-6.2969 4.0469,-10.0781 4.0625,-3.78125 9.5313,-3.78125 5.6562,0 9.5312,3.73437 3.8906,3.73438 3.8906,10.12498 0,4.8438 -2.6874,8.6719 -2.6876,3.8281 -10.9376,6.0312"
+                 id="AndaleMono-38" />
+            </defs>
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,289.72447,353.14784)"
+               id="g220199">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-38"
+                 id="use220201" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-30"
+                 id="use220203" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-30"
+                 id="use220205" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-30"
+                 id="use220207" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="xtick_4">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_8">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p92da7d893d)"
+               d="m 348.965,338.192 0,-223.2"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220211" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_9">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220214">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="348.96509"
+                 xlink:href="#m8bc147ca23"
+                 y="338.19208"
+                 id="use220216" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_4">
+            <!-- 12000 -->
+            <defs
+               id="defs220219">
+              <path
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0"
+                 d="m 49.7031,0 -36.2187,0 0,6.98438 14.5937,0 0,53.51562 -13.7656,-6.8906 0,8.0156 14.8906,7.6562 6.875,0 0,-62.29682 13.625,0 z"
+                 id="AndaleMono-31" />
+              <path
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0"
+                 d="m 47.9062,0 -37.8906,0 0,5.8125 q 14.4063,16.0625 18.7032,21.5313 4.2968,5.4687 6.9687,11.4687 2.6875,6.0156 2.6875,11.9687 0,5.7657 -3.5,9.0782 -3.4844,3.3281 -9.7812,3.3281 -4.8282,0 -12.9844,-2.9844 l -1.125,6.8907 q 7.375,3.125 15.4375,3.125 9.2187,0 14.8593,-5.2032 5.6407,-5.2031 5.6407,-13.8906 0,-6.2031 -2.9063,-12.3125 Q 41.1094,32.7188 36.5625,27.0938 32.0312,21.4844 18.8906,6.98438 l 29.0156,0 z"
+                 id="AndaleMono-32" />
+            </defs>
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,330.81893,353.14784)"
+               id="g220223">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-31"
+                 id="use220225" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-32"
+                 id="use220227" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-30"
+                 id="use220229" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-30"
+                 id="use220231" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="240.03906"
+                 xlink:href="#AndaleMono-30"
+                 id="use220233" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="xtick_5">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_10">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p92da7d893d)"
+               d="m 393.605,338.192 0,-223.2"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220237" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_11">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220240">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="393.6051"
+                 xlink:href="#m8bc147ca23"
+                 y="338.19208"
+                 id="use220242" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_5">
+            <!-- 16000 -->
+            <defs
+               id="defs220245">
+              <path
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0"
+                 d="m 17.6719,35.8906 q 6.4531,5.2188 14.0156,5.2188 8.75,0 14.5781,-5.5938 5.8282,-5.5781 5.8282,-14.4218 0,-9.7188 -5.1719,-16.06255 Q 41.75,-1.3125 33.1094,-1.3125 q -11.0313,0 -17.4844,10.125 -6.4375,10.1406 -6.4375,24.7813 0,15.625 6.7031,26.125 6.7188,10.5 18.3906,10.5 8.0469,0 13.9063,-2.3907 l -1.2656,-7.1406 q -6.7813,2.5 -12.4063,2.5 -7.9531,0 -12.4062,-7.625 -4.4375,-7.6094 -4.4375,-19.6719 M 17.9219,29 q 0,-8.8281 4.1406,-16.0625 4.1563,-7.21875 10.4531,-7.21875 5.3282,0 8.2032,3.90625 2.8906,3.9062 2.8906,10.7812 0,6.3594 -3.1875,10.0157 Q 37.25,34.0781 31.5,34.0781 24.0312,34.0781 17.9219,29"
+                 id="AndaleMono-36" />
+            </defs>
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,375.45893,353.14784)"
+               id="g220248">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-31"
+                 id="use220250" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-36"
+                 id="use220252" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-30"
+                 id="use220254" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-30"
+                 id="use220256" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="240.03906"
+                 xlink:href="#AndaleMono-30"
+                 id="use220258" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="xtick_6">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_12">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p92da7d893d)"
+               d="m 438.245,338.192 0,-223.2"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220262" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_13">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220265">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="438.24509"
+                 xlink:href="#m8bc147ca23"
+                 y="338.19208"
+                 id="use220267" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_6">
+            <!-- 20000 -->
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,419.87346,353.14784)"
+               id="g220270">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-32"
+                 id="use220272" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-30"
+                 id="use220274" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-30"
+                 id="use220276" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-30"
+                 id="use220278" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="240.03906"
+                 xlink:href="#AndaleMono-30"
+                 id="use220280" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="text_7">
+          <!-- Time -->
+          <defs
+             id="defs220283">
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="m 33.2969,70.125 q 2.1562,0 3.6719,-1.5469 1.5156,-1.5312 1.5156,-3.6875 0,-2.25 -1.5,-3.7656 -1.4844,-1.5 -3.6875,-1.5 -2,0 -3.5469,1.5781 -1.5312,1.5938 -1.5312,3.6875 0,2.1094 1.5312,3.6719 1.5469,1.5625 3.5469,1.5625 M 37.0156,0 l -7.625,0 0,44.2812 -14.9844,0 0,6.5938 22.6094,0 z"
+               id="AndaleMono-69" />
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="m 55.3281,62.4062 -21.25,0 0,-62.4062 -7.9531,0 0,62.4062 -21.34375,0 0,6.4844 50.54685,0 z"
+               id="AndaleMono-54" />
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="m 53.7188,0 -7.625,0 0,33.4062 q 0,12.1094 -4.4844,12.1094 -2.2969,0 -5.0625,-4.1875 -2.75,-4.1719 -2.75,-4.6093 l 0,-36.7188 -7.5781,0 0,33.4062 q 0,12.1094 -4.5313,12.1094 -2.25,0 -5.0156,-4.1875 -2.75,-4.1719 -2.75,-4.6093 l 0,-36.7188 -7.62502,0 0,50.875 7.32812,0 0,-7.6562 q 2.1406,4.0468 5.0938,6.4531 2.9687,2.4219 5.8906,2.4219 3.0781,0 5.5156,-2.4219 2.4375,-2.4063 3.375,-6.4531 2.1406,4.0468 5.125,6.4531 2.9844,2.4219 5.8594,2.4219 9.2344,0 9.2344,-16.5 z"
+               id="AndaleMono-6d" />
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="m 51.2188,25.2031 -34.9063,0 q 0,-8.6562 5,-14.2656 5,-5.60938 12.2813,-5.60938 6.9374,0 14.3124,2.48438 L 49.2188,1.70312 Q 42.4844,-1.3125 33.5,-1.3125 q -11.3281,0 -18.2656,7.26562 -6.93752,7.28128 -6.93752,19.64068 0,12.1093 6.21872,19.2968 6.2344,7.2032 16.0938,7.2032 8.7968,0 14.7031,-6.6876 5.9063,-6.6874 5.9063,-17.8124 z m -8.2969,6.1875 q 0,5.9688 -3.7188,10.0469 -3.7031,4.0781 -8.2969,4.0781 -5.9062,0 -9.7968,-3.9062 -3.875,-3.9063 -4.3125,-10.2188 z"
+               id="AndaleMono-65" />
+          </defs>
+          <g
+             style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+             transform="matrix(0.156,0,0,-0.156,308.97932,371.51103)"
+             id="g220289">
+            <use
+               height="1"
+               width="1"
+               y="0"
+               x="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               xlink:href="#AndaleMono-54"
+               id="use220291" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="60.009766"
+               xlink:href="#AndaleMono-69"
+               id="use220293" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="120.01953"
+               xlink:href="#AndaleMono-6d"
+               id="use220295" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="180.0293"
+               xlink:href="#AndaleMono-65"
+               id="use220297" />
+          </g>
+        </g>
+      </g>
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         id="matplotlib.axis_2">
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="ytick_1">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_14">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p92da7d893d)"
+               d="m 215.045,336.758 223.2,0"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220302" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_15">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220305">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="215.0451"
+                 xlink:href="#m8bc147ca23"
+                 y="336.7583"
+                 id="use220307" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_8">
+            <!-- 0.15 -->
+            <defs
+               id="defs220310">
+              <path
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0"
+                 d="M 21.1875,41.1094 Q 24.5156,42 27.6875,42 q 9.7656,0 15.4219,-5.9844 5.6718,-5.9844 5.6718,-14.9218 0,-9.375 -6.5937,-15.89068 -6.5937,-6.51562 -16.0625,-6.51562 -9.0312,0 -15.1406,3.01562 L 12.5938,8.5 q 6.6406,-2.78125 13.7187,-2.78125 6.3125,0 10.1875,4.04687 3.875,4.04688 3.875,11.32818 0,6.8906 -3.6562,10.5937 -3.6563,3.7187 -9.4219,3.7187 -4.2031,0 -8.2969,-1.6093 l -4.7969,2.1875 0,32.9062 31.5,0 0,-6.9687 -24.5156,0 z"
+                 id="AndaleMono-35" />
+              <path
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0"
+                 d="m 29.6875,11.1875 q 2.5937,0 4.3437,-1.76562 1.7657,-1.75 1.7657,-4.34376 0,-2.64062 -1.7813,-4.51562 -1.7812,-1.875 -4.3281,-1.875 -2.4844,0 -4.25,1.875 -1.75,1.875 -1.75,4.51562 0,2.64063 1.7344,4.375 1.7343,1.73438 4.2656,1.73438"
+                 id="AndaleMono-2e" />
+            </defs>
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,180.22979,339.92808)"
+               id="g220314">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-30"
+                 id="use220316" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-2e"
+                 id="use220318" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-31"
+                 id="use220320" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-35"
+                 id="use220322" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="ytick_2">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_16">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p92da7d893d)"
+               d="m 215.045,308.142 223.2,0"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220326" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_17">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220329">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="215.0451"
+                 xlink:href="#m8bc147ca23"
+                 y="308.14221"
+                 id="use220331" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_9">
+            <!-- 0.20 -->
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,179.73416,311.31197)"
+               id="g220334">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-30"
+                 id="use220336" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-2e"
+                 id="use220338" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-32"
+                 id="use220340" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-30"
+                 id="use220342" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="ytick_3">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_18">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p92da7d893d)"
+               d="m 215.045,279.526 223.2,0"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220346" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_19">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220349">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="215.0451"
+                 xlink:href="#m8bc147ca23"
+                 y="279.52609"
+                 id="use220351" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_10">
+            <!-- 0.25 -->
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,180.22979,282.69586)"
+               id="g220354">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-30"
+                 id="use220356" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-2e"
+                 id="use220358" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-32"
+                 id="use220360" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-35"
+                 id="use220362" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="ytick_4">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_20">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p92da7d893d)"
+               d="m 215.045,250.91 223.2,0"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220366" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_21">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220369">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="215.0451"
+                 xlink:href="#m8bc147ca23"
+                 y="250.90999"
+                 id="use220371" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_11">
+            <!-- 0.30 -->
+            <defs
+               id="defs220374">
+              <path
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 inkscape:connector-curvature="0"
+                 d="m 34.2812,37.0156 q 6.2969,-1.7656 10.0938,-6.4375 3.8125,-4.6562 3.8125,-10.4531 0,-9.0938 -7.0781,-15.26562 -7.0782,-6.17188 -16.6875,-6.17188 -8.2031,0 -14.70315,3.60938 l 1.56245,6.59374 q 6.7813,-3.17187 13.4219,-3.17187 6.25,0 10.6719,3.875 4.4219,3.89065 4.4219,9.98435 0,6.0157 -4.7344,9.7657 -4.7344,3.7656 -12.5469,3.7656 l -2.1094,0 0,6.5937 0.5938,0 q 7.5156,0 12.3906,3.5313 4.8906,3.5468 4.8906,9.5468 0,4.8907 -3.5156,7.6407 -3.5156,2.7656 -9.6718,2.7656 -5.3126,0 -11.9063,-2.8906 l -1.0781,6.8906 q 6.6406,3.0313 13.375,3.0313 9.2344,0 15.2187,-4.8594 5.9844,-4.8594 5.9844,-12.4844 0,-5.2656 -3.6406,-9.8281 -3.6407,-4.5625 -8.7657,-5.7344 z"
+                 id="AndaleMono-33" />
+            </defs>
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,179.73416,254.07975)"
+               id="g220377">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-30"
+                 id="use220379" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-2e"
+                 id="use220381" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-33"
+                 id="use220383" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-30"
+                 id="use220385" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="ytick_5">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_22">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p92da7d893d)"
+               d="m 215.045,222.294 223.2,0"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220389" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_23">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220392">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="215.0451"
+                 xlink:href="#m8bc147ca23"
+                 y="222.29388"
+                 id="use220394" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_12">
+            <!-- 0.35 -->
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,180.22979,225.46365)"
+               id="g220397">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-30"
+                 id="use220399" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-2e"
+                 id="use220401" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-33"
+                 id="use220403" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-35"
+                 id="use220405" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="ytick_6">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_24">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p92da7d893d)"
+               d="m 215.045,193.678 223.2,0"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220409" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_25">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220412">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="215.0451"
+                 xlink:href="#m8bc147ca23"
+                 y="193.67776"
+                 id="use220414" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_13">
+            <!-- 0.40 -->
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,179.73416,196.84754)"
+               id="g220417">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-30"
+                 id="use220419" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-2e"
+                 id="use220421" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-34"
+                 id="use220423" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-30"
+                 id="use220425" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="ytick_7">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_26">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p92da7d893d)"
+               d="m 215.045,165.062 223.2,0"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220429" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_27">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220432">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="215.0451"
+                 xlink:href="#m8bc147ca23"
+                 y="165.06166"
+                 id="use220434" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_14">
+            <!-- 0.45 -->
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,180.22979,168.23143)"
+               id="g220437">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-30"
+                 id="use220439" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-2e"
+                 id="use220441" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-34"
+                 id="use220443" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-35"
+                 id="use220445" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="ytick_8">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_28">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p92da7d893d)"
+               d="m 215.045,136.446 223.2,0"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220449" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_29">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220452">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="215.0451"
+                 xlink:href="#m8bc147ca23"
+                 y="136.44556"
+                 id="use220454" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_15">
+            <!-- 0.50 -->
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,179.73416,139.61532)"
+               id="g220457">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-30"
+                 id="use220459" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-2e"
+                 id="use220461" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-35"
+                 id="use220463" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-30"
+                 id="use220465" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="text_16">
+          <!--  Orientation Selectivity -->
+          <defs
+             id="defs220468">
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="M 49.5156,1.70312 Q 42.875,-1.3125 34.9062,-1.3125 q -12,0 -19.1562,7.29688 -7.15625,7.29682 -7.15625,19.40622 0,12.1094 7.20315,19.4063 7.2031,7.2969 18.9219,7.2969 7.6718,0 14.5937,-2.6719 l -2,-6.3125 q -6.9375,2.4062 -12.5,2.4062 -8.3906,0 -13.2969,-5.4218 -4.9062,-5.4219 -4.9062,-14.7032 0,-8.5 5.0781,-14.2812 5.0781,-5.78128 13.2187,-5.78128 6.4532,0 13.2813,2.48438 z"
+               id="AndaleMono-63" />
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="m 50.9844,0 -7.5782,0 q -0.9218,3.07812 -0.9218,8.20312 -6.5,-9.51562 -17.6719,-9.51562 -5.6719,0 -10,4.01562 Q 10.5,6.73438 10.5,13.0938 q 0,3.75 1.5156,6.625 1.5156,2.8906 4.4375,4.8593 2.9375,1.9844 7.125,3.125 4.2031,1.1563 9.9688,1.5938 l 8.5469,0.6875 0,2.4375 q 0,13.0937 -12.2032,13.0937 -2.8906,0 -7.3125,-1.25 -4.4062,-1.25 -7.5937,-2.9531 l -2,5.4687 q 10.4062,5.3126 19.3437,5.3126 17.375,0 17.375,-18.4063 l 0,-21.875 Q 49.7031,5.17188 50.9844,0 m -8.8906,15.0938 0,9.2187 Q 31.7812,23.3906 27.9531,22.5781 24.125,21.7812 21.3125,19.5781 18.5,17.3906 18.5,13.625 18.5,10.2031 20.8906,8.09375 23.2969,6 27,6 q 4.0625,0 8.0625,2.42188 4,2.42192 7.0313,6.67192"
+               id="AndaleMono-61" />
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="m 50.2031,2.29688 q -7.6719,-3.51563 -15.0937,-3.51563 -13.625,0 -13.625,14.40625 l 0,31.0937 -9.7656,0 0,6.5938 9.7656,0 0,13.9219 7.4218,0 0,-13.9219 17.2813,0 0,-6.5938 -17.2813,0 0,-29.0937 q 0,-4.6406 2.0469,-7.20312 2.0625,-2.5625 5.5781,-2.5625 6.25,0 12.3438,2.78124 z"
+               id="AndaleMono-74" />
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="M 52,50.875 32.7188,0 25.7812,0 6.59375,50.875 l 8.29685,0 14.4063,-40.4688 14.4062,40.4688 z"
+               id="AndaleMono-76" />
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="M 52,50.875 32.7188,0 q -4.2032,-11.2344 -8.3282,-15.6719 -4.125,-4.4531 -9.4062,-4.4531 -4.6875,0 -9.26565,1.7188 l 1.26563,6.0937 q 3.70312,-1.1719 6.64062,-1.1719 4.0938,0 6.7344,3.1875 Q 23,-7.125 25.6875,0.09375 L 6.59375,50.875 l 8.29685,0 14.4063,-40.5781 14.4062,40.5781 z"
+               id="AndaleMono-79" />
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="m 29.8906,70.2188 q 11.5625,0 17.6406,-9.1563 6.0782,-9.1563 6.0782,-26.6406 0,-17.375 -6.0625,-26.56252 Q 41.5,-1.3125 29.8906,-1.3125 18.3594,-1.3125 12.2812,7.84375 6.20312,17 6.20312,34.4219 q 0,17.4375 6.04688,26.6093 6.0625,9.1876 17.6406,9.1876 m 0,-64.50005 q 15.2344,0 15.2344,28.70315 0,28.7656 -15.2344,28.7656 -7.4218,0 -11.3125,-7.4531 -3.875,-7.4375 -3.875,-21.3125 0,-14.0157 3.8438,-21.3594 3.8593,-7.34375 11.3437,-7.34375"
+               id="AndaleMono-4f" />
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="m 46,0 -20.7969,0 0,62.3125 -13.2812,0 0,6.5781 20.8906,0 0,-62.29685 13.1875,0 z"
+               id="AndaleMono-6c" />
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="m 50.4844,49.5156 -3.0782,-7.3281 q -5.0156,2.2031 -8.6874,2.2031 -3.3594,0 -6.5938,-1.9375 -3.2188,-1.9219 -5.9375,-5.5156 -2.7031,-3.5937 -2.7031,-4.0313 l 0,-32.9062 -7.5625,0 0,50.875 7.5625,0 0,-10.2969 q 6.1094,11.5157 15.8281,11.5157 5.75,0 11.1719,-2.5782"
+               id="AndaleMono-72" />
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="m 29.9844,52.0938 q 10.5,0 16.6875,-7.3282 6.2031,-7.3125 6.2031,-19.2812 0,-12.0625 -6.2031,-19.43752 Q 40.4844,-1.3125 29.9844,-1.3125 19.4375,-1.3125 13.25,6.03125 7.07812,13.375 7.07812,25.4844 q 0,12.0156 6.20308,19.3125 6.2032,7.2969 16.7032,7.2969 m 0,-46.76568 q 6.9375,0 10.9375,5.85938 4,5.8594 4,14.2031 0,8.7969 -3.9531,14.4532 -3.9532,5.6718 -10.9844,5.6718 -7.0782,0 -10.9844,-5.5937 -3.9062,-5.5938 -3.9062,-14.5313 0,-8.5 3.9531,-14.2812 Q 23,5.32812 29.9844,5.32812"
+               id="AndaleMono-6f" />
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d=""
+               id="AndaleMono-20" />
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="m 49.7031,0 -7.6093,0 0,32.625 q 0,6.7812 -2.1719,9.8281 -2.1719,3.0625 -6.8125,3.0625 -6.9844,0 -15,-8.7031 L 18.1094,0 10.5,0 l 0,50.875 7.6094,0 0,-7.4688 q 8.2031,8.6876 17.2968,8.6876 14.2969,0 14.2969,-17.2813 z"
+               id="AndaleMono-6e" />
+            <path
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               inkscape:connector-curvature="0"
+               d="m 44.6719,61.2812 q -6.1407,2.0938 -11.6563,2.0938 -6.25,0 -10.1875,-2.8594 -3.9375,-2.8437 -3.9375,-8.125 0,-6.25 10.3125,-10.9844 7.6094,-3.5156 10.0781,-4.8906 2.4688,-1.3594 5,-3.75 2.5469,-2.3906 4.0782,-5.6406 1.5468,-3.25 1.5468,-7.2969 0,-10.06248 -6.7656,-15.60935 -6.7656,-5.53125 -15.9375,-5.53125 -8.8906,0 -15.5781,3.51562 l 1.6562,6.875 Q 21.1406,5.51562 27,5.51562 q 6.8438,0 10.9688,3.53126 4.125,3.54692 4.125,9.75002 0,4.5937 -2.6876,7.7812 -2.6874,3.2031 -9.9062,6.5313 -7.4219,3.4218 -9.6094,4.6562 -2.1718,1.25 -4.3281,3.4375 -2.1406,2.2031 -3.3125,4.9375 -1.1719,2.7344 -1.1719,5.9532 0,8.5468 6.1563,13.3281 6.1562,4.7969 15.5781,4.7969 6.8906,0 13.6719,-2.1094 z"
+               id="AndaleMono-53" />
+          </defs>
+          <g
+             style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+             transform="matrix(0,-0.156,-0.156,0,171.59466,338.31609)"
+             id="g220482">
+            <use
+               height="1"
+               width="1"
+               y="0"
+               x="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               xlink:href="#AndaleMono-20"
+               id="use220484" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="60.009766"
+               xlink:href="#AndaleMono-4f"
+               id="use220486" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="120.01953"
+               xlink:href="#AndaleMono-72"
+               id="use220488" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="180.0293"
+               xlink:href="#AndaleMono-69"
+               id="use220490" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="240.03906"
+               xlink:href="#AndaleMono-65"
+               id="use220492" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="300.04883"
+               xlink:href="#AndaleMono-6e"
+               id="use220494" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="360.05859"
+               xlink:href="#AndaleMono-74"
+               id="use220496" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="420.06836"
+               xlink:href="#AndaleMono-61"
+               id="use220498" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="480.07812"
+               xlink:href="#AndaleMono-74"
+               id="use220500" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="540.08789"
+               xlink:href="#AndaleMono-69"
+               id="use220502" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="600.09766"
+               xlink:href="#AndaleMono-6f"
+               id="use220504" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="660.10742"
+               xlink:href="#AndaleMono-6e"
+               id="use220506" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="720.11719"
+               xlink:href="#AndaleMono-20"
+               id="use220508" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="780.12695"
+               xlink:href="#AndaleMono-53"
+               id="use220510" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="840.13672"
+               xlink:href="#AndaleMono-65"
+               id="use220512" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="900.14648"
+               xlink:href="#AndaleMono-6c"
+               id="use220514" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="960.15625"
+               xlink:href="#AndaleMono-65"
+               id="use220516" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="1020.166"
+               xlink:href="#AndaleMono-63"
+               id="use220518" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="1080.1758"
+               xlink:href="#AndaleMono-74"
+               id="use220520" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="1140.1855"
+               xlink:href="#AndaleMono-69"
+               id="use220522" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="1200.1953"
+               xlink:href="#AndaleMono-76"
+               id="use220524" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="1260.2051"
+               xlink:href="#AndaleMono-69"
+               id="use220526" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="1320.2148"
+               xlink:href="#AndaleMono-74"
+               id="use220528" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="1380.2246"
+               xlink:href="#AndaleMono-79"
+               id="use220530" />
+          </g>
+        </g>
+      </g>
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         id="patch_3">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 215.045,338.192 223.2,0"
+           style="fill:none;stroke:#eeeeee;stroke-linecap:butt;stroke-linejoin:round"
+           id="path220533" />
+      </g>
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         id="patch_4">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 215.045,338.192 0,-223.2"
+           style="fill:none;stroke:#eeeeee;stroke-linecap:butt;stroke-linejoin:round"
+           id="path220536" />
+      </g>
+      <g
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         transform="translate(250,105)"
+         id="g223865">
+        <use
+           id="use220549"
+           xlink:href="#AndaleMono-56"
+           x="60.009766"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220551"
+           xlink:href="#AndaleMono-31"
+           x="120.01953"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220553"
+           xlink:href="#AndaleMono-45"
+           x="180.0293"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220555"
+           xlink:href="#AndaleMono-78"
+           x="240.03906"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220557"
+           xlink:href="#AndaleMono-63"
+           x="300.04883"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220561"
+           xlink:href="#AndaleMono-4f"
+           x="420.06836"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220563"
+           xlink:href="#AndaleMono-72"
+           x="480.07812"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220565"
+           xlink:href="#AndaleMono-69"
+           x="540.08789"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220567"
+           xlink:href="#AndaleMono-65"
+           x="600.09766"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220569"
+           xlink:href="#AndaleMono-6e"
+           x="660.10742"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220571"
+           xlink:href="#AndaleMono-74"
+           x="720.11719"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220573"
+           xlink:href="#AndaleMono-61"
+           x="780.12695"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220575"
+           xlink:href="#AndaleMono-74"
+           x="840.13672"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220577"
+           xlink:href="#AndaleMono-69"
+           x="900.14648"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220579"
+           xlink:href="#AndaleMono-6f"
+           x="960.15625"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220581"
+           xlink:href="#AndaleMono-6e"
+           x="1020.166"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220585"
+           xlink:href="#AndaleMono-53"
+           x="1140.1855"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220587"
+           xlink:href="#AndaleMono-65"
+           x="1200.1953"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220589"
+           xlink:href="#AndaleMono-6c"
+           x="1260.2051"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220591"
+           xlink:href="#AndaleMono-65"
+           x="1320.2148"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220593"
+           xlink:href="#AndaleMono-63"
+           x="1380.2246"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220595"
+           xlink:href="#AndaleMono-74"
+           x="1440.2344"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220597"
+           xlink:href="#AndaleMono-69"
+           x="1500.2441"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220599"
+           xlink:href="#AndaleMono-76"
+           x="1560.2539"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220601"
+           xlink:href="#AndaleMono-69"
+           x="1620.2637"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220603"
+           xlink:href="#AndaleMono-74"
+           x="1680.2734"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+        <use
+           id="use220605"
+           xlink:href="#AndaleMono-79"
+           x="1740.2832"
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           y="0"
+           width="1"
+           height="1"
+           transform="matrix(0.234,0,0,-0.234,-266.13661,79.639224)" />
+      </g>
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         id="patch_5">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 549.845,338.192 223.2,0 0,-223.2 -223.2,0 z"
+           style="fill:#bcbcbc;stroke-linecap:butt;stroke-linejoin:round"
+           id="path220700" />
+      </g>
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         id="line2d_30">
+        <path
+           inkscape:connector-curvature="0"
+           clip-path="url(#p1de978af26)"
+           d="m 549.845,338.192 11.16,-75.686 11.16,-26.387 11.16,-12.717 11.16,-9.084 11.16,-8.248 11.16,-8.512 11.16,-7.428 11.16,-5.822 11.16,-5.469 11.16,-5.186 11.16,-6.047 11.16,-4.533 11.16,-5.637 11.16,-4.781 11.16,-4.591 11.16,-3.995 11.16,-4.847 11.16,-5.401 11.16,-5.886 11.16,-12.943"
+           style="fill:none;stroke:#e24a33;stroke-width:2;stroke-linecap:square;stroke-linejoin:round"
+           id="path220703" />
+      </g>
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         id="matplotlib.axis_3">
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="xtick_7">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_31">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p1de978af26)"
+               d="m 549.845,338.192 0,-223.2"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220708" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_32">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220711">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="549.84509"
+                 xlink:href="#m8bc147ca23"
+                 y="338.19208"
+                 id="use220713" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_18">
+            <!-- 0 -->
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,546.89268,353.14784)"
+               id="g220716">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-30"
+                 id="use220718" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="xtick_8">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_33">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p1de978af26)"
+               d="m 594.485,338.192 0,-223.2"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220722" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_34">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220725">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="594.48511"
+                 xlink:href="#m8bc147ca23"
+                 y="338.19208"
+                 id="use220727" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_19">
+            <!-- 4000 -->
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,579.74737,353.14784)"
+               id="g220730">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-34"
+                 id="use220732" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-30"
+                 id="use220734" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-30"
+                 id="use220736" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-30"
+                 id="use220738" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="xtick_9">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_35">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p1de978af26)"
+               d="m 639.125,338.192 0,-223.2"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220742" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_36">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220745">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="639.12512"
+                 xlink:href="#m8bc147ca23"
+                 y="338.19208"
+                 id="use220747" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_20">
+            <!-- 8000 -->
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,624.52448,353.14784)"
+               id="g220750">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-38"
+                 id="use220752" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-30"
+                 id="use220754" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-30"
+                 id="use220756" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-30"
+                 id="use220758" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="xtick_10">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_37">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p1de978af26)"
+               d="m 683.765,338.192 0,-223.2"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220762" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_38">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220765">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="683.76508"
+                 xlink:href="#m8bc147ca23"
+                 y="338.19208"
+                 id="use220767" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_21">
+            <!-- 12000 -->
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,665.61893,353.14784)"
+               id="g220770">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-31"
+                 id="use220772" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-32"
+                 id="use220774" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-30"
+                 id="use220776" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-30"
+                 id="use220778" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="240.03906"
+                 xlink:href="#AndaleMono-30"
+                 id="use220780" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="xtick_11">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_39">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p1de978af26)"
+               d="m 728.405,338.192 0,-223.2"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220784" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_40">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220787">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="728.40509"
+                 xlink:href="#m8bc147ca23"
+                 y="338.19208"
+                 id="use220789" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_22">
+            <!-- 16000 -->
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,710.25893,353.14784)"
+               id="g220792">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-31"
+                 id="use220794" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-36"
+                 id="use220796" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-30"
+                 id="use220798" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-30"
+                 id="use220800" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="240.03906"
+                 xlink:href="#AndaleMono-30"
+                 id="use220802" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="xtick_12">
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_41">
+            <path
+               inkscape:connector-curvature="0"
+               clip-path="url(#p1de978af26)"
+               d="m 773.045,338.192 0,-223.2"
+               style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+               id="path220806" />
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="line2d_42">
+            <g
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               id="g220809">
+              <use
+                 height="1"
+                 width="1"
+                 style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+                 x="773.0451"
+                 xlink:href="#m8bc147ca23"
+                 y="338.19208"
+                 id="use220811" />
+            </g>
+          </g>
+          <g
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             id="text_23">
+            <!-- 20000 -->
+            <g
+               style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+               transform="matrix(0.13,0,0,-0.13,754.67346,353.14784)"
+               id="g220814">
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 x="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 xlink:href="#AndaleMono-32"
+                 id="use220816" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="60.009766"
+                 xlink:href="#AndaleMono-30"
+                 id="use220818" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="120.01953"
+                 xlink:href="#AndaleMono-30"
+                 id="use220820" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="180.0293"
+                 xlink:href="#AndaleMono-30"
+                 id="use220822" />
+              <use
+                 height="1"
+                 width="1"
+                 y="0"
+                 style="stroke-linecap:butt;stroke-linejoin:round"
+                 x="240.03906"
+                 xlink:href="#AndaleMono-30"
+                 id="use220824" />
+            </g>
+          </g>
+        </g>
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="text_24">
+          <!-- Time -->
+          <g
+             style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+             transform="matrix(0.156,0,0,-0.156,643.77932,371.51103)"
+             id="g220827">
+            <use
+               height="1"
+               width="1"
+               y="0"
+               x="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               xlink:href="#AndaleMono-54"
+               id="use220829" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="60.009766"
+               xlink:href="#AndaleMono-69"
+               id="use220831" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="120.01953"
+               xlink:href="#AndaleMono-6d"
+               id="use220833" />
+            <use
+               height="1"
+               width="1"
+               y="0"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="180.0293"
+               xlink:href="#AndaleMono-65"
+               id="use220835" />
+          </g>
+        </g>
+      </g>
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         id="ytick_9"
+         style="stroke-linecap:butt;stroke-linejoin:round">
+        <g
+           id="line2d_43"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <path
+             id="path220840"
+             style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+             d="m 549.845,294.192 223.2,0"
+             clip-path="url(#p1de978af26)"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="line2d_44"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <g
+             id="g220843"
+             style="stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               id="use220845"
+               y="294.1918"
+               xlink:href="#m8bc147ca23"
+               x="549.84509"
+               style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+               width="1"
+               height="1" />
+          </g>
+        </g>
+        <g
+           id="text_25"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <!-- 0.2 -->
+          <g
+             id="g220848"
+             transform="matrix(0.13,0,0,-0.13,522.94557,297.36158)"
+             style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               id="use220850"
+               xlink:href="#AndaleMono-30"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="0"
+               y="0"
+               width="1"
+               height="1" />
+            <use
+               id="use220852"
+               xlink:href="#AndaleMono-2e"
+               x="60.009766"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="1"
+               height="1" />
+            <use
+               id="use220854"
+               xlink:href="#AndaleMono-32"
+               x="120.01953"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="1"
+               height="1" />
+          </g>
+        </g>
+      </g>
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         id="ytick_10"
+         style="stroke-linecap:butt;stroke-linejoin:round">
+        <g
+           id="line2d_45"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <path
+             id="path220858"
+             style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+             d="m 549.845,249.392 223.2,0"
+             clip-path="url(#p1de978af26)"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="line2d_46"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <g
+             id="g220861"
+             style="stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               id="use220863"
+               y="249.39188"
+               xlink:href="#m8bc147ca23"
+               x="549.84509"
+               style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+               width="1"
+               height="1" />
+          </g>
+        </g>
+        <g
+           id="text_26"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <!-- 0.4 -->
+          <g
+             id="g220866"
+             transform="matrix(0.13,0,0,-0.13,522.3626,252.56164)"
+             style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               id="use220868"
+               xlink:href="#AndaleMono-30"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="0"
+               y="0"
+               width="1"
+               height="1" />
+            <use
+               id="use220870"
+               xlink:href="#AndaleMono-2e"
+               x="60.009766"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="1"
+               height="1" />
+            <use
+               id="use220872"
+               xlink:href="#AndaleMono-34"
+               x="120.01953"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="1"
+               height="1" />
+          </g>
+        </g>
+      </g>
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         id="ytick_11"
+         style="stroke-linecap:butt;stroke-linejoin:round">
+        <g
+           id="line2d_47"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <path
+             id="path220876"
+             style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+             d="m 549.845,204.592 223.2,0"
+             clip-path="url(#p1de978af26)"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="line2d_48"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <g
+             id="g220879"
+             style="stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               id="use220881"
+               y="204.59193"
+               xlink:href="#m8bc147ca23"
+               x="549.84509"
+               style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+               width="1"
+               height="1" />
+          </g>
+        </g>
+        <g
+           id="text_27"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <!-- 0.6 -->
+          <g
+             id="g220884"
+             transform="matrix(0.13,0,0,-0.13,522.40119,207.7617)"
+             style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               id="use220886"
+               xlink:href="#AndaleMono-30"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="0"
+               y="0"
+               width="1"
+               height="1" />
+            <use
+               id="use220888"
+               xlink:href="#AndaleMono-2e"
+               x="60.009766"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="1"
+               height="1" />
+            <use
+               id="use220890"
+               xlink:href="#AndaleMono-36"
+               x="120.01953"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="1"
+               height="1" />
+          </g>
+        </g>
+      </g>
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         id="ytick_12"
+         style="stroke-linecap:butt;stroke-linejoin:round">
+        <g
+           id="line2d_49"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <path
+             id="path220894"
+             style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+             d="m 549.845,159.792 223.2,0"
+             clip-path="url(#p1de978af26)"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="line2d_50"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <g
+             id="g220897"
+             style="stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               id="use220899"
+               y="159.79201"
+               xlink:href="#m8bc147ca23"
+               x="549.84509"
+               style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+               width="1"
+               height="1" />
+          </g>
+        </g>
+        <g
+           id="text_28"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <!-- 0.8 -->
+          <g
+             id="g220902"
+             transform="matrix(0.13,0,0,-0.13,522.45197,162.96177)"
+             style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               id="use220904"
+               xlink:href="#AndaleMono-30"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="0"
+               y="0"
+               width="1"
+               height="1" />
+            <use
+               id="use220906"
+               xlink:href="#AndaleMono-2e"
+               x="60.009766"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="1"
+               height="1" />
+            <use
+               id="use220908"
+               xlink:href="#AndaleMono-38"
+               x="120.01953"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="1"
+               height="1" />
+          </g>
+        </g>
+      </g>
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         id="ytick_13"
+         style="stroke-linecap:butt;stroke-linejoin:round">
+        <g
+           id="line2d_51"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <path
+             id="path220912"
+             style="fill:none;stroke:#ffffff;stroke-width:0.5;stroke-linecap:square;stroke-linejoin:round"
+             d="m 549.845,114.992 223.2,0"
+             clip-path="url(#p1de978af26)"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="line2d_52"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <g
+             id="g220915"
+             style="stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               id="use220917"
+               y="114.99207"
+               xlink:href="#m8bc147ca23"
+               x="549.84509"
+               style="fill:#555555;stroke:#555555;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:round"
+               width="1"
+               height="1" />
+          </g>
+        </g>
+        <g
+           id="text_29"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <!-- 1.0 -->
+          <g
+             id="g220920"
+             transform="matrix(0.13,0,0,-0.13,523.15682,118.16183)"
+             style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round">
+            <use
+               id="use220922"
+               xlink:href="#AndaleMono-31"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               x="0"
+               y="0"
+               width="1"
+               height="1" />
+            <use
+               id="use220924"
+               xlink:href="#AndaleMono-2e"
+               x="60.009766"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="1"
+               height="1" />
+            <use
+               id="use220926"
+               xlink:href="#AndaleMono-30"
+               x="120.01953"
+               style="stroke-linecap:butt;stroke-linejoin:round"
+               y="0"
+               width="1"
+               height="1" />
+          </g>
+        </g>
+      </g>
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use220996"
+         xlink:href="#AndaleMono-43"
+         x="1800.293"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use220998"
+         xlink:href="#AndaleMono-79"
+         x="1860.3027"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use221000"
+         xlink:href="#AndaleMono-63"
+         x="1920.3125"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use221002"
+         xlink:href="#AndaleMono-6c"
+         x="1980.3223"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use221004"
+         xlink:href="#AndaleMono-69"
+         x="2040.332"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use221006"
+         xlink:href="#AndaleMono-63"
+         x="2100.3418"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use221010"
+         xlink:href="#AndaleMono-53"
+         x="2220.3613"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use221012"
+         xlink:href="#AndaleMono-69"
+         x="2280.3711"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use221014"
+         xlink:href="#AndaleMono-6d"
+         x="2340.3809"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use221016"
+         xlink:href="#AndaleMono-69"
+         x="2400.3906"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use221018"
+         xlink:href="#AndaleMono-6c"
+         x="2460.4004"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use221020"
+         xlink:href="#AndaleMono-61"
+         x="2520.4102"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use221022"
+         xlink:href="#AndaleMono-72"
+         x="2580.4199"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use221024"
+         xlink:href="#AndaleMono-69"
+         x="2640.4297"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use221026"
+         xlink:href="#AndaleMono-74"
+         x="2700.4395"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <use
+         transform="matrix(0,-0.195,-0.195,0,429.07084,777.31662)"
+         id="use221028"
+         xlink:href="#AndaleMono-79"
+         x="2760.4492"
+         style="fill:#555555;stroke-linecap:butt;stroke-linejoin:round"
+         y="0"
+         width="1"
+         height="1" />
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         id="patch_6">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 549.845,338.192 223.2,0"
+           style="fill:none;stroke:#eeeeee;stroke-linecap:butt;stroke-linejoin:round"
+           id="path221031" />
+      </g>
+      <g
+         transform="matrix(1.25,0,0,1.25,-207.99375,61.979325)"
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         id="patch_7">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 549.845,338.192 0,-223.2"
+           style="fill:none;stroke:#eeeeee;stroke-linecap:butt;stroke-linejoin:round"
+           id="path221034" />
+      </g>
+      <g
+         style="stroke-linecap:butt;stroke-linejoin:round"
+         transform="translate(545,82.857143)"
+         id="g223349">
+        <g
+           style="stroke-linecap:butt;stroke-linejoin:round"
+           id="g223321">
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="60.009766"
+             xlink:href="#AndaleMono-56"
+             id="use221041" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="120.01953"
+             xlink:href="#AndaleMono-31"
+             id="use221043" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="180.0293"
+             xlink:href="#AndaleMono-45"
+             id="use221045" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="240.03906"
+             xlink:href="#AndaleMono-78"
+             id="use221047" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="300.04883"
+             xlink:href="#AndaleMono-63"
+             id="use221049" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="420.06836"
+             xlink:href="#AndaleMono-4f"
+             id="use221053" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="480.07812"
+             xlink:href="#AndaleMono-72"
+             id="use221055" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="540.08789"
+             xlink:href="#AndaleMono-69"
+             id="use221057" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="600.09766"
+             xlink:href="#AndaleMono-65"
+             id="use221059" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="660.10742"
+             xlink:href="#AndaleMono-6e"
+             id="use221061" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="720.11719"
+             xlink:href="#AndaleMono-74"
+             id="use221063" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="780.12695"
+             xlink:href="#AndaleMono-61"
+             id="use221065" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="840.13672"
+             xlink:href="#AndaleMono-74"
+             id="use221067" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="900.14648"
+             xlink:href="#AndaleMono-69"
+             id="use221069" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="960.15625"
+             xlink:href="#AndaleMono-6f"
+             id="use221071" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1020.166"
+             xlink:href="#AndaleMono-6e"
+             id="use221073" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1140.1855"
+             xlink:href="#AndaleMono-50"
+             id="use221077" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1200.1953"
+             xlink:href="#AndaleMono-72"
+             id="use221079" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1260.2051"
+             xlink:href="#AndaleMono-65"
+             id="use221081" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1320.2148"
+             xlink:href="#AndaleMono-66"
+             id="use221083" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1380.2246"
+             xlink:href="#AndaleMono-65"
+             id="use221085" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1440.2344"
+             xlink:href="#AndaleMono-72"
+             id="use221087" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1500.2441"
+             xlink:href="#AndaleMono-65"
+             id="use221089" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1560.2539"
+             xlink:href="#AndaleMono-6e"
+             id="use221091" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1620.2637"
+             xlink:href="#AndaleMono-63"
+             id="use221093" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1680.2734"
+             xlink:href="#AndaleMono-65"
+             id="use221095" />
+        </g>
+        <g
+           id="g223303"
+           transform="translate(-330.5074,30)"
+           style="stroke-linecap:butt;stroke-linejoin:round">
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1800.293"
+             xlink:href="#AndaleMono-43"
+             id="use221099" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1860.3027"
+             xlink:href="#AndaleMono-79"
+             id="use221101" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1920.3125"
+             xlink:href="#AndaleMono-63"
+             id="use221103" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="1980.3223"
+             xlink:href="#AndaleMono-6c"
+             id="use221105" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="2040.332"
+             xlink:href="#AndaleMono-69"
+             id="use221107" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="2100.3418"
+             xlink:href="#AndaleMono-63"
+             id="use221109" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="2220.3613"
+             xlink:href="#AndaleMono-53"
+             id="use221113" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="2280.3711"
+             xlink:href="#AndaleMono-69"
+             id="use221115" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="2340.3809"
+             xlink:href="#AndaleMono-6d"
+             id="use221117" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="2400.3906"
+             xlink:href="#AndaleMono-69"
+             id="use221119" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="2460.4004"
+             xlink:href="#AndaleMono-6c"
+             id="use221121" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="2520.4102"
+             xlink:href="#AndaleMono-61"
+             id="use221123" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="2580.4199"
+             xlink:href="#AndaleMono-72"
+             id="use221125" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="2640.4297"
+             xlink:href="#AndaleMono-69"
+             id="use221127" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="2700.4395"
+             xlink:href="#AndaleMono-74"
+             id="use221129" />
+          <use
+             transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)"
+             height="1"
+             width="1"
+             y="0"
+             style="stroke-linecap:butt;stroke-linejoin:round"
+             x="2760.4492"
+             xlink:href="#AndaleMono-79"
+             id="use221131" />
+        </g>
+      </g>
+    </g>
+    <use
+       id="use221133"
+       xlink:href="#AndaleMono-20"
+       x="2820.459"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)" />
+    <use
+       id="use221137"
+       xlink:href="#AndaleMono-20"
+       x="2940.4785"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)" />
+    <use
+       id="use221139"
+       xlink:href="#AndaleMono-20"
+       x="3000.4883"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)" />
+    <use
+       id="use221151"
+       xlink:href="#AndaleMono-20"
+       x="3360.5469"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)" />
+    <use
+       id="use221175"
+       xlink:href="#AndaleMono-20"
+       x="4080.6641"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)" />
+    <use
+       id="use221197"
+       xlink:href="#AndaleMono-20"
+       x="4740.7715"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)" />
+    <use
+       id="use221211"
+       xlink:href="#AndaleMono-20"
+       x="5160.8398"
+       style="stroke-linecap:butt;stroke-linejoin:round"
+       y="0"
+       width="1"
+       height="1"
+       transform="matrix(0.234,0,0,-0.234,-94.224015,86.067796)" />
+  </g>
+</svg>
