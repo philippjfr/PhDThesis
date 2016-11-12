@@ -49,6 +49,14 @@ discrepancies and specifically assessing various models used to
 characterize the spatial tuning properties of neurons in the visual
 pathway.
 
+Since there are wide number of constraints the analyses and results in
+this chapter represent a highly complex optimization problem. The
+concrete parameters being optimized are the spatial extents of the
+various projections to attempt to match experimentally verified
+extents as closely as possible, while also maintaining a fixed
+hypercolumn distance and closely matching the electrophysiologically
+measured response properties of individual V1 neurons.
+
 Once we have collected the data we will provide a full
 characterization of the spatial response properties, receptive fields
 and synaptic weights in the model confirming they closely match
@@ -146,9 +154,16 @@ layer 2/3 in the visual cortex of higher mammals.
         \includegraphics[width=1.0\textwidth]{SCAL_Diagram.pdf}
 	\caption[Schematic representation of the SCAL model.]{Diagram of
       the SCAL V1 stage of the model showing the spatial scales of the
-      various excitatory (red) and inhibitory (blue)
-      connections. Saturated colors indicate the kernel radii, while
-      lightly shaded regions indicate kernel cut-off extents.}
+      various excitatory (red) and inhibitory (blue) connections. The
+      innermost red circle represents the initial extent of the
+      excitatory kernel, while the next circle represents the full
+      maximum extent of the local excitatory kernel. The blue circle
+      represents the maximum extent of the inhibitory kernel and the
+      large red circle the cut-off extent of the long-range excitatory
+      projection. A fixed cut-off for the kernel is set such that it
+      has no effect on early organization but limits the long-range
+      projections to realistic extents arising due to biophysical
+      constraints.}
 	\label{SCALDiagram}
 \end{figure}
 
@@ -176,13 +191,15 @@ given by:
 \label{eqn:gausspattern}
 \end{equation}
 %%
-Additionally two image datasets will be employed one taken from a
-database of natural images and the other recorded from within the
-rearing environment of ferrets in a laboratory, which is dominated by
-the long co-linear statistics of the cage bars. These datasets will
-allow us to explore the effect of the natural image statistics on the
-organization of the models and confirm robustness against a wide range
-of visual input.
+
+These simplistic patterns are then presented at random orientations
+and locations on the retinal layer. Additionally two image datasets
+will be employed one taken from a database of natural images and the
+other recorded from within the rearing environment of ferrets in a
+laboratory, which is dominated by the long co-linear statistics of the
+cage bars. These datasets will allow us to explore the effect of the
+natural image statistics on the organization of the models and confirm
+robustness against a wide range of visual input.
 
 \subsubsection*{Activation}
 
@@ -195,7 +212,7 @@ O at time $t+\delta t$ is defined as:
 %%
 \begin{equation}
 \eta_{j, O}(t+\delta t)=f\left(\frac{\gamma_{O}\sum_{i\in
-    F_{j,P}}\Psi_{i}(t)\omega_{ij}}{k+\gamma_{S}\sum_{i\in
+    F_{j,P}}\Psi_{i}(t)\omega_{ij}}{\kappa+\gamma_{S}\sum_{i\in
     F_{j,S}}\eta_{i, O}(t)\omega_{ij, S}}\right)
 \label{eqn:lgnactivation}
 \end{equation}
@@ -209,9 +226,10 @@ two-dimensional array of neurons on the photoreceptor sheet from which
 ON/OFF unit $j$ receives input (its afferent connection field
 $F_{j,P}$) and $\eta_{i, O}(t)$ is the activation of other ON/OFF
 units on the previous time step (received over the suppressive
-connection field $F_{j,S}$). The activation function $f$ is a
-half-wave rectifying function that ensures the activation of ON/OFF
-units is always positive.
+connection field $F_{j,S}$). $\kappa$ defines fixed constant to avoid
+zero division errors. The activation function $f$ is a half-wave
+rectifying function that ensures the activation of ON/OFF units is
+always positive.
 
 The weights $\omega_{ij}$ represent the fixed connection weights from
 photoreceptor $i$ to the ON or OFF unit $j$ defined with a standard
@@ -306,28 +324,40 @@ unlike GCAL the inhibitory projection acts divisively rather than
 subtractively.
 
 At the end of the 16 settling steps, the settled V1 activation pattern
-is deemed to be the V1 response to the presented pattern. At this
-point we use the V1 response to update the threshold point ($\theta$)
-of V1 neurons (using the adaptation process described below) and to
-update the afferent and lateral inhibitory weights via Hebbian
-learning. Unlike the regular GCAL model the V1 activity is not reset
-to zero instead being allowed to decay until the onset of the next
-visual input pattern.
+is deemed to be the V1 response to the presented pattern. Since this
+is a recurrent model there is no guarantee a steady state is reached
+within settling period but through manual inspection it was confirmed
+this was almost always the case. At this point we use the V1 response
+to update the threshold point ($\theta$) of V1 neurons (using the
+adaptation process described below) and to update the afferent and
+lateral inhibitory weights via Hebbian learning. Unlike the regular
+GCAL model the V1 activity is not reset to zero instead being allowed
+to decay until the onset of the next visual input pattern, which had
+no direct effect but provides a pathway to a more continuous model of
+visual responses.
 
 In order to assess the development of long-range patchy connections in
 this model we additionally add a long-range excitatory connection,
-which we let develop without any weight. This term is modeled as an
-additional multiplicative component with a constant offset of 1,
-ensuring only facilitatory modulation from the far surround. The
-activation of a model neuron is therefore given by:
+which we let develop without any actual weight. This projection
+therefore has no direct influence on the model but allows us to
+evaluate how long-range excitatory connectivity would develop within
+this model. It also provides a unified means of expressing the
+influence of surround modulation from the surround that will stay
+consistent between models. This term is modeled as an additional
+multiplicative component with a constant offset of 1, ensuring only
+facilitatory modulation from the far surround. The activation of a
+model neuron is therefore given by:
 %%
 \begin{equation}
-  \eta_{exc} = \frac{\eta_{A} + \eta_{E}}{1 + \eta_{I}}
+  \eta_{exc} = \frac{(\eta_{A} + \eta_{E})(1+\eta_{LR})}{1 + \eta_{I}}
 \end{equation}
 %%
 where $\eta_A$ is the afferent activity, $\eta_E$ is the local
 excitatory input, $\eta_I$ is the divisive inhibitory input and
-$\eta_{LR}$ is the long-range excitatory input.
+$\eta_{LR}$ is the long-range excitatory input. These parameters have
+no absolute scale or units and merely express activity levels of the
+different projections. In general activity levels among the excitatory
+population is kept in the range from zero to one.
 
 \subsection*{Adaptation}
 
@@ -378,19 +408,20 @@ neuron, $u=1$ for the lateral excitatory projection ($p=E$) and $u$ is
 a scalar value drawn from a uniform random distribution for the
 afferent and lateral inhibitory projections ($p=A,I$), $\sigma_{p}$
 determines the width of the Gaussian in sheet coordinates, which
-correspond to visual degrees in the spatially calibrated model. For a
-full summary for the parameters of the model see Appendix
+correspond to visual degrees in the spatially calibrated model. The
+choice of a uniform random distribution does not have a major effect
+but avoids introducing spatial biases in the initial model. For a full
+summary for the parameters of the model see Appendix
 \ref{Appendix:Parameters}.
 
-In the model, as images are presented to
-the photoreceptors, V1 afferent connection weights $\omega_{ij,A}$
-from the ON/OFF sheets are adjusted once per iteration (after V1
-settling is completed) using a simple Hebbian learning rule. This rule
-results in connections that reflect correlations between the
-pre-synaptic ON/OFF unit activities and the post-synaptic V1 response.
-Hebbian connection weight adjustment at each iteration is dependent on
-the pre-synaptic activity, the post-synaptic response, and the Hebbian
-learning rate:
+In the model, as images are presented to the photoreceptors, V1
+afferent connection weights $\omega_{ij,A}$ from the ON/OFF sheets are
+adjusted once per iteration (after V1 settling is completed) using a
+simple Hebbian learning rule. This rule results in connections that
+reflect correlations between the pre-synaptic ON/OFF unit activities
+and the post-synaptic V1 response.  Hebbian connection weight
+adjustment at each iteration is dependent on the pre-synaptic
+activity, the post-synaptic response, and the Hebbian learning rate:
 %%
 \begin{equation}
 \omega_{ij,p}(t)=\frac{\omega_{ij,p}(t-1)+\alpha\eta_{j}\eta_{i}}{\sum_{k}\left(\omega_{kj,p}(t-1)+\alpha\eta_{j}\eta_{k}\right)}
@@ -404,12 +435,15 @@ the weights \citep{Rochester1956}. In all the models the weights are
 constrained using divisive post-synaptic weight normalization
 (equation~\ref{eqn:hebb}), which is a simple and well understood
 mechanism. Afferent connection weights from ON and OFF units are
-normalized together in the model. We expect that a more biologically
-motivated homeostatic mechanism for normalization such as
-multiplicative synaptic scaling
-\citep{Turrigiano1999,Turrigiano2004,Sullivan2006} or a sliding
-threshold for plasticity \citep{Bienenstock1982} would achieve similar
-results, but have not tested these.
+normalized together in the model, which has been shown to extract PCA
+like weights. Symmetry breaking using this learning rule occurs as a
+result of the initial patterns introducing small biases in the spatial
+weight distribution, which become reinforced through recurrent
+interactions over time. We expect that a more biologically motivated
+homeostatic mechanism for normalization such as multiplicative
+synaptic scaling \citep{Turrigiano1999,Turrigiano2004,Sullivan2006} or
+a sliding threshold for plasticity \citep{Bienenstock1982} would
+achieve similar results, but have not tested these.
 
 The learning rates $\alpha$ are defined separately for the afferent,
 lateral excitatory and lateral inhibitory projections. The
@@ -469,7 +503,7 @@ electrophysiological, optical imaging and anatomical data obtained in
 vivo allowing us to compare directly between experimental results and
 our model.
 
-\subsubsection*x{Area summation curves} \label{DoG_Section}
+\subsubsection*{Area summation curves} \label{DoG_Section}
 
 The area summation curves were measured in the model by presenting the
 model with disks of sine gratings of increasing size and varying phase
@@ -513,10 +547,10 @@ both the DoG models:
   SI_d = 1 - \frac{1}{1+K_i b}
 \end{equation}
 %%
-Unlike in the original experiment we eliminate the $R_0$ and $\beta$
-parameters from both models since they represent the baseline activity
-and the spiking threshold respectively, which does not apply to a
-firing-rate model.
+Unlike in the original experiment \citep{Sceniak2001} we eliminate the
+$R_0$ constant offset and $\beta$ exponent from both models since they
+represent the baseline activity and spiking threshold respectively,
+which does not apply to a firing-rate model.
 
 \subsubsection*{Hypercolumn distance}
 
@@ -566,12 +600,11 @@ and $I_o(\kappa)$ is the modified Bessel function of the first kind of
 zero order.
 
 The Gaussian component on the other hand is a simple 2D Gaussian
-function, where $x$ and $y$ are the cortical coordinates and $\sigma$
-the standard deviation of the Gaussian:
+function, where $x$ and $y$ are the cortical coordinates and $\sigma_{x/y}$
+to control the standard deviation and aspect ratio of the Gaussian:
 %%
 \begin{equation}
-G(x, y, \sigma) = \frac{1}{2 \pi \sigma^2} e^{\frac{x^2+y^2}{2
-    \sigma^2}}
+G(x, y, \sigma_x, \sigma_y) = e^(-x^2/(2\sigma_x^2) - y^2/(2\sigma_y^2)
 \end{equation}
 %%
 These two components can be combined into a single spatially weighted
@@ -582,6 +615,9 @@ components:
 D_1(x, y, \phi) = s_1 [G_{11}(x, y, \sigma_{11}) V_1(\phi, \kappa_1, \mu_1)]
 \end{equation}
 %%
+where $s_1$ represents the weighting factor of the combined Gaussian
+and vonMises functions representing long-range connectivity.
+
 In order to accurately estimate the local isotropic kernel an
 additional Gaussian component is added, such that the full model is
 described by:
@@ -590,6 +626,12 @@ described by:
 D_2(x, y, \phi) = s_1 [G_{11}(x, y, \sigma_{11}) V_1(\phi, \kappa_1, \mu_1) + G_{22}(x, y, \sigma_{22})]
 \end{equation}
 %%
+The weights generated by the full model are then divisively normalized
+to sum to one just like the actual weights. This means that no
+weighting factor for the $G_{22}$ component is needed because the
+strength of the first and second component are scaled relative to each
+other by the $s_1$ scaling factor.
+
 Based on this model we can obtain estimates of the spatial extent of
 the local isotropic component and separately measures of the
 orientation dependence and size of the long-range lateral connectivity
@@ -832,9 +874,9 @@ and exhibited the same properties as GCAL.
 The orientation map, receptive fields and orientation tuning curve for
 the fully developed model are shown in
 Figure~\ref{SCALORTuning}. These results demonstrate that the final
-spatially calibrated model still exhibit good quality orientation
-maps, contrast independent orientation tuning and very clear oriented
-lobes in individual receptive fields. Comparing the robustness of map
+spatially calibrated model exhibit high quality orientation maps,
+contrast independent orientation tuning and very clear oriented lobes
+in individual receptive fields. Comparing the robustness of map
 organization to the GCAL model will be performed later on, when we are
 looking at the properties that make a model robust to a wide range of
 inputs.
