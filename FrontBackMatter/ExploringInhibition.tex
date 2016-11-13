@@ -98,6 +98,13 @@ densely innervate each other and themselves \citep{Buzas2001, Ma2011,
 afferent input \citep{Burkhalter2008}. All of these properties are
 captured by the model.
 
+There is some limited evidence the learning rules on parvalbumin
+expressing rules may differ in input cell specific ways with some
+anti-Hebbian phenomena having been found in hippocampal circuits
+\citep{LeRoux2013}. However for the sake of simplicity the learning
+rule applied in the inhibitory population is the same as in the
+excitatory population described in equation~\ref{eqn:hebb}.
+
 In order to model the response of the PV population we apply only
 half-rectification to the inhibitory population, rather than a
 floating homeostatically determined threshold, because basket cells
@@ -116,6 +123,7 @@ given by:
 %%
 \begin{equation}
   \eta_E = \eta_I = \frac{\eta_{A} + \eta_{L}}{1 + \eta_{P}}
+\label{eqn:sepiactivation}
 \end{equation}
 %%
 where $\eta_{A}$ is the LGN afferent activity, $\eta_{L}$ the local
@@ -132,7 +140,28 @@ activity depending on long-range excitatory input:
 %%
 where $\eta_{HE}$ is the input from the horizontal excitatory
 projection. The full set of parameters for the SEPI model are list in
-Appendix \ref{Appendix:Parameters}.
+Appendix \ref{Appendix:Parameters}. Modeling the long-range input as
+an additional multiplicative component has a number of biophysical
+explanation, which we will revisit in more detail in the next chapter,
+however there is strong evidence that the influence of long-range
+excitatory input is strongly voltage dependent \citep{Hirsch1991},
+having little effect when afferent input is weak but strongly
+modulating the response under stronger input conditions.
+
+The combined activation of the various projections is still combined
+in the same way as in the previous models (shown in equation
+\ref{eqn:activation1} and as stated above a half-rectifying function
+($f$) is used in the inhibitory population, while a homeostatic
+function is used among the excitatory population. The response
+function of the neurons is therefore given by:
+
+\begin{equation}
+\eta_{j,V}(t)=f\left(\frac{\sum_{p=\{E, A\}}\gamma_{p}C_{jp}(t)}{1+\sum_{p=\{I\}}\gamma_{p}C_{jp}(t)}\right)^\beta
+\label{eqn:activation2}
+\end{equation}
+
+where $\beta$ is the only new term controlling the linearity of the
+response, which will be used throughout this chapter.
 
 \subsubsection*{Hysteresis}
 
@@ -144,7 +173,7 @@ exponential weighting between the previous activation and the new
 activity, expressed as:
 %%
 \begin{equation}
-  \eta_h (t + \delta\eta) = \eta(t) + \tau \big[ \eta(t+\delta\eta) - \eta(t) \big]
+  \eta_h (t + \delta\eta) = \eta(t) + \tau \big[ \eta(t+\delta t) - \eta(t) \big]
 \end{equation}
 %%
 where $\tau$ is the time constant. If $\tau < 1$, hysteresis will
@@ -170,17 +199,26 @@ selectivity and pinwheel density.
 
 Interestingly, it has been found that experimentally measured
 orientation maps share a fundamental property across species: pinwheel
-count scales linearly with hypercolumn size.  More specifically,
-there are $\pi$ orientation pinwheels within the area of one
-hypercolumn, when averaging over sufficiently large cortical
-areas. This dimensionless, statistical measure of pinwheel
-distribution is thought to reflect a universal constant of map
-organization, converging to $\pi$ across carnivorans, primates, cats, and
-tree shrews \citep{Kaschube2010, Keil2012}. This value was predicted
-by a theoretical model of map organization and has strong empirical
+count scales linearly with hypercolumn size.  More specifically, there
+are $\pi$ orientation pinwheels within the area of one hypercolumn,
+when averaging over sufficiently large cortical areas. This
+dimensionless, statistical measure of pinwheel distribution is thought
+to reflect a universal constant of map organization, converging to
+$\pi$ across carnivorans, primates, cats, and tree shrews
+\citep{Kaschube2010, Keil2012}. This value was predicted by a
+theoretical model of map organization and has strong empirical
 evidence, with a mean pinwheel density across four species (tree
 shrew, galago, cat, and ferret) statistically indistinguishable from
 $\pi$.
+
+Pinwheel density provides such a good measure of map quality because
+it is strongly influenced by any number of disruptions of map
+organization. Analyzing poor quality maps often reveals other
+disruptions in development including poor retinotopy and
+selectivity. While it is possible to generate maps which have a
+deceptively good pinwheel density metric, this problem can be elimated
+by initializing the same model with multiple seeds as was demonstrated
+by \cite{Stevens2013}.
 
 To determine the pinwheel density for any given map, the hypercolumn
 distance is computed and all pinwheel centers are found. Pinwheel
@@ -195,7 +233,7 @@ a map, for which it works well because it has a clear target value.
 \subsubsection*{Orientation Selectivity}
 
 When measuring an orientation map using the protocol outlined in
-Figure~\ref{ORMeasurement}, two components are returned. The first is
+section~\ref{ORMeasurement}, two components are returned. The first is
 the orientation preference computed as the vector averaged estimate of
 the neurons preference. Additionally there is a selectivity component,
 which provides an estimate of how much the neuron will respond to the
@@ -220,15 +258,17 @@ similarity index is therefore defined as:
   OSI = 1 - \frac{4}{n\pi} \sum_{i}\abs{(F_{i}-O_{i})\bmod\frac{\pi}{2}}
 \end{equation}
 %%
-By averaging the OSI at every 1000 development steps we can
-numerically compare the stability of the model over time, which
-provides a measure of how quickly and how smoothly the map is becoming
-organized. Note that there is no objective criterion for ``best''
-stability, since a perfectly stable map that never achieves
-selectivity would be a failure both as a model and as a visual system,
-but in conjunction with other measures the stability metric is helpful
-for evaluating the effect of changing specific parameters for a given
-model.
+where $i$ iterates over each neuron in the orientation map $F_i$
+represents the final orientation preference and $O_i$ is the
+orientation preference at an earlier time. By averaging the OSI at
+every 1000 development steps we can numerically compare the stability
+of the model over time, which provides a measure of how quickly and
+how smoothly the map is becoming organized. Note that there is no
+objective criterion for ``best'' stability, since a perfectly stable
+map that never achieves selectivity would be a failure both as a model
+and as a visual system, but in conjunction with other measures the
+stability metric is helpful for evaluating the effect of changing
+specific parameters for a given model.
 
 \subsubsection*{Local Homogeneity Index}
 
@@ -305,20 +345,20 @@ value to assess the model.
 \begin{figure}
   \includegraphics[width=1.0\textwidth]{./results/sepi/Metrics.pdf}
   \caption[Metrics used to evaluate orientation map
-    development.]{Metrics used to evaluate orientation map
-    development taken from a $2x2^\circ$ region in the model. A)
-  Local homogeneity index representing how similar neurons in a
-  local region are, poor organization will lead to large
-  high-homogeneity regions or low global homogeneity. B) Orientation
-  selectivity measures the overall selectivity of the neurons. Low
-  mean selectivity indicates poor and unstable development. C)
-  Stability measures the self-similarity of the orientation
-  preference over time. Low stability values indicate continuous
-  reorganization of the orientation map. D) Center-of-gravity
-  distortion represents a measure of how precise the retinotopy in
-  the model is. Significant amounts of CoG distortion indicates poor
-  retinotopy, which generally indicates poor orientation map
-  organization.}
+    development.]{Metrics used to evaluate orientation map development
+    taken from a $2x2^\circ$ region in the model. A) Local homogeneity
+    index representing how similar neurons in a local region are, poor
+    organization will lead to large high-homogeneity regions or low
+    global homogeneity. B) Orientation selectivity measures the
+    overall selectivity of the neurons. Low mean selectivity indicates
+    poor and unstable development. C) Stability measures the
+    self-similarity of the orientation preference over time. Low
+    stability, i.e. values well below 0.8, values indicate continuous
+    reorganization of the orientation map. D) Center-of-gravity
+    distortion represents a measure of how precise the retinotopy in
+    the model is. Significant amounts of CoG distortion indicates poor
+    retinotopy, which generally indicates poor orientation map
+    organization.}
 	\label{MetricPlots}
 \end{figure}
 
@@ -338,7 +378,8 @@ of these neurons in shaping V1 development.
 
 Accurately capturing the response of these neurons in a rate-based
 model presents a number of challenges because we cannot explicitly
-model fast-spiking properties. Additionally, much of the data about
+model fast-spiking kinetics, which means we are limited to modeling
+higher absolute firing rates. Additionally, much of the data about
 these cell classes comes from mouse experiments, because of the new,
 rich techniques for genetic manipulation of specific cell classes,
 rather than primates or carnivorans as for most of the functional
@@ -365,11 +406,12 @@ To help understand how the PV population affects the behavior of the
 model, variants of the model were launched using different PV
 activation functions determined by two parameters. The parameter
 determines the linearity of the response, by adding an exponential
-term after the half-rectifier. By varying this exponential term we
-could vary the response of the neuron from sub- to supra-linear
-values. To control the time profile of the response, a hysteresis term
-was added as well. After training, these model variants were assessed
-based on the metrics outlined in Section~\ref{metrics}.
+term after the half-rectifier defined as the $\beta$ term in equation
+\ref{eqn:activation2}. By varying this exponential term we could vary
+the response of the neuron from sub- to supra-linear values. To
+control the time profile of the response, a hysteresis term was added
+as well. After training, these model variants were assessed based on
+the metrics outlined in Section~\ref{metrics}.
 
 \begin{figure}
 	\centering
@@ -423,11 +465,12 @@ effects until the response is very slow.
 	\centering
     \includegraphics[width=0.7\textwidth]{./results/sepi/SEPI_Linearity_Correlations.pdf}
 	\caption{A correlation matrix of the various dependent and
-      independent variables of the linearity analysis. Plots the
-      Pearson correlation of the various metrics with each other,
-      showing how these metrics are related. Highlights the strong
-      correlation between a super-linear response and high
-      selectivity, stability and retinotopic distortions.}
+      independent variables when varying the linearity and time
+      constant of PV neuron responses. Plots the Pearson correlation
+      of the various metrics with each other, showing how these
+      metrics are related. Highlights the strong correlation between a
+      super-linear response and high selectivity, stability and
+      retinotopic distortions.}
 	\label{SEPILinearityCorr}
 \end{figure}
 
@@ -482,7 +525,7 @@ Figure~\ref{SCALHypercolumns}.
 \begin{figure}
 	\centering
         \includegraphics[width=0.8\textwidth]{./results/sepi/SEPI_V1_DoG_Contrast.pdf}
-	\caption{contrast-dependent shifts in size tuning as estimated by
+	\caption{Contrast-dependent shifts in size tuning as estimated by
       the DoG model. A) Spatial constant of the excitatory center of
       the DoG model at low vs. high contrast. B) Distribution of
       contrast-dependent shifts, showing a much better match to the
@@ -575,11 +618,13 @@ perspective? In order for long-range excitation to mediate contextual
 modulation phenomena, these projections need to be able to
 meaningfully modulate neuron activity at long distances. However, from
 a theoretical perspective, introducing strong long-range excitatory
-connectivity in a model seems problematic for a number of
-reasons. Ignoring the fact that strong excitation can lead to runaway,
-`epileptic` activity in the cortex. More subtly however, by
-introducing long-range correlations into the activity we can disrupt
-the retinotopy in the model and violate the sparse coding hypothesis,
+connectivity in a model seems problematic for a number of reasons. The
+most obvious and problematic result of strong excitation is that it
+can lead to runaway, `epileptic` activity in the cortex, which results
+in severely disrupted development as we already saw when inhibitory
+neurons responded sublinearly. More subtly however, by introducing
+long-range correlations into the activity we can disrupt the
+retinotopy in the model and violate the sparse coding hypothesis,
 which have been shown to play crucial roles in self-organization.
 
 Therefore assessing how the models hold up in the presence of strong
@@ -600,15 +645,16 @@ realistic.
       orientation map development using the SCAL model from
       Chapter~\ref{SCALmodel}. Plotted on $x$ and $y$ are the strength
       of long-range lateral excitation and the stimulus contrast
-      during training. The three metrics are \textbf{A} the $\rho$
-      pinwheel density metric, which characterizes the quality of the
-      map, \textbf{B} the average selectivity over the time course of
-      development, and \textbf{C} the stability metric, measuring how
-      much the map changes throughout the course of development. The
-      model is highly robust to varying stimulus contrasts at low
-      levels of lateral excitation, but quickly deteriorates with
-      increasing levels of excitation. Pure white values indicate
-      instabilities in the model causing the model to terminate.}
+      during training. The metrics show \textbf{A} the orientation map
+      stability metric, \textbf{B} the average selectivity over the
+      time course of development, \textbf{C} the average local
+      homogeneity index providing a measure of map quality, \textbf{D}
+      the $\rho$ pinwheel density metric, which characterizes the
+      quality of the map, and \textbf{D} the mean amount of
+      Center-of-Gravity distortion providing a measure of retinotopic
+      distortions. The model is highly robust to varying stimulus
+      contrasts at low levels of lateral excitation, but quickly
+      deteriorates with increasing levels of excitation.}
 	\label{SCALStability}
 \end{figure}
 
@@ -662,13 +708,18 @@ and strong lateral excitation.
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/sepi/SEPI_Robustness.pdf}
 	\caption{Parameter explorations of three separate metrics of
-          orientation map development using the SEPI model. In
-          comparison to the SCAL model, the model is far more
-          robust to strong lateral excitation and maintains almost
-          uniform stability across almost all explored parameter
-          values. Uncoupling of excitation and inhibition allows the
-          model to handle changes in parameter strengths in a robust
-          and responsive way.}
+      orientation map development using the SEPI model. In comparison
+      to the SCAL model, the model is far more robust to strong
+      lateral excitation and maintains almost uniform stability across
+      almost all explored parameter values. As in
+      Figure~\ref{SCALStability} panel \textbf{A} shows the
+      orientation map stability metric, \textbf{B} the average
+      selectivity over the time course of development, \textbf{C} the
+      average LHI providing a measure of map quality, \textbf{D} the
+      $\rho$ pinwheel density metric and \textbf{D} the mean CoG
+      distortion. Uncoupling of excitation and inhibition allows the
+      model to handle changes in parameter strengths in a robust and
+      responsive way.}
 	\label{SEPIStability}
 \end{figure}
 
@@ -721,6 +772,16 @@ orientation map, and the diffuse and unorganized initial pattern of
 GABAergic connections acts to patches of correlated activity further
 apart rather than concentrating it in a smaller column.
 
+The hysteresis term in the responses of PV neurons was not used in the
+final model for two reasons. Firstly it had little effect on the
+organization of the model unless very low time constants were used
+resulting in highly sluggish responses and potential decoupling of the
+excitatory and inhibitory populations. Additionally since this
+population is modeled after the fast-spiking population, which exhibit
+fast very fast kinetics \citep{Cruikshank2007,Gabernet2005}, a more
+instantaneous reponse fits more closely with our experimental
+observations about this population of interneurons.
+
 Finally, we compared how the SCAL model compared to the SEPI model in
 terms of robustness to lateral excitation and varying levels of
 contrast. These results clearly showed that the SEPI model
@@ -730,10 +791,12 @@ long-range excitation much better. This property is likely a direct
 result of separating the two populations. Although separating the
 populations allows these neurons to become uncoupled, it also ensures
 that the inhibitory population can effectively respond and cancel out
-the additional excitation arriving via long-range
-connections. However, at the very highest lateral excitation and
-contrast values tested here, even this model had trouble canceling out
-this additional excitation.
+the additional excitation arriving via long-range connections. In this
+way high activity among the excitatory population results in more
+effective suppression rather than complete destabilization of the
+network. However, at the very highest lateral excitation and contrast
+values tested here, even this model had trouble canceling out this
+additional excitation.
 
 Based on the overall observations, it seems that the model's PV
 population provide a means for the neurons in a local region to
