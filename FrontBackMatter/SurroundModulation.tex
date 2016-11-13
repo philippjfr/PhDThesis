@@ -9,15 +9,16 @@ early visual cortex. These connections have been suggested to drive a
 wide range of contextual-modulation effects including pop-out,
 iso-orientation suppression, contour completion, and more
 \citep{Gilbert1983, Hirsch1991, McGuire1991, Grinvald1994,
-  Fitzpatrick2000, Hupe2001, Stettler2002}.  The most commonly
-reported effects are suppressive, and even though the connections are
-known to be excitatory and to primarily target other excitatory cells,
-some connections target local inhibitory neurons that provide strong
-di- or poly-synaptic inhibition \citep{Hirsch1991,Weliky1995}.  While
-both the SCAL and SEPI models optionally support long-range excitation
-that could provide such suppression di-synaptically via the PV
-inhibitory cells, the suppression would not be specific for features
-like orientation, because the PV cell population is so weakly tuned.
+  Fitzpatrick2000, Hupe2001, Stettler2002}. The most commonly reported
+effects particularly at high contrast are suppressive, and even though
+the connections are known to be excitatory and to primarily target
+other excitatory cells, some connections target local inhibitory
+neurons that provide strong di- or poly-synaptic inhibition
+\citep{Hirsch1991,Weliky1995}.  While both the SCAL and SEPI models
+optionally support long-range excitation that could provide such
+suppression di-synaptically via the PV inhibitory cells, the
+suppression would not be specific for features like orientation,
+because the PV cell population is so weakly tuned.
 
 On theoretical grounds, it has been hypothesized that the neural code
 in the cortex achieves a sparse representation of the input by
@@ -264,13 +265,21 @@ terminals. Informally, we have confirmed that the model self-organizes
 well using a simple sparse sprouting-and-retraction algorithm, but
 this sparsification algorithm would need to be documented, explained,
 analyzed, and validated separately before being applied here. Since
-that complexity would be distracting for our current purposes, we
-instead train the model with dense projections and then subsequently
-sparsify it by thresholding all weights below the 90th percentile. As
-shown in the results section below, this process leaves only patchy
-connections that strongly resemble experimental plots of patchy
-long-range connections in layer 2/3 of macaque and tree shrew,
+that complexity would be distracting for our current modeling goals,
+we instead train the model with dense projections and then
+subsequently sparsify it by thresholding all weights below the 90th
+percentile. As shown in the results section below, this process leaves
+only patchy connections that strongly resemble experimental plots of
+patchy long-range connections in layer 2/3 of macaque and tree shrew,
 extending up to 4 hypercolumns from the neuron.
+
+Sparsifying the weights in this way has the potential to alter the
+activity but since the connections mostly have a modulatory influence
+this does not significantly change network responses especially in the
+initial response. However influences on the overall tuning and
+therefore the map structure cannot be ruled out. To eliminate these
+issues future work should therefore pursue an approach that employs
+connection sparsity from the start.
 
 \subsection{Visual statistics}
 
@@ -391,6 +400,9 @@ we used the orientation-contrast suppression index defined as:
   OCSI = \frac{R_0 - R_{\frac{\pi}{2}}}{R_0}
 \end{equation}
 
+where $R_0$ represents the response at the preferred orientation and
+$R_{\frac{\pi}{2}}$ at the orthogonal orientation.
+
 \paragraph{Pop-out}
 
 Another well-studied effect in the surround-modulation
@@ -413,7 +425,10 @@ simulated area.
 As previously discussed, the surround-modulation effects in the model
 are highly dependent on the statistics of the visual input used for
 training. The following analyses all use either the ``natural`` or the
-``treeshrew`` (cage) dataset shown in Figure~\ref{image_patterns}.
+``treeshrew`` (cage) dataset shown in
+Figure~\ref{image_patterns}. This is because the Gaussian patterns are
+drawn randomly and do not contain any long-range correlations the
+model could learn and encode in its lateral connectivity.
 
 Before characterizing the responses to more complex patterns, we will
 once again show how the response to a simple Gaussian pattern evolves
@@ -683,7 +698,8 @@ where all flankers have the same orientation.
       but pops out when surrounded by cross-oriented flankers.
       %% jbednar: doesn't there need to be a third case, of no
       %% surround, to say whether it's really pop-out or just lack of
-      suppression?  The average response in the target region in both
+      %% suppression ?
+      The average response in the target region in both
       conditions is represented by the solid lines, while the annulus
       region is shown as dotted lines. The averaged responses
       highlight pop-out of the target stimulus from the background in
