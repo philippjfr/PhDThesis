@@ -272,6 +272,12 @@ weights $\omega_{ij}$ to neuron $j$ sum to 1.0. This gain-control
 projection is activated once per iteration before activity is sent to
 the V1 sheet.
 
+Except for the various spatial constants and the strengths of the
+different projections in the LGN layer, the equations are inherited
+directly from the GCAL model, including the divisive normalization
+stage. It is only in the V1 layer that we introduce significant
+changes to the model.
+
 \subsubsection*{The V1 model}
 
 As we saw above in the LGN section the model described here is heavily
@@ -1028,11 +1034,12 @@ will be to evaluate feedforward and lateral connections independently.
       orientation map showing a ring identifying the periodicity of
       the map. C) 1D histogram of the FFT along with Gaussian fit
       marking the best fit hypercolumn distance. D) Summary table
-      showing various parameters of the fit, along with pinwheel
-      density ($\rho$) which classifies the quality of the map. The
-      SCAL model exhibits near $\pi$ pinwheel density a measure that
-      has been associated with realistic orientation maps
-      \citep{Kaschube2010, Stevens2013}.}
+      showing various parameters of the fit, including the hypercolumn
+      \texttt{cycles}, along with pinwheel density (\texttt{rho}) and
+      the pinwheel density metric (\texttt{rho\_metric}) which
+      classifies the quality of the map. The SCAL model exhibits near
+      $\pi$ pinwheel density a measure that has been associated with
+      realistic orientation maps \citep{Kaschube2010, Stevens2013}.}
 	\label{SCALhypercolumns}
 \end{figure}
 
@@ -1103,22 +1110,24 @@ on mean and median values.
       model.]{Comparison between the distributions of space constants
       estimated by \cite{Cavanaugh2002}, converted from visual angle
       to cortical space and the equivalent measurements applied to the
-      model. A, C) Distributions of maximal integration area radii.
-      B, D) Distributions of suppressive surround area radii. }
+      model. Distributions of maximal integration area radii for the
+      from experiment in A) and the model in B). Distributions of
+      suppressive surround area radii from experiment in A) and the
+      model in D).}
 	\label{CavanaughDistribution}
 \end{figure}
 
 Additionally we also compare the shift in size-tuning preference
 between low and high contrast conditions, between experiment
-\citep{Sceniak1999} and the model. In addition to the SCAL model, the
-analysis also includes results from GCAL, which employs subtractive
-rather than divisive inhibition. The results highlight that the GCAL
-model does not really exhibit any meaningful size-tuning shift between
-low and high contrast. Additionally both model scatter plots clearly
-highlight the lack of diversity in the model. Generally however, the
-results are qualitatively very similar between SCAL and the
-experimental data, showing a mean shift and distribution of shifts
-that is very similar (2.2x shift in experiment vs. 1.8x in the model).
+\citep{Sceniak1999} and both SCAL model and GCAL model, which employ
+divisive and subtractive respectively. The results shown in
+\ref{ContrastShift} highlight that the GCAL model does not really
+exhibit any meaningful size-tuning shift between low and high
+contrast. Additionally both model scatter plots clearly highlight the
+lack of diversity in the model. Generally however, the results are
+qualitatively very similar between SCAL and the experimental data,
+showing a mean shift and distribution of shifts that is very similar
+(2.2x shift in experiment vs. 1.8x in the model).
 
 \begin{figure}
 	\centering
@@ -1132,13 +1141,16 @@ that is very similar (2.2x shift in experiment vs. 1.8x in the model).
       high contrast in experiment and the model respectively. B, D, F)
       Distribution of contrast-dependent shift in excitatory
       constant. The introduction of divisive gain control results in a
-      significant contrast-dependent size-tunign shift.}
+      significant contrast-dependent size-tuning shift.}
 	\label{ContrastShift}
 \end{figure}
 
 Finally we investigate the distribution of suppression indices, which
-shows a similar mean value but also highlights the complete lack of
-unsuppressed cells.
+shows a similar mean value to experiments ($SI=0.65$ in the model
+vs. $SI=0.8$ in experiment \citep{Sceniak2006}) but also highlights
+the complete lack of unsuppressed cells, which may be explained by the
+fact that only excitatory neurons were modeled and there considerably
+less diversity in connection profiles.
 
 \begin{figure}
 	\centering
@@ -1157,9 +1169,14 @@ them using reverse correlation techniques. After mapping the receptive
 fields using 5000 sparse, random stimuli the results were fit using
 the simple Gabor model described in Section~\ref{rffitting}. In
 addition to once again confirming the spatial frequency preference of
-the neurons, we compared the $n_x$ and $n_y$ ratios of the neurons to
-equivalent measurements in macaque \citep{Ringach2002b} and cat
-\citep{Jones1987}.
+the neurons, we compared the $n_x=\sigma_x f$ and $n_y=\sigma_y f$
+ratios of the neurons to equivalent measurements in macaque
+\citep{Ringach2002b} and cat \citep{Jones1987}. These values can be
+thought of as representing the number of sinusoidal cycles of the
+Gabor function fitting in a segment of length $\sigma_x$ and
+$\sigma_y$ respectively, allowing us to compare the number and
+elongation of Gabor subfields in a way that is independent of phase,
+translation or orientation.
 
 The results show a similar general shape but also demonstrate a shift
 toward greater $n_x$ values as compared to the experimental data.
@@ -1302,15 +1319,15 @@ The results of our fitting procedure shown in Figure~\ref{LatDist}
 show good correspondence with these experimental estimates with a mean
 long-range connectivity that has a spatial constant of around $1645
 \mu m$ but extends beyond that with our cut-off defined at
-$2.5\degree$ or $7.5 mm$. The model without aspect fits the
-experimentally obtained long-range spatial constant more closely but
-neither extends to the furthest reaches of the lateral connection
-field. The local excitatory kernel provides a reasonable fit to
-experimental estimates with a mean local excitatory kernel with a
-spatial constant of around $221 \mu m$, compared to the $280 \mu m$
-estimated in cat V1 \citep{Buzas2006}. However most neurons exhibit
-much smaller local kernels and the distribution seems to be
-distributed bi-modally.
+$2.5\degree$ or $7.5 mm$. The model with the additional aspect
+parameter fits the experimentally obtained long-range spatial constant
+more closely, but neither extends to the furthest reaches of the
+lateral connection field. The local excitatory kernel provides a
+reasonable fit to experimental estimates with a mean local excitatory
+kernel with a spatial constant of around $221 \mu m$, compared to the
+$280 \mu m$ estimated in cat V1 \citep{Buzas2006}. However most
+neurons exhibit much smaller local kernels and the distribution seems
+to be distributed bi-modally.
 
 \begin{figure}
 	\centering
@@ -1322,10 +1339,10 @@ distributed bi-modally.
       part of the SCAL model. A) Distribution of kernel sizes of the
       local excitatory component. B) Distribution of kernel sizes of
       the long-range excitatory component C) Comparison between naive
-      model with orientation dependent component (i.e. pure Gaussian),
-      the vonMises model including the orientation dependent component
-      and additionally versions of both with an additional term for
-      the anisotropy in the connectivity.}
+      model without an orientation dependent component (i.e. pure
+      Gaussian), the vonMises model including the orientation
+      dependent component and additionally versions of both with an
+      additional term for the anisotropy in the connectivity.}
 	\label{LatDist}
 \end{figure}
 
@@ -1529,13 +1546,15 @@ different feature preferences across the cortical surface.
 
 However, in exploring this model we have also encountered clear
 limitations, the most important of which is the lack of distinct
-excitatory and inhibitory populations. Apart from directly violating
-Dale's law, this poses a serious problem for a developmental model.
-This is because Hebbian learning will ensure the strength and spatial
-profile of the neural connections is dependent on the response
-properties of the neuron and different cell types may respond very
-differently. This has made it difficult to directly compare the
-lateral connectivity in the model to experimental data.
+excitatory and inhibitory populations. This violation of Dale's law,
+which states that neurons release the same neurotransmitters at all of
+its synapses and therefore have either an excitatory or a inhibitory
+influence on post-synaptic cells, poses a serious problem for a
+developmental model. This is because Hebbian learning will ensure the
+strength and spatial profile of the neural connections is dependent on
+the response properties of the neuron and different cell types may
+respond very differently. This has made it difficult to directly
+compare the lateral connectivity in the model to experimental data.
 
 \subsubsection*{Differences to GCAL}
 
