@@ -212,7 +212,7 @@ O at time $t+\delta t$ is defined as:
 %%
 \begin{equation}
 \eta_{j, O}(t+\delta t)=f\left(\frac{\gamma_{O}\sum_{i\in
-    F_{j,P}}\Psi_{i}(t)\omega_{ij}}{\kappa+\gamma_{S}\sum_{i\in
+    F_{j,P}}\Psi_{i}(t)\omega_{ij}}{k+\gamma_{S}\sum_{i\in
     F_{j,S}}\eta_{i, O}(t)\omega_{ij, S}}\right)
 \label{eqn:lgnactivation}
 \end{equation}
@@ -1199,20 +1199,19 @@ toward greater $n_x$ values as compared to the experimental data.
 
 We have already settled that afferent activity is the major driver of
 responses in primary visual cortex but intracortical, recurrent
-connections between neurons are though to provide significant
-modulatory influences on V1 responses. Precisely breaking down the
-contributions of specific connections, particularly when taking into
-account the cell types is much more difficult, particularly because
-experimental data is much more scarce. In
-Section~\ref{InhibitoryBackground} we summarized the potential role of
-different inhibitory subclasses, however beyond some estimates of the
-maximum extent of the axonal projections from different cell classes
-\citep{Kisvarday1993, Kisvarday1997a, Budd2001, Buzas2001}, very
-little is known about their spatial profile. The extent of excitatory
-projections between V1 neurons are better studied, with a range of
-estimates for the maximum extents \citep{Angelucci2002} and even some
-models of the spatial profile of connections \citep{Buzas2006} being
-available.
+connections between neurons may however provide significant modulatory
+influences on V1 responses. Precisely breaking down the contributions
+of specific connections, particularly when taking into account the
+cell types is much more difficult, particularly because experimental
+data is much more scarce. In Section~\ref{InhibitoryBackground} we
+summarized the potential role of different inhibitory subclasses,
+however beyond some estimates of the maximum extent of the axonal
+projections from different cell classes \citep{Kisvarday1993,
+  Kisvarday1997a, Budd2001, Buzas2001}, very little is known about
+their spatial profile. The extent of excitatory projections between V1
+neurons are better studied, with a range of estimates for the maximum
+extents \citep{Angelucci2002} and even some models of the spatial
+profile of connections \citep{Buzas2006} being available.
 
 We summarize various anatomical estimates of the extents and spatial
 distribution of intracortical connections in
@@ -1408,16 +1407,21 @@ ranges.
 
 \begin{figure}
 	\centering
-        \includegraphics[width=1.0\textwidth]{./SCAL_Inh_Distribution.pdf}
+        \includegraphics[width=1.0\textwidth]{SCAL_Inh_Distribution.pdf}
 	\caption[Spatial and orientation distribution of the lateral
       inhibitory weights in SCAL.]{Distributions of inhibitory
       projections as a function of space broken down into
       iso-orientation, oblique orientation, and cross orientations
       relative to the orientation preference of the post-synaptic
       neuron. Top row shows model results bottom row reproduces
-      results from \cite{Kisvarday1997a} in cat area 17. Comparison
-      highlights similarity although the model truncates the heavy
-      tail of the distribution.}
+      results from \cite{Kisvarday1997a} in cat area 17. The
+      iso-oriented connections are most numerous and strongest overall
+      and follow a similar distribution although they drop off more
+      quickly at larger distances. Oblique- and cross-orientation
+      connections start at further distances and are overall less
+      frequent. However since only the central region is simulated the
+      long tail of the experimental distributions can't be
+      replicated.}
 	\label{LatORDist}
 \end{figure}
 
@@ -1610,20 +1614,27 @@ model itself does not exert any long-range influences any changes in
 the fit is must likely mediated by the relatively short-range
 connections in the model. However we did find significant shifts in
 the integration area depending on the contrast level in the SCAL model
-but not in the GCAL model. This suggests suggest the 
-contrast-dependent shifts in effective integration area can be explained by
-changes in the relative gain of the center and surround component in a
-ratio-of-Gaussians model, just as was proposed by
-\cite{Cavanaugh2002}. It is therefore not necessary to invoke
-integration over a larger area via long-range lateral connections as
-was suggested by the experimental work by \cite{Levitt2002} and
-\cite{Sceniak2001} and translated into a model by
-\cite{Schwabe2006}. This does not mean however that long-range lateral
-connections do not have any influence. Indeed it is difficult to
-envision how the model can mediate any longer range feature specific
-excitation and inhibition without corresponding long-range projections
-between neurons, which are themselves tuned for those specific
-features.
+but not in the GCAL model. This suggests suggest the
+contrast-dependent shifts in effective integration area can be
+explained by changes in the relative gain of the center and surround
+component in a ratio-of-Gaussians model, just as was proposed by
+\cite{Cavanaugh2002}. However it is also worth noting that the value
+of $k$ in equation \ref{eqn:lgnactivation} describing the LGN
+activation may have a role here. Under low contrast conditions the
+additive $k$ component in the LGN normalization term can dominate
+relative to the projection strength and result in shifts in size
+tuning. In V1 however the additive offset in the normalization term is
+fixed at 1, which does not result in such a shift.
+
+It is therefore not necessary to invoke integration over a larger area
+via long-range lateral connections as was suggested by the
+experimental work by \cite{Levitt2002} and \cite{Sceniak2001} and
+translated into a model by \cite{Schwabe2006}. This does not mean
+however that long-range lateral connections do not have any
+influence. Indeed it is difficult to envision how the model can
+mediate any longer range feature specific excitation and inhibition
+without corresponding long-range projections between neurons, which
+are themselves tuned for those specific features.
 
 \subsubsection*{Lateral Connectivity}
 
