@@ -142,24 +142,31 @@ $\psi$, highlighting which spatial arrangement of edges is most likely
 to co-occur. In these plots, the central $1^\circ$ diameter region of
 the lateral field was ignored so the plot would reflect co-occurrence
 statistics of connections \emph{outside} the receptive field of the
-neuron. This procedure also allowed comparing the co-occurrences between
-datasets by taking the ratio of normalized weights in each bins.
+neuron. The color in each bin represents the strength of weights for
+each arrangement of edges relative to the mean. Therefore dark blue
+bins represent edge arrangements that the model learned to be less
+likely to co-occur while dark red bins represent arrangements more
+likely to co-occur. This procedure also allowed comparing the
+co-occurrences between datasets by computing the ratio of normalized
+weights in each of the bins, highlighting how the edge co-occurrences
+change between datasets.
 
 The \cite{Geisler2001} type of co-occurence plots, on the other hand,
 reflect three dimensions, the angles $\theta$ and $\phi$ and the
 distance, displaying the probability of an edge of a particular
 orientation, co-occurring at a particular distance and azimuth
-relative to the edge. It is then possible to plot the data to ask
-two related questions: (1) what is the most likely orientation of an
-edge given the distance and azimuth, and (2) where is the most likely
+relative to the edge. It is then possible to plot the data to ask two
+related questions: (1) what is the most likely orientation of an edge
+given the distance and azimuth, and (2) where is the most likely
 position of an edge of a specific orientation at a specific
 distance. These will be referred to as the co-circularity and
-co-linearity maps respectively. \cite{Geisler2001} asked humans to analyze
-natural image patterns for this analysis, providing a direct measure
-of the statistics. In the model there is only the weights, from which we can
-decode the statistics. In addition to taking the weight to
-compute each co-occurrence, the selectivity for each orientation and
-azimuth were also determined by computing the vector sum.
+co-linearity maps respectively. \cite{Geisler2001} asked humans to
+analyze natural image patterns for this analysis, providing a direct
+measure of the statistics. In the model there is only the weights,
+from which we can decode the statistics. In addition to taking the
+weight to compute each co-occurrence, the selectivity for each
+orientation and azimuth were also determined by computing the vector
+sum.
 
 \subsubsection*{von Mises Model}
 
@@ -281,9 +288,8 @@ iso-oriented and co-linear contours in the input patterns.
       $\psi$ (relative azimuth) along the x-axis and $\theta$
       (orientation difference) along the y-axis. Increased probability
       is shown in red, and lower probabilities shown in blue. These
-      results highlight the stronger bias for connecting
-      iso-orientation regions in the model trained on narrowly
-      distributed synthetic patterns.}
+      results also highlight that the bias toward similar orientations
+      is significantly stronger than for azimuths.}
 	\label{SyntheticCooccurrence}
 \end{figure}
 
@@ -571,13 +577,16 @@ anti-correlated, a feature the Buzas model does not capture.
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/lespi/NatImg_vonMises_Fit.pdf}
-	\caption[Comparison of \cite{Buzas2006} von Mises model fit between
-      the natural and treeshrew trained models.]{Comparison of
+	\caption[Comparison of \cite{Buzas2006} von Mises model fit
+      between the natural and treeshrew trained models.]{Comparison of
       \cite{Buzas2006} von Mises model fits between the natural and
       tree-shrew--trained models. A, D) Thresholded lateral fields in
       the natural and tree-shrew condition. B, E) Model-fitting result
       for the two conditions. C, F) Error between fitted and actual
-      lateral weight fields.}
+      lateral weight fields. Overall the patchy organization is
+      captured well however the large error at one hypercolumn
+      distance suggests the model is not capturing the spatial weight
+      distribution perfectly.}
 	\label{NatImgvonMises}
 \end{figure}
 
@@ -604,8 +613,7 @@ much higher anisotropy along the axis of preferred orientation.
       connection field. B) Dependence between orientation selectivity
       and aspect ratio for the two conditions. Clearly highlights the
       anisotropy in lateral connections trained on the treeshrew
-      dataset. Also suggests the model does not capture local
-      interactions very well.}
+      dataset.}
 	\label{NatImgvonMisesAspect}
 \end{figure}
 
