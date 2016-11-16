@@ -323,11 +323,14 @@ The projection strength scaling factors $\gamma$ are defined for each
 projection type set to provide a balance between excitation and
 inhibition, and between afferent and lateral influences, to provide
 robust formation of activity bubbles that allows smooth maps to
-form. The function $f$ defines a variable threshold point ($\theta$)
-dependent on the average activity of the unit as described in the next
-subsection, but in all cases the gain is fixed at unity. Note that
-unlike GCAL the inhibitory projection acts divisively rather than
-subtractively.
+form. This does not mean that the model is a balanced
+excitation/inhibition model in the formal sense, indeed the default
+parameters ensure that inhibition exceeds excitation in the absence of
+strong afferent input. The function $f$ defines an adaptive threshold
+point ($\theta$) dependent on the average activity of the unit as
+described in the next subsection, but in all cases the gain is fixed
+at unity. Note that unlike GCAL the inhibitory projection acts
+divisively rather than subtractively.
 
 At the end of the 16 settling steps, the settled V1 activation pattern
 is deemed to be the V1 response to the presented pattern. Since this
@@ -800,10 +803,14 @@ the responses with the experimental results we will treat the 10\%
 contrast response as the low contrast response and 70\% contrast as
 the high contrast response. This matches the experiment where the
 contrast with 20-50\% and 70-90\% of the maximal response are taken as
-low- and high-contrast responses respectively. To compare the data
-directly to the experimental data, we have overlaid the low and high
-contrast estimates of the excitatory and inhibitory constant directly
-on experimental data from \cite{Sceniak2006} (see
+low- and high-contrast responses respectively. It is worth noting that
+because there is no real experimental setup and the retinal sheet
+represents the spiking responses of RGC cells we use an operational
+definition of contrast. This means the range of contrasts are scaled
+to match the dynamic range of responses by the network. To compare the
+data directly to the experimental data, we have overlaid the low and
+high contrast estimates of the excitatory and inhibitory constant
+directly on experimental data from \cite{Sceniak2006} (see
 Figure~\ref{LGNDistribution}).
 
 The excitatory space constant $a$ was estimated at $0.16\degree$ at
@@ -1197,9 +1204,10 @@ toward greater $n_x$ values as compared to the experimental data.
 
 \subsubsection*{Intracortical connectivity}
 
-We have already settled that afferent activity is the major driver of
-responses in primary visual cortex but intracortical, recurrent
-connections between neurons may however provide significant modulatory
+Although they make up a small fraction of connections in V1
+thalamocortical afferents are a major driver of activity in primary
+visual cortex \citep{Binzegger2004}. However intracortical, recurrent
+connections between neurons also provide significant modulatory
 influences on V1 responses. Precisely breaking down the contributions
 of specific connections, particularly when taking into account the
 cell types is much more difficult, particularly because experimental

@@ -554,19 +554,30 @@ results (Figure~\ref{ContrastShift}). This likely can be attributed to
 the greater strength and variation of inhibition that is made possible
 by partially decoupling the excitatory and inhibitory population.
 
-
 Introducing a separate inhibitory population also allows us to compare
 the spatial and orientation profile of inhibitory neurons more
 realistically, since they no longer reflect the activation of the
 joint excitatory/inhibitory population. When comparing
-Figure~\ref{SEPI_OR_Distributions} to \ref{LatDist} we can see
-that the neurons are no longer as strongly biased toward the preferred
+Figure~\ref{SEPI_OR_Distributions} to \ref{LatORDist} we can see that
+the neurons are no longer as strongly biased toward the preferred
 orientation of the excitatory neuron, which is a direct result of much
-broader orientation tuning in the inhibitory PV population.
+broader orientation tuning in the inhibitory PV
+population. Additionally the inhibitory connections seem to exhibit
+longer tails, particularly in the oblique and cross-orientation
+distributions, which more closely matches the experimental data. The
+major difference when compared to the experimental data seems to be in
+the relative weights of connections targeting iso-, oblique- and
+cross-orientation domains. Since the model distributions represent the
+actual weights while experimental data just uses the total count of
+boutons it is unclear whether this difference arises simply because it
+is not possible to accurately measure connection strengths in
+experiments. Overall these orientation distribution of inhibitory
+connections in the SEPI model more closely reflects the experimental
+data when compared to the SCAL model.
 
 \begin{figure}
 	\centering
-        \includegraphics[width=1.0\textwidth]{./results/sepi/SEPI_Inh_OR_Distributions.pdf}
+    \includegraphics[width=1.0\textwidth]{./results/sepi/SEPI_Inh_OR_Distributions.pdf}
 	\caption{Spatial distribution of weights targeting A)
       iso-orientation regions, B) oblique-orientation regions and C)
       cross-orientation regions. Inhibitory neurons in the SEPI model

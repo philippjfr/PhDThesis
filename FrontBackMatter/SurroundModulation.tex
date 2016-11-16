@@ -21,23 +21,24 @@ suppression would not be specific for features like orientation,
 because the PV cell population is so weakly tuned.
 
 On theoretical grounds, it has been hypothesized that the neural code
-in the cortex achieves a sparse representation of the input by
-eliminating redundancy \citep{barlow:comneuron89,Olshausen1996}.
-Indeed, modulation from the non-classical receptive field has been
-shown to suppress redundant information in the input, sparsifying the
-representation \citep{Vinje2000}. Here it is crucial that the target
-of the suppression is \emph{redundant} activity; achieving sparsity by
-simply globally or randomly reducing activity will increase sparseness
-but lose information.  For instance, in previous developmental models
-of V1 with long-range lateral inhibition, it was shown that both
-isotropic and feature-specific connections could achieve a given level
-of sparsity, but the isotropic connections did so by reducing
-information about the input patterns \citep{Miikkulainen2005}.  For
-instance, if two unrelated contours are nearby in an image, isotropic
-suppression will eliminate the representation of the weaker one,
-achieving sparsity by losing information about the input, while
-feature-specific will reduce the number of neurons responding to each
-contour separately.
+in the cortex achieves a neural representation that is both sparse and
+reduces redundancy in the input
+\citep{barlow:comneuron89,Olshausen1996}. Indeed, modulation from the
+non-classical receptive field has been shown to suppress redundant
+information in the input, sparsifying the representation
+\citep{Vinje2000}. Here it is crucial that the target of the
+suppression is \emph{redundant} activity; achieving sparsity by simply
+globally or randomly reducing activity will increase sparseness but
+lose information. For instance, in previous developmental models of V1
+with long-range lateral inhibition, it was shown that both isotropic
+and feature-specific connections could achieve a given level of
+sparsity, but the isotropic connections did so by reducing information
+about the input patterns \citep{Miikkulainen2005}.  For instance, if
+two unrelated contours are nearby in an image, isotropic suppression
+will eliminate the representation of the weaker one, achieving
+sparsity by losing information about the input, while feature-specific
+will reduce the number of neurons responding to each contour
+separately.
 
 These considerations suggest a difference between short-range
 interactions, where the cortex is trying to ensure it achieves maximal
@@ -604,26 +605,41 @@ Sst population activates much more strongly in the iso-orientation
 condition (C) than in the cross-orientation condition, as expected due
 to the feature selectivity of the Sst neurons.
 
+The model only has a rough temporal calibration, which makes it
+difficult to compare. However one iteration in the model corresponds
+to roughly 250 ms of response, and the lateral delay is calibrated to
+a maximum propagation speed of about 0.3 m/s, which has been confirmed
+in experiments \citep{Hirsch1991}. The time course of the
+iso-orientation surround suppression and facilitation arrive roughly
+40-60 ms after the onset of the excitatory response, which is also
+roughly in line with experiments \citep{Bair2003, Hupe2001b}. This
+indicates that lateral connections can realistically exert
+iso-oriented surround suppression within the spatial ranges explored
+here over the time-course that has been observed in
+experiments. However, over larger spatial scales it is likely that
+feedback connections would have to be involved as \cite{Bair2003} have
+argued previously.
+
 \begin{figure}
 	\centering
-        \includegraphics[width=1.0\textwidth]{./results/lespi/ORTC_TimeCourse.pdf}
+    \includegraphics[width=1.0\textwidth]{./results/lespi/ORTC_TimeCourse.pdf}
 	\caption[Time-course of neural and synaptic projection responses
       under four conditions, demonstrating how a contrast-dependent
       switch between facilitation and suppression occurs]{Time-course
       of neural and synaptic projection responses under four
       conditions, demonstrating how a contrast-dependent switch
-      between facilitation and suppression occurs. Visualizes how
-      inerneuron activity and lateral excitatory projection affect the
-      response of the excitatory projection (in red). A) In the
-      low-contrast iso-orientation condition, lateral excitation
-      exceeds the activation of the V1 Sst population, resulting in
-      facilitation. B) In the low-contrast cross-orientation
-      condition, very little surround modulation occurs. C) In the
-      high-contrast iso-orientation condition, the Sst population
-      activates strongly causing strong suppression. D) Under the
-      high-contrast cross-orientation condition, Sst neurons are only
-      weakly recruited, resulting in a moderate amount of modulation.
-      Results from model trained on natural dataset.}
+      between facilitation and suppression occurs in the
+      model. Visualizes how inerneuron activity and lateral excitatory
+      projection affect the response of the excitatory projection (in
+      red). A) In the low-contrast iso-orientation condition, lateral
+      excitation exceeds the activation of the V1 Sst population,
+      resulting in facilitation. B) In the low-contrast
+      cross-orientation condition, very little surround modulation
+      occurs. C) In the high-contrast iso-orientation condition, the
+      Sst population activates strongly causing strong suppression. D)
+      Under the high-contrast cross-orientation condition, Sst neurons
+      are only weakly recruited, resulting in a moderate amount of
+      modulation.  Results from model trained on natural dataset.}
 	\label{ORTC_TimeCourse}
 \end{figure}
 
