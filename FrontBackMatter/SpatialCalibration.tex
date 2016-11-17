@@ -1127,7 +1127,7 @@ on mean and median values.
 Additionally we also compare the shift in size-tuning preference
 between low and high contrast conditions, between experiment
 \citep{Sceniak1999} and both SCAL model and GCAL model, which employ
-divisive and subtractive respectively. The results shown in
+divisive and subtractive inhibition respectively. The results shown in
 \ref{ContrastShift} highlight that the GCAL model does not really
 exhibit any meaningful size-tuning shift between low and high
 contrast. Additionally both model scatter plots clearly highlight the
@@ -1135,6 +1135,20 @@ lack of diversity in the model. Generally however, the results are
 qualitatively very similar between SCAL and the experimental data,
 showing a mean shift and distribution of shifts that is very similar
 (2.2x shift in experiment vs. 1.8x in the model).
+
+The difference in the contrast dependent size tuning shifts between
+GCAL and SCAL may be partially explained by the difference in the LGN
+normalization pool size, as we can already see a small amounts of
+shift in Figure~\ref{LGNSizeTuning}, which is not evident in the GCAL
+model. This may allow the additive term $k$ in the normalization pool
+(see Equation~\ref{eqn:lgnactivation}) to exert more influence under
+low contrast conditions. Additionally as indicated by
+\cite{Cavanaugh2002} and \citep{Solomon2006}, a divisive contrast-gain
+control model can capture contrast-dependent changes in the shape of
+the size tuning response function simply by shifting the balance of
+the excitatory and inhibitory components. Therefore both the LGN and
+V1 divisive components likely contribute to the increase in size
+tuning shifts observed in the SCAL model compared to the GCAL model.
 
 \begin{figure}
 	\centering
@@ -1616,23 +1630,37 @@ orientation tuning as well as robust, yet adaptive self-organization.
 \subsubsection*{Size tuning}
 
 A major component of the analysis we applied here was in comparing
-applying a Difference-of-Gaussian model to the area summation curves
-and comparing the results to equivalent experimental data. Since the
-model itself does not exert any long-range influences any changes in
-the fit is must likely mediated by the relatively short-range
-connections in the model. However we did find significant shifts in
-the integration area depending on the contrast level in the SCAL model
-but not in the GCAL model. This suggests suggest the
-contrast-dependent shifts in effective integration area can be
-explained by changes in the relative gain of the center and surround
-component in a ratio-of-Gaussians model, just as was proposed by
-\cite{Cavanaugh2002}. However it is also worth noting that the value
-of $k$ in equation \ref{eqn:lgnactivation} describing the LGN
-activation may have a role here. Under low contrast conditions the
-additive $k$ component in the LGN normalization term can dominate
-relative to the projection strength and result in shifts in size
-tuning. In V1 however the additive offset in the normalization term is
-fixed at 1, which does not result in such a shift.
+Difference-of-Gaussian (DoG) and Ratio-of-Gaussian (RoG) models of the
+area summation curves from both models and comparing the results to
+equivalent experimental data. Since the model itself does not exert
+any long-range influences any changes in the fit is must likely
+mediated by the relatively short-range connections in the model.
+
+Using the subtractive DoG model we did find significant shifts in the
+integration area depending on the contrast level in the SCAL model but
+not in the GCAL model. Since the actual integration area is fixed in
+both models this suggests the contrast-dependent shifts in effective
+integration area can be explained by changes in the relative gain of
+the center and surround component in a ratio-of-Gaussians model, just
+as was suggested by \cite{Cavanaugh2002} and
+\citep{Solomon2006}. However it is also worth noting that the value of
+$k$ in equation \ref{eqn:lgnactivation} describing the LGN activation
+may have a role here. Under low contrast conditions the additive $k$
+component in the LGN normalization term can dominate relative to the
+projection strength and result in shifts in size tuning.
+
+The divisive RoG models were not able to fit the data quite as well
+(see Figure~\ref{LGNSizeFit}) and have therefore not been shown in as
+much detail. However comparing these two models of size tuning shows
+that the divisive model performs significantly better when the spatial
+constants of the center and surround are not fixed, i.e. the ratio in
+the gain between the center and surround components explains part of
+the size tuning shift the subtractive DoG model captures through a
+shift in the spatial constants of center and surround. This suggests
+that subtractive suppression is not a good model of surround
+suppression in the LGN or V1 and that contrast-gain control can
+explain a large portion of the contrast dependent effects observed in
+experiment and in the SCAL model.
 
 It is therefore not necessary to invoke integration over a larger area
 via long-range lateral connections as was suggested by the
