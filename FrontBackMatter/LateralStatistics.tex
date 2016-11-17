@@ -91,15 +91,13 @@ predict the performance of human subjects in contour-detection tasks.
 \end{figure}
 
 The afferent receptive fields in the visual cortex are usually assumed
-to act as feature detectors (or at least feature-selective units),
-reducing the dimensionality of the visual 
-``pixel'' space into a lower-dimensional representation. Connections
-between these feature detectors could therefore at least in theory
-represent the co-occurence statistics of the low-level features. In
-primary visual cortex they could therefore represent the co-occurence
-of simple oriented edges. In order to test this idea, the models
-were trained on various synthetic and natural image datasets, and the
-statistics embedded in the lateral connections were decoded.
+to act as feature detectors (or at least feature-selective units). In
+primary visual cortex connections between these feature detectors
+could therefore represent the co-occurence of the features,
+i.e. second- or higher-order correlations between simple oriented
+edges. In order to test this idea, the models were trained on various
+synthetic and natural image datasets, and the statistics embedded in
+the lateral connections were decoded.
 
 This analysis was done by computing the angles $\theta$, $\phi$, and $\psi$ (as
 defined in figure (C) in Figure~\ref{classifier}) as well as the
