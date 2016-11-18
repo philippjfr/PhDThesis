@@ -39,9 +39,10 @@ Specifically we will assess how the model performs when manipulating
 the response properties of the PV population, under varying levels of
 contrast and strong lateral excitation. The SOM inhibitory population
 will be disregarded we are primarily focused on development of the
-orientation map, which is known to occur before lateral connectivity
-emerges, which is known to drive the SOM interneurons. This inhibitory
-cell class will be revisited in the following chapters.
+orientation map, which is known to occur before long-range lateral
+connectivity emerges, which is known to drive the SOM
+interneurons. This inhibitory cell class will be revisited in the
+following chapters.
 
 \section{Methods}
 
@@ -103,7 +104,7 @@ afferent input \citep{Burkhalter2008}. All of these properties are
 captured by the model.
 
 There is some limited evidence the learning rules on parvalbumin
-expressing rules may differ in input cell specific ways with some
+expressing neurons may differ in input-cell-specific ways, with some
 anti-Hebbian phenomena having been found in hippocampal circuits
 \citep{LeRoux2013}. However for the sake of simplicity the learning
 rule applied in the inhibitory population is the same as in the
@@ -143,14 +144,14 @@ activity depending on long-range excitatory input:
 \end{equation}
 %%
 where $\eta_{HE}$ is the input from the horizontal excitatory
-projection. The full set of parameters for the SEPI model are list in
-Appendix \ref{Appendix:Parameters}. Modeling the long-range input as
-an additional multiplicative component has a number of biophysical
-explanation, which we will revisit in more detail in the next chapter,
-however there is strong evidence that the influence of long-range
-excitatory input is strongly voltage dependent \citep{Hirsch1991},
-having little effect when afferent input is weak but strongly
-modulating the response under stronger input conditions.
+projection. The full set of parameters for the SEPI model are listed
+in Appendix \ref{Appendix:Parameters}. Modeling the long-range input
+as an additional multiplicative component has a number of biophysical
+explanations, which we will revisit in more detail in the next
+chapter, however there is strong evidence that the influence of
+long-range excitatory input is strongly voltage dependent
+\citep{Hirsch1991}, having little effect when afferent input is weak
+but strongly modulating the response under stronger input conditions.
 
 The combined activation of the various projections is still combined
 in the same way as in the previous models (shown in equation
@@ -220,7 +221,7 @@ it is strongly influenced by any number of disruptions of map
 organization. Analyzing poor quality maps often reveals other
 disruptions in development including poor retinotopy and
 selectivity. While it is possible to generate maps which have a
-deceptively good pinwheel density metric, this problem can be elimated
+deceptively good pinwheel density metric, this problem can be eliminated
 by initializing the same model with multiple seeds as was demonstrated
 by \cite{Stevens2013}.
 
@@ -357,12 +358,11 @@ value to assess the model.
     overall selectivity of the neurons. Low mean selectivity indicates
     poor and unstable development. C) Stability measures the
     self-similarity of the orientation preference over time. Low
-    stability, i.e. values well below 0.8, values indicate continuous
-    reorganization of the orientation map. D) Center-of-gravity
-    distortion represents a measure of how precise the retinotopy in
-    the model is. Significant amounts of CoG distortion indicates poor
-    retinotopy, which generally indicates poor orientation map
-    organization.}
+    stability (<0.8) indicate continuous reorganization of the
+    orientation map. D) Center-of-gravity distortion represents a
+    measure of how precise the retinotopy in the model is. Significant
+    amounts of CoG distortion indicates poor retinotopy, which
+    generally indicate poor orientation map organization.}
 	\label{MetricPlots}
 \end{figure}
 
@@ -637,10 +637,10 @@ connectivity in a model seems problematic for a number of reasons. The
 most obvious and problematic result of strong excitation is that it
 can lead to runaway, `epileptic` activity in the cortex, which results
 in severely disrupted development as we already saw when inhibitory
-neurons responded sublinearly. More subtly however, by introducing
+neurons responded sub-linearly. More subtly however, by introducing
 long-range correlations into the activity we can disrupt the
-retinotopy in the model and violate the sparse coding hypothesis,
-which have been shown to play crucial roles in self-organization.
+retinotopy in the model, which alters the sparsity constraints on the
+model and can have profound effects on self-organization.
 
 Therefore assessing how the models hold up in the presence of strong
 lateral excitation under varying contrast levels will help us
@@ -668,7 +668,7 @@ realistic.
       quality of the map, and \textbf{D} the mean amount of
       Center-of-Gravity distortion providing a measure of retinotopic
       distortions. The model is highly robust to varying stimulus
-      contrasts at low levels of lateral excitation, but quickly
+      contrasts, at low levels of lateral excitation, but quickly
       deteriorates with increasing levels of excitation.}
 	\label{SCALStability}
 \end{figure}
@@ -791,10 +791,10 @@ The hysteresis term in the responses of PV neurons was not used in the
 final model for two reasons. Firstly it had little effect on the
 organization of the model unless very low time constants were used
 resulting in highly sluggish responses and potential decoupling of the
-excitatory and inhibitory populations. Additionally since this
+excitatory and inhibitory populations. Additionally, since this
 population is modeled after the fast-spiking population, which exhibit
-fast very fast kinetics \citep{Cruikshank2007,Gabernet2005}, a more
-instantaneous reponse fits more closely with our experimental
+very fast kinetics \citep{Cruikshank2007,Gabernet2005}, a more
+instantaneous response fits more closely with experimental
 observations about this population of interneurons.
 
 Finally, we compared how the SCAL model compared to the SEPI model in
@@ -845,18 +845,18 @@ size-tuning shifts has not changed significantly between the SCAL and
 SEPI models. However there is far greater diversity observed between
 different neurons than was present in the simpler SCAL model. This
 diversity can also be observed in experiments, suggesting something
-about the SEPI model captures this phenomenon more accurately. This
-increase in diversity is likely the result of greater diversity in
-connectivity, due to the separation of excitatory and inhibitory
-neurons into distinct cell classes neurons can now receive varying
-levels of excitation and inhibition. If we accept the argument made in
-the previous chapter and put forth by \cite{Cavanaugh2002} and
+about the SEPI model captures this phenomenon more accurately. It is
+likely the result in a matching increase in the diversity of
+connectivity between neurons. Due to the separation of excitatory and
+inhibitory neurons into distinct cell classes, neurons can now receive
+varying levels of excitation and inhibition. If we accept the argument
+made in the previous chapter and put forth by \cite{Cavanaugh2002} and
 \cite{Solomon2006}, that the shift in size tuning emerges as a result
-of different excitatory and inhibitory gain, this explanation perfect
-sense. Since neurons now have greater diversity in the excitatory and
-inhibitory inputs they receive the ratio between these components also
-becomes more diverse resulting in greater variance in the observed
-size-tuning shift.
+of different excitatory and inhibitory gain values, this explanation
+makes perfect sense. Since neurons now have greater diversity in the
+excitatory and inhibitory inputs they receive, the ratio between these
+components also becomes more diverse, resulting in greater variance in
+the observed size-tuning shift.
 
 One major question in the literature has been the tuning properties of
 PV neurons. A number of theoretical studies had suggested that untuned
