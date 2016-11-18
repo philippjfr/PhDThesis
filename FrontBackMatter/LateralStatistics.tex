@@ -169,28 +169,26 @@ reflect three dimensions, the angles $\theta$ and $\varphi$ and the
 distance $d$. The plot represents the probability of an edge of a
 particular orientation, co-occurring at a particular distance and
 azimuth relative to the reference edge. It is then possible to plot
-the data to ask two related questions: (1) what is the most likely
-orientation of an edge given the distance and azimuth (i.e.,
+the data to ask two related questions corresponding to the first and
+second cooccurrence properties: (1) what is the most likely
+orientation difference given a distance and azimuth (i.e.,
 $argmax_\theta P(\theta \mid d, \varphi)$), and (2) where is the most
-likely position of an edge of a specific orientation at a specific
-distance (i.e., $argmax_\varphi P(\varphi \mid d, \theta)$). These
-will be referred to as the co-circularity and co-linearity maps
-respectively.
+likely position or azimuth of an edge of a specific orientation at a
+specific distance (i.e., $argmax_\varphi P(\varphi \mid d,
+\theta)$).
 
-In the model there is only the weights, from which we can decode the
-statistics. In addition to taking the weight to compute each
-co-occurrence, the selectivity for each orientation and azimuth were
-also determined by computing the vector sum. Since each bin represents
-a circular annulus of different area the weights in each bin were
-additionally normalized by their area. While the normalized weights
-cannot be directly compared to the relative probabilities obtained by
-\cite{Geisler2001} through analysis of various image datasets, they
-should provide a reasonable proxy for the co-occurrence probabilities
-as encoded by the network. In addition to the magnitude obtained by
-computing the vector, a selectivity was also obtained by dividing the
-magnitude by the sum of weights. In the final plots the magnitude is
-indicated by the color, while the selectivity at least for the
-co-linearity plots is indicated by size.
+Unlike in the approach taken by \cite{Geisler2001} analyzing the
+images directly only the weights available to decode the statistics.
+While the normalized weights cannot be directly compared to the
+relative probabilities obtained by \cite{Geisler2001} through analysis
+of various image datasets, they should provide a reasonable proxy for
+the co-occurrence probabilities as encoded by the network. Since each
+bin represents a circular annulus of different area the weights in
+each bin were additionally normalized by their area. In addition to
+obtaining the magnitude of the vector sum, a selectivity was also
+obtained by dividing the magnitude by the sum of weights. In the final
+plots the magnitude is indicated by the color, while the selectivity
+at least for the first occurrence property plots is indicated by size.
 
 \subsubsection*{von Mises Model}
 
@@ -285,17 +283,18 @@ understand what the lateral connections are actually capturing. The
 difference in lateral fields between a model trained on the synthetic
 stimuli with a very wide distribution ($\kappa=0.5$) and a much
 tighter distribution ($\kappa=8$) is shown in
-Figure~\ref{SyntheticDistributions}. This simple analysis already
-makes it clear that both conditions show a strong preference for
-similar orientations and co-linear stimuli, as can be seen when
-looking at the azimuth histogram, which highlights a strong isotropy
-along the axis of preferred orientation. This can indeed be seen even
-when just looking at the sample lateral connection fields directly
-(Figure~\ref{SyntheticDistributions}A,B). The analysis also highlights
-that the model trained on patterns drawn from the tighter distribution
-has a slightly stronger preference for similar orientations, and more
-weights at larger distances. This reflects the stronger bias for long
-iso-oriented and co-linear contours in the input patterns.
+Figure~\ref{SyntheticDistributions}. These univariate distributions
+already demonstrate a clear preference for similar orientations and
+co-linear stimuli under both conditions. The histogram of relative
+azimuths highlights a strong isotropy along the axis of preferred
+orientation. This can indeed be seen even when just looking at the
+sample lateral connection fields directly
+(Figure~\ref{SyntheticDistributions}A, B). The analysis also
+highlights that the model trained on patterns drawn from the tighter
+distribution ($\kappa=8$) has a slightly stronger preference for
+similar orientations, and more weights at larger distances. This
+reflects the stronger bias for long iso-oriented and co-linear
+contours in the input patterns.
 
 \begin{figure}
 	\centering
@@ -350,50 +349,67 @@ The most striking results are obtained by the Geisler-style
 co-occurrence histograms in Figure~\ref{SynthethicGeisler}
 highlighting how well the network has captured the statistics of the
 input and additionally demonstrating how distribution of input
-patterns differs with a varying $\kappa$ value. The co-linearity plot
-almost perfectly reflects the statistics of the input, in that the
-same orientation is encountered along the axis of preferred
-orientation and as we move away from this axis the preferred angle
-slowly shifts away from this orientation, which is precisely how the
-input pattern is defined. The strength of the co-occurrence
-probabilities naturally falls off with distance, and this effect is
-even stronger in the $\kappa=0.5$ condition, likely because the
-distribution is wider and extended, iso-orientation contours are less
-likely to occur. This effect is evident both in the orientation and
-azimuth co-occurrence plots.
+patterns differs with a varying $\kappa$ value. The line segments
+shown in the top row of the figure, show, at each of 6 distances and
+72 azimuths, the most probable orientation difference. Expressed
+differently, for each distance and direction we plotted the preferred
+line orientation. The line segments in the bottom row of the figure on
+the other hand show, at each distance, the most probable direction for
+each possible orientation difference.
+
+In both types of plot we can observe that the same orientation is
+encountered along the co-linear axis and as we move away from this
+direction the preferred angle slowly shifts away from a parallel to a
+co-circular arrangement, which is precisely how the input pattern is
+defined. The strength of the co-occurrence probabilities naturally
+falls off with distance, and this effect is even stronger in the
+$\kappa=0.5$ condition, likely because the distribution is wider and
+extended, iso-orientation contours are less likely to occur. This
+effect is evident both in the orientation and azimuth co-occurrence
+plots.
+
+The top row showing the preferred orientation differences particularly
+highlights the increasing preference for extended, co-linear contours
+with increasing $\kappa$. The bottom row showing the preferred
+direction (or azimuth) on the other hand highlights a slightly greater
+spread in azimuths when the distribution of azimuths is wider,
+demonstrating that the model can capture differences between the
+co-occurence distributions.
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.5\textwidth]{./results/lespi/Geisler_Synthetic_Cooccurrence_Diff.pdf}
-	\caption{The difference in co-occurrence statistics between the
-      models trained on synthetic stimuli with flankers drawn from a
-      vonMises distributions with $\kappa=8$ and $\kappa=0.5$. Shows
-      the ratio between their respective weights for each azimuth and
-      weight bin. Underepresentation is represented by negative (blue)
-      values, while overrepresentation is represented by positive
-      (red) values. This analysis highlights the strong
-      overrepresentation of co-linear, iso-oriented contours at the
-      furthest distances and the slight underrepresentation of
+  \includegraphics[width=0.5\textwidth]{./results/lespi/Geisler_Synthetic_Cooccurrence_Diff.pdf
+	\caption{The difference in the first co-occurrence property
+      between the models trained on synthetic stimuli with flankers
+      drawn from a vonMises distributions with $\kappa=8$ and
+      $\kappa=0.5$. Shows the ratio between their respective weights
+      for each azimuth and weight bin. Underepresentation is
+      represented by negative (blue) values, while overrepresentation
+      is represented by positive (red) values. This analysis
+      highlights the strong overrepresentation of co-linear contours
+      at the furthest distances and the slight underrepresentation of
       co-circular edges non-axis aligned azimuths in the $\kappa=8$
       condition when compared to the $\kappa=0.5$ condition.}
 	\label{SyntheticGeislerDiff}
 \end{figure}
 
 To make the differences even clearer we computed the ratio in weights
-at each distance and azimuth between these two conditions and then
-plotted these differences in Figure~\ref{SyntheticGeislerDiff}. This
-plot highlights just how strongly co-linear arrangements are
-overrepresented in the $\kappa=8$ condition, with a 20-fold increase
-in the weight assigned to this arrangement. The underrepresentation of
-oblique and orthogonal arrangements in the $\kappa=8$ condition also
-reflects the actual differences between input pattern distribution
-since a higher $\kappa$ will result in a narrower distribution in the
-orientation difference between patterns. This suggest that the network
-does not only learn a coarse representation of co-occurrences but also
-captures more subtle differences in the input statistics. Having
-confirmed that the model can capture such differences using synthetic
-patterns we can extend the analysis to the far greater complexity that
-is present in natural images.
+for each orientation difference at each distance and direction between
+these two conditions and then plotted relative over- and
+under-representation of the weights for the $\kappa=8$ compared to the
+$\kappa=0.5$ condition. Figure~\ref{SyntheticGeislerDiff} highlights
+just how strongly co-linear arrangements are overrepresented in the
+$\kappa=8$ condition, with a 20-fold increase in the weight assigned
+to this arrangement. The underrepresentation of oblique and orthogonal
+arrangements in the $\kappa=8$ condition also reflects the actual
+differences between input pattern distribution since a higher $\kappa$
+will result in a narrower distribution in the orientation difference
+between patterns. This suggest that the network does not only learn a
+coarse representation of co-occurrences but also captures more subtle
+differences in the input statistics. Having confirmed that the model
+can capture such differences for simple, synthetic patterns, we can
+extend the analysis to the far greater complexity that is present in
+natural images.
 
 \subsection{Natural Images}
 
@@ -524,59 +540,63 @@ light on the actual differences.
 	\label{NatImgCooccurrences}
 \end{figure}
 
-\subsubsection*{Co-linearity and co-circularity}
+\subsubsection*{Co-occurrence properties}
 
 Instead of considering both orientation and azimuth co-occurrences at
 the same time, we can treat each separately to ensure that one does
-not drown out the other. The co-linearity and co-circularity plots,
-shown in Figure~\ref{NatImgGeisler} alongside the results from
+not drown out the other. The first and second co-occurrence property
+plots, shown in Figure~\ref{NatImgGeisler} alongside the results from
 \cite{Geisler2001} and \cite{Perrinet2015}, make these differences
-very clear. Note that while the direct analysis can directly compute
-the probability, the model indicates both relative probability and
-confidence via the color and size respectively.
+very clear. Note that while the image analysis performed in these two
+studies can directly compute the probability, the model results use
+the normalized and weighted synaptic weights as a proxy for the
+probability. The magnitude and confidence obtained by computing the
+vector sum of the orientation and azimuth co-occurrences are indicated
+through color and size respectively.
 
-\paragraph{Co-linearity}
+The right half of Figure~\ref{NatImgGeisler} shows the co-occurrence
+of orientation differences obtained from the model and previous
+analyses. The results obtained by \cite{Geisler2001} bear out strong
+preference for iso-oriented edges, close to and placed along the axis
+aligned with the orientation of the reference edge. The results from
+the model also show a preference for this arrangment, however there
+seems to some distortion in the azimuth for close distances, which may
+be caused by imperfect decoding or as a result of the local
+interactions that drive column formation. In comparing the direct
+image analysis to the model results for the Serre animal dataset and
+the tree-shrew--cage dataset, we can make several additional
+observations. The tree-shrew data has a stronger bias for parallel and
+co-linear edges at almost all azimuths and distances. The animal
+dataset on the other hand exhibits more co-circularity in the
+orientation differences but has very little preference and selectivity
+for arrangements that are orthogonal to the co-linear axis. This
+result presumably reflects the fact the treeshrew cages largely
+consist of long, parallel lines in form of the bars, while the animal
+dataset will contain more smooth, circular contours.
 
-First we will consider the co-occurrence of orientations in the model
-and from previous analyses. Comparing the extracted co-occurrence
-histograms for the models trained on animal, outdoor, and
-treeshrew-cage images, against the analysis obtained by
-\cite{Perrinet2015} and \cite{Geisler2001} by analyzing the edge
-co-occurrences directly in the images.
+Next we can look at the azimuth co-occurrence preferences (shown on
+the left of Figure~\ref{NatImgGeisler}. The results from
+\cite{Geisler2001} and \cite{Perrinet2015} indicate some general
+patterns, parallel or similarly oriented edges are most likely to
+occur along the co-linear and co-circular directions, while oblique
+and orthogonal edges mostly occur at angles orthogonal to the
+reference edge. The model results also show a similar preference for
+the co-occurrence of parallel and similarly oriented edges, but only
+the model trained on outdoor images places a number of orthogonal
+edges along the axis orthogonal to the reference edge. This suggests
+the models is more selective for the azimuth of the co-occuring edge
+than its orientation, perhaps reflecting low orientation selectivity.
+Looking more specifically at the model trained on the treeshrew
+dataset highlightts a considerably tighter distribution of azimuth
+co-occurrences centered around the co-aligned axis. This suggests that
+the treeshrew dataset has more extended, co-linear contours and fewer
+co-circular or orthogonal edges when compared to the Serre animal
+dataset. While the model results are somewhat noisy this result is
+also strongly borne out by the image analysis performed by
+\cite{Perrinet2015}, and makes intuitive sense, since the cages are
+made up of parallel bars while animals and their environments will
+exhibit more co-circularity and criss-crossing textures.
 
-Comparing this direct image analysis to the model results for the
-Serre animal dataset and the tree-shrew--cage dataset, we can make
-several observations. The tree-shrew data has a stronger bias for
-iso-oriented edges at almost all azimuths and distances. The animal
-dataset on the other hand exhibits some more co-circularity but has
-very little preference for arrangements that are not either co-linear
-or co-circular. This is likely because the treeshrew cages exhibit a
-lot of parallel line arrangement forming parallel lines, while the
-animal dataset will contain more smooth, circular contours. It is
-worth noting that these results are not directly comparable as the
-decoding of azimuth has a considerable degree of uncertainty in the
-model.
-
-Comparing the outdoor dataset with the Geisler co-linearity plot with
-outdoor model condition we can also see a lot of similarities. The
-strongest probabilities are in the center extending out along the axis
-of preferred orientation but iso-oriented lines are most likely at all
-azimuths and distances.
-
-\paragraph{Co-circularity}
-
-Next we can look at the co-occurrences of edges with different
-azimuths in the model and compare against the original analyses. The
-immediately striking observation is that the model trained on the
-treeshrew dataset exhibits a considerably tighter distribution of
-azimuth co-occurrences centered around the co-aligned axis. This
-suggests that the treeshrew dataset has more and longer aligned and
-co-linear contours and fewer co-circular or orthogonal edges when
-compared to the Serre animal dataset. This is also strongly evident in
-the image analysis performed by \cite{Perrinet2015}, and makes
-intuitive sense, since the cages are generally very straight while
-animals and their environments will exhibit more co-circularity and
-criss-crossing textures.
 
 \begin{figure}
   \begin{minipage}[t]{0.6\textwidth}
@@ -808,11 +828,11 @@ generally show up in the co-circularity plots as is particularly
 evident in the outdoor condition, where they do appear at longer
 distances.
 
-From a functional perspective, these do not seem like major issues,
-if the lateral connections are primarily concerned
-with capturing co-occurrences rather than simply reflecting the
-preference of the neuron in the classical receptive field. This issue once
-again highlights the importance of considering the visuotopic extent of
+From a functional perspective, these do not seem like major issues, if
+the lateral connections are primarily concerned with capturing
+co-occurrences rather than simply reflecting the preference of the
+neuron in the classical receptive field. This issue once again
+highlights the importance of considering the visuotopic extent of
 lateral connections when compared to the size of the receptive
 field. Depending on the species and eccentricity, the neurons could
 shift from being primarily devoted to mediating effects within the
@@ -859,10 +879,24 @@ the geometric arrangement of the stimuli, the contrast and other
 contextual information. By learning that edges in the visual
 environment are generally co-linearly and co-circularly arranged, even
 the very earliest stages of visual processing can contribute towards
-complex computations.  For instance, such a system could detect
+complex computations. For instance, such a system could detect
 visually salient features through the learned Gestalt grouping laws,
-and it can fall into configurations that have historically been more
-likely when incoming information is sparse and weak.
+and fill in missing in information based on past experience when the
+input is weak or incomplete.
+
+Indeed one of the major findings by \cite{Geisler2001} was the
+observation that the local grouping function for contour integration
+derived from absolute and Bayesian statistics are very similar. Since
+local grouping functions based upon Bayesian statistics are relatively
+optimal, this suggests that learning the absolute co-occurence
+statistics may be sufficient to achieve to human level performance in
+contour grouping. In the analysis of the co-occurrence statistics we
+showed that the model was very successful at learning the preferences
+for parallel, co-linear and co-circular edge arrangements that are
+present in natural images. Future analysis should further explore
+whether decoding the neural responses could signal contour groupings,
+which could then be compared to the psychophysical results obtained by
+\cite{Geisler2001}.
 
 In order to predict to what extent the visual statistics of the
 rearing environment affect surround modulation, future
