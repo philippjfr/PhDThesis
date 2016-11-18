@@ -194,12 +194,12 @@ given by:
 
 These simplistic patterns are then presented at random orientations
 and locations on the retinal layer. Additionally two image datasets
-will be employed one taken from a database of natural images and the
-other recorded from within the rearing environment of ferrets in a
-laboratory, which is dominated by the long co-linear statistics of the
-cage bars. These datasets will allow us to explore the effect of the
-natural image statistics on the organization of the models and confirm
-robustness against a wide range of visual input.
+will be employed. The first taken from a database of natural images
+and the other recorded from within the rearing environment of ferrets
+in a laboratory, which is dominated by the long co-linear statistics
+of the cage bars. These datasets will allow us to explore the effect
+of the natural image statistics on the organization of the models and
+confirm robustness against a wide range of visual input.
 
 \subsubsection*{Activation}
 
@@ -226,7 +226,7 @@ two-dimensional array of neurons on the photoreceptor sheet from which
 ON/OFF unit $j$ receives input (its afferent connection field
 $F_{j,P}$) and $\eta_{i, O}(t)$ is the activation of other ON/OFF
 units on the previous time step (received over the suppressive
-connection field $F_{j,S}$). $\kappa$ defines fixed constant to avoid
+connection field $F_{j,S}$). $\kappa$ is a fixed constant to avoid
 zero division errors. The activation function $f$ is a half-wave
 rectifying function that ensures the activation of ON/OFF units is
 always positive.
@@ -335,10 +335,10 @@ divisively rather than subtractively.
 At the end of the 16 settling steps, the settled V1 activation pattern
 is deemed to be the V1 response to the presented pattern. Since this
 is a recurrent model there is no guarantee a steady state is reached
-within settling period but through manual inspection it was confirmed
-this was almost always the case. At this point we use the V1 response
-to update the threshold point ($\theta$) of V1 neurons (using the
-adaptation process described below) and to update the afferent and
+within the settling period but through manual inspection it was
+confirmed this was almost always the case. At this point we use the V1
+response to update the threshold point ($\theta$) of V1 neurons (using
+the adaptation process described below) and to update the afferent and
 lateral inhibitory weights via Hebbian learning. Unlike the regular
 GCAL model the V1 activity is not reset to zero instead being allowed
 to decay until the onset of the next visual input pattern, which had
@@ -347,10 +347,12 @@ visual responses.
 
 In order to assess the development of long-range patchy connections in
 this model we additionally add a long-range excitatory connection,
-which we let develop without any actual weight. This projection
-therefore has no direct influence on the model but allows us to
-evaluate how long-range excitatory connectivity would develop within
-this model. It also provides a unified means of expressing the
+which we let develop specific synaptic weights but which is given an
+overall strength of zero so that this projection has no effect on the
+actual model. In this way we can evaluate how long-range excitatory
+connectivity would develop within this model without any of the
+disruptions to development the introduction of long-range correlations
+might cause. It also provides a unified means of expressing the
 influence of surround modulation from the surround that will stay
 consistent between models. This term is modeled as an additional
 multiplicative component with a constant offset of 1, ensuring only
@@ -366,7 +368,7 @@ excitatory input, $\eta_I$ is the divisive inhibitory input and
 $\eta_{LR}$ is the long-range excitatory input. These parameters have
 no absolute scale or units and merely express activity levels of the
 different projections. In general activity levels among the excitatory
-population is kept in the range from zero to one.
+population are kept in the range from zero to one.
 
 \subsection*{Adaptation}
 
@@ -1045,7 +1047,7 @@ will be to evaluate feedforward and lateral connections independently.
       \texttt{cycles}, along with pinwheel density (\texttt{rho}) and
       the pinwheel density metric (\texttt{rho\_metric}) which
       classifies the quality of the map. The SCAL model exhibits near
-      $\pi$ pinwheel density a measure that has been associated with
+      $\pi$ pinwheel density, a measure that has been associated with
       realistic orientation maps \citep{Kaschube2010, Stevens2013}.}
 	\label{SCALhypercolumns}
 \end{figure}
@@ -1138,8 +1140,8 @@ showing a mean shift and distribution of shifts that is very similar
 
 The difference in the contrast dependent size tuning shifts between
 GCAL and SCAL may be partially explained by the difference in the LGN
-normalization pool size, as we can already see a small amounts of
-shift in Figure~\ref{LGNSizeTuning}, which is not evident in the GCAL
+normalization pool size, as we can already see a small amount of shift
+in Figure~\ref{LGNSizeTuning}, which is not evident in the GCAL
 model. This may allow the additive term $k$ in the normalization pool
 (see Equation~\ref{eqn:lgnactivation}) to exert more influence under
 low contrast conditions. Additionally as indicated by
@@ -1170,8 +1172,8 @@ Finally we investigate the distribution of suppression indices, which
 shows a similar mean value to experiments ($SI=0.65$ in the model
 vs. $SI=0.8$ in experiment \citep{Sceniak2006}) but also highlights
 the complete lack of unsuppressed cells, which may be explained by the
-fact that only excitatory neurons were modeled and there considerably
-less diversity in connection profiles.
+fact that only excitatory neurons were modeled and therefore there is
+considerably less diversity in connection profiles.
 
 \begin{figure}
 	\centering
@@ -1223,17 +1225,17 @@ thalamocortical afferents are a major driver of activity in primary
 visual cortex \citep{Binzegger2004}. However intracortical, recurrent
 connections between neurons also provide significant modulatory
 influences on V1 responses. Precisely breaking down the contributions
-of specific connections, particularly when taking into account the
-cell types is much more difficult, particularly because experimental
-data is much more scarce. In Section~\ref{InhibitoryBackground} we
-summarized the potential role of different inhibitory subclasses,
-however beyond some estimates of the maximum extent of the axonal
-projections from different cell classes \citep{Kisvarday1993,
-  Kisvarday1997a, Budd2001, Buzas2001}, very little is known about
-their spatial profile. The extent of excitatory projections between V1
-neurons are better studied, with a range of estimates for the maximum
-extents \citep{Angelucci2002} and even some models of the spatial
-profile of connections \citep{Buzas2006} being available.
+of specific connections, particularly because experimental data is
+much more scarce when taking into account the different cell types. In
+Section~\ref{InhibitoryBackground} we summarized the potential role of
+different inhibitory subclasses, however beyond some estimates of the
+maximum extent of the axonal projections from different cell classes
+\citep{Kisvarday1993, Kisvarday1997a, Budd2001, Buzas2001}, very
+little is known about their spatial profile. The extent of excitatory
+projections between V1 neurons are better studied, with a range of
+estimates for the maximum extents \citep{Angelucci2002} and even some
+models of the spatial profile of connections \citep{Buzas2006} being
+available.
 
 We summarize various anatomical estimates of the extents and spatial
 distribution of intracortical connections in
@@ -1578,9 +1580,10 @@ its synapses and therefore have either an excitatory or a inhibitory
 influence on post-synaptic cells, poses a serious problem for a
 developmental model. This is because Hebbian learning will ensure the
 strength and spatial profile of the neural connections is dependent on
-the response properties of the neuron and different cell types may
-respond very differently. This has made it difficult to directly
-compare the lateral connectivity in the model to experimental data.
+the response properties of the neuron, yet in animals different cell
+types may respond very differently. This has made it difficult to
+directly compare the lateral connectivity in the model to experimental
+data.
 
 \subsubsection*{Differences to GCAL}
 
@@ -1633,7 +1636,7 @@ A major component of the analysis we applied here was in comparing
 Difference-of-Gaussian (DoG) and Ratio-of-Gaussian (RoG) models of the
 area summation curves from both models and comparing the results to
 equivalent experimental data. Since the model itself does not exert
-any long-range influences any changes in the fit is must likely
+any long-range influences any changes in the fit is most likely
 mediated by the relatively short-range connections in the model.
 
 Using the subtractive DoG model we did find significant shifts in the
