@@ -65,7 +65,7 @@ a greedy algorithm, and then computed both the relative orientation
 between each pair of edges, and the normalized azimuthal angle between
 them. An example image with labeled edges is shown in
 Figure~\ref{classifier}, along with a diagram showing how the
-co-occurences were computed. Similar analysis approaches have been
+co-occurrences were computed. Similar analysis approaches have been
 used to visualize the co-occurrence statistics in natural images, such
 as those produced by \cite{Geisler2001} to predict the performance of
 human subjects in contour-detection tasks.
@@ -170,7 +170,7 @@ distance $d$. The plot represents the probability of an edge of a
 particular orientation, co-occurring at a particular distance and
 azimuth relative to the reference edge. It is then possible to plot
 the data to ask two related questions corresponding to the first and
-second cooccurrence properties: (1) what is the most likely
+second co-occurrence properties: (1) what is the most likely
 orientation difference given a distance and azimuth (i.e.,
 $argmax_\theta P(\theta \mid d, \varphi)$), and (2) where is the most
 likely position or azimuth of an edge of a specific orientation at a
@@ -379,12 +379,12 @@ co-occurence distributions.
   \includegraphics[width=0.5\textwidth]{./results/lespi/Geisler_Synthetic_Cooccurrence_Diff.pdf
 	\caption{The difference in the first co-occurrence property
       between the models trained on synthetic stimuli with flankers
-      drawn from a vonMises distributions with $\kappa=8$ and
+      drawn from a von Mises distributions with $\kappa=8$ and
       $\kappa=0.5$. Shows the ratio between their respective weights
-      for each azimuth and weight bin. Underepresentation is
-      represented by negative (blue) values, while overrepresentation
+      for each azimuth and weight bin. Underrepresentation is
+      represented by negative (blue) values, while over-representation
       is represented by positive (red) values. This analysis
-      highlights the strong overrepresentation of co-linear contours
+      highlights the strong over-representation of co-linear contours
       at the furthest distances and the slight underrepresentation of
       co-circular edges non-axis aligned azimuths in the $\kappa=8$
       condition when compared to the $\kappa=0.5$ condition.}
@@ -557,7 +557,7 @@ of orientation differences obtained from the model and previous
 analyses. The results obtained by \cite{Geisler2001} bear out strong
 preference for iso-oriented edges, close to and placed along the axis
 aligned with the orientation of the reference edge. The results from
-the model also show a preference for this arrangment, however there
+the model also show a preference for this arrangement, however there
 seems to some distortion in the azimuth for close distances, which may
 be caused by imperfect decoding or as a result of the local
 interactions that drive column formation. In comparing the direct
@@ -582,7 +582,7 @@ reference edge. The model results also show a similar preference for
 the co-occurrence of parallel and similarly oriented edges, but only
 the model trained on outdoor images places a number of orthogonal
 edges along the axis orthogonal to the reference edge. This suggests
-the models is more selective for the azimuth of the co-occuring edge
+the models is more selective for the azimuth of the co-occurring edge
 than its orientation, perhaps reflecting low orientation selectivity.
 Looking more specifically at the model trained on the treeshrew
 dataset highlights a considerably tighter distribution of azimuth
@@ -613,7 +613,7 @@ exhibit more co-circularity and criss-crossing textures.
       and model results. Model results additionally indicate
       confidence through the size of the edge. A number of clear
       conclusions can be drawn. First of all co-linear arrangements
-      and extended contours are recognizeable in all datasets. In the
+      and extended contours are recognizable in all datasets. In the
       treeshrew condition the lateral decoding is very confident about
       these arrangements, while in the outdoor conditions similarly
       oriented edges occur at almost all azimuths. Cross-oriented
@@ -860,9 +860,9 @@ region, the brain robustly yet adaptively organizes in such a way that
 it can robustly and accurately encode whatever input it is given. This
 idea is supported by experiments performed by the Sur lab, where the
 retinal projections to the LGN were rewired to the auditory thalamus.
-Sur et al.\ found that animals would develop visual receptive fields
-in auditory cortex, and were even able to perform various visual tasks
-with no primary visual cortex other than the rewired area
+\cite{Sur1990} found that animals would develop visual receptive
+fields in auditory cortex, and were even able to perform various
+visual tasks with no primary visual cortex other than the rewired area
 \citep{vonMelchner2000}.
 
 Based on this evidence and the results presented here, we argue that
