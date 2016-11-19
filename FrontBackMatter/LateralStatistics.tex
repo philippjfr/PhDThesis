@@ -92,8 +92,8 @@ human subjects in contour-detection tasks.
 
 The afferent receptive fields in the visual cortex are usually assumed
 to act as feature-selective units. In primary visual cortex,
-connections between these feature detectors could therefore represent
-the co-occurence of the features, i.e. second- or higher-order
+connections between these neurons could therefore represent the
+co-occurence of the features, i.e. second- or higher-order
 correlations between simple oriented edges. In order to test this
 idea, the models were trained on various synthetic and natural image
 datasets, and the statistics embedded in the lateral connections were
@@ -177,8 +177,6 @@ likely position or azimuth of an edge of a specific orientation at a
 specific distance (i.e., $argmax_\varphi P(\varphi \mid d,
 \theta)$).
 
-Unlike in the approach taken by \cite{Geisler2001} analyzing the
-images directly only the weights available to decode the statistics.
 While the normalized weights cannot be directly compared to the
 relative probabilities obtained by \cite{Geisler2001} through analysis
 of various image datasets, they should provide a reasonable proxy for
@@ -587,7 +585,7 @@ edges along the axis orthogonal to the reference edge. This suggests
 the models is more selective for the azimuth of the co-occuring edge
 than its orientation, perhaps reflecting low orientation selectivity.
 Looking more specifically at the model trained on the treeshrew
-dataset highlightts a considerably tighter distribution of azimuth
+dataset highlights a considerably tighter distribution of azimuth
 co-occurrences centered around the co-aligned axis. This suggests that
 the treeshrew dataset has more extended, co-linear contours and fewer
 co-circular or orthogonal edges when compared to the Serre animal
@@ -887,9 +885,9 @@ input is weak or incomplete.
 Indeed one of the major findings by \cite{Geisler2001} was the
 observation that the local grouping function for contour integration
 derived from absolute and Bayesian statistics are very similar. Since
-local grouping functions based upon Bayesian statistics are relatively
+local grouping functions based upon Bayesian statistics are near
 optimal, this suggests that learning the absolute co-occurence
-statistics may be sufficient to achieve to human level performance in
+statistics may be sufficient to achieve human level performance in
 contour grouping. In the analysis of the co-occurrence statistics we
 showed that the model was very successful at learning the preferences
 for parallel, co-linear and co-circular edge arrangements that are
