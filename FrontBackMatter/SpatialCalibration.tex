@@ -49,6 +49,14 @@ discrepancies and specifically assessing various models used to
 characterize the spatial tuning properties of neurons in the visual
 pathway.
 
+Since there are wide number of constraints the analyses and results in
+this chapter represent a highly complex optimization problem. The
+concrete parameters being optimized are the spatial extents of the
+various projections to attempt to match experimentally verified
+extents as closely as possible, while also maintaining a fixed
+hypercolumn distance and closely matching the electrophysiologically
+measured response properties of individual V1 neurons.
+
 Once we have collected the data we will provide a full
 characterization of the spatial response properties, receptive fields
 and synaptic weights in the model confirming they closely match
@@ -146,9 +154,16 @@ layer 2/3 in the visual cortex of higher mammals.
         \includegraphics[width=1.0\textwidth]{SCAL_Diagram.pdf}
 	\caption[Schematic representation of the SCAL model.]{Diagram of
       the SCAL V1 stage of the model showing the spatial scales of the
-      various excitatory (red) and inhibitory (blue)
-      connections. Saturated colors indicate the kernel radii, while
-      lightly shaded regions indicate kernel cut-off extents.}
+      various excitatory (red) and inhibitory (blue) connections. The
+      innermost red circle represents the initial extent of the
+      excitatory kernel, while the next circle represents the full
+      maximum extent of the local excitatory kernel. The blue circle
+      represents the maximum extent of the inhibitory kernel and the
+      large red circle the cut-off extent of the long-range excitatory
+      projection. A fixed cut-off for the kernel is set such that it
+      has no effect on early organization but limits the long-range
+      projections to realistic extents arising due to biophysical
+      constraints.}
 	\label{SCALDiagram}
 \end{figure}
 
@@ -176,13 +191,15 @@ given by:
 \label{eqn:gausspattern}
 \end{equation}
 %%
-Additionally two image datasets will be employed one taken from a
-database of natural images and the other recorded from within the
-rearing environment of ferrets in a laboratory, which is dominated by
-the long co-linear statistics of the cage bars. These datasets will
-allow us to explore the effect of the natural image statistics on the
-organization of the models and confirm robustness against a wide range
-of visual input.
+
+These simplistic patterns are then presented at random orientations
+and locations on the retinal layer. Additionally two image datasets
+will be employed. The first taken from a database of natural images
+and the other recorded from within the rearing environment of ferrets
+in a laboratory, which is dominated by the long co-linear statistics
+of the cage bars. These datasets will allow us to explore the effect
+of the natural image statistics on the organization of the models and
+confirm robustness against a wide range of visual input.
 
 \subsubsection*{Activation}
 
@@ -209,9 +226,10 @@ two-dimensional array of neurons on the photoreceptor sheet from which
 ON/OFF unit $j$ receives input (its afferent connection field
 $F_{j,P}$) and $\eta_{i, O}(t)$ is the activation of other ON/OFF
 units on the previous time step (received over the suppressive
-connection field $F_{j,S}$). The activation function $f$ is a
-half-wave rectifying function that ensures the activation of ON/OFF
-units is always positive.
+connection field $F_{j,S}$). $\kappa$ is a fixed constant to avoid
+zero division errors. The activation function $f$ is a half-wave
+rectifying function that ensures the activation of ON/OFF units is
+always positive.
 
 The weights $\omega_{ij}$ represent the fixed connection weights from
 photoreceptor $i$ to the ON or OFF unit $j$ defined with a standard
@@ -253,6 +271,12 @@ constant that ensures that the total of all the lateral inhibitory
 weights $\omega_{ij}$ to neuron $j$ sum to 1.0. This gain-control
 projection is activated once per iteration before activity is sent to
 the V1 sheet.
+
+Except for the various spatial constants and the strengths of the
+different projections in the LGN layer, the equations are inherited
+directly from the GCAL model, including the divisive normalization
+stage. It is only in the V1 layer that we introduce significant
+changes to the model.
 
 \subsubsection*{The V1 model}
 
@@ -299,35 +323,52 @@ The projection strength scaling factors $\gamma$ are defined for each
 projection type set to provide a balance between excitation and
 inhibition, and between afferent and lateral influences, to provide
 robust formation of activity bubbles that allows smooth maps to
-form. The function $f$ defines a variable threshold point ($\theta$)
-dependent on the average activity of the unit as described in the next
-subsection, but in all cases the gain is fixed at unity. Note that
-unlike GCAL the inhibitory projection acts divisively rather than
-subtractively.
+form. This does not mean that the model is a balanced
+excitation/inhibition model in the formal sense, indeed the default
+parameters ensure that inhibition exceeds excitation in the absence of
+strong afferent input. The function $f$ defines an adaptive threshold
+point ($\theta$) dependent on the average activity of the unit as
+described in the next subsection, but in all cases the gain is fixed
+at unity. Note that unlike GCAL the inhibitory projection acts
+divisively rather than subtractively.
 
 At the end of the 16 settling steps, the settled V1 activation pattern
-is deemed to be the V1 response to the presented pattern. At this
-point we use the V1 response to update the threshold point ($\theta$)
-of V1 neurons (using the adaptation process described below) and to
-update the afferent and lateral inhibitory weights via Hebbian
-learning. Unlike the regular GCAL model the V1 activity is not reset
-to zero instead being allowed to decay until the onset of the next
-visual input pattern.
+is deemed to be the V1 response to the presented pattern. Since this
+is a recurrent model there is no guarantee a steady state is reached
+within the settling period but through manual inspection it was
+confirmed this was almost always the case. At this point we use the V1
+response to update the threshold point ($\theta$) of V1 neurons (using
+the adaptation process described below) and to update the afferent and
+lateral inhibitory weights via Hebbian learning. Unlike the regular
+GCAL model the V1 activity is not reset to zero instead being allowed
+to decay until the onset of the next visual input pattern, which had
+no direct effect but provides a pathway to a more continuous model of
+visual responses.
 
 In order to assess the development of long-range patchy connections in
 this model we additionally add a long-range excitatory connection,
-which we let develop without any weight. This term is modeled as an
-additional multiplicative component with a constant offset of 1,
-ensuring only facilitatory modulation from the far surround. The
-activation of a model neuron is therefore given by:
+which we let develop specific synaptic weights but which is given an
+overall strength of zero so that this projection has no effect on the
+actual model. In this way we can evaluate how long-range excitatory
+connectivity would develop within this model without any of the
+disruptions to development the introduction of long-range correlations
+might cause. It also provides a unified means of expressing the
+influence of surround modulation from the surround that will stay
+consistent between models. This term is modeled as an additional
+multiplicative component with a constant offset of 1, ensuring only
+facilitatory modulation from the far surround. The activation of a
+model neuron is therefore given by:
 %%
 \begin{equation}
-  \eta_{exc} = \frac{\eta_{A} + \eta_{E}}{1 + \eta_{I}}
+  \eta_{exc} = \frac{(\eta_{A} + \eta_{E})(1+\eta_{LR})}{1 + \eta_{I}}
 \end{equation}
 %%
 where $\eta_A$ is the afferent activity, $\eta_E$ is the local
 excitatory input, $\eta_I$ is the divisive inhibitory input and
-$\eta_{LR}$ is the long-range excitatory input.
+$\eta_{LR}$ is the long-range excitatory input. These parameters have
+no absolute scale or units and merely express activity levels of the
+different projections. In general activity levels among the excitatory
+population are kept in the range from zero to one.
 
 \subsection*{Adaptation}
 
@@ -378,19 +419,20 @@ neuron, $u=1$ for the lateral excitatory projection ($p=E$) and $u$ is
 a scalar value drawn from a uniform random distribution for the
 afferent and lateral inhibitory projections ($p=A,I$), $\sigma_{p}$
 determines the width of the Gaussian in sheet coordinates, which
-correspond to visual degrees in the spatially calibrated model. For a
-full summary for the parameters of the model see Appendix
+correspond to visual degrees in the spatially calibrated model. The
+choice of a uniform random distribution does not have a major effect
+but avoids introducing spatial biases in the initial model. For a full
+summary for the parameters of the model see Appendix
 \ref{Appendix:Parameters}.
 
-In the model, as images are presented to
-the photoreceptors, V1 afferent connection weights $\omega_{ij,A}$
-from the ON/OFF sheets are adjusted once per iteration (after V1
-settling is completed) using a simple Hebbian learning rule. This rule
-results in connections that reflect correlations between the
-pre-synaptic ON/OFF unit activities and the post-synaptic V1 response.
-Hebbian connection weight adjustment at each iteration is dependent on
-the pre-synaptic activity, the post-synaptic response, and the Hebbian
-learning rate:
+In the model, as images are presented to the photoreceptors, V1
+afferent connection weights $\omega_{ij,A}$ from the ON/OFF sheets are
+adjusted once per iteration (after V1 settling is completed) using a
+simple Hebbian learning rule. This rule results in connections that
+reflect correlations between the pre-synaptic ON/OFF unit activities
+and the post-synaptic V1 response.  Hebbian connection weight
+adjustment at each iteration is dependent on the pre-synaptic
+activity, the post-synaptic response, and the Hebbian learning rate:
 %%
 \begin{equation}
 \omega_{ij,p}(t)=\frac{\omega_{ij,p}(t-1)+\alpha\eta_{j}\eta_{i}}{\sum_{k}\left(\omega_{kj,p}(t-1)+\alpha\eta_{j}\eta_{k}\right)}
@@ -404,12 +446,15 @@ the weights \citep{Rochester1956}. In all the models the weights are
 constrained using divisive post-synaptic weight normalization
 (equation~\ref{eqn:hebb}), which is a simple and well understood
 mechanism. Afferent connection weights from ON and OFF units are
-normalized together in the model. We expect that a more biologically
-motivated homeostatic mechanism for normalization such as
-multiplicative synaptic scaling
-\citep{Turrigiano1999,Turrigiano2004,Sullivan2006} or a sliding
-threshold for plasticity \citep{Bienenstock1982} would achieve similar
-results, but have not tested these.
+normalized together in the model, which has been shown to extract PCA
+like weights. Symmetry breaking using this learning rule occurs as a
+result of the initial patterns introducing small biases in the spatial
+weight distribution, which become reinforced through recurrent
+interactions over time. We expect that a more biologically motivated
+homeostatic mechanism for normalization such as multiplicative
+synaptic scaling \citep{Turrigiano1999,Turrigiano2004,Sullivan2006} or
+a sliding threshold for plasticity \citep{Bienenstock1982} would
+achieve similar results, but have not tested these.
 
 The learning rates $\alpha$ are defined separately for the afferent,
 lateral excitatory and lateral inhibitory projections. The
@@ -469,7 +514,7 @@ electrophysiological, optical imaging and anatomical data obtained in
 vivo allowing us to compare directly between experimental results and
 our model.
 
-\subsubsection*x{Area summation curves} \label{DoG_Section}
+\subsubsection*{Area summation curves} \label{DoG_Section}
 
 The area summation curves were measured in the model by presenting the
 model with disks of sine gratings of increasing size and varying phase
@@ -513,10 +558,10 @@ both the DoG models:
   SI_d = 1 - \frac{1}{1+K_i b}
 \end{equation}
 %%
-Unlike in the original experiment we eliminate the $R_0$ and $\beta$
-parameters from both models since they represent the baseline activity
-and the spiking threshold respectively, which does not apply to a
-firing-rate model.
+Unlike in the original experiment \citep{Sceniak2001} we eliminate the
+$R_0$ constant offset and $\beta$ exponent from both models since they
+represent the baseline activity and spiking threshold respectively,
+which does not apply to a firing-rate model.
 
 \subsubsection*{Hypercolumn distance}
 
@@ -566,12 +611,11 @@ and $I_o(\kappa)$ is the modified Bessel function of the first kind of
 zero order.
 
 The Gaussian component on the other hand is a simple 2D Gaussian
-function, where $x$ and $y$ are the cortical coordinates and $\sigma$
-the standard deviation of the Gaussian:
+function, where $x$ and $y$ are the cortical coordinates and $\sigma_{x/y}$
+to control the standard deviation and aspect ratio of the Gaussian:
 %%
 \begin{equation}
-G(x, y, \sigma) = \frac{1}{2 \pi \sigma^2} e^{\frac{x^2+y^2}{2
-    \sigma^2}}
+G(x, y, \sigma_x, \sigma_y) = e^(-x^2/(2\sigma_x^2) - y^2/(2\sigma_y^2)
 \end{equation}
 %%
 These two components can be combined into a single spatially weighted
@@ -582,6 +626,9 @@ components:
 D_1(x, y, \phi) = s_1 [G_{11}(x, y, \sigma_{11}) V_1(\phi, \kappa_1, \mu_1)]
 \end{equation}
 %%
+where $s_1$ represents the weighting factor of the combined Gaussian
+and von Mises functions representing long-range connectivity.
+
 In order to accurately estimate the local isotropic kernel an
 additional Gaussian component is added, such that the full model is
 described by:
@@ -590,6 +637,12 @@ described by:
 D_2(x, y, \phi) = s_1 [G_{11}(x, y, \sigma_{11}) V_1(\phi, \kappa_1, \mu_1) + G_{22}(x, y, \sigma_{22})]
 \end{equation}
 %%
+The weights generated by the full model are then divisively normalized
+to sum to one just like the actual weights. This means that no
+weighting factor for the $G_{22}$ component is needed because the
+strength of the first and second component are scaled relative to each
+other by the $s_1$ scaling factor.
+
 Based on this model we can obtain estimates of the spatial extent of
 the local isotropic component and separately measures of the
 orientation dependence and size of the long-range lateral connectivity
@@ -752,10 +805,14 @@ the responses with the experimental results we will treat the 10\%
 contrast response as the low contrast response and 70\% contrast as
 the high contrast response. This matches the experiment where the
 contrast with 20-50\% and 70-90\% of the maximal response are taken as
-low- and high-contrast responses respectively. To compare the data
-directly to the experimental data, we have overlaid the low and high
-contrast estimates of the excitatory and inhibitory constant directly
-on experimental data from \cite{Sceniak2006} (see
+low- and high-contrast responses respectively. It is worth noting that
+because there is no real experimental setup and the retinal sheet
+represents the spiking responses of RGC cells we use an operational
+definition of contrast. This means the range of contrasts are scaled
+to match the dynamic range of responses by the network. To compare the
+data directly to the experimental data, we have overlaid the low and
+high contrast estimates of the excitatory and inhibitory constant
+directly on experimental data from \cite{Sceniak2006} (see
 Figure~\ref{LGNDistribution}).
 
 The excitatory space constant $a$ was estimated at $0.16\degree$ at
@@ -832,9 +889,9 @@ and exhibited the same properties as GCAL.
 The orientation map, receptive fields and orientation tuning curve for
 the fully developed model are shown in
 Figure~\ref{SCALORTuning}. These results demonstrate that the final
-spatially calibrated model still exhibit good quality orientation
-maps, contrast independent orientation tuning and very clear oriented
-lobes in individual receptive fields. Comparing the robustness of map
+spatially calibrated model exhibit high quality orientation maps,
+contrast independent orientation tuning and very clear oriented lobes
+in individual receptive fields. Comparing the robustness of map
 organization to the GCAL model will be performed later on, when we are
 looking at the properties that make a model robust to a wide range of
 inputs.
@@ -986,11 +1043,12 @@ will be to evaluate feedforward and lateral connections independently.
       orientation map showing a ring identifying the periodicity of
       the map. C) 1D histogram of the FFT along with Gaussian fit
       marking the best fit hypercolumn distance. D) Summary table
-      showing various parameters of the fit, along with pinwheel
-      density ($\rho$) which classifies the quality of the map. The
-      SCAL model exhibits near $\pi$ pinwheel density a measure that
-      has been associated with realistic orientation maps
-      \citep{Kaschube2010, Stevens2013}.}
+      showing various parameters of the fit, including the hypercolumn
+      \texttt{cycles}, along with pinwheel density (\texttt{rho}) and
+      the pinwheel density metric (\texttt{rho\_metric}) which
+      classifies the quality of the map. The SCAL model exhibits near
+      $\pi$ pinwheel density, a measure that has been associated with
+      realistic orientation maps \citep{Kaschube2010, Stevens2013}.}
 	\label{SCALhypercolumns}
 \end{figure}
 
@@ -1061,22 +1119,38 @@ on mean and median values.
       model.]{Comparison between the distributions of space constants
       estimated by \cite{Cavanaugh2002}, converted from visual angle
       to cortical space and the equivalent measurements applied to the
-      model. A, C) Distributions of maximal integration area radii.
-      B, D) Distributions of suppressive surround area radii. }
+      model. Distributions of maximal integration area radii for the
+      from experiment in A) and the model in B). Distributions of
+      suppressive surround area radii from experiment in A) and the
+      model in D).}
 	\label{CavanaughDistribution}
 \end{figure}
 
 Additionally we also compare the shift in size-tuning preference
 between low and high contrast conditions, between experiment
-\citep{Sceniak1999} and the model. In addition to the SCAL model, the
-analysis also includes results from GCAL, which employs subtractive
-rather than divisive inhibition. The results highlight that the GCAL
-model does not really exhibit any meaningful size-tuning shift between
-low and high contrast. Additionally both model scatter plots clearly
-highlight the lack of diversity in the model. Generally however, the
-results are qualitatively very similar between SCAL and the
-experimental data, showing a mean shift and distribution of shifts
-that is very similar (2.2x shift in experiment vs. 1.8x in the model).
+\citep{Sceniak1999} and both SCAL model and GCAL model, which employ
+divisive and subtractive inhibition respectively. The results shown in
+\ref{ContrastShift} highlight that the GCAL model does not really
+exhibit any meaningful size-tuning shift between low and high
+contrast. Additionally both model scatter plots clearly highlight the
+lack of diversity in the model. Generally however, the results are
+qualitatively very similar between SCAL and the experimental data,
+showing a mean shift and distribution of shifts that is very similar
+(2.2x shift in experiment vs. 1.8x in the model).
+
+The difference in the contrast dependent size tuning shifts between
+GCAL and SCAL may be partially explained by the difference in the LGN
+normalization pool size, as we can already see a small amount of shift
+in Figure~\ref{LGNSizeTuning}, which is not evident in the GCAL
+model. This may allow the additive term $k$ in the normalization pool
+(see Equation~\ref{eqn:lgnactivation}) to exert more influence under
+low contrast conditions. Additionally as indicated by
+\cite{Cavanaugh2002} and \citep{Solomon2006}, a divisive contrast-gain
+control model can capture contrast-dependent changes in the shape of
+the size tuning response function simply by shifting the balance of
+the excitatory and inhibitory components. Therefore both the LGN and
+V1 divisive components likely contribute to the increase in size
+tuning shifts observed in the SCAL model compared to the GCAL model.
 
 \begin{figure}
 	\centering
@@ -1090,13 +1164,16 @@ that is very similar (2.2x shift in experiment vs. 1.8x in the model).
       high contrast in experiment and the model respectively. B, D, F)
       Distribution of contrast-dependent shift in excitatory
       constant. The introduction of divisive gain control results in a
-      significant contrast-dependent size-tunign shift.}
+      significant contrast-dependent size-tuning shift.}
 	\label{ContrastShift}
 \end{figure}
 
 Finally we investigate the distribution of suppression indices, which
-shows a similar mean value but also highlights the complete lack of
-unsuppressed cells.
+shows a similar mean value to experiments ($SI=0.65$ in the model
+vs. $SI=0.8$ in experiment \citep{Sceniak2006}) but also highlights
+the complete lack of unsuppressed cells, which may be explained by the
+fact that only excitatory neurons were modeled and therefore there is
+considerably less diversity in connection profiles.
 
 \begin{figure}
 	\centering
@@ -1115,9 +1192,14 @@ them using reverse correlation techniques. After mapping the receptive
 fields using 5000 sparse, random stimuli the results were fit using
 the simple Gabor model described in Section~\ref{rffitting}. In
 addition to once again confirming the spatial frequency preference of
-the neurons, we compared the $n_x$ and $n_y$ ratios of the neurons to
-equivalent measurements in macaque \citep{Ringach2002b} and cat
-\citep{Jones1987}.
+the neurons, we compared the $n_x=\sigma_x f$ and $n_y=\sigma_y f$
+ratios of the neurons to equivalent measurements in macaque
+\citep{Ringach2002b} and cat \citep{Jones1987}. These values can be
+thought of as representing the number of sinusoidal cycles of the
+Gabor function fitting in a segment of length $\sigma_x$ and
+$\sigma_y$ respectively, allowing us to compare the number and
+elongation of Gabor subfields in a way that is independent of phase,
+translation or orientation.
 
 The results show a similar general shape but also demonstrate a shift
 toward greater $n_x$ values as compared to the experimental data.
@@ -1138,13 +1220,13 @@ toward greater $n_x$ values as compared to the experimental data.
 
 \subsubsection*{Intracortical connectivity}
 
-We have already settled that afferent activity is the major driver of
-responses in primary visual cortex but intracortical, recurrent
-connections between neurons are though to provide significant
-modulatory influences on V1 responses. Precisely breaking down the
-contributions of specific connections, particularly when taking into
-account the cell types is much more difficult, particularly because
-experimental data is much more scarce. In
+Although they make up a small fraction of connections in V1
+thalamocortical afferents are a major driver of activity in primary
+visual cortex \citep{Binzegger2004}. However intracortical, recurrent
+connections between neurons also provide significant modulatory
+influences on V1 responses. Precisely breaking down the contributions
+of specific connections, particularly because experimental data is
+much more scarce when taking into account the different cell types. In
 Section~\ref{InhibitoryBackground} we summarized the potential role of
 different inhibitory subclasses, however beyond some estimates of the
 maximum extent of the axonal projections from different cell classes
@@ -1245,7 +1327,7 @@ resembles the bouton density maps obtained by \cite{Buzas2006}.
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/SCAL/SCAL_vonMises_Fits.pdf}
-	\caption[Combined Gaussian+vonMises model fits to lateral
+	\caption[Combined Gaussian+von Mises model fits to lateral
       connectivity of the SCAL model.]{Example fits obtained by
       fitting Gaussian and von Mises distributions to the thresholded
       long-range lateral weights. A) The thresholded long-range
@@ -1260,30 +1342,30 @@ The results of our fitting procedure shown in Figure~\ref{LatDist}
 show good correspondence with these experimental estimates with a mean
 long-range connectivity that has a spatial constant of around $1645
 \mu m$ but extends beyond that with our cut-off defined at
-$2.5\degree$ or $7.5 mm$. The model without aspect fits the
-experimentally obtained long-range spatial constant more closely but
-neither extends to the furthest reaches of the lateral connection
-field. The local excitatory kernel provides a reasonable fit to
-experimental estimates with a mean local excitatory kernel with a
-spatial constant of around $221 \mu m$, compared to the $280 \mu m$
-estimated in cat V1 \citep{Buzas2006}. However most neurons exhibit
-much smaller local kernels and the distribution seems to be
-distributed bi-modally.
+$2.5\degree$ or $7.5 mm$. The model with the additional aspect
+parameter fits the experimentally obtained long-range spatial constant
+more closely, but neither extends to the furthest reaches of the
+lateral connection field. The local excitatory kernel provides a
+reasonable fit to experimental estimates with a mean local excitatory
+kernel with a spatial constant of around $221 \mu m$, compared to the
+$280 \mu m$ estimated in cat V1 \citep{Buzas2006}. However most
+neurons exhibit much smaller local kernels and the distribution seems
+to be distributed bi-modally.
 
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/SCAL/SCAL_Buzas_Distributions.pdf}
 	\caption[Distribution of spatial constants obtained by fitting
-      Gaussian and vonMises model.]{Distribution of spatial constant
+      Gaussian and von Mises model.]{Distribution of spatial constant
       obtained by fitting the \cite{Buzas2006} von Mises and Gaussian
       model to long-range lateral excitatory connections developed as
       part of the SCAL model. A) Distribution of kernel sizes of the
       local excitatory component. B) Distribution of kernel sizes of
       the long-range excitatory component C) Comparison between naive
-      model with orientation dependent component (i.e. pure Gaussian),
-      the vonMises model including the orientation dependent component
-      and additionally versions of both with an additional term for
-      the anisotropy in the connectivity.}
+      model without an orientation dependent component (i.e. pure
+      Gaussian), the von Mises model including the orientation
+      dependent component and additionally versions of both with an
+      additional term for the anisotropy in the connectivity.}
 	\label{LatDist}
 \end{figure}
 
@@ -1302,7 +1384,7 @@ selectivity of the neuron (Spearman's $\rho=0.59$, $p<10^{-184}$).
 \begin{figure}
 	\centering
         \includegraphics[width=1.0\textwidth]{./results/SCAL/SCAL_vonMises_ORSel.pdf}
-	\caption[Relationship between the width of vonMises distribution
+	\caption[Relationship between the width of von Mises distribution
       in the lateral connectivity model and the orientation
       selectivity of the neuron.]{Scatter plot of the $\kappa$
       variable of the von Mises distribution and the orientation
@@ -1349,16 +1431,21 @@ ranges.
 
 \begin{figure}
 	\centering
-        \includegraphics[width=1.0\textwidth]{./SCAL_Inh_Distribution.pdf}
+        \includegraphics[width=1.0\textwidth]{SCAL_Inh_Distribution.pdf}
 	\caption[Spatial and orientation distribution of the lateral
       inhibitory weights in SCAL.]{Distributions of inhibitory
       projections as a function of space broken down into
       iso-orientation, oblique orientation, and cross orientations
       relative to the orientation preference of the post-synaptic
       neuron. Top row shows model results bottom row reproduces
-      results from \cite{Kisvarday1997a} in cat area 17. Comparison
-      highlights similarity although the model truncates the heavy
-      tail of the distribution.}
+      results from \cite{Kisvarday1997a} in cat area 17. The
+      iso-oriented connections are most numerous and strongest overall
+      and follow a similar distribution although they drop off more
+      quickly at larger distances. Oblique- and cross-orientation
+      connections start at further distances and are overall less
+      frequent. However since only the central region is simulated the
+      long tail of the experimental distributions can't be
+      replicated.}
 	\label{LatORDist}
 \end{figure}
 
@@ -1487,13 +1574,16 @@ different feature preferences across the cortical surface.
 
 However, in exploring this model we have also encountered clear
 limitations, the most important of which is the lack of distinct
-excitatory and inhibitory populations. Apart from directly violating
-Dale's law, this poses a serious problem for a developmental model.
-This is because Hebbian learning will ensure the strength and spatial
-profile of the neural connections is dependent on the response
-properties of the neuron and different cell types may respond very
-differently. This has made it difficult to directly compare the
-lateral connectivity in the model to experimental data.
+excitatory and inhibitory populations. This violation of Dale's law,
+which states that neurons release the same neurotransmitters at all of
+its synapses and therefore have either an excitatory or a inhibitory
+influence on post-synaptic cells, poses a serious problem for a
+developmental model. This is because Hebbian learning will ensure the
+strength and spatial profile of the neural connections is dependent on
+the response properties of the neuron, yet in animals different cell
+types may respond very differently. This has made it difficult to
+directly compare the lateral connectivity in the model to experimental
+data.
 
 \subsubsection*{Differences to GCAL}
 
@@ -1543,26 +1633,47 @@ orientation tuning as well as robust, yet adaptive self-organization.
 \subsubsection*{Size tuning}
 
 A major component of the analysis we applied here was in comparing
-applying a Difference-of-Gaussian model to the area summation curves
-and comparing the results to equivalent experimental data. Since the
-model itself does not exert any long-range influences any changes in
-the fit is must likely mediated by the relatively short-range
-connections in the model. However we did find significant shifts in
-the integration area depending on the contrast level in the SCAL model
-but not in the GCAL model. This suggests suggest the 
-contrast-dependent shifts in effective integration area can be explained by
-changes in the relative gain of the center and surround component in a
-ratio-of-Gaussians model, just as was proposed by
-\cite{Cavanaugh2002}. It is therefore not necessary to invoke
-integration over a larger area via long-range lateral connections as
-was suggested by the experimental work by \cite{Levitt2002} and
-\cite{Sceniak2001} and translated into a model by
-\cite{Schwabe2006}. This does not mean however that long-range lateral
-connections do not have any influence. Indeed it is difficult to
-envision how the model can mediate any longer range feature specific
-excitation and inhibition without corresponding long-range projections
-between neurons, which are themselves tuned for those specific
-features.
+Difference-of-Gaussian (DoG) and Ratio-of-Gaussian (RoG) models of the
+area summation curves from both models and comparing the results to
+equivalent experimental data. Since the model itself does not exert
+any long-range influences any changes in the fit is most likely
+mediated by the relatively short-range connections in the model.
+
+Using the subtractive DoG model we did find significant shifts in the
+integration area depending on the contrast level in the SCAL model but
+not in the GCAL model. Since the actual integration area is fixed in
+both models this suggests the contrast-dependent shifts in effective
+integration area can be explained by changes in the relative gain of
+the center and surround component in a ratio-of-Gaussians model, just
+as was suggested by \cite{Cavanaugh2002} and
+\citep{Solomon2006}. However it is also worth noting that the value of
+$k$ in equation \ref{eqn:lgnactivation} describing the LGN activation
+may have a role here. Under low contrast conditions the additive $k$
+component in the LGN normalization term can dominate relative to the
+projection strength and result in shifts in size tuning.
+
+The divisive RoG models were not able to fit the data quite as well
+(see Figure~\ref{LGNSizeFit}) and have therefore not been shown in as
+much detail. However comparing these two models of size tuning shows
+that the divisive model performs significantly better when the spatial
+constants of the center and surround are not fixed, i.e. the ratio in
+the gain between the center and surround components explains part of
+the size tuning shift the subtractive DoG model captures through a
+shift in the spatial constants of center and surround. This suggests
+that subtractive suppression is not a good model of surround
+suppression in the LGN or V1 and that contrast-gain control can
+explain a large portion of the contrast dependent effects observed in
+experiment and in the SCAL model.
+
+It is therefore not necessary to invoke integration over a larger area
+via long-range lateral connections as was suggested by the
+experimental work by \cite{Levitt2002} and \cite{Sceniak2001} and
+translated into a model by \cite{Schwabe2006}. This does not mean
+however that long-range lateral connections do not have any
+influence. Indeed it is difficult to envision how the model can
+mediate any longer range feature specific excitation and inhibition
+without corresponding long-range projections between neurons, which
+are themselves tuned for those specific features.
 
 \subsubsection*{Lateral Connectivity}
 

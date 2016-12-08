@@ -1,41 +1,41 @@
 %!TEX root = ../PhDthesis.tex
 \chapter{Long-range interactions in the visual cortex}
 
-%% jbednar: would be good to add a more recent citation or two to this
-%% list, as the newest is 14 years old.
 Patchy long-range lateral connections that link regions with similar
 visual preferences are one of the most intriguing features of the
 early visual cortex. These connections have been suggested to drive a
 wide range of contextual-modulation effects including pop-out,
 iso-orientation suppression, contour completion, and more
 \citep{Gilbert1983, Hirsch1991, McGuire1991, Grinvald1994,
-  Fitzpatrick2000, Hupe2001, Stettler2002}.  The most commonly
-reported effects are suppressive, and even though the connections are
-known to be excitatory and to primarily target other excitatory cells,
-some connections target local inhibitory neurons that provide strong
-di- or poly-synaptic inhibition \citep{Hirsch1991,Weliky1995}.  While
-both the SCAL and SEPI models optionally support long-range excitation
-that could provide such suppression di-synaptically via the PV
-inhibitory cells, the suppression would not be specific for features
-like orientation, because the PV cell population is so weakly tuned.
+  Fitzpatrick2000, Hupe2001, Stettler2002}. The most commonly reported
+effects particularly at high contrast are suppressive, and even though
+the connections are known to be excitatory and to primarily target
+other excitatory cells, some connections target local inhibitory
+neurons that provide strong di- or poly-synaptic inhibition
+\citep{Hirsch1991,Weliky1995}.  While both the SCAL and SEPI models
+optionally support long-range excitation that could provide such
+suppression di-synaptically via the PV inhibitory cells, the
+suppression would not be specific for features like orientation,
+because the PV cell population is so weakly tuned.
 
 On theoretical grounds, it has been hypothesized that the neural code
-in the cortex achieves a sparse representation of the input by
-eliminating redundancy \citep{barlow:comneuron89,Olshausen1996}.
-Indeed, modulation from the non-classical receptive field has been
-shown to suppress redundant information in the input, sparsifying the
-representation \citep{Vinje2000}. Here it is crucial that the target
-of the suppression is \emph{redundant} activity; achieving sparsity by
-simply globally or randomly reducing activity will increase sparseness
-but lose information.  For instance, in previous developmental models
-of V1 with long-range lateral inhibition, it was shown that both
-isotropic and feature-specific connections could achieve a given level
-of sparsity, but the isotropic connections did so by reducing
-information about the input patterns \citep{Miikkulainen2005}.  For
-instance, if two unrelated contours are nearby in an image, isotropic
-suppression will eliminate the representation of the weaker one,
-achieving sparsity by losing information about the input, while
-feature-specific will reduce the number of neurons responding to each
+in the cortex achieves a neural representation that is both sparse and
+reduces redundancy in the input
+\citep{barlow:comneuron89,Olshausen1996}. Indeed, modulation from the
+non-classical receptive field has been shown to suppress redundant
+information in the input, sparsifying the representation
+\citep{Vinje2000}. Here it is crucial that the target of the
+suppression is \emph{redundant} activity; achieving sparsity by simply
+globally or randomly reducing activity will increase sparseness but
+lose information. For instance, in previous developmental models of V1
+with long-range lateral inhibition, it was shown that both isotropic
+and feature-specific connections could achieve a given level of
+sparsity, but the isotropic connections did so by reducing information
+about the input patterns \citep{Miikkulainen2005}.  For instance, if
+two unrelated contours are nearby in an image, isotropic suppression
+will eliminate the representation of the weaker one, achieving
+sparsity by losing information about the input, while feature-specific
+suppression will reduce the number of neurons responding to each
 contour separately.
 
 These considerations suggest a difference between short-range
@@ -107,7 +107,7 @@ through a higher inhibitory threshold that conflicts with the
 experimental evidence \citep{Li2002, Schwabe2006}. In this model, the
 contextual-modulation effects are an emergent phenomenon, arising
 directly from the correlations present in the training patterns (as
-transformed subcortically).  Identifying and understanding the
+transformed sub-cortically).  Identifying and understanding the
 circuits involved in these processes is a fundamental challenge for
 neuroscience, and will hugely contribute to extending our knowledge of
 cortical information processing.
@@ -134,10 +134,9 @@ neurons are connected.
         \includegraphics[width=1.0\textwidth]{LESPI_Diagram.pdf}
 	\caption{Diagram of the LESPI V1 stage of the model showing the
       spatial scales of the various excitatory (red) and inhibitory
-      (blue) connections. Saturated colors indicate the kernel radii,
-      while lightly shaded regions indicate kernel cut-off extents.}
-        %% jbednar: I can't see which are lightly shaded and which are saturated
-	\label{LESPIDiagram}
+      (blue) connections. Dark colors indicate the kernel radii, while
+      lightly shaded regions indicate kernel cut-off extents.}
+    \label{LESPIDiagram}
 \end{figure}
 
 The newly introduced Sst population differs from the PV population in
@@ -175,7 +174,7 @@ excitatory contribution, $\eta_{P}$ the PV inhibitory contribution,
 and the surround-modulation term $\eta_{SM}$ is defined as:
 %%
 \begin{equation}
-  \eta_{SM} = 1 + \eta_{H} - \eta_{S}
+  \eta_{SM} = 1 + \eta_{HE} - \eta_{S}
 \end{equation}
 %%
 where $\eta_{H}$ represents the long-range horizontal excitatory
@@ -264,13 +263,21 @@ terminals. Informally, we have confirmed that the model self-organizes
 well using a simple sparse sprouting-and-retraction algorithm, but
 this sparsification algorithm would need to be documented, explained,
 analyzed, and validated separately before being applied here. Since
-that complexity would be distracting for our current purposes, we
-instead train the model with dense projections and then subsequently
-sparsify it by thresholding all weights below the 90th percentile. As
-shown in the results section below, this process leaves only patchy
-connections that strongly resemble experimental plots of patchy
-long-range connections in layer 2/3 of macaque and tree shrew,
+that complexity would be distracting for our current modeling goals,
+we instead train the model with dense projections and then
+subsequently sparsify it by thresholding all weights below the 90th
+percentile. As shown in the results section below, this process leaves
+only patchy connections that strongly resemble experimental plots of
+patchy long-range connections in layer 2/3 of macaque and tree shrew,
 extending up to 4 hypercolumns from the neuron.
+
+Sparsifying the weights in this way has the potential to alter the
+activity but since the connections mostly have a modulatory influence
+this does not significantly change network responses especially in the
+initial response. However influences on the overall tuning and
+therefore the map structure cannot be ruled out. To eliminate these
+issues future work should therefore pursue an approach that employs
+connection sparsity from the start.
 
 \subsection{Visual statistics}
 
@@ -282,7 +289,7 @@ simple cells, strongly tuned for spatial phase.  Patterns like natural
 images have a variety of spatial phases, such as light areas
 surrounded by dark and dark areas surrounded by light.  When given
 such patterns, SCAL or SEPI simple cells with opposite phase
-preferences (swapping ON for OFF excitation) will be anticorrelated
+preferences (swapping ON for OFF excitation) will be anti-correlated
 and thus far from each other on the cortical surface, disrupting the
 maps for orientation and retinotopy \citep{Miikkulainen2005}.  In
 contrast, animal maps in the superficial layers used in imaging
@@ -325,16 +332,16 @@ visual experience of a developing animal, both in a laboratory environment,
 dominated by high-contrast bars of the animal cages, and a
 natural environment dominated mostly by grass, leaves, and trees.
 
-% jbednar: can you change the name ``natural'' to outdoor, if it's A?
 \begin{figure}
 	\centering
-	\includegraphics[width=1.0\textwidth]{./results/lespi/ImagePatterns.pdf}
+    \includegraphics[width=1.0\textwidth]{./results/lespi/ImagePatterns.pdf}
 	\caption[Example image patterns used to train the model] {Example
       image patterns sampled from different image datasets and then
-      randomly positioned and rotated. A) Forest and grass taken in
-      Gif-sur-Yvette. B) Inside of a tree-shrew cage taken in David
-      Fitzpatrick's animal rearing facilities at Duke University.
-      C) \cite{Serre2007} target patterns of animals and natural landscapes.}
+      randomly positioned and rotated. A) Forest and grass from the
+      outdoor dataset taken in Gif-sur-Yvette. B) Inside of a
+      tree-shrew cage taken in David Fitzpatrick's animal rearing
+      facilities at Duke University. C) \cite{Serre2007} target
+      patterns of animals and natural landscapes.}
     \label{image_patterns}
 \end{figure}
 
@@ -375,12 +382,12 @@ respectively.
 \begin{figure}
 	\centering
         \includegraphics[width=0.5\textwidth]{ORC_Stimulus.pdf}
-	\caption{orientation-contrast stimulus measuring modulation by a
+	\caption{Orientation-contrast stimulus measuring modulation by a
       sine grating annulus on the response of a central neuron
-      responding to a central sine grating disk of the same spatial frequency.
-      Stimulus is varied by center and surround contrast, surround
-      orientation and the offset between the central disk and the
-      surround annulus.}
+      responding to a central sine grating disk of the same spatial
+      frequency.  Stimulus is varied by center and surround contrast,
+      surround orientation and the offset between the central disk and
+      the surround annulus.}
 	\label{ORC_Stimulus}
 \end{figure}
 
@@ -390,6 +397,9 @@ we used the orientation-contrast suppression index defined as:
 \begin{equation}
   OCSI = \frac{R_0 - R_{\frac{\pi}{2}}}{R_0}
 \end{equation}
+
+where $R_0$ represents the response at the preferred orientation and
+$R_{\frac{\pi}{2}}$ at the orthogonal orientation.
 
 \paragraph{Pop-out}
 
@@ -413,7 +423,10 @@ simulated area.
 As previously discussed, the surround-modulation effects in the model
 are highly dependent on the statistics of the visual input used for
 training. The following analyses all use either the ``natural`` or the
-``treeshrew`` (cage) dataset shown in Figure~\ref{image_patterns}.
+``treeshrew`` (cage) dataset shown in
+Figure~\ref{image_patterns}. This is because the Gaussian patterns are
+drawn randomly and do not contain any long-range correlations the
+model could learn and encode in its lateral connectivity.
 
 Before characterizing the responses to more complex patterns, we will
 once again show how the response to a simple Gaussian pattern evolves
@@ -589,26 +602,41 @@ Sst population activates much more strongly in the iso-orientation
 condition (C) than in the cross-orientation condition, as expected due
 to the feature selectivity of the Sst neurons.
 
+The model only has a rough temporal calibration, which makes it
+difficult to compare. However one iteration in the model corresponds
+to roughly 250 ms of response, and the lateral delay is calibrated to
+a maximum propagation speed of about 0.3 m/s, which has been confirmed
+in experiments \citep{Hirsch1991}. The time course of the
+iso-orientation surround suppression and facilitation arrive roughly
+40-60 ms after the onset of the excitatory response, which is also
+roughly in line with experiments \citep{Hupe2001, Bair2003}. This
+indicates that lateral connections can realistically exert
+iso-oriented surround suppression within the spatial ranges explored
+here over the time-course that has been observed in
+experiments. However, over larger spatial scales it is likely that
+feedback connections would have to be involved as \cite{Bair2003} have
+argued previously.
+
 \begin{figure}
 	\centering
-        \includegraphics[width=1.0\textwidth]{./results/lespi/ORTC_TimeCourse.pdf}
+    \includegraphics[width=1.0\textwidth]{./results/lespi/ORTC_TimeCourse.pdf}
 	\caption[Time-course of neural and synaptic projection responses
       under four conditions, demonstrating how a contrast-dependent
       switch between facilitation and suppression occurs]{Time-course
       of neural and synaptic projection responses under four
       conditions, demonstrating how a contrast-dependent switch
-      between facilitation and suppression occurs. Visualizes how
-      inerneuron activity and lateral excitatory projection affect the
-      response of the excitatory projection (in red). A) In the
-      low-contrast iso-orientation condition, lateral excitation
-      exceeds the activation of the V1 Sst population, resulting in
-      facilitation. B) In the low-contrast cross-orientation
-      condition, very little surround modulation occurs. C) In the
-      high-contrast iso-orientation condition, the Sst population
-      activates strongly causing strong suppression. D) Under the
-      high-contrast cross-orientation condition, Sst neurons are only
-      weakly recruited, resulting in a moderate amount of modulation.
-      Results from model trained on natural dataset.}
+      between facilitation and suppression occurs in the
+      model. Visualizes how interneuron activity and lateral excitatory
+      projection affect the response of the excitatory projection (in
+      red). A) In the low-contrast iso-orientation condition, lateral
+      excitation exceeds the activation of the V1 Sst population,
+      resulting in facilitation. B) In the low-contrast
+      cross-orientation condition, very little surround modulation
+      occurs. C) In the high-contrast iso-orientation condition, the
+      Sst population activates strongly causing strong suppression. D)
+      Under the high-contrast cross-orientation condition, Sst neurons
+      are only weakly recruited, resulting in a moderate amount of
+      modulation.  Results from model trained on natural dataset.}
 	\label{ORTC_TimeCourse}
 \end{figure}
 
@@ -683,7 +711,8 @@ where all flankers have the same orientation.
       but pops out when surrounded by cross-oriented flankers.
       %% jbednar: doesn't there need to be a third case, of no
       %% surround, to say whether it's really pop-out or just lack of
-      suppression?  The average response in the target region in both
+      %% suppression ?
+      The average response in the target region in both
       conditions is represented by the solid lines, while the annulus
       region is shown as dotted lines. The averaged responses
       highlight pop-out of the target stimulus from the background in
@@ -764,7 +793,7 @@ At the same time, the spatial scales over which the lateral connections
 can effectively act are very limited, dropping off almost completely
 after about $1^\circ$ in visual angle in the model. This suggests that
 the lateral connections could mediate strong visual effects in
-relatively limited circuumstances, such as at the borders of different
+relatively limited circumstances, such as at the borders of different
 textures or for more peripheral stimuli where the lateral connections
 would cover a large visual area compared to central vision.
 
@@ -930,6 +959,37 @@ connections. Indeed this provides an intriguing connection to
 predictive coding models, where the sign of the lateral modulation
 represents the sign of the error \citep{Rao1999}.
 
+\subsection{More complex surround modulation effects}
+
+In this chapter we mostly focused on fairly simple contextual
+modulation phenomena such as pop-out and orientation contrast
+suppression and facilitation. Generally these simple phenomena were
+modeled well but further investigation will have to be applied to
+determine whether this extends to phenomena such as contour
+integration and more complex pop-out effects. In particular the model
+is highly sensitive to the total amount of excitation so it is unclear
+whether the results here extend to pop-out effects in crowded
+arrangements such as those tested in \citep{Li2002}. However from a
+conceptual perspective the mechanisms underlying simple and more
+complex phenomena are largely the same so the model is likely to be
+able to model these effects too.
+
+There are however also some experimental observations that are not as
+easily explained such as the observation by \cite{Sillito1995} that
+when a stimulus with an orientation orthogonal to the preferred
+orientation is presented in the center and with the preferred
+orientation in the surrounding annulus, some neurons responded
+strongly even though presenting the center and surround independently
+elicited no response. This may be explained by the fact that an
+orthogonal stimulus in the center does not recruit much excitation on
+its own but also elicits little suppression, such that when a surround
+annulus with the preferred orientation is added the additional
+excitation arriving through long-range excitatory connections is
+sufficient to get the neuron to respond. In future these more subtle
+phenomena can be investigated using these models too, allowing us to
+make predictions on how the interaction between various cell classes
+can give rise to effects that are usually extremely difficult to
+disentangle.
 
 \subsection{Effects of natural image statistics on the model}
 

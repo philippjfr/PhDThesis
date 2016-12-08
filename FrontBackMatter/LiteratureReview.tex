@@ -103,14 +103,14 @@ characterized as simple edge detectors.
 \begin{figure}
 	\centering \includegraphics[width=0.9\textwidth]{Figure2.png}
 	\caption[A Center-surround receptive field. Adapted from
-      \cite{Bear2006}.]{The center-surround receptive field structure
-      of some retinal ganglion cells and LGN neurons, illustrating how
-      a contrast edge activates different portions of the field and
-      thereby results in different activation patterns. From left to
-      right one can see that as the light-dark edge moves into the ON
-      surround field, spontaneous activity is suppressed, and as it
-      moves further over the OFF-center field the neuron becomes
-      highly active. Adapted from \cite{Bear2006}.}
+      \cite{Bear2006}.]{The canonical center-surround receptive field
+      structure of retinal ganglion cells and LGN neurons,
+      illustrating how a contrast edge activates different portions of
+      the field and thereby results in different activation
+      patterns. From left to right one can see that as the light-dark
+      edge moves into the ON surround field, spontaneous activity is
+      suppressed, and as it moves further over the OFF-center field
+      the neuron becomes highly active. Adapted from \cite{Bear2006}.}
 	\label{Center-Surround}
 \end{figure}
 
@@ -297,12 +297,35 @@ connections longer than 500 \si{\micro\metre} preferentially link
 neurons with co-oriented and co-axially aligned receptive fields
 \citep{Bosking1997}. In iso-orientation regions, cells therefore make
 short-range connections largely with cells that prefer the same
-direction as them, while at pinwheels short-range connections are made
+features as them, while at pinwheels short-range connections are made
 with cells with a wider range of orientation preferences
 \citep{Yousef2001}. However, it is known that the patchy lateral
 connectivity in V1 does not arise until after the orientation map has
 emerged \citep{Ruthazer1996}, indicating that they may be involved in
 some higher-order processing not required during initial development.
+
+The exact purpose of cortical maps is still under intense
+debate. Various hypotheses exist that they have emerged as a highly
+efficient solution to solve distinct constraints, firstly of providing
+optimal coverage of the feature space by mapping it onto a tiled
+two-dimensional surface and secondly to optimize the overall length of
+synaptic connections, which have high metabolic costs associated with
+them \cite{Koulakov2001}. It is also possible that map formation is
+merely an epiphenomenon that arises due to the need for an
+evolutionary algorithm that can develop useful structure based merely
+on the interaction of locally interconnected neurons, eliminating the
+need for any complex interactions to be encoded genetically, making
+use of general pattern-formation principles to efficiently encode the
+structure of the cortex genetically \citep{Wilson2015}. Cortical maps
+may also be important for the hierarchical organization of the cortex
+allowing high-level areas to pool over the full feature space within a
+relatively small region, e.g. allowing complex cells in layer 2/3 in
+V1 to pool over all different orientation preferences in layer 4. All
+of these explanations rely on the assumption that preferentially
+connecting neurons with similar feature preferences has some
+benefit. It is therefore unclear whether cortical maps have any
+concrete purpose or are merely the result of various constraints on
+cortical development.
 
 The development of the early visual pathway is probably driven by a
 number of mechanisms complementing each other at various stages,
@@ -312,8 +335,13 @@ processes driven by internal and extrinsically stimulated
 activity. Although the structure of a neuron's receptive field is
 constantly changing and varies widely from cell to cell, a lot of work
 has gone into measuring the exact structure and functional properties
-of neural receptive fields and their underlying anatomical basis,
-the neurite arbors.
+of neural receptive fields and their underlying anatomical basis, the
+neurite arbors. The different time scales involved in the initial
+development of orientation maps and the maturation of long-range
+lateral connectivity indicates that the precise statistics of visual
+experience are not important in early development and only play a
+strong role once the rough classical receptive field structure has
+emerged.
 
 \subsection{Functional and Anatomical Properties of Neural Receptive Fields}
 
@@ -513,14 +541,27 @@ attempt to integrate the results from studies employing different
 means of classifying RFs.
 
 The studies reviewed in \cite{Angelucci2006a} suggest that
-geniculocortical FF projections integrate signals in the hsRF, while
-lateral connections underlie the lsRF and may thus account for the
-contrast dependence of spatial summation as well as modulatory effects
-in the near surround. Classification through measurement of spatial
-dimensions and onset latencies suggest that inter-areal FB
-connections are responsible for modulatory influences from the
-far surround. The influence and spatial properties of each of these
-projections will be detailed in the following sections.
+geniculocortical FF projections linear integrate signals in the hsRF,
+while lateral connections underlie the lsRF and may thus account for
+the contrast dependence of spatial summation as well as modulatory
+effects in the near surround. In particular they argue that excitatory
+and inhibitory neurons differentially integrate their inputs, where
+the excitatory population integrates input linearly, inhibitory
+interneurons respond non-linearly responding only weakly with low
+excitatory drive but rapidly scale up their response to stronger
+input, effectively putting a brake on excitation, causing it to
+asymptote and eventually level off \citep{Angelucci2002}. Other work
+by \cite{Sceniak1999} also suggests that the effective reduction of
+lateral integration under high-contrast conditions could be the result
+of greater depression of cortico-cortical synapses at higher levels of
+mean activity and the greater shunting of EPSPs resulting from strong
+tonic inhibition. In addition to these potential intra-areal
+interactions giving rise to the lsRF and hsRF under varying stimulus
+conditions, classification through measurement of spatial dimensions
+and onset latencies suggest that inter-areal FB connections are
+responsible for modulatory influences from the far surround. The
+influence and spatial properties of each of these projections will be
+detailed in the following sections.
 
 \begin{figure}
 	\centering
@@ -533,12 +574,24 @@ projections will be detailed in the following sections.
 	\label{RFstruct}
 \end{figure}
 
+Before considering what exact interactions might be giving rise to the
+lsRF and hsRF it is worth considering why it might be important to
+have differential signal integration under varying stimulus
+conditions. An effective reduction in the spatial integration area at
+high contrast makes functional sense; a strong signal generally
+provides a much better signal-to-noise ratio allowing a single neuron
+to precisely spatially localize image features even when they are only
+integrating over a small area. However under weaker stimulus
+conditions this spatial precision is sacrificed for greater
+sensitivity for detection, which is achieved by integrating over a
+larger area.
+
 It is unclear whether this simple story attributing the different
 parts of the receptive to specific projections is realistic, as there
-will surely be overlap. Nonetheless, we will review the hypothesized contributions
-to the receptive field in detail so we can later confirm whether the
-different components in the model can actually account for the
-contrast-dependent changes in receptive field integration.
+will surely be overlap. Nonetheless, we will review the hypothesized
+contributions to the receptive field in detail so we can later confirm
+whether the different components in the model can actually account for
+the contrast-dependent changes in receptive field integration.
 
 \paragraph{Geniculocortical Afferents and the Minimum and High Contrast Summation RF} \label{AfferentBackground}
 
@@ -1013,8 +1066,8 @@ surround suppression, stimulus size, and contrast.
 Since the circuitry of the cortex is so complex, the task of
 identifying feedforward and feedback contributions to surround
 suppression is difficult. Although only a starting point, one way of
-roughly separating these two possible contributions is to look at
-the time course of suppression. In the literature, early and late
+roughly separating these two possible contributions is to look at the
+time course of suppression. In the literature, early and late
 contributors to surround suppression have been identified
 \citep{Webb2005}. The early component is characterized as being driven
 by lower CRF contrasts with spatio-temporally broadband tuning and
@@ -1030,13 +1083,20 @@ is thought to arise much more strongly in layer 4 of striate cortex
 \citep{Webb2005}, which may have some correspondence to the broadly
 tuned inhibitory population identified by \cite{Hirsch2003}.
 
-\cite{Carandini2002} on the other hand suggest that there is a
-synaptic explanation for surround suppression, primarily due to the
-speed with which the suppression arrives, its immunity to cortical
-adaptation, and the fact that it is restricted to the CRF. However,
-they concede that synaptic depression does not account for gain
-control and the abolishment of cross-orientation suppression by
-GABA$^{A}$ blockade, so a mechanism that can account for all these
+There is also the possibility that the origins of surround suppression
+differ between species, which may arise due to the difference in
+orientation tuning of LGN neurons. \citep{Ozeki2009} found that GABA_A
+blockade using bicuculline methiodide (BMI) in V1 did not abolish
+surround suppression in V1, suggesting it is the result of a reduction
+of thalamocortical inputs driving both excitatory and inhibitory in
+the cortex. \cite{Carandini2002} on the other hand suggest that there
+is a synaptic explanation for suppression, primarily due to the speed
+with which the early component of suppression arrives, its immunity to
+cortical adaptation, and the fact that it is restricted to the
+CRF. However, they concede that synaptic depression does not account
+for gain control and the abolishment of cross-orientation suppression
+by GABA$^{A}$ blockade and the later component of suppression arriving
+from the surround, so a mechanism that can account for all these
 phenomena may still be preferable. In that vein, \cite{Webb2005}
 propose two inhibitory mechanisms, one of which sums local activity in
 a neuron's CRF and divides the response of the CRF, and a later
@@ -1046,9 +1106,9 @@ has a strong relationship with contrast gain control, which has been
 firmly established to act divisively. Independent work by
 \cite{Xing2005} supports the suggestion of two inhibitory components
 and further expands on the size dependence of these two
-components. Specifically, \cite{Xing2005} conclude that the tuned component is
-recruited far more strongly for larger stimuli, which seems to confirm
-a contribution from beyond the CRF.
+components. Specifically, \cite{Xing2005} conclude that the tuned
+component is recruited far more strongly for larger stimuli, which
+seems to confirm a contribution from beyond the CRF.
 
 This recent work has identified two clear and distinct inhibitory
 components, but has not yet fully described which mechanisms and
@@ -1808,7 +1868,7 @@ As it is thought that the cortex captures statistics about the sensory
 streams to construct internal models of the world, it is clear that
 function, structure and development are closely linked. Indeed it is
 now clear that V1 is a dynamic and adaptive circuit, which exhibits
-learning and learns to optimally encode and represent its inputs. In
+learning and learns to accurately encode and represent its inputs. In
 other words, V1 is not a static circuit, organizing solely based on
 genetic cues, but rather self-organizes through a complex interplay of
 genetic triggers, intrinsic mechanisms such as retinal waves and
